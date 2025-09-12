@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useEffect, useState } from 'react';
-import { Vortex } from './ui/vortex';
+import { Vortex } from '@/components/ui/vortex';
 import { shouldEnableHeavyEffects } from '@/utils/animationGate';
 
 type Props = {
@@ -8,34 +8,45 @@ type Props = {
   baseHue?: number;
   particleCount?: number;
   rangeY?: number;
+  baseSpeed?: number;
+  rangeSpeed?: number;
+  baseRadius?: number;
+  rangeRadius?: number;
 };
 
 export default function HeroVortex({
   children,
-  className,
+  className = '',
   backgroundColor = 'black',
-  baseHue = 220,
+  baseHue = 250,
   particleCount = 1200,
-  rangeY = 800,
+  rangeY = 1200,
+  baseSpeed = 0.05,
+  rangeSpeed = 0.4,
+  baseRadius = 1.5,
+  rangeRadius = 1.5,
 }: PropsWithChildren<Props>) {
   const [enable, setEnable] = useState(false);
-  useEffect(() => { setEnable(shouldEnableHeavyEffects()); }, []);
 
+  useEffect(() => {
+    setEnable(shouldEnableHeavyEffects());
+  }, []);
+
+  // Fallback to a static container if we decide not to render heavy effects
   if (!enable) {
-    // Static fallback container with same sizing/classes
-    return <div className={className + ' hero'}>{children}</div>;
+    return <div className={className}>{children}</div>;
   }
 
   return (
     <Vortex
       backgroundColor={backgroundColor}
-      baseHue={250}
-      particleCount={1200}
-      rangeY={1200}
-      baseSpeed={0.05}
-      rangeSpeed={0.4}
-      baseRadius={1.5}
-      rangeRadius={1.5}
+      baseHue={baseHue}
+      particleCount={particleCount}
+      rangeY={rangeY}
+      baseSpeed={baseSpeed}
+      rangeSpeed={rangeSpeed}
+      baseRadius={baseRadius}
+      rangeRadius={rangeRadius}
       className={className}
     >
       {children}

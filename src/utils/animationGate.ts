@@ -1,21 +1,20 @@
+// src/utils/animationGate.ts
 export function shouldEnableHeavyEffects(): boolean {
-  if (typeof window === 'undefined') return false;
+  try {
+    // Respect "Save-Data"
+    const nav = navigator as any;
+    if ('connection' in nav && nav.connection?.saveData) return false;
 
-  const motionOK =
-    window.matchMedia?.('(prefers-reduced-motion: no-preference)')?.matches ?? false;
+    // Avoid on low memory/small devices
+    const mem = (navigator as any).deviceMemory ?? 4;
+    if (mem < 2) return false;
 
-  const host = window.location.hostname;
-  const isProd =
-    host === 'virtualstrategytech.com' || host === 'www.virtualstrategytech.com';
+    // Prefer desktop or bigger screens
+    const isSmallScreen = Math.min(window.innerWidth, window.innerHeight) < 640;
+    if (isSmallScreen) return false;
 
-  // Vite-style env var; default ON if not set
-  const raw = (import.meta as any)?.env?.VITE_ENABLE_ANIM ?? '1';
-  const flag =
-    String(raw) === '1' ||
-    String(raw).toLowerCase() === 'true' ||
-    String(raw).toLowerCase() === 'on';
-
-  const notIframe = window.top === window.self;
-
-  return motionOK && isProd && flag && notIframe;
+    return true;
+  } catch {
+    return false;
+  }
 }
