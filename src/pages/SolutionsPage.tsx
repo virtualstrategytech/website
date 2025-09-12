@@ -33,13 +33,11 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({ onBackToHome, onOp
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back to Home
               </button>
-              <button
+              <button>
                 onClick={onOpenModal}
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-xl hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
-              >
                 Demo
-              </button>
+                </button>
             </div>
           </div>
         </div>
