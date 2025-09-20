@@ -284,14 +284,19 @@ function App() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             From Strategy to Prompt: Teach Teams{" "}
             <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              AI-Ready Thinking
+              Prompt Engineering
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+<<<<<<< HEAD
             Transform your strategic challenges with prompt engineering coaching
             and optional dynamic quizzes - for prompt upskilling that sticks.
+=======
+            Contextual microlearning for on-the-job prompt engineering that
+            sticks
+>>>>>>> 9eb1b00cead5cc48bc01e33ef58e896915a1b004
           </p>
 
           {/* CTA Button */}
@@ -1082,5 +1087,8 @@ function App() {
     </div>
   );
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9eb1b00cead5cc48bc01e33ef58e896915a1b004
 export default App;

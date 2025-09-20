@@ -61,6 +61,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
               </button>
               <button
                 onClick={onOpenModal}
+<<<<<<< HEAD
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
                 style={{
                   fontSize: "26px",
@@ -71,6 +72,11 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
                 }}
               >
                 Demo
+=======
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
+              >
+                Get Started
+>>>>>>> 9eb1b00cead5cc48bc01e33ef58e896915a1b004
               </button>
             </div>
           </div>
