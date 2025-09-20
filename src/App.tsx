@@ -290,8 +290,8 @@ function App() {
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            Transform your strategic challenges with prompt engineering coaching
-            and optional dynamic quizzes - for prompt upskilling that sticks.
+            Contextual microlearning for on-the-job prompt engineering that
+            sticks
           </p>
 
           {/* CTA Button */}
@@ -1082,5 +1082,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
