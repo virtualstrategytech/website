@@ -149,18 +149,18 @@ function App() {
                 About
               </a>
               <a
-                href="#services"
+                href="#products"
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
-                Services
+                Products
               </a>
               <button
                 onClick={() => handleNavigateToPage("solutions")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
-                Solutions
+                Services
               </button>
               <button
                 onClick={() => handleCTAClick("header-cta")}
@@ -211,18 +211,18 @@ function App() {
                   About
                 </a>
                 <a
-                  href="#services"
+                  href="#products"
                   onClick={(e) => {
                     e.preventDefault();
                     setIsMobileMenuOpen(false);
-                    const section = document.getElementById("services");
+                    const section = document.getElementById("products");
                     if (section) {
                       section.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
                 >
-                  Services
+                  Products
                 </a>
                 <a
                   href="#case-studies"
@@ -238,7 +238,7 @@ function App() {
                   }}
                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-left"
                 >
-                  Solutions
+                  Services
                 </button>
                 <button
                   onClick={() => {
@@ -290,8 +290,8 @@ function App() {
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            Transform your strategic challenges with prompt engineering coaching
-            and optional dynamic quizzes - for prompt upskilling that sticks.
+            Contextual microlearning for on-the-job prompt engineering that
+            sticks
           </p>
 
           {/* CTA Button */}
@@ -424,11 +424,10 @@ function App() {
                 Product Development
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Build scalable, future-ready products with automation-first
-                design principles that grow with your business needs. Create new
-                products or improve existing ones to anticipate client's needs,
-                improve the creativity of your workforce by making learning on
-                the job more fun and challenging whilst driving business growth.
+                Build scalable products that grow with your business needs and
+                utilize automation where it makes most sense. Improve the
+                creativity of your workforce by making learning on-the-job fun
+                yet challenging making the best use of your time.
               </p>
             </div>
 
@@ -811,7 +810,7 @@ function App() {
         className="relative z-10 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500 overflow-hidden"
       >
         {/* Enhanced Background Elements */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.4%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.4%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM36 6V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
 
         {/* Floating Accent Elements */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200/30 rounded-full blur-2xl animate-pulse duration-6000"></div>
@@ -835,7 +834,7 @@ function App() {
 
       {/* Services Overview Section */}
       <div
-        id="services"
+        id="products"
         className="relative z-10 bg-gradient-to-br from-gray-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500"
       >
         <div className="max-w-7xl mx-auto">
@@ -844,7 +843,7 @@ function App() {
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Our{" "}
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Services
+                Products
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -856,41 +855,41 @@ function App() {
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-stagger-in">
-            {/* AI Lead Capture & CRM Integration */}
+            {/* Product Development (replaces Lead Capture) */}
             <div
-              id="ai-lead-capture"
-              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100"
+              id="product-development"
+              className="group bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-orange-100"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Users className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Rocket className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                AI Lead Capture & CRM Integration
+                Product Development
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Revolutionize your sales process with intelligent lead capture
-                and seamless CRM workflows that never miss an opportunity.
+                Build scalable products that grow with your business needs and
+                utilize automation where it makes most sense. Improve the
+                creativity of your workforce by making learning on-the-job fun
+                yet challenging making the best use of your time.
               </p>
-
               {/* Key Benefits */}
               <div className="space-y-3 mb-8">
                 <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Fast Lead Responses</span>
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                  <span className="font-medium">Scalable Solutions</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Seamless CRM Integration</span>
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                  <span className="font-medium">Automation where Needed</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Higher Conversions</span>
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                  <span className="font-medium">Enhanced Creativity</span>
                 </div>
               </div>
-
               <button
-                onClick={() => handleNavigateToPage("ai-lead-capture")}
-                className="group/btn w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-emerald-500 hover:to-teal-500 transition-all duration-500 flex items-center justify-center hover:shadow-lg transform hover:scale-105"
+                onClick={() => handleNavigateToPage("solutions")}
+                className="group/btn w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-orange-500 hover:to-red-500 transition-all duration-500 flex items-center justify-center hover:shadow-lg transform hover:scale-105"
               >
                 Learn More
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-500 group-hover/btn:translate-x-1" />
