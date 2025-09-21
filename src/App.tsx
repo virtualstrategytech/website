@@ -345,20 +345,6 @@ function App() {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
-            {/* Badge - Consistent with SolutionsPage */}
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-900 via-emerald-700 to-indigo-900 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
-              <Lightbulb className="w-5 h-5 mr-2" />
-              <Brain className="w-5 h-5 mr-2 text-emerald-300" />
-              <span
-                style={{
-                  fontSize: "22px",
-                  fontWeight: 600,
-                  letterSpacing: "0.02em",
-                }}
-              >
-                Strategic Prompt Engineering
-              </span>
-            </div>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Why{" "}
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
@@ -376,7 +362,12 @@ function App() {
           {/* Value Proposition Grid */}
           <div className="flex justify-center my-12">
             <button
-              onClick={() => handleNavigateToPage("products")}
+              onClick={() => {
+                const section = document.getElementById("products");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
