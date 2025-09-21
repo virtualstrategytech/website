@@ -21,7 +21,7 @@ import HeroVortex from "./components/HeroVortex";
 import { UpskillingAgentsPage } from "./pages/UpskillingAgentsPage";
 import { SupportManagementPage } from "./pages/SupportManagementPage";
 import { SolutionsPage } from "./pages/SolutionsPage";
-import { ProductsPage } from "./pages/ProductsPage";
+import ProductsPage from "./pages/ProductsPage";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
