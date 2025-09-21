@@ -7,12 +7,11 @@ import {
   TrendingUp,
   Target,
   Lightbulb,
-  BarChart3,
   Settings,
   Rocket,
-  RefreshCw,
   Menu,
   X,
+  Brain,
 } from "lucide-react";
 import { LeadCaptureModal } from "./components/LeadCaptureModal";
 import { ImageBanner } from "./components/ImageBanner";
@@ -22,7 +21,7 @@ import HeroVortex from "./components/HeroVortex";
 import { UpskillingAgentsPage } from "./pages/UpskillingAgentsPage";
 import { SupportManagementPage } from "./pages/SupportManagementPage";
 import { SolutionsPage } from "./pages/SolutionsPage";
-
+import { ProductsPage } from "./pages/ProductsPage";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,6 +31,7 @@ function App() {
     | "upskilling-agents"
     | "support-management"
     | "solutions"
+    | "products"
   >("home");
   const { trackLead } = useLeadTracking({
     // Configure your integrations here
@@ -56,6 +56,7 @@ function App() {
       | "upskilling-agents"
       | "support-management"
       | "solutions"
+      | "products"
   ) => {
     setCurrentPage(page);
     window.scrollTo(0, 0);
@@ -109,13 +110,16 @@ function App() {
 
   if (currentPage === "solutions") {
     return (
-      <>
-        <SolutionsPage
-          onBackToHome={() => handleNavigateToPage("home")}
-          onOpenModal={() => setIsModalOpen(true)}
-        />
-      </>
+      <SolutionsPage
+        onBackToHome={() => handleNavigateToPage("home")}
+        onOpenModal={() => setIsModalOpen(true)}
+        onNavigateToProducts={() => handleNavigateToPage("products")}
+      />
     );
+  }
+
+  if (currentPage === "products") {
+    return <ProductsPage onBackToHome={() => handleNavigateToPage("home")} />;
   }
 
   return (
@@ -272,18 +276,25 @@ function App() {
         className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-200 text-lg font-medium mb-8 animate-fade-in">
+          {/* Badge - Consistent with SolutionsPage */}
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-900 via-emerald-700 to-indigo-900 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <Lightbulb className="w-5 h-5 mr-2" />
-            <span style={{ fontSize: "22px" }}>
-              Strategic AI Prompt Engineering
+            <Brain className="w-5 h-5 mr-2 text-emerald-300" />
+            <span
+              style={{
+                fontSize: "22px",
+                fontWeight: 600,
+                letterSpacing: "0.02em",
+              }}
+            >
+              Strategic Prompt Engineering
             </span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             From Strategy to Prompt: Teach Teams{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
               Prompt Engineering
             </span>
           </h1>
@@ -294,15 +305,17 @@ function App() {
             sticks
           </p>
 
-          {/* CTA Button */}
+          {/* CTA Button - Consistent with SolutionsPage/Home style */}
           <div className="mb-16 animate-slide-up delay-400">
             <button
               onClick={() => handleCTAClick("hero-cta")}
-              className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:from-blue-500 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50"
+              className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
-              <span className="relative z-10">Demo Prompt Lesson</span>
-              <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <span className="relative z-10 tracking-wide drop-shadow">
+                Demo Prompt Lesson
+              </span>
+              <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </button>
           </div>
 
@@ -332,10 +345,24 @@ function App() {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
+            {/* Badge - Consistent with SolutionsPage */}
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-900 via-emerald-700 to-indigo-900 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
+              <Lightbulb className="w-5 h-5 mr-2" />
+              <Brain className="w-5 h-5 mr-2 text-emerald-300" />
+              <span
+                style={{
+                  fontSize: "22px",
+                  fontWeight: 600,
+                  letterSpacing: "0.02em",
+                }}
+              >
+                Strategic Prompt Engineering
+              </span>
+            </div>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Why{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Upskill Pro
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
+                Upskilling Pro
               </span>
               ?
             </h2>
@@ -347,106 +374,17 @@ function App() {
           </div>
 
           {/* Value Proposition Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-stagger-in">
-            {/* Strategy Consulting */}
-            <div className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Strategy Consulting
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Align your business objectives with cutting-edge automation
-                strategies that drive sustainable growth and competitive
-                advantage. Design comprehensive roadmaps and strategic
-                frameworks to drive competitive advantage and long-term value
-                creation.
-              </p>
-            </div>
-
-            {/* Innovation Management */}
-            <div className="group bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl border border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Lightbulb className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Innovation Management
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Foster a culture of continuous innovation that empowers your
-                team to embrace new technologies and creative problem-solving.
-                Transform ideas into market-ready solutions with our innovation
-                methodology.
-              </p>
-            </div>
-
-            {/* Analytics & Insights */}
-            <div className="group bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <BarChart3 className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Analytics & Insights
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Leverage data-driven insights to make informed decisions and
-                measure the real impact of your automation initiatives.
-                Data-driven decision making powered by advanced analytics,
-                insightful easy to understand dashboard, and market
-                intelligence.
-              </p>
-            </div>
-
-            {/* Process Optimization */}
-            <div className="group bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border border-emerald-100 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Settings className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Process Optimization
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Streamline your workflows with intelligent automation to
-                eliminate bottlenecks, maximize workforce productivity and
-                optimize operational efficiency. Enhance operational excellence
-                through workflow analysis, and continuous improvement
-                methodologies.
-              </p>
-            </div>
-
-            {/* Product Development */}
-            <div className="group bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-2xl border border-orange-100 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Rocket className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Product Development
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Build scalable products that grow with your business needs and
-                utilize automation where it makes most sense. Improve the
-                creativity of your workforce by making learning on-the-job fun
-                yet challenging making the best use of your time.
-              </p>
-            </div>
-
-            {/* Change Management */}
-            <div className="group bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-2xl border border-cyan-100 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <RefreshCw className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Change Management
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Ensure successful adoption of new automation and integration
-                technologies through comprehensive training and support that
-                empowers your workforce. Guide organizational transformation
-                through strategic leadership, employee engagement, and cultural
-                alignment.
-              </p>
-            </div>
+          <div className="flex justify-center my-12">
+            <button
+              onClick={() => handleNavigateToPage("products")}
+              className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
+            >
+              <span className="relative z-10 tracking-wide drop-shadow">
+                Discover Our Products
+              </span>
+              <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            </button>
           </div>
         </div>
       </div>
@@ -466,7 +404,8 @@ function App() {
               </span>
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Get started with our AI-powered solutions in three simple steps
+              Get started with our prompt engineering solutions in three simple
+              steps
             </p>
           </div>
 
@@ -867,10 +806,9 @@ function App() {
                 Product Development
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Build scalable products that grow with your business needs and
-                utilize automation where it makes most sense. Improve the
-                creativity of your workforce by making learning on-the-job fun
-                yet challenging making the best use of your time.
+                Build scalable products with automation where it makes sense to
+                grow your business. Improve the creativity of your workforce by
+                making learning on-the-job fun and productive.
               </p>
               {/* Key Benefits */}
               <div className="space-y-3 mb-8">

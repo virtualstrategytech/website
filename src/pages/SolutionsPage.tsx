@@ -10,7 +10,6 @@ import {
   BarChart3,
   Rocket,
   ArrowRight,
-  Settings,
   Workflow,
   Brain,
   Database,
@@ -22,11 +21,13 @@ import {
 interface SolutionsPageProps {
   onBackToHome: () => void;
   onOpenModal: () => void;
+  onNavigateToProducts: () => void;
 }
 
 export const SolutionsPage: React.FC<SolutionsPageProps> = ({
   onBackToHome,
   onOpenModal,
+  onNavigateToProducts,
 }) => {
   return (
     <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
@@ -88,18 +89,24 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
       {/* Hero Section */}
       <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
         <div className="max-w-6xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-full text-emerald-200 text-lg font-medium mb-8 animate-fade-in">
+          {/* Strategic Prompt Engineering Badge - moved above headline, colors adapted */}
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-700 via-blue-700 to-purple-700 backdrop-blur-sm border border-emerald-400/30 rounded-full text-emerald-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <Lightbulb className="w-5 h-5 mr-2" />
-            <span style={{ fontSize: "22px" }}>Comprehensive AI Solutions</span>
+            <Brain className="w-5 h-5 mr-2 text-emerald-300" />
+            <span
+              style={{
+                fontSize: "22px",
+                fontWeight: 600,
+                letterSpacing: "0.02em",
+              }}
+            >
+              Strategic Prompt Engineering
+            </span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            Complete Suite of{" "}
-            <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              AI-Powered Solutions
-            </span>
+            From Strategy to Prompt
           </h1>
 
           {/* Subheading */}
@@ -112,19 +119,14 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
           {/* CTA Button */}
           <div className="mb-16 animate-slide-up delay-400">
             <button
-              onClick={() => {
-                const solutionsSection = document.getElementById(
-                  "solutions-portfolio"
-                );
-                if (solutionsSection) {
-                  solutionsSection.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-              className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-emerald-600 to-blue-600 rounded-xl shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300 transform hover:scale-105 hover:from-emerald-500 hover:to-blue-500 focus:outline-none focus:ring-4 focus:ring-emerald-500/50"
+              onClick={onNavigateToProducts}
+              className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
-              <span className="relative z-10">Explore All Solutions</span>
-              <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <span className="relative z-10 tracking-wide drop-shadow">
+                Discover Our Products
+              </span>
+              <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </button>
           </div>
 
@@ -168,117 +170,31 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
 
           {/* Solutions Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-stagger-in">
-            {/* Upskilling Agents */}
-            <div className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Brain className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Upskilling Agents
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                AI-powered learning companions that accelerate skill development
-                and boost productivity through personalized, on-demand
-                education.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-blue-500 mr-2" />
-                  Personalized Learning Paths
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-blue-500 mr-2" />
-                  Real-time Knowledge Assistance
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-blue-500 mr-2" />
-                  Progress Tracking & Analytics
-                </li>
-              </ul>
-            </div>
-
-            {/* AI Lead Capture & CRM */}
+            {/* Product Management */}
             <div className="group bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border border-emerald-100 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
               <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-8 h-8 text-white" />
+                <Rocket className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Lead Capture
+                Product Management
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Intelligent lead capture that identifies, qualifies, and
-                nurtures prospects from various channels, ensuring no
-                opportunity is missed.
+                Build scalable products with automation where it makes sense
+                to grow your business. Improve the creativity of
+                your workforce by making learning on-the-job fun and productive.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                  Intelligent Lead Scoring
+                  <Rocket className="w-4 h-4 text-emerald-500 mr-2" />
+                  Scalable products
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                  Multi-channel Capture
+                  <Rocket className="w-4 h-4 text-emerald-500 mr-2" />
+                  Automation where it makes sense
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
-                  Automated Nurturing
-                </li>
-              </ul>
-            </div>
-
-            {/* CRM Integration */}
-            <div className="group bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border border-amber-100 hover:shadow-xl hover:shadow-amber-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Database className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                CRM Integration
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Seamlessly connect your lead data with leading CRM platforms,
-                ensuring real-time synchronization and a unified view of your
-                customer journey.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-amber-500 mr-2" />
-                  Real-time Data Sync
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-amber-500 mr-2" />
-                  Custom Field Mapping
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-amber-500 mr-2" />
-                  Unified Customer View
-                </li>
-              </ul>
-            </div>
-
-            {/* Support Ticket Management */}
-            <div className="group bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Settings className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Support Ticket Management
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Transform customer support with intelligent ticket routing and
-                automated scheduling that delivers exceptional experiences.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-purple-500 mr-2" />
-                  Intelligent Ticket Routing
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-purple-500 mr-2" />
-                  Automated Scheduling
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-purple-500 mr-2" />
-                  24/7 AI Assistant
+                  <Rocket className="w-4 h-4 text-emerald-500 mr-2" />
+                  Anticipate client's needs
                 </li>
               </ul>
             </div>
