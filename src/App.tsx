@@ -164,7 +164,7 @@ function App() {
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
-                Services
+                Solutions
               </button>
               <button
                 onClick={() => handleCTAClick("header-cta")}

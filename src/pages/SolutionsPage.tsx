@@ -106,7 +106,10 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            From Strategy to Prompt
+            From Strategy to Prompt: Teach Teams{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
+              Prompt Engineering
+            </span>
           </h1>
 
           {/* Subheading */}
