@@ -182,9 +182,9 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
                 Product Management
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Build scalable products with automation where it makes sense
-                to grow your business. Improve the creativity of
-                your workforce by making learning on-the-job fun and productive.
+                Build scalable products with automation where it makes sense to
+                grow your business. Improve the creativity of your workforce by
+                making learning on-the-job fun and productive.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">

@@ -119,7 +119,18 @@ function App() {
   }
 
   if (currentPage === "products") {
-    return <ProductsPage onBackToHome={() => handleNavigateToPage("home")} />;
+    return (
+      <>
+        <ProductsPage
+          onBackToHome={() => handleNavigateToPage("home")}
+          onOpenModal={() => setIsModalOpen(true)}
+        />
+        <LeadCaptureModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+      </>
+    );
   }
 
   return (
@@ -152,13 +163,13 @@ function App() {
               >
                 About
               </a>
-              <a
-                href="#products"
+              <button
+                onClick={() => handleNavigateToPage("products")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
                 Products
-              </a>
+              </button>
               <button
                 onClick={() => handleNavigateToPage("solutions")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
@@ -214,20 +225,15 @@ function App() {
                 >
                   About
                 </a>
-                <a
-                  href="#products"
-                  onClick={(e) => {
-                    e.preventDefault();
+                <button
+                  onClick={() => {
                     setIsMobileMenuOpen(false);
-                    const section = document.getElementById("products");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
+                    handleNavigateToPage("products");
                   }}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-left"
                 >
                   Products
-                </a>
+                </button>
                 <a
                   href="#case-studies"
                   className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
@@ -362,12 +368,7 @@ function App() {
           {/* Value Proposition Grid */}
           <div className="flex justify-center my-12">
             <button
-              onClick={() => {
-                const section = document.getElementById("products");
-                if (section) {
-                  section.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
+              onClick={() => handleNavigateToPage("products")}
               className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
@@ -783,132 +784,7 @@ function App() {
             </p>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-stagger-in">
-            {/* Product Development (replaces Lead Capture) */}
-            <div
-              id="product-development"
-              className="group bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-orange-100"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Rocket className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Product Development
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Build scalable products with automation where it makes sense to
-                grow your business. Improve the creativity of your workforce by
-                making learning on-the-job fun and productive.
-              </p>
-              {/* Key Benefits */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Scalable Solutions</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Automation where Needed</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Enhanced Creativity</span>
-                </div>
-              </div>
-              <button
-                onClick={() => handleNavigateToPage("solutions")}
-                className="group/btn w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-orange-500 hover:to-red-500 transition-all duration-500 flex items-center justify-center hover:shadow-lg transform hover:scale-105"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-500 group-hover/btn:translate-x-1" />
-              </button>
-            </div>
-
-            {/* Upskilling Agents for Learning & Productivity */}
-            <div
-              id="upskilling-agents"
-              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <TrendingUp className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Upskilling Agents for Learning & Productivity
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Empower your workforce with AI-driven learning companions that
-                accelerate skill development and boost productivity.
-              </p>
-
-              {/* Key Benefits */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Personalized Learning</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Productivity Gains</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                  <span className="font-medium">
-                    Instant Knowledge Retrieval
-                  </span>
-                </div>
-              </div>
-
-              <button
-                onClick={() => handleNavigateToPage("upskilling-agents")}
-                className="group/btn w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-500 flex items-center justify-center hover:shadow-lg transform hover:scale-105"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-500 group-hover/btn:translate-x-1" />
-              </button>
-            </div>
-
-            {/* Support Ticket Management & Smart Scheduling */}
-            <div
-              id="support-management"
-              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Settings className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Support Ticket Management & Smart Scheduling
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Transform customer support with intelligent ticket routing and
-                automated scheduling that delights customers.
-              </p>
-
-              {/* Key Benefits */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Improved Efficiency</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                  <span className="font-medium">24/7 Availability</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Effortless Scheduling</span>
-                </div>
-              </div>
-
-              <button
-                onClick={() => handleNavigateToPage("support-management")}
-                className="group/btn w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-purple-500 hover:to-pink-500 transition-all duration-500 flex items-center justify-center hover:shadow-lg transform hover:scale-105"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-500 group-hover/btn:translate-x-1" />
-              </button>
-            </div>
-          </div>
+          {/* Product cards removed from main page. Now only on ProductsPage. */}
         </div>
       </div>
 
