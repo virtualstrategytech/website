@@ -7,9 +7,18 @@ import {
   LifeBuoy,
 } from "lucide-react";
 
+export type PageKey =
+  | "home"
+  | "product-development"
+  | "upskilling-agents"
+  | "support-ticket-management"
+  | "solutions"
+  | "products";
+
 interface ProductsPageProps {
   onBackToHome: () => void;
   onOpenModal: () => void;
+  onNavigateToProductPage: (page: PageKey) => void;
 }
 
 interface ProductCard {
@@ -21,6 +30,7 @@ interface ProductCard {
   bulletIcon: React.ReactNode;
   href: string;
   btnBg: string;
+  page: PageKey;
 }
 
 const productCards: ProductCard[] = [
@@ -36,7 +46,8 @@ const productCards: ProductCard[] = [
       "Enhanced Creativity",
     ],
     bulletIcon: <Users className="w-4 h-4 text-emerald-500 mr-2" />,
-    href: "/products#product-development",
+    href: "#product-development",
+    page: "product-development",
     btnBg: "bg-gradient-to-r from-emerald-600 to-teal-500",
   },
   {
@@ -51,7 +62,8 @@ const productCards: ProductCard[] = [
       "Instant Knowledge Retrieval",
     ],
     bulletIcon: <TrendingUp className="w-4 h-4 text-blue-500 mr-2" />,
-    href: "/products#upskilling-agents",
+    href: "#upskilling-agents",
+    page: "upskilling-agents",
     btnBg: "bg-gradient-to-r from-blue-600 to-indigo-600",
   },
   {
@@ -66,7 +78,8 @@ const productCards: ProductCard[] = [
       "Effortless Scheduling",
     ],
     bulletIcon: <LifeBuoy className="w-4 h-4 text-fuchsia-500 mr-2" />,
-    href: "/products#support-ticket-management",
+    href: "#support-ticket-management",
+    page: "support-ticket-management",
     btnBg: "bg-gradient-to-r from-fuchsia-600 to-purple-600",
   },
 ];
@@ -74,6 +87,7 @@ const productCards: ProductCard[] = [
 export default function ProductsPage({
   onBackToHome,
   onOpenModal,
+  onNavigateToProductPage,
 }: ProductsPageProps) {
   return (
     <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
@@ -197,13 +211,13 @@ export default function ProductsPage({
                     </li>
                   ))}
                 </ul>
-                <a
-                  href={card.href}
+                <button
+                  onClick={() => onNavigateToProductPage(card.page)}
                   className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-semibold text-white ${card.btnBg} hover:from-blue-500 hover:to-indigo-500 shadow-md transition-all`}
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
+                </button>
               </div>
             ))}
           </div>

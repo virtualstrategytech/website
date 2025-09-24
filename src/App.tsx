@@ -15,11 +15,11 @@ import {
 } from "lucide-react";
 import { LeadCaptureModal } from "./components/LeadCaptureModal";
 import { ImageBanner } from "./components/ImageBanner";
-import { AiLeadCapturePage } from "./pages/AiLeadCapturePage";
+import { ProductDevelopmentPage } from "./pages/ProductDevelopmentPage";
 import { useLeadTracking } from "./hooks/useLeadTracking";
 import HeroVortex from "./components/HeroVortex";
-import { UpskillingAgentsPage } from "./pages/UpskillingAgentsPage";
-import { SupportManagementPage } from "./pages/SupportManagementPage";
+import { UpskillingProAgentsPage } from "./pages/UpskillingProAgentsPage";
+import { SmartTicketSchedulingPage } from "./pages/SmartTicketSchedulingPage";
 import { SolutionsPage } from "./pages/SolutionsPage";
 import ProductsPage from "./pages/ProductsPage";
 function App() {
@@ -29,9 +29,10 @@ function App() {
     | "home"
     | "ai-lead-capture"
     | "upskilling-agents"
-    | "support-management"
+    | "support-ticket-management"
     | "solutions"
     | "products"
+    | "product-development"
   >("home");
   const { trackLead } = useLeadTracking({
     // Configure your integrations here
@@ -52,9 +53,9 @@ function App() {
   const handleNavigateToPage = (
     page:
       | "home"
-      | "ai-lead-capture"
+      | "product-development"
       | "upskilling-agents"
-      | "support-management"
+      | "support-ticket-management"
       | "solutions"
       | "products"
   ) => {
@@ -63,10 +64,10 @@ function App() {
   };
 
   // Render different pages based on current page state
-  if (currentPage === "ai-lead-capture") {
+  if (currentPage === "product-development") {
     return (
       <>
-        <AiLeadCapturePage
+        <ProductDevelopmentPage
           onBackToHome={() => handleNavigateToPage("home")}
           onOpenModal={() => setIsModalOpen(true)}
         />
@@ -81,7 +82,7 @@ function App() {
   if (currentPage === "upskilling-agents") {
     return (
       <>
-        <UpskillingAgentsPage
+        <UpskillingProAgentsPage
           onBackToHome={() => handleNavigateToPage("home")}
           onOpenModal={() => setIsModalOpen(true)}
         />
@@ -93,10 +94,10 @@ function App() {
     );
   }
 
-  if (currentPage === "support-management") {
+  if (currentPage === "support-ticket-management") {
     return (
       <>
-        <SupportManagementPage
+        <SmartTicketSchedulingPage
           onBackToHome={() => handleNavigateToPage("home")}
           onOpenModal={() => setIsModalOpen(true)}
         />
@@ -118,12 +119,22 @@ function App() {
     );
   }
 
+  if (window.location.pathname === "/smart-ticket-scheduling") {
+    return (
+      <SmartTicketSchedulingPage
+        onBackToHome={() => handleNavigateToPage("home")}
+        onOpenModal={() => setIsModalOpen(true)}
+      />
+    );
+  }
+
   if (currentPage === "products") {
     return (
       <>
         <ProductsPage
           onBackToHome={() => handleNavigateToPage("home")}
           onOpenModal={() => setIsModalOpen(true)}
+          onNavigateToProductPage={handleNavigateToPage}
         />
         <LeadCaptureModal
           isOpen={isModalOpen}
@@ -760,31 +771,6 @@ function App() {
             </h3>
             <ImageBanner />
           </div>
-        </div>
-      </div>
-
-      {/* Services Overview Section */}
-      <div
-        id="products"
-        className="relative z-10 bg-gradient-to-br from-gray-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500"
-      >
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Our{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Products
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive solutions designed to empower your workforce and
-              provide strategic counsel that transforms your business operations
-              and sustains your growth in the new digital era.
-            </p>
-          </div>
-
-          {/* Product cards removed from main page. Now only on ProductsPage. */}
         </div>
       </div>
 
