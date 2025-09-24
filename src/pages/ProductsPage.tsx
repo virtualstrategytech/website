@@ -5,6 +5,8 @@ import {
   Users,
   TrendingUp,
   LifeBuoy,
+  Lightbulb,
+  Brain,
 } from "lucide-react";
 
 export type PageKey =
@@ -91,44 +93,61 @@ export default function ProductsPage({
 }: ProductsPageProps) {
   return (
     <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-24">
-          {/* Logo */}
-          <div className="flex items-center">
-            <img
-              src="/Logo/VirtualStrategyTechLogoSVG.svg"
-              alt="Virtual Strategy Tech"
-              className="h-36 w-auto object-contain"
-            />
-          </div>
-          <div className="flex-1" />
-          {/* Back to Home */}
+      {/* Header with Back Button */}
+      <header
+        className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
+        style={{ height: "calc(6rem * 1.3)" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className="flex justify-between items-center"
+            style={{ height: "calc(6rem * 1.3)" }}
+          >
+            {/* Logo */}
+            <div className="flex items-center">
+              <img
+                src="/Logo/VirtualStrategyTechLogoSVG.svg"
+                alt="Virtual Strategy Tech - Productivity Reimagined"
+                className="h-36 w-auto object-contain"
+              />
+            </div>
 
-          <button
-            onClick={onBackToHome}
-            className="text-gray-700 hover:text-blue-600 font-medium"
-            style={{ fontSize: "22px" }}
-          >
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Back to Home
-          </button>
-          {/* Demo Button */}
-          <button
-            onClick={onOpenModal}
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold text-lg shadow hover:from-blue-500 hover:to-indigo-500 transition-all duration-300"
-            style={{ fontSize: "20px" }}
-          >
-            Demo
-          </button>
+            {/* Navigation */}
+            <div className="flex items-center space-x-6">
+              <button
+                onClick={onBackToHome}
+                className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                style={{ fontSize: "22px" }}
+              >
+                <ArrowLeft className="w-5 h-5 mr-2" />
+                Back to Home
+              </button>
+              <button
+                onClick={onOpenModal}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
+                style={{
+                  fontSize: "26px",
+                  paddingLeft: "1.5rem",
+                  paddingRight: "1.5rem",
+                  paddingTop: "0.75rem",
+                  paddingBottom: "0.75rem",
+                }}
+              >
+                Demo
+              </button>
+            </div>
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="w-full bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 pt-32 pb-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+
+      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
         <div className="max-w-6xl w-full mx-auto text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-700 via-blue-700 to-purple-700 border border-emerald-400/30 rounded-full text-emerald-100 text-lg font-medium mb-8 shadow-lg">
-            <Users className="w-5 h-5 mr-2" />
+          {/*Strategic Product Solutions Badge*/}
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-700 via-blue-700 to-purple-700 backdrop-blur-sm border border-emerald-400/30 rounded-full text-emerald-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
+            <Lightbulb className="w-5 h-5 mr-2" />
+            <Brain className="w-5 h-5 mr-2 text-emerald-300" />
             <span
               style={{
                 fontSize: "22px",
@@ -139,12 +158,16 @@ export default function ProductsPage({
               Strategic Product Solutions
             </span>
           </div>
-          <h1 className="font-sans text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-            From Strategy to Product: Teach Teams{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-purple-600 bg-clip-text text-transparent">
-              Product Engineering
+
+          {/*Main Headline */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
+            From Strategy to Prompt: Teach Teams{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
+              Prompt Engineering
             </span>
           </h1>
+
+          {/*Subheading*/}
           <p className="font-sans text-2xl text-blue-100 mb-12 max-w-4xl mx-auto font-normal leading-snug">
             Discover our comprehensive portfolio of intelligent automation
             solutions designed to transform every aspect of your business
@@ -152,7 +175,12 @@ export default function ProductsPage({
           </p>
           <div className="mb-16">
             <button
-              onClick={onOpenModal}
+              onClick={() => {
+                const grid = document.getElementById("products-grid");
+                if (grid) {
+                  grid.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
@@ -162,6 +190,7 @@ export default function ProductsPage({
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </button>
           </div>
+
           {/* Feature Chips */}
           <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-emerald-200">
             <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
@@ -178,10 +207,13 @@ export default function ProductsPage({
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Product Cards Section */}
-      <section className="relative z-10 bg-gradient-to-br from-emerald-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8">
+      <section
+        id="products-grid"
+        className="relative z-10 bg-gradient-to-br from-emerald-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {productCards.map((card) => (

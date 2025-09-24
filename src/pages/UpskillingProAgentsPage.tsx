@@ -57,16 +57,16 @@ export const UpskillingProAgentsPage: React.FC<UpskillingAgentsPageProps> = ({
               </button>
               <button
                 onClick={onOpenModal}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
                 style={{
-                  fontSize: "30px",
-                  paddingLeft: "2rem",
-                  paddingRight: "2rem",
-                  paddingTop: "1rem",
-                  paddingBottom: "1rem",
+                  fontSize: "26px",
+                  paddingLeft: "1.5rem",
+                  paddingRight: "1.5rem",
+                  paddingTop: "0.75rem",
+                  paddingBottom: "0.75rem",
                 }}
               >
-                Get Started
+                Demo
               </button>
             </div>
           </div>
