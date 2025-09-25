@@ -23,6 +23,10 @@ import { SmartTicketSchedulingPage } from "./pages/SmartTicketSchedulingPage";
 import { SolutionsPage } from "./pages/SolutionsPage";
 import { UseCasesPage } from "./pages/UseCasesPage";
 import ProductsPage from "./pages/ProductsPage";
+import CaseStudy1Page from "./pages/CaseStudy1Page";
+import CaseStudy2Page from "./pages/CaseStudy2Page";
+import CaseStudy3Page from "./pages/CaseStudy3Page";
+import ResearchPage from "./pages/ResearchPage";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -63,6 +67,10 @@ function App() {
       | "solutions"
       | "products"
       | "use-cases"
+      | "case-study-1"
+      | "case-study-2"
+      | "case-study-3"
+      | "research"
   ) => {
     setCurrentPage(page);
     window.scrollTo(0, 0);
@@ -178,6 +186,19 @@ function App() {
         />
       </>
     );
+  }
+
+  if (currentPage === "case-study-1") {
+    return <CaseStudy1Page onBackToHome={() => handleNavigateToPage("home")} />;
+  }
+  if (currentPage === "case-study-2") {
+    return <CaseStudy2Page onBackToHome={() => handleNavigateToPage("home")} />;
+  }
+  if (currentPage === "case-study-3") {
+    return <CaseStudy3Page onBackToHome={() => handleNavigateToPage("home")} />;
+  }
+  if (currentPage === "research") {
+    return <ResearchPage onBackToHome={() => handleNavigateToPage("home")} />;
   }
 
   return (
@@ -405,16 +426,16 @@ function App() {
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Why{" "}
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Upskilling Pro
               </span>
-              ?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We deliver comprehensive strategy solutions that transform your
-              business through workforce optimization, strategic innovation,
-              process engineering for quantifiable results.
+            <p className="text-2xl text-gray-700 max-w-5xl mx-auto">
+              Where strategy meets prompt engineering:
+              <br />
+              <span className="text-2xl text-gray-700 max-w-5xl mx-auto">
+                elevate the work, not replace the workers
+              </span>
             </p>
           </div>
 

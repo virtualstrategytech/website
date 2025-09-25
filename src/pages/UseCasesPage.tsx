@@ -127,6 +127,34 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               <ArrowRight className="ml-2 h-4 w-4" />
             </button>
           </div>
+        </div> {/* This closes the cards container */}
+
+        {/* Detailed Use Cases Section */}
+        <div className="max-w-5xl mx-auto py-20 px-4 text-left">
+          <h2 className="text-3xl font-bold text-white mb-8">Detailed Use Cases</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Use Case 1 */}
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <h3 className="text-xl font-bold text-blue-600 mb-2">AI Lead Capture for B2B SaaS</h3>
+              <p className="text-gray-700 mb-4">
+                How our AI lead capture solution increased conversion rates by 35% for a SaaS company.
+              </p>
+            </div>
+            {/* Use Case 2 */}
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <h3 className="text-xl font-bold text-blue-600 mb-2">Upskilling Agents in FinTech</h3>
+              <p className="text-gray-700 mb-4">
+                See how upskilling agents improved productivity and compliance in a financial services firm.
+              </p>
+            </div>
+            {/* Use Case 3 */}
+            <div className="bg-white rounded-xl shadow-lg p-8">
+              <h3 className="text-xl font-bold text-blue-600 mb-2">Smart Ticket Scheduling for Retail</h3>
+              <p className="text-gray-700 mb-4">
+                Discover how smart ticket scheduling reduced support costs and improved customer satisfaction for a retail chain.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
