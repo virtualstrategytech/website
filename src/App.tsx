@@ -26,7 +26,6 @@ import ProductsPage from "./pages/ProductsPage";
 import CaseStudy1Page from "./pages/CaseStudy1Page";
 import CaseStudy2Page from "./pages/CaseStudy2Page";
 import CaseStudy3Page from "./pages/CaseStudy3Page";
-import ResearchPage from "./pages/ResearchPage";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,6 +40,9 @@ function App() {
     | "use-cases"
     | "case-studies"
     | "research"
+    | "case-study-1"
+    | "case-study-2"
+    | "case-study-3"
   >("home");
   const { trackLead } = useLeadTracking({
     // Configure your integrations here
@@ -67,6 +69,7 @@ function App() {
       | "solutions"
       | "products"
       | "use-cases"
+      | "case-studies"
       | "case-study-1"
       | "case-study-2"
       | "case-study-3"
@@ -197,9 +200,7 @@ function App() {
   if (currentPage === "case-study-3") {
     return <CaseStudy3Page onBackToHome={() => handleNavigateToPage("home")} />;
   }
-  if (currentPage === "research") {
-    return <ResearchPage onBackToHome={() => handleNavigateToPage("home")} />;
-  }
+  // Removed duplicate "research" page block to fix type error
 
   return (
     <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
@@ -407,7 +408,7 @@ function App() {
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Lightbulb className="w-6 h-6 text-indigo-400" />
-              <span className="text-xl font-medium">AI Mastery</span>
+              <span className="text-xl font-medium">Prompt Mastery</span>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Rocket className="w-6 h-6 text-purple-400" />
@@ -430,11 +431,11 @@ function App() {
                 Upskilling Pro
               </span>
             </h2>
-            <p className="text-2xl text-gray-700 max-w-5xl mx-auto">
-              Where strategy meets prompt engineering:
+            <p className="text-2xl text-gray-800 max-w-5xl mx-auto">
+              An automation agency where strategy meets prompt engineering:
               <br />
-              <span className="text-2xl text-gray-700 max-w-5xl mx-auto">
-                elevate the work, not replace the workers
+              <span className="text-2xl text-gray-800 max-w-5xl mx-auto">
+                elevating the work rather than replacing the workers.
               </span>
             </p>
           </div>
