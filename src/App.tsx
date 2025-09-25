@@ -21,6 +21,7 @@ import HeroVortex from "./components/HeroVortex";
 import { UpskillingProAgentsPage } from "./pages/UpskillingProAgentsPage";
 import { SmartTicketSchedulingPage } from "./pages/SmartTicketSchedulingPage";
 import { SolutionsPage } from "./pages/SolutionsPage";
+import { UseCasesPage } from "./pages/UseCasesPage";
 import ProductsPage from "./pages/ProductsPage";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,6 +35,8 @@ function App() {
     | "products"
     | "product-development"
     | "use-cases"
+    | "case-studies"
+    | "research"
   >("home");
   const { trackLead } = useLeadTracking({
     // Configure your integrations here
@@ -104,6 +107,26 @@ function App() {
         onNavigateToCaseStudies={() => handleNavigateToPage("case-studies")}
         onNavigateToResearch={() => handleNavigateToPage("research")}
       />
+    );
+  }
+
+  if (currentPage === "case-studies") {
+    return (
+      <div>
+        {/* TODO: Replace with your actual CaseStudiesPage component */}
+        <h1 className="text-3xl font-bold text-center mt-20">Case Studies</h1>
+        {/* ... */}
+      </div>
+    );
+  }
+
+  if (currentPage === "research") {
+    return (
+      <div>
+        {/* TODO: Replace with your actual ResearchPage component */}
+        <h1 className="text-3xl font-bold text-center mt-20">Research</h1>
+        {/* ... */}
+      </div>
     );
   }
 
@@ -193,6 +216,13 @@ function App() {
                 style={{ fontSize: "22px" }}
               >
                 Products
+              </button>
+              <button
+                onClick={() => handleNavigateToPage("use-cases")}
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                style={{ fontSize: "22px" }}
+              >
+                Use Cases
               </button>
               <button
                 onClick={() => handleNavigateToPage("solutions")}
