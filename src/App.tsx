@@ -33,6 +33,7 @@ function App() {
     | "solutions"
     | "products"
     | "product-development"
+    | "use-cases"
   >("home");
   const { trackLead } = useLeadTracking({
     // Configure your integrations here
@@ -58,6 +59,7 @@ function App() {
       | "support-ticket-management"
       | "solutions"
       | "products"
+      | "use-cases"
   ) => {
     setCurrentPage(page);
     window.scrollTo(0, 0);
@@ -91,6 +93,17 @@ function App() {
           onClose={() => setIsModalOpen(false)}
         />
       </>
+    );
+  }
+
+  if (currentPage === "use-cases") {
+    return (
+      <UseCasesPage
+        onBackToHome={() => handleNavigateToPage("home")}
+        onOpenModal={() => setIsModalOpen(true)}
+        onNavigateToCaseStudies={() => handleNavigateToPage("case-studies")}
+        onNavigateToResearch={() => handleNavigateToPage("research")}
+      />
     );
   }
 
@@ -202,7 +215,6 @@ function App() {
                 Demo
               </button>
             </nav>
-
             {/* Mobile menu button */}
             <div className="md:hidden">
               <button
