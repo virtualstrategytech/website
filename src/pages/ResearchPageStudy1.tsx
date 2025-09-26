@@ -515,9 +515,8 @@ const ResearchPageStudy1: React.FC<ResearchPageProps> = ({ onBackToHome }) => (
       </p>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          <strong>Enhanced Efficiency:</strong> AI-drive tools such as ChatGPT
-          reduce communication costs and streamline processes. With effective
-          prompt
+          Enhanced Efficiency: AI-drive tools such as ChatGPT reduce
+          communication costs and streamline processes. With effective prompt
           <ul className="list-disc pl-6 text-blue-100 mb-4">
             <li>
               Enhanced Efficiency: AI-drive tools such as ChatGPT reduce
@@ -557,6 +556,36 @@ const ResearchPageStudy1: React.FC<ResearchPageProps> = ({ onBackToHome }) => (
         and maintain ethical excellence - ultimately transforming challenges
         into strategic opportunities.
       </p>
+      <h2 className="text-2xl font-semibold text-white mb-4">9. References</h2>
+      <ul className="list-disc pl-6 text-blue-100 mb-4">
+        <li>
+          1. Bommasani, R., Hudson, D. A., Adeli, E., et al. (2021). On the
+          Opportunities and Risks of Foundation Models. arXiv.
+          https://arxiv.org/abs/2108.07258
+        </li>
+        <li>
+          2. Mittelstadt, B., Russell, C., & Wachter, S. (2019). Explaining
+          Explanations in AI. In FAT ’19: Proceedings of the 2019 Conference on
+          Fairness, Accountability, and Transparency.
+          https://doi.org/10.1145/3287560.3287574
+        </li>
+        <li>
+          3. Westerman, G., Bonnet, D., & McAfee, A. (2014). Leading Digital:
+          Turning Technology into Business Transformation. Harvard Business
+          Review Press.
+        </li>
+        <li>
+          4. World Economic Forum. (2020). The Future of Jobs Report 2020.
+          https://www.weforum.org/reports/the-future-of-jobs-report-2020
+        </li>
+        <li>
+          5. Binns, R., Veale, M., Van Kleek, M., & Shadbolt, N. (2018). ‘It's
+          Reducing a Human Being to a Percentage’: Perceptions of Justice in
+          Algorithmic Decisions. CHI '18: Proceedings of the 2018 CHI Conference
+          on Human Factors in Computing Systems, 1–14.
+          https://doi.org/10.1145/3173574.3173951
+        </li>
+      </ul>
       <button
         onClick={onBackToHome}
         className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold mt-8"
