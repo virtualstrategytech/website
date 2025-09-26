@@ -136,67 +136,106 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               <ArrowRight className="ml-2 h-4 w-4" />
             </button>
           </div>
-        </div>{" "}
-        {/* This closes the cards container */}
-        {/* Detailed Case Studies Section */}
-        <div className="max-w-5xl mx-auto py-20 px-4 text-left">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Detailed Case Studies
-          </h2>
-          <div
-            id="detailed-case-studies"
-            className="max-w-3xl mx-auto py-4 px-1 text-left"
-          ></div>
-          {/* Spacer to raise the title above the use cases */}
-          <div className="mt-8"></div>
-          <div className="mt-2 mb-6">
-            <div className="mt-2 mb-2">
-              <h3 className="text-3xl font text-white mt-[-2.5rem] mb-6">
-                Automation Agents in Consulting
-              </h3>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Use Case 1 */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-xl font-bold text-blue-600 mb-2">
-                Strategic Intelligence Acceleration in a Mid-Tier Consulting
-                Firm
-              </h3>
-              <p className="text-gray-700 mb-4">
-                A UK-based market research and business strategy firm faced
-                growing pressure to deliver faster, deeper insights to clients
-                without scaling headcount or increasing operational overhead.
-              </p>
-            </div>
-            {/* Use Case 2 */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-xl font-bold text-blue-600 mb-2">
-                Digital Human Resources Transformation in a Global Professional
-                Services Network
-              </h3>
-              <p className="text-gray-700 mb-4">
-                A multinational advisory firm sought to transform its internal
-                HR strategy consulting function into a digital-first model.
-              </p>
-            </div>
-            {/* Use Case 3 */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-xl font-bold text-blue-600 mb-2">
-                Financial Services Advisory and Boutique Consulting Firms
-              </h3>
-              <p className="text-gray-700 mb-4">
-                A consortium of boutique consulting firms specializing in
-                financial services advisory sought scalable ways to offer
-                high-impact insights to clients in wealth management, fintech,
-                and regulatory strategy.
-              </p>
-            </div>
+        </div>
+      </div>
+    </div>
+    {/* This closes the cards container */}
+    {/* Summary Case Studies Section */}
+    <div className="max-w-5xl mx-auto py-6 px-4 text-left">
+      <h2 className="text-4xl font-bold text-white mb-4">
+        Case Study Summaries
+      </h2>
+      <div
+        id="detailed-case-studies"
+        className="max-w-3xl mx-auto py-4 px-1 text-left"
+      ></div>
+      {/* Spacer to raise the title above the use cases */}
+      <div className="mt-8"></div>
+      <div className="mt-2 mb-6">
+        <div className="mt-2 mb-2">
+          <h3 className="text-3xl font text-white mt-[-2.5rem] mb-6">
+            Automation Agents in Consulting
+          </h3>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* Use Case 1 */}
+        <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
+          <h3 className="text-xl font-bold text-blue-600 mb-2">
+            Strategic Intelligence Acceleration in a Mid-Tier Consulting Firm
+          </h3>
+          <p className="text-gray-700 mb-4 flex-1">
+            A UK-based market research and business strategy firm faced growing
+            pressure to deliver faster, deeper insights to clients without
+            scaling headcount or increasing operational overhead extended its
+            strategic reach through automation agents.
+          </p>
+          <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
+            Read here
+          </button>
+        </div>
+        {/* Use Case 2 */}
+        <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
+          <h3 className="text-xl font-bold text-blue-600 mb-2">
+            Digital Human Resources Transformation in a Global Professional
+            Services Network
+          </h3>
+          <p className="text-gray-700 mb-4 flex-1">
+            A multinational advisory firm sought to transform its internal HR
+            strategy consulting function into a digital-first model and embedded
+            co-creators in the firm's HR strategy playbook.
+          </p>
+          <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
+            Read here
+          </button>
+        </div>
+        {/* Use Case 3 */}
+        <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
+          <h3 className="text-xl font-bold text-blue-600 mb-2">
+            Financial Services Advisory and Boutique Consulting Firms
+          </h3>
+          <p className="text-gray-700 mb-4 flex-1">
+            Explore how a consortium of boutique consulting firms specializing
+            in financial services advisory sought scalable ways to offer
+            high-impact insights to clients in wealth management, fintech, and
+            regulatory strategy and leveled up their competitiveness with larger
+            firms.
+          </p>
+          <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
+            Read here
+          </button>
+        </div>
+      </div>
+      <div className="max-w-5xl mx-auto px-4 text-left mt-20">
+        <h2 className="text-4xl font-bold text-white mb-4">
+          Research Study Summaries
+        </h2>
+        <div className="mt-8"></div>
+        <div className="mt-2 mb-6">
+          <h3 className="text-3xl font text-white mb-6">
+            Prompt Engineering Agents in Consulting
+          </h3>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+          <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
+            <h3 className="text-xl font-bold text-blue-600 mb-2">
+              Research Study: Prompt Engineering for Small Business Strategy
+              Consulting Firms
+            </h3>
+            <p className="text-gray-700 mb-4 flex-1">
+              This research study explores how upskilling consulting teams in
+              prompt engineering leads to improved operational efficiency,
+              faster client deliverables, and greater innovation. Key findings
+              highlight the importance of continuous learning and AI adoption in
+              the consulting sector.
+            </p>
+            <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
+              Read here
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 );
-
 export default UseCasesPage;
