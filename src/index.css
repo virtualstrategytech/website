@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+ul.decimal-point > li::marker {
+  content: counter(list-item) ".0 ";
+}
+
 /* Custom animations for enhanced user experience */
 @keyframes fade-in {
   from {
@@ -91,7 +95,8 @@ a:focus-visible {
 
 /* Optimized transitions for better performance */
 * {
-  transition-property: transform, opacity, box-shadow, background-color, border-color;
+  transition-property: transform, opacity, box-shadow, background-color,
+    border-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -108,12 +113,12 @@ body {
     font-size: clamp(2rem, 8vw, 4rem);
     line-height: 1.1;
   }
-  
+
   h2 {
     font-size: clamp(1.5rem, 6vw, 3rem);
     line-height: 1.2;
   }
-  
+
   p {
     font-size: clamp(1rem, 4vw, 1.25rem);
     line-height: 1.6;
@@ -148,11 +153,13 @@ body {
 
 /* Improved shadow effects */
 .shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .shadow-xl {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .shadow-2xl {
@@ -183,8 +190,11 @@ body {
 .hero {
   position: relative;
   z-index: 0;
-  background:
-    radial-gradient(1200px circle at 20% -10%, #0b1020 0%, transparent 60%),
+  background: radial-gradient(
+      1200px circle at 20% -10%,
+      #0b1020 0%,
+      transparent 60%
+    ),
     radial-gradient(1200px circle at 80% 120%, #321b56 0%, transparent 55%),
     linear-gradient(180deg, #1b2550 0%, #16234a 50%, #321b56 100%);
   overflow: hidden; /* ensures orbs stay inside */
@@ -227,20 +237,30 @@ body {
   z-index: 0;
   pointer-events: none;
   /* IMPORTANT: start with a background property (prevents PostCSS parse errors) */
-  background:
-    radial-gradient(circle at 15% 30%, rgba(158,199,255,0.78) 0 2px, transparent 2px),
-    radial-gradient(circle at 40% 70%, rgba(209,168,255,0.72) 0 2px, transparent 2px),
-    radial-gradient(circle at 75% 20%, rgba(143,179,255,0.74) 0 2px, transparent 2px),
+  background: radial-gradient(
+      circle at 15% 30%,
+      rgba(158, 199, 255, 0.78) 0 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 40% 70%,
+      rgba(209, 168, 255, 0.72) 0 2px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(143, 179, 255, 0.74) 0 2px,
+      transparent 2px
+    ),
     /* keep the existing large gradient backdrop underneath if present */
-    var(--hero-gradient, radial-gradient(1200px circle at 20% 0%, #0b1020, #05070f 60%));
-  background-size:
-    260px 280px,
-    300px 320px,
-    240px 260px,
-    cover;
+      var(
+        --hero-gradient,
+        radial-gradient(1200px circle at 20% 0%, #0b1020, #05070f 60%)
+      );
+  background-size: 260px 280px, 300px 320px, 240px 260px, cover;
   background-repeat: repeat, repeat, repeat, no-repeat;
-  mix-blend-mode: screen;     /* makes dots pop without washing text */
-  opacity: 0.70;              /* was around .45–.55; now brighter */
+  mix-blend-mode: screen; /* makes dots pop without washing text */
+  opacity: 0.7; /* was around .45–.55; now brighter */
   animation: dotFade 16s ease-in-out infinite alternate;
 }
 
@@ -260,9 +280,16 @@ body {
   inset: -10% -10% -10% -10%;
   z-index: 0;
   pointer-events: none;
-  background:
-    radial-gradient(420px 420px at 18% 22%, rgba(90,125,255,0.18) 0%, transparent 65%),
-    radial-gradient(520px 520px at 82% 78%, rgba(170,90,255,0.20) 0%, transparent 65%);
+  background: radial-gradient(
+      420px 420px at 18% 22%,
+      rgba(90, 125, 255, 0.18) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      520px 520px at 82% 78%,
+      rgba(170, 90, 255, 0.2) 0%,
+      transparent 65%
+    );
   mix-blend-mode: screen;
   animation: heroOrbsPulse 14s ease-in-out infinite alternate;
   opacity: 0.38;
@@ -270,13 +297,23 @@ body {
 
 /* Animations for dots/orbs */
 @keyframes dotFade {
-  0%   { opacity: 0.62; }
-  100% { opacity: 0.80; }
+  0% {
+    opacity: 0.62;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
 
 @keyframes heroOrbsPulse {
-  0%   { transform: scale(1);   opacity: 0.34; }
-  100% { transform: scale(1.06); opacity: 0.42; }
+  0% {
+    transform: scale(1);
+    opacity: 0.34;
+  }
+  100% {
+    transform: scale(1.06);
+    opacity: 0.42;
+  }
 }
 
 /* Accessibility: respect reduced motion */
@@ -301,10 +338,11 @@ body {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   overflow: hidden;
-  background: linear-gradient(90deg, 
-    rgba(255, 255, 255, 0) 0%, 
-    rgba(255, 255, 255, 1) 10%, 
-    rgba(255, 255, 255, 1) 90%, 
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 1) 90%,
     rgba(255, 255, 255, 0) 100%
   );
   padding: 20px 0;
@@ -316,7 +354,7 @@ body {
 
 .logo-banner-container::before,
 .logo-banner-container::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -327,12 +365,20 @@ body {
 
 .logo-banner-container::before {
   left: 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .logo-banner-container::after {
   right: 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 .logo-banner {
@@ -390,23 +436,23 @@ body {
     animation-duration: 25s;
     gap: 45px;
   }
-  
+
   .logo-item {
     min-width: 210px;
     height: 120px;
   }
-  
+
   .logo-image {
     max-width: 180px;
     max-height: 90px;
     padding: 12px;
   }
-  
+
   .logo-banner-container::before,
   .logo-banner-container::after {
     width: 75px;
   }
-  
+
   .logo-banner-container {
     min-height: 160px;
   }
@@ -417,18 +463,18 @@ body {
     animation-duration: 20s;
     gap: 30px;
   }
-  
+
   .logo-item {
     min-width: 150px;
     height: 100px;
   }
-  
+
   .logo-image {
     max-width: 135px;
     max-height: 68px;
     padding: 9px;
   }
-  
+
   .logo-banner-container {
     min-height: 140px;
   }
@@ -444,12 +490,12 @@ body {
   .logo-banner {
     animation: none;
   }
-  
+
   .logo-banner-container {
     overflow-x: auto;
     overflow-y: hidden;
   }
-  
+
   .logo-banner {
     width: auto;
     justify-content: center;

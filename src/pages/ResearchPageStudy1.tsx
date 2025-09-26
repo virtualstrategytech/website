@@ -1,43 +1,82 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
+
 interface ResearchPageProps {
   onBackToHome: () => void;
+  onOpenModal: () => void;
 }
+
 export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
   onBackToHome,
+  onOpenModal,
 }) => (
   <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
-    <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-24">
-        <button
-          onClick={onBackToHome}
-          className="flex items-center text-blue-700 font-medium px-6 py-4"
+    {/* Header */}
+    <header
+      className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
+      style={{ height: "calc(6rem * 1.3)" }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className="flex justify-between items-center"
+          style={{ height: "calc(6rem * 1.3)" }}
         >
-          <ArrowLeft className="w-5 h-5 mr-2" />
-          Back to Use Cases
-        </button>
+          {/* Logo */}
+          <div className="flex items-center">
+            <img
+              src="/Logo/VirtualStrategyTechLogoSVG.svg"
+              alt="Virtual Strategy Tech - Productivity Reimagined"
+              className="h-36 w-auto object-contain"
+            />
+          </div>
+          {/* Navigation */}
+          <div className="flex items-center space-x-6">
+            <button
+              onClick={onBackToHome}
+              className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+              style={{ fontSize: "22px" }}
+            >
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              Back to Home
+            </button>
+            <button
+              onClick={onOpenModal}
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
+              style={{
+                fontSize: "26px",
+                paddingLeft: "1.5rem",
+                paddingRight: "1.5rem",
+                paddingTop: "0.75rem",
+                paddingBottom: "0.75rem",
+              }}
+            >
+              Demo
+            </button>
+          </div>
+        </div>
       </div>
     </header>
     <main className="max-w-4xl mx-auto py-20 px-4 text-left">
-      <h1 className="text-4xl font-bold text-blue-600 mb-8">
+      <h1 className="text-4xl font-bold text-blue-400 mb-8">
         Targeting Small Business Strategy Consulting Firms for Upskilling Agents
         in Prompt Engineering
       </h1>
       <h2 className="text-2xl font-semibold text-white mb-4">
         Table of Contents
       </h2>
-      <ul className="list-decimal pl-6 text-blue-100 mb-8">
-        <li>Introduction</li>
-        <li>The Changing Landscape of Business Strategy Consulting</li>
-        <li>The Role of Artificial Intelligence and Prompt Engineering</li>
-        <li>The Imperative of Upskilling and Reskilling in the Age of AI</li>
-        <li>The Business Case for Upskilling Agents in Prompt Engineering</li>
-        <li>Implementation Recommendations for Consulting Firms</li>
-        <li>Visualizations: Comparative Analysis and Process Flow</li>
-        <li>Conclusion</li>
+      <ul className="list-decimal decimal-point pl-6 text-blue-100 mb-8">
+        <li> Introduction</li>
+        <li> The Changing Landscape of Business Strategy Consulting</li>
+        <li> The Role of Artificial Intelligence and Prompt Engineering</li>
+        <li> The Imperative of Upskilling and Reskilling in the Age of AI</li>
+        <li> The Business Case for Upskilling Agents in Prompt Engineering</li>
+        <li> Implementation Recommendations for Consulting Firms</li>
+        <li> Visualizations: Comparative Analysis</li>
+        <li> Conclusion</li>
+        <li> References</li>
       </ul>
       <h2 className="text-2xl font-semibold text-white mb-4">
-        1. Introduction
+        1.0 Introduction
       </h2>
       <p className="text-lg text-blue-100 mb-4">
         The rapid evolution of artificial intelligence (AI) has irrevocably
@@ -55,7 +94,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
         recommendations, and the ethical challenges posed by AI systems.
       </p>
       <h2 className="text-2xl font-semibold text-white mb-4">
-        2. The Changing Landscape of Business Strategy Consulting
+        2.0 The Changing Landscape of Business Strategy Consulting
       </h2>
       <p className="text-lg text-blue-100 mb-4">
         Business strategy consulting is undergoing a transformation spurred by
@@ -66,28 +105,43 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       </p>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Increased Efficiency and Communication: Modern AI systems, exemplified
-          by ChatGPT are capable of understanding and generating human-like
-          language with remarkable clarity. This capability helps reduce
-          communication costs and speeds up information processing in
-          decision-making.<sup>1</sup>
+          <span className="font-bold text-white-300">
+            Increased Efficiency and Communication:{" "}
+          </span>
+          Modern AI systems, exemplified by ChatGPT are capable of understanding
+          and generating human-like language with remarkable clarity. This
+          capability helps reduce communication costs and speeds up information
+          processing in decision-making.<sup>1</sup>
         </li>
         <li>
-          Advanced Task Handling: AI applications are no longer limited to
-          simple tasks: they now support complex problem solving and even code
-          generation, thereby allowing consultants to focus on strategic issues
-          rather than routine operations. <sup>1</sup>
+          <span className="font-bold text-white-300">
+            Advanced Task Handling:
+          </span>
+          <span>
+            {" "}
+            AI applications are no longer limited to simple tasks: they now
+            support complex problem solving and even code generation, thereby
+            allowing consultants to focus on strategic issues rather than
+            routine operations.
+          </span>
+          <sup>1</sup>
         </li>
         <li>
-          Digital Transformation Imperatives: As consulting firms strive to
-          remain competitive in the digital era, they must embrace
-          transformation by integrating customizable AI solutions.
-          Recommendations for digital transformation suggest that firms "own the
-          change", commit organization-wide, and start small by building on
-          firsthand benefits. <sup>3</sup>
+          <span className="font-bold text-white-300">
+            Digital Transformation Imperatives:
+          </span>
+          <span>
+            {" "}
+            As consulting firms strive to remain competitive in the digital era,
+            they must embrace transformation by integrating customizable AI
+            solutions. Recommendations for digital transformation suggest that
+            firms "own the change", commit organization-wide, and start small by
+            building on firsthand benefits.
+          </span>
+          <sup>3</sup>
         </li>
       </ul>
-      <p>
+      <p className="text-blue-100 text-lg mb-4">
         The consulting environment now demands agility, rapid adaptation, and a
         commitment to continuous learning - which together underline the urgent
         need for upskilling agents in prompt engineering. These skills enable
@@ -96,9 +150,9 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
         operational lags.
       </p>
       <h2 className="text-2xl font-semibold text-white mb-4">
-        3. The Role of Artificial Intelligence and Prompt Engineering
+        3.0 The Role of Artificial Intelligence and Prompt Engineering
       </h2>
-      <h3 className="text-xl font-semibold text-blue-300 mb-2">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         3.1 Artificial Intelligence in Consulting
       </h3>
       <p className="text-lg text-blue-100 mb-4">
@@ -111,24 +165,32 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
         consulting, these models can be deployed to assist with:
         <ul className="list-disc pl-6 text-blue-100 mb-4">
           <li>
+            <span className="font-bold text-white-300">
+              Data Analysis and Report Generation:
+            </span>
             Data Analysis and Report Generation: AI can sift through large
             datasets, generating insights that help consultants make informed
             decisions.
           </li>
           <li>
-            Scenario Modeling and Forecasting: The adaptability of AI models in
-            handling diverse content enables accurate predictions and strategic
-            recommendations.
+            <span className="font-bold text-white-300">
+              Scenario Modeling and Forecasting:
+            </span>
+            The adaptability of AI models in handling diverse content enables
+            accurate predictions and strategic recommendations.
           </li>
           <li>
-            Communication and Client Engagement: By reducing communication
-            barriers through human-like language generation, AI can improve
-            rapport with clients, facilitating smoother interactions.
+            <span className="font-bold text-white-300">
+              Communication and Client Engagement:
+            </span>{" "}
+            <span> </span>By reducing communication barriers through human-like
+            language generation, AI can improve rapport with clients,
+            facilitating smoother interactions.
             <sup>1</sup>
           </li>
         </ul>
       </p>
-      <h3 className="text-xl font-semibold text-blue-300 mb-2">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         3.2 Understanding Prompt Engineering
       </h3>
       <p className="text-lg text-blue-100 mb-4">
@@ -138,24 +200,27 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       </p>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Optimization of AI Outputs: The quality of AI-generated content - be
-          it strategic insights or coded solutions - depends heavily on the
-          clarity and precision of prompts given by the user.<sup>1</sup>
+          <span className="font-bold text-white-300"></span>Optimization of AI
+          Outputs: <span> </span> The quality of AI-generated content - be it
+          strategic insights or coded solutions - depends heavily on the clarity
+          and precision of prompts given by the user.<sup>1</sup>
         </li>
         <li>
-          Customization for Specific Needs: In a consulting context, prompt
+          <span className="font-bold text-white-300"> </span>Customization for
+          Specific Needs: <span></span> In a consulting context, prompt
           engineering enables the tailoring of AI responses to specific business
           challenges, making AI outputs more relevant and actionable.
         </li>
         <li>
-          Reduction of Iterative Feedback: Effective prompt engineering
+          <span className="font-bold text-white-300"></span>Reduction of
+          Iterative Feedback: <span></span>Effective prompt engineering
           minimizes the number of feedback loops necessary to achieve
           satisfactory results, leading to increased operational efficiency and
           reduced turnaround time. <sup>1</sup>
           <sup>1</sup>
         </li>
       </ul>
-      <h3 className="text-xl font-semibold text-blue-300 mb-2">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         3.3 Integration with Hybrid Intelligence
       </h3>
       <p className="text-lg text-blue-100 mb-4">
@@ -166,7 +231,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
         humans nor machines could achieve independently. <sup>1</sup>
       </p>
       <h2 className="text-2xl font-semibold text-white mb-4">
-        4. The Imperative of Upskilling and Reskilling in the Age of AI
+        4.0 The Imperative of Upskilling and Reskilling in the Age of AI
       </h2>
       <p className="text-lg text-blue-100 mb-4">
         The digital revolution, powered by AI, has accelerated the need for
@@ -174,56 +239,68 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
         now pivotal for organizations that seek to harness technological
         advancements without compromising their competitive edge. <sup>1</sup>
       </p>
-      <h3 className="text-xl font-semibold text-blue-300 mb-2">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         4.1. Benefits of Upskilling
       </h3>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Improved Adaptability: Upskilling employees ensures that they remain
+          <span className="font-bold text-white-300">
+            Improved Adaptability:{" "}
+          </span>
           adaptable in the face of rapid technological change. This is
           particularly significant in sectors like consulting where strategic
           agility is critical. <sup>4</sup>
         </li>
         <li>
-          Enhanced Efficiency: By learning new skills, such as prompt
-          engineering, employees can directly contribute to more efficient
-          processes. This efficiency translates into reduced operational costs
-          and improved service delivery.<sup>4</sup>
+          <span className="font-bold text-white-300">Enhanced Efficiency:</span>{" "}
+          By learning new skills, such as prompt engineering, employees can
+          directly contribute to more efficient processes. This efficiency
+          translates into reduced operational costs and improved service
+          delivery.<sup>4</sup>
         </li>
         <li>
-          Talent Retention and Competitive Advantage: Upskilled employees are
-          not only more confident in utilizing technological tools but also add
-          unique value to the firm's service offerings. Continuous development
+          <span className="font-bold text-white-300"></span>Talent Retention and
+          Competitive Advantage: <span></span> Upskilled employees are not only
+          more confident in utilizing technological tools but also add unique
+          value to the firm's service offerings. Continuous development
           encourages talent retention while also bolstering the firm's
           reputation for innovation. <sup>4</sup>
         </li>
       </ul>
-      <h3 className="text-xl font-semibold text-blue-300 mb-2">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         4.2. Risks of Not Upskilling
       </h3>
-      <p>
+      <p className="text-blue-100 text-lg mb-4">
         In contrast, a failure to invest in employee development can have
         detrimental consequences:
       </p>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          De-skilling of the Workforce: Without consistent upskilling efforts,
-          there is an increased risk that AI systems may eventually replace
-          human roles, leading to the de-skilling of high-level functions.{" "}
+          <span className="font-bold text-white-300">
+            De-skilling of the Workforce:{" "}
+          </span>{" "}
+          Without consistent upskilling efforts, there is an increased risk that
+          AI systems may eventually replace human roles, leading to the
+          de-skilling of high-level functions. <sup>5</sup>
+        </li>
+        <li>
+          <span className="font-bold text-white-300">
+            Ethical and Operational Pitfalls:{" "}
+          </span>{" "}
+          The absence of sufficient human oversight in the deployment of AI can
+          lead to ethical issues and inefficiencies. As noted in the literature,
+          ethical principles must be embedded from the design stage to prevent
+          potential misuse or bias in AI systems. <sup>2</sup>
           <sup>5</sup>
         </li>
         <li>
-          Ethical and Operational Pitfalls: The absence of sufficient human
-          oversight in the deployment of AI can lead to ethical issues and
-          inefficiencies. As noted in the literature, ethical principles must be
-          embedded from the design stage to prevent potential misuse or bias in
-          AI systems. <sup>2</sup>
-          <sup>5</sup>
-        </li>
-        <li>
-          Competitive Disadvantage: Firms that overlook the importance of
-          continuous learning risk falling behind competitors who exploit the
-          dual benefits of human expertise and AI prowess.
+          <span className="font-bold text-white-300"></span>Competitive
+          Disadvantage:{" "}
+          <span>
+            Firms that overlook the importance of continuous learning risk
+            falling behind competitors who exploit the dual benefits of human
+            expertise and AI prowess.
+          </span>
         </li>
       </ul>
       <h3 className="text-2xl font-semibold text-white mb-4">
@@ -240,7 +317,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
         insights.
       </p>
       <h2 className="text-2xl font-semibold text-white mb-4">
-        5. The Business Case for Upskilling Agents in Prompt Engineering
+        5.0 The Business Case for Upskilling Agents in Prompt Engineering
       </h2>
       <p className="text-lg text-blue-100 mb-4">
         Small business strategy consulting firms are uniquely positioned to
@@ -250,22 +327,35 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       <h3 className="text-2xl font-semibold text-white mb-4">
         5.1 Enhancing Operational Efficiency
       </h3>
-      By equipping consulting teams with prompt engineering skills, firms can:
+      <p className="text-blue-100 text-lg mb-4">
+        By equipping consulting teams with prompt engineering skills, firms can:
+      </p>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Streamline Report Generation: AI systems, when properly prompted, can
-          quickly produce comprehensive reports and data analyses. This
-          accelerates the turnaround time for client deliverables and enhances
-          operational frameworks. <sup>1</sup>
+          <span className="font-bold text-white-300">
+            Streamline Report Generation:
+          </span>
+          <span>
+            {" "}
+            AI systems, when properly prompted, can quickly produce
+            comprehensive reports and data analyses. This accelerates the
+            turnaround time for client deliverables and enhances operational
+            frameworks.
+          </span>{" "}
+          <sup>1</sup>
         </li>
         <li>
-          Reduce Feedback Loops: As demonstrated in research on conversational
+          <span className="font-bold text-white-300">
+            Reduce Feedback Loops:{" "}
+          </span>{" "}
           APR (Automated Program Repair), AI that is directed through
           well-crafted prompts requires significantly fewer feedback cycles,
           thereby reducing resource use and enhancing efficiency. <sup>1</sup>
         </li>
         <li>
-          Optimize Data Utilization: Effective prompt engineering allows
+          <span className="font-bold text-white-300">
+            Optimize Data Utilization:{" "}
+          </span>{" "}
           consultants to extract actionable insights from large datasets,
           transforming raw information into strategic value.
         </li>
@@ -273,16 +363,23 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       <h3 className="text-2xl font-semibold text-white mb-4">
         5.2 Driving Innovation and Competitive Differentiation
       </h3>
-      Investing in the upskilling of prompt engineering creates a distinct
-      competitive advantage:
+      <p className="text-blue-100 text-lg mb-4">
+        Investing in the upskilling of prompt engineering creates a distinct
+        competitive advantage:
+      </p>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Customized AI Interactions: Upskilled employees can tailor AI outputs
-          to address specific client challenges, resulting in more innovative
-          and relevant solutions. <sup>1</sup>
+          <span className="font-bold text-white-300">
+            Customized AI Interactions:{" "}
+          </span>{" "}
+          Upskilled employees can tailor AI outputs to address specific client
+          challenges, resulting in more innovative and relevant solutions.{" "}
+          <sup>1</sup>
         </li>
         <li>
-          Market Differentation: Firms that harness the power of prompt
+          <span className="font-bold text-white-300">
+            Market Differentation:{" "}
+          </span>{" "}
           engineering can offer unique value propositions by combining
           traditional consulting acumen with cutting-edge AI capabilities. This
           blend of skills enables rapid adaptation to market changes and
@@ -290,7 +387,9 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
           <sup>4</sup>
         </li>
         <li>
-          Enhanced Client Engagement: With robust prompt engineering,
+          <span className="font-bold text-white-300">
+            Enhanced Client Engagement:{" "}
+          </span>{" "}
           consultants can generate client communications and strategic proposals
           that are qualitatively superior, thereby increasing client
           satisfaction and retention.
@@ -299,34 +398,38 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       <h3 className="text-2xl font-semibold text-white mb-4">
         5.3. Mitigating Operational and Ethical Risks
       </h3>
-      Upskilling in prompt engineering also helps mitigate risks:
-      <h3 className="text-xl font-semibold text-blue-300 mb-2">
-        5.3. Mitigating Operational and Ethical Risks
-      </h3>
+      <p className="text-blue-100 text-lg mb-4">
+        Upskilling in prompt engineering also helps mitigate risks:
+      </p>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Prevention of De-skilling: Involving human expertise in prompt
-          creation ensures that AI systems are used as augmentation tools rather
-          than replacements, thereby preserving critical thinking and creative
-          capabilities of human employees.<sup>1</sup>
+          <span className="font-bold text-white-300">
+            Prevention of De-skilling:{" "}
+          </span>{" "}
+          Involving human expertise in prompt creation ensures that AI systems
+          are used as augmentation tools rather than replacements, thereby
+          preserving critical thinking and creative capabilities of human
+          employees.<sup>1</sup>
           <sup>5</sup>
         </li>
         <li>
-          Ethical Oversight: Training employees in prompt engineering reinforces
+          <span className="font-bold text-white-300">Ethical Oversight: </span>{" "}
           the practice of embedding ethical considerations into AI applications.
           It encourages transparency, accountability, and stakeholder
           consultation at every stage - from design to deployment. <sup>2</sup>
           <sup>5</sup>
         </li>
         <li>
-          Organizational Resilience: In a dynamic environment where
+          <span className="font-bold text-white-300">
+            Organizational Resilience:{" "}
+          </span>{" "}
           technological disruptions are constant, a skilled workforce is
           resilient. Upskilling equips employees with the ability to pivot,
           innovate, and implement new technologies safely and effectively.
         </li>
       </ul>
       <h2 className="text-2xl font-semibold text-white mb-4">
-        6. Implementation Recommendations for Consulting Firms
+        6.0 Implementation Recommendations for Consulting Firms
       </h2>
       <p className="text-lg text-blue-100 mb-4">
         Transitioning to a model that emphasizes both technical and strategic
@@ -339,22 +442,29 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       </h3>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Executive Sponsorship: Digital transformation is a strategic
+          <span className="font-bold text-white-300">
+            Executive Sponsorship:{" "}
+          </span>{" "}
           imperative that must be driven by top management. Leaders should
           commit to upskilling initatives by providing the necessary resources
           and setting clear performance benchmarks. <sup>3</sup>
           <sup>5</sup>
         </li>
         <li>
-          Organization-Wide Involvement: Upskilling programs should be
-          integrated into the firm's overall strategy. This means that all
-          leverls of the organization - fron entry-level consultants to senior
-          partners - should be engaged in continuous learning processes.
+          <span className="font-bold text-white-300">
+            Organization-Wide Involvement:{" "}
+          </span>{" "}
+          Upskilling programs should be integrated into the firm's overall
+          strategy. This means that all levels of the organization - from
+          entry-level consultants to senior partners - should be engaged in
+          continuous learning processes.
         </li>
         <li>
-          Continuous Feedback and Iteration: Establish feedback mechanisms to
-          monitor the effectiveness of upskilling initiatives and adjust
-          training programs as needed.
+          <span className="font-bold text-white-300">
+            Continuous Feedback and Iteration:{" "}
+          </span>{" "}
+          Establish feedback mechanisms to monitor the effectiveness of
+          upskilling initiatives and adjust training programs as needed.
         </li>
       </ul>
       <h3 className="text-2xl font-semibold text-white mb-4">
@@ -362,7 +472,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       </h3>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Pilot Initiatives: Begin with small-scale pilot programs that focus on
+          <span className="font-bold text-white-300">Pilot Initiatives: </span>{" "}
           prompt engineering skills directly tied to specific consulting tasks.
           Collect data on improvements in efficiency, quality, and client
           satisfaction to build a robust business case for wider adoption.{" "}
@@ -370,10 +480,11 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
           <sup>5</sup>
         </li>
         <li>
-          Iterative Learning: Utilize feedback from pilot programs to refine
-          training modules and optimize prompt engineering practices. These
-          iterative processes help in calibrating AI systems to the specific
-          needs of the consulting domain.
+          <span className="font-bold text-white-300">Iterative Learning: </span>{" "}
+          Utilize feedback from pilot programs to refine training modules and
+          optimize prompt engineering practices. These iterative processes help
+          in calibrating AI systems to the specific needs of the consulting
+          domain.
         </li>
       </ul>
       <h3 className="text-2xl font-semibold text-white mb-4">
@@ -381,13 +492,17 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       </h3>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Development of Best Practices: Establish a repository of effective
+          <span className="font-bold text-white-300">
+            Development of Best Practices:{" "}
+          </span>{" "}
           prompts, case studies, and success metrics. Sharing these best
           practices across teams encourages standardization and continous
           improvement.
         </li>
         <li>
-          Regular Training and Updates: The field of prompt engineering is
+          <span className="font-bold text-white-300">
+            Regular Training and Updates:{" "}
+          </span>{" "}
           evolving rapidly. Therefore, training programs must be regularly
           updated to reflect the latest developments, emerging ethical
           guidelines, and technological advancements. <sup>3</sup>
@@ -398,16 +513,19 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       </h3>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Cross-Functional Teams: Create cross-functional teams that include HR,
+          <span className="font-bold text-white-300">
+            Cross-Functional Teams:{" "}
+          </span>{" "}
           AI specialists, and consulting experts. Such teams can facilitate the
           blended implementation of hybrid intelligence models that emphasize
           both human creativity and machine efficiency. <sup>1</sup>
         </li>
         <li>
-          Ethical Frameworks: Develop ethical guidelines that ensure
-          transparency and accountability in AI use. Regular audits and
-          stakeholder engagement initatives ensure that AI applications remain
-          aligned with both business goals and ethical principles. <sup>2</sup>
+          <span className="font-bold text-white-300">Ethical Frameworks: </span>{" "}
+          Develop ethical guidelines that ensure transparency and accountability
+          in AI use. Regular audits and stakeholder engagement initatives ensure
+          that AI applications remain aligned with both business goals and
+          ethical principles. <sup>2</sup>
           <sup>5</sup>
         </li>
       </ul>
@@ -416,29 +534,31 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       </h3>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Performance Metrics: Establish performance metrics that link prompt
-          engineering improvements to business outcomes. Key performance
-          indicators might include faster report turnaround times, higher client
-          satisfaction scores, and reduced iterative corrections in AI-generated
-          content.{" "}
+          <span className="font-bold text-white-300">
+            Performance Metrics:{" "}
+          </span>{" "}
+          Establish performance metrics that link prompt engineering
+          improvements to business outcomes. Key performance indicators might
+          include faster report turnaround times, higher client satisfaction
+          scores, and reduced iterative corrections in AI-generated content.{" "}
         </li>
         <li>
-          Scalable Models: Once initial pilots demonstrate success, gradually
-          scale up the training initiatives. Ensure that the broader workforce
-          is engaged through continuous learning platforms and real-time
-          feedback mechanisms.
+          <span className="font-bold text-white-300">Scalable Models: </span>{" "}
+          Once initial pilots demonstrate success, gradually scale up the
+          training initiatives. Ensure that the broader workforce is engaged
+          through continuous learning platforms and real-time feedback
+          mechanisms.
         </li>
       </ul>
-      <h2 className="text-xl font-semibold text-blue-300 mb-2">
-        7 Visualizations: Comparative Analysis and Process Flow
+      <h2 className="text-2xl font-semibold text-blue-300 mb-2">
+        7.0 Visualizations: Comparative Analysis
       </h2>
-      <h3 className="text-2xl font-semibold text-white mb-4">
+      <h3 className="text-xl font-semibold text-white mb-4">
         7.1 Table: Benefits vs. Risks of Upskilling in Prompt Engineering
       </h3>
       <table className="min-w-full bg-white rounded-lg shadow my-8">
         <thead>
           {" "}
-          Table: Benefits vs. Risks of Upskilling in Prompt Engineering
           <tr>
             <th className="px-4 py-2 text-left font-bold">Aspect</th>
             <th className="px-4 py-2 text-left font-bold">
@@ -505,7 +625,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
           </tr>
         </tbody>
       </table>
-      <h2 className="text-2xl font-semibold text-white mb-4">8. Conclusion</h2>
+      <h2 className="text-2xl font-semibold text-white mb-4">8.0 Conclusion</h2>
       <p className="text-lg text-blue-100 mb-4">
         The advent of AI has created an urgent need for consulting firms to
         reimagine their operational models. Upskilling agents in prompt
@@ -516,37 +636,38 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       </p>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
-          Enhanced Efficiency: AI-drive tools such as ChatGPT reduce
-          communication costs and streamline processes. With effective prompt
-          <ul className="list-disc pl-6 text-blue-100 mb-4">
-            <li>
-              Enhanced Efficiency: AI-drive tools such as ChatGPT reduce
-              communication costs and streamline processes. With effective
-              prompt engineering, these benefits are maximized, leading to
-              faster and more accurate client deliverables.<sup>1</sup>
-            </li>
-            <li>
-              Innovative Solutions: The fusion of human expertise with advanced
-              AI capabilities creates a hubrid intelligence model. This model
-              enables consultants to craft customized, innovative strategies
-              that meet the unique challenges of their clients.<sup>1</sup>
-            </li>
-            <li>
-              Risk Mitigation: Upskilling protects against the potential
-              pitfalls of over-reliance on technology. By involving human
-              oversight in prompt creation, firms can ensure ethical,
-              respoonsible AI use that aligns with stakeholder intersts.{" "}
-              <sup>2</sup>
-              <sup>5</sup>
-            </li>
-            <li>
-              Digital Transformation Alignment: Consulting firms adopting
-              digital transformation must own the change, start with pilot
-              programs, and expand through standardization and continuous
-              learning. This approach secures a competitive edge in an
-              increasingly dynamic market. <sup>3</sup>
-            </li>
-          </ul>
+          <span className="font-bold text-white-300">
+            Enhanced Efficiency:{" "}
+          </span>{" "}
+          AI-drive tools such as ChatGPT reduce communication costs and
+          streamline processes. With effective prompt engineering, these
+          benefits are maximized, leading to faster and more accurate client
+          deliverables.<sup>1</sup>
+        </li>
+        <li>
+          <span className="font-bold text-white-300">
+            Innovative Solutions:{" "}
+          </span>{" "}
+          The fusion of human expertise with advanced AI capabilities creates a
+          hubrid intelligence model. This model enables consultants to craft
+          customized, innovative strategies that meet the unique challenges of
+          their clients.<sup>1</sup>
+        </li>
+        <li>
+          <span className="font-bold text-white-300">Risk Mitigation: </span>{" "}
+          pitfalls of over-reliance on technology. By involving human oversight
+          in prompt creation, firms can ensure ethical, respoonsible AI use that
+          aligns with stakeholder intersts. <sup>2</sup>
+          <sup>5</sup>
+        </li>
+        <li>
+          <span className="font-bold text-white-300">
+            Digital Transformation Alignment:{" "}
+          </span>{" "}
+          digital transformation must own the change, start with pilot programs,
+          and expand through standardization and continuous learning. This
+          approach secures a competitive edge in an increasingly dynamic market.{" "}
+          <sup>3</sup>
         </li>
       </ul>
       <p className="text-lg text-blue-100 mb-4">
@@ -557,7 +678,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
         and maintain ethical excellence - ultimately transforming challenges
         into strategic opportunities.
       </p>
-      <h2 className="text-2xl font-semibold text-white mb-4">9. References</h2>
+      <h2 className="text-2xl font-semibold text-white mb-4">9.0 References</h2>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
           1. Bommasani, R., Hudson, D. A., Adeli, E., et al. (2021). On the
