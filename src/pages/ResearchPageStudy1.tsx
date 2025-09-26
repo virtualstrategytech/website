@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
-
+import { ResearchPageStudy1 } from "./pages/ResearchPageStudy";
 interface ResearchPageProps {
   onBackToHome: () => void;
 }
@@ -595,4 +595,4 @@ const ResearchPageStudy1: React.FC<ResearchPageProps> = ({ onBackToHome }) => (
     </main>
   </div>
 );
-export default ResearchPageStudy1;
+export const ResearchPageStudy1;

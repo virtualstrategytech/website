@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
+import { CaseStudy3Page } from "./pages/CaseStudy3Page";
 
 const CaseStudy3Page = ({ onBackToHome }) => (
   <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
@@ -75,4 +76,4 @@ const CaseStudy3Page = ({ onBackToHome }) => (
   </div>
 );
 
-export default CaseStudy3Page;
+export const CaseStudy3Page;
