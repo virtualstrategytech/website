@@ -324,7 +324,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
         benefit from investing in prompt engineering skills. Several factors
         support the business case for such an investment:
       </p>
-      <h3 className="text-2xl font-semibold text-white mb-4">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         5.1 Enhancing Operational Efficiency
       </h3>
       <p className="text-blue-100 text-lg mb-4">
@@ -360,7 +360,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
           transforming raw information into strategic value.
         </li>
       </ul>
-      <h3 className="text-2xl font-semibold text-white mb-4">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         5.2 Driving Innovation and Competitive Differentiation
       </h3>
       <p className="text-blue-100 text-lg mb-4">
@@ -395,7 +395,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
           satisfaction and retention.
         </li>
       </ul>
-      <h3 className="text-2xl font-semibold text-white mb-4">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         5.3. Mitigating Operational and Ethical Risks
       </h3>
       <p className="text-blue-100 text-lg mb-4">
@@ -437,8 +437,10 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
         on digital transformation recommendations and research findings,
         consulting firms should consider the following steps:
       </p>
-      <h3 className="text-2xl font-semibold text-white mb-4">
-        6.1. Ownership and Organizational Commitment
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
+        {" "}
+        6.1. Ownership and Organizational Commitment 6.1. Ownership and
+        Organizational Commitment
       </h3>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
         <li>
@@ -467,7 +469,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
           upskilling initiatives and adjust training programs as needed.
         </li>
       </ul>
-      <h3 className="text-2xl font-semibold text-white mb-4">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         6.2 Starting Small with Pilot Programs
       </h3>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
@@ -487,7 +489,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
           domain.
         </li>
       </ul>
-      <h3 className="text-2xl font-semibold text-white mb-4">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         6.3 Standardization and Continuous Learning
       </h3>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
@@ -508,7 +510,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
           guidelines, and technological advancements. <sup>3</sup>
         </li>
       </ul>
-      <h3 className="text-2xl font-semibold text-white mb-4">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         6.4 Collaboration and Ethical Oversight
       </h3>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
@@ -529,7 +531,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
           <sup>5</sup>
         </li>
       </ul>
-      <h3 className="text-2xl font-semibold text-white mb-4">
+      <h3 className="text-xl font-semibold text-blue-400 mb-2">
         6.5 Measuring Success and Scaling Up
       </h3>
       <ul className="list-disc pl-6 text-blue-100 mb-4">
