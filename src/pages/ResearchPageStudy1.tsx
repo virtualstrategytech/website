@@ -550,77 +550,94 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
           mechanisms.
         </li>
       </ul>
-      <h2 className="text-2xl font-semibold text-blue-300 mb-2">
+      <h2 className="text-2xl font-semibold text-blue-100 mb-2">
         7.0 Visualizations: Comparative Analysis
       </h2>
       <h3 className="text-xl font-semibold text-white mb-4">
         7.1 Table: Benefits vs. Risks of Upskilling in Prompt Engineering
       </h3>
-      <table className="min-w-full bg-white rounded-lg shadow my-8">
+      <table className="min-w-full bg-blue-800 rounded-lg shadow my-8 text-white">
         <thead>
-          {" "}
           <tr>
-            <th className="px-4 py-2 text-left font-bold">Aspect</th>
-            <th className="px-4 py-2 text-left font-bold">
+            <th className="px-4 py-2 text-left font-bold bg-blue-800">
+              Aspect
+            </th>
+            <th className="px-4 py-2 text-left font-bold bg-blue-800">
               Benefits of Upskilling
             </th>
-            <th className="px-4 py-2 text-left font-bold">
+            <th className="px-4 py-2 text-left font-bold bg-blue-800">
               Risks of Not Upskilling
             </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className="px-4 py-2">Operational Efficiency</td>
-            <td className="px-4 py-2">
-              -Faster report generation -Reduced feedback loops -Optimized data
-              utilization
+            <td className="px-4 py-2 border-t border-blue-100">
+              Operational Efficiency
             </td>
-            <td className="px-4 py-2">
-              -Increased turnaround times -Inefficiency due to excessive
-              iterations
+            <td className="px-4 py-2 border-t border-blue-100">
+              <ul className="list-disc pl-5">
+                <li>Faster report generation</li>
+                <li>Reduced feedback loops</li>
+                <li>Optimized data utilization</li>
+              </ul>
             </td>
-          </tr>
-          <tr>
-            <td className="px-4 py-2">Innovation & Quality</td>
-            <td className="px-4 py-2">
-              -Tailored AI outputs -Innovative problem solving -Enhanced client
-              engagement
-            </td>
-            <td className="px-4 py-2">
-              -Increased turnaround times -Inefficiency due to excessive
-              iterations
+            <td className="px-4 py-2 border-t border-blue-100">
+              <ul className="list-disc pl-5">
+                <li>Increased turnaround times</li>
+                <li>Inefficiency due to excessive iterations</li>
+              </ul>
             </td>
           </tr>
           <tr>
             <td className="px-4 py-2">Innovation & Quality</td>
             <td className="px-4 py-2">
-              -Tailored AI outputs -Innovative problem solving -Enhanced client
-              engagement
+              <ul className="list-disc pl-5">
+                <li>Tailored AI outputs</li>
+                <li>Innovative problem solving</li>
+                <li>Enhanced client engagement</li>
+              </ul>
             </td>
             <td className="px-4 py-2">
-              -Generic solutions lacking customization -Stagnation in innovation
+              <ul className="list-disc pl-5">
+                <li>Generic solutions lacking customization</li>
+                <li>Stagnation in innovation</li>
+              </ul>
             </td>
           </tr>
           <tr>
             <td className="px-4 py-2">Employee Development</td>
             <td className="px-4 py-2">
-              -Preservation and enhancement of human expertise -Increased job
-              satisfaction
+              <ul className="list-disc pl-5">
+                <li>Preservation and enhancement of human expertise</li>
+                <li>Increased job satisfaction</li>
+              </ul>
             </td>
             <td className="px-4 py-2">
-              -Risk of de-skilling -Reduced human oversight leading to
-              over-reliance on black-box algorithms
+              <ul className="list-disc pl-5">
+                <li>Risk of de-skilling</li>
+                <li>
+                  Reduced human oversight leading to over-reliance on black-box
+                  algorithms
+                </li>
+              </ul>
             </td>
           </tr>
           <tr>
             <td className="px-4 py-2">Ethical & Oversight</td>
             <td className="px-4 py-2">
-              -Built-in ethical consultation -Transparency in AI operations
+              <ul className="list-disc pl-5">
+                <li>Built-in ethical consultation</li>
+                <li>Transparency in AI operations</li>
+              </ul>
             </td>
             <td className="px-4 py-2">
-              -Ethical risks due to inadequate stakeholder consultation
-              -Potential bias and misuse of AI outputs
+              <ul className="list-disc pl-5">
+                <li>
+                  Ethical risks due to inadequate stakeholder consultation
+                </li>
+                <li>Potential bias and misuse of AI outputs</li>
+              </ul>
             </td>
           </tr>
         </tbody>
