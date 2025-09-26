@@ -132,12 +132,9 @@ function App() {
   }
 
   if (currentPage === "research") {
+    // TODO: Replace with your actual ResearchPage component
     return (
-      <div>
-        {/* TODO: Replace with your actual ResearchPage component */}
-        <h1 className="text-3xl font-bold text-center mt-20">Research</h1>
-        {/* ... */}
-      </div>
+      <ResearchPage onBackToHome={() => handleNavigateToPage("use-cases")} />
     );
   }
 
@@ -192,15 +189,20 @@ function App() {
   }
 
   if (currentPage === "case-study-1") {
-    return <CaseStudy1Page onBackToHome={() => handleNavigateToPage("home")} />;
+    return (
+      <CaseStudy1Page onBackToHome={() => handleNavigateToPage("use-cases")} />
+    );
   }
   if (currentPage === "case-study-2") {
-    return <CaseStudy2Page onBackToHome={() => handleNavigateToPage("home")} />;
+    return (
+      <CaseStudy2Page onBackToHome={() => handleNavigateToPage("use-cases")} />
+    );
   }
   if (currentPage === "case-study-3") {
-    return <CaseStudy3Page onBackToHome={() => handleNavigateToPage("home")} />;
+    return (
+      <CaseStudy3Page onBackToHome={() => handleNavigateToPage("use-cases")} />
+    );
   }
-  // Removed duplicate "research" page block to fix type error
 
   return (
     <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">

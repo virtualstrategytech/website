@@ -83,9 +83,8 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
           </span>
         </h1>
         <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-          See how our solutions drive results in real organizations. Dive into
-          case studies and research to discover proven strategies and
-          innovation.
+          See how these solutions drive results in real organizations. Dive into
+          case studies and research to discover these innovative strategies.
         </p>
         {/* Cards */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-12 mt-12">
@@ -101,10 +100,20 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               Case Studies
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6">
-              See how our clients achieved measurable results and transformed
-              their business with our solutions.
+              See how some clients achieved measurable results and transformed
+              their business with similar solutions.
             </p>
-            <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-md transition-all">
+            <button
+              className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-md transition-all"
+              onClick={() => {
+                const section = document.getElementById(
+                  "detailed-case-studies"
+                );
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               View Case Studies
               <ArrowRight className="ml-2 h-4 w-4" />
             </button>
@@ -119,39 +128,68 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Research</h3>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Explore our latest research, insights, and innovation in AI,
-              automation, and workforce transformation.
+              Explore our research, insights, and innovation in prompt
+              engineering and workforce elevation.
             </p>
             <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
               View Research
               <ArrowRight className="ml-2 h-4 w-4" />
             </button>
           </div>
-        </div> {/* This closes the cards container */}
-
-        {/* Detailed Use Cases Section */}
+        </div>{" "}
+        {/* This closes the cards container */}
+        {/* Detailed Case Studies Section */}
         <div className="max-w-5xl mx-auto py-20 px-4 text-left">
-          <h2 className="text-3xl font-bold text-white mb-8">Detailed Use Cases</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Detailed Case Studies
+          </h2>
+          <div
+            id="detailed-case-studies"
+            className="max-w-3xl mx-auto py-4 px-1 text-left"
+          ></div>
+          {/* Spacer to raise the title above the use cases */}
+          <div className="mt-8"></div>
+          <div className="mt-2 mb-6">
+            <div className="mt-2 mb-2">
+              <h3 className="text-3xl font text-white mt-[-2.5rem] mb-6">
+                Automation Agents in Consulting
+              </h3>
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Use Case 1 */}
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-xl font-bold text-blue-600 mb-2">AI Lead Capture for B2B SaaS</h3>
+              <h3 className="text-xl font-bold text-blue-600 mb-2">
+                Strategic Intelligence Acceleration in a Mid-Tier Consulting
+                Firm
+              </h3>
               <p className="text-gray-700 mb-4">
-                How our AI lead capture solution increased conversion rates by 35% for a SaaS company.
+                A UK-based market research and business strategy firm faced
+                growing pressure to deliver faster, deeper insights to clients
+                without scaling headcount or increasing operational overhead.
               </p>
             </div>
             {/* Use Case 2 */}
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-xl font-bold text-blue-600 mb-2">Upskilling Agents in FinTech</h3>
+              <h3 className="text-xl font-bold text-blue-600 mb-2">
+                Digital Human Resources Transformation in a Global Professional
+                Services Network
+              </h3>
               <p className="text-gray-700 mb-4">
-                See how upskilling agents improved productivity and compliance in a financial services firm.
+                A multinational advisory firm sought to transform its internal
+                HR strategy consulting function into a digital-first model.
               </p>
             </div>
             {/* Use Case 3 */}
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <h3 className="text-xl font-bold text-blue-600 mb-2">Smart Ticket Scheduling for Retail</h3>
+              <h3 className="text-xl font-bold text-blue-600 mb-2">
+                Financial Services Advisory and Boutique Consulting Firms
+              </h3>
               <p className="text-gray-700 mb-4">
-                Discover how smart ticket scheduling reduced support costs and improved customer satisfaction for a retail chain.
+                A consortium of boutique consulting firms specializing in
+                financial services advisory sought scalable ways to offer
+                high-impact insights to clients in wealth management, fintech,
+                and regulatory strategy.
               </p>
             </div>
           </div>
