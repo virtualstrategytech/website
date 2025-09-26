@@ -26,6 +26,8 @@ import ProductsPage from "./pages/ProductsPage";
 import CaseStudy1Page from "./pages/CaseStudy1Page";
 import CaseStudy2Page from "./pages/CaseStudy2Page";
 import CaseStudy3Page from "./pages/CaseStudy3Page";
+import ResearchPageStudy1 from "./pages/ResearchPageStudy1";
+import CaseStudiesPage from "./pages/CaseStudiesPage";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -123,18 +125,20 @@ function App() {
 
   if (currentPage === "case-studies") {
     return (
-      <div>
-        {/* TODO: Replace with your actual CaseStudiesPage component */}
-        <h1 className="text-3xl font-bold text-center mt-20">Case Studies</h1>
-        {/* ... */}
-      </div>
+      <CaseStudiesPage
+        onBackToHome={() => handleNavigateToPage("use-cases")}
+        onNavigateToCaseStudy1={() => handleNavigateToPage("case-study-1")}
+        onNavigateToCaseStudy2={() => handleNavigateToPage("case-study-2")}
+        onNavigateToCaseStudy3={() => handleNavigateToPage("case-study-3")}
+      />
     );
   }
 
   if (currentPage === "research") {
-    // TODO: Replace with your actual ResearchPage component
     return (
-      <ResearchPage onBackToHome={() => handleNavigateToPage("use-cases")} />
+      <ResearchPageStudy1
+        onBackToHome={() => handleNavigateToPage("use-cases")}
+      />
     );
   }
 
@@ -311,13 +315,16 @@ function App() {
                 >
                   Products
                 </button>
-                <a
-                  href="#case-studies"
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    handleNavigateToPage("case-studies");
+                  }}
                   className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                   style={{ fontSize: "18px" }}
                 >
                   Case Studies
-                </a>
+                </button>
                 <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
@@ -325,7 +332,7 @@ function App() {
                   }}
                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-left"
                 >
-                  Services
+                  Solutions
                 </button>
                 <button
                   onClick={() => {
