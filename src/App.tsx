@@ -21,13 +21,12 @@ import HeroVortex from "./components/HeroVortex";
 import { UpskillingProAgentsPage } from "./pages/UpskillingProAgentsPage";
 import { SmartTicketSchedulingPage } from "./pages/SmartTicketSchedulingPage";
 import { SolutionsPage } from "./pages/SolutionsPage";
-import { UseCasesPage } from "./pages/UseCasesPage";
 import ProductsPage from "./pages/ProductsPage";
 import CaseStudy1Page from "./pages/CaseStudy1Page";
 import CaseStudy2Page from "./pages/CaseStudy2Page";
 import CaseStudy3Page from "./pages/CaseStudy3Page";
 import ResearchPageStudy1 from "./pages/ResearchPageStudy1";
-import CaseStudiesPage from "./pages/CaseStudiesPage";
+import { UseCasesPage } from "./pages/UseCasesPage";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -112,24 +111,13 @@ function App() {
     );
   }
 
-  if (currentPage === "use-cases") {
-    return (
-      <UseCasesPage
-        onBackToHome={() => handleNavigateToPage("home")}
-        onOpenModal={() => setIsModalOpen(true)}
-        onNavigateToCaseStudies={() => handleNavigateToPage("case-studies")}
-        onNavigateToResearch={() => handleNavigateToPage("research")}
-      />
-    );
-  }
-
   if (currentPage === "case-studies") {
     return (
-      <CaseStudiesPage
+      <UseCasesPage
         onBackToHome={() => handleNavigateToPage("use-cases")}
-        onNavigateToCaseStudy1={() => handleNavigateToPage("case-study-1")}
-        onNavigateToCaseStudy2={() => handleNavigateToPage("case-study-2")}
-        onNavigateToCaseStudy3={() => handleNavigateToPage("case-study-3")}
+        onNavigateToCaseStudies={() => handleNavigateToPage("case-studies")}
+        onOpenModal={() => setIsModalOpen(true)}
+        onNavigateToResearch={() => handleNavigateToPage("research")}
       />
     );
   }
