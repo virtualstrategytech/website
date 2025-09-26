@@ -1,10 +1,11 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
-import { ResearchPageStudy1 } from "./pages/ResearchPageStudy";
 interface ResearchPageProps {
   onBackToHome: () => void;
 }
-const ResearchPageStudy1: React.FC<ResearchPageProps> = ({ onBackToHome }) => (
+export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
+  onBackToHome,
+}) => (
   <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
     <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-24">
@@ -595,4 +596,3 @@ const ResearchPageStudy1: React.FC<ResearchPageProps> = ({ onBackToHome }) => (
     </main>
   </div>
 );
-export const ResearchPageStudy1;

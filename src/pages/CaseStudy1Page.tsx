@@ -1,8 +1,7 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
-import { CaseStudy1Page } from "./pages/CaseStudy1Page";
 
-const CaseStudy1Page = ({ onBackToHome }) => (
+export const CaseStudy1Page = ({ onBackToHome }) => (
   <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
     <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40">
       <button
@@ -91,5 +90,3 @@ const CaseStudy1Page = ({ onBackToHome }) => (
     </main>
   </div>
 );
-
-export const CaseStudy1Page;

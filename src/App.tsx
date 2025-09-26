@@ -22,10 +22,10 @@ import { UpskillingProAgentsPage } from "./pages/UpskillingProAgentsPage";
 import { SmartTicketSchedulingPage } from "./pages/SmartTicketSchedulingPage";
 import { SolutionsPage } from "./pages/SolutionsPage";
 import ProductsPage from "./pages/ProductsPage";
-import CaseStudy1Page from "./pages/CaseStudy1Page";
-import CaseStudy2Page from "./pages/CaseStudy2Page";
-import CaseStudy3Page from "./pages/CaseStudy3Page";
-import ResearchPageStudy1 from "./pages/ResearchPageStudy1";
+import { CaseStudy1Page } from "./pages/CaseStudy1Page";
+import { CaseStudy2Page } from "./pages/CaseStudy2Page";
+import { CaseStudy3Page } from "./pages/CaseStudy3Page";
+import { ResearchPageStudy1 } from "./pages/ResearchPageStudy1";
 import { UseCasesPage } from "./pages/UseCasesPage";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -111,21 +111,21 @@ function App() {
     );
   }
 
-  if (currentPage === "case-studies") {
-    return (
-      <UseCasesPage
-        onBackToHome={() => handleNavigateToPage("use-cases")}
-        onNavigateToCaseStudies={() => handleNavigateToPage("case-studies")}
-        onOpenModal={() => setIsModalOpen(true)}
-        onNavigateToResearch={() => handleNavigateToPage("research")}
-      />
-    );
-  }
-
   if (currentPage === "research") {
     return (
       <ResearchPageStudy1
         onBackToHome={() => handleNavigateToPage("use-cases")}
+      />
+    );
+  }
+
+  if (currentPage === "use-cases") {
+    return (
+      <UseCasesPage
+        onBackToHome={() => handleNavigateToPage("home")}
+        onNavigateToCaseStudies={() => handleNavigateToPage("use-cases")}
+        onOpenModal={() => setIsModalOpen(true)}
+        onNavigateToResearch={() => handleNavigateToPage("research")}
       />
     );
   }
@@ -306,7 +306,7 @@ function App() {
                 <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
-                    handleNavigateToPage("case-studies");
+                    handleNavigateToPage("use-cases");
                   }}
                   className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                   style={{ fontSize: "18px" }}
