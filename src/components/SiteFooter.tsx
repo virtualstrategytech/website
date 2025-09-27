@@ -10,18 +10,18 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
   const isLight = theme === "light";
 
   return (
-    <footer className="bg-transparent w-full py-4 px-4 mb-16">
+    <footer className="bg-transparent w-full pt-16 pb-4 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 mb-2">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-2">
           <div className="flex-shrink-0">
             <BrandBlock theme={theme} />
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-4">
-            <div className="flex flex-wrap items-center justify-center gap-4 text-base">
+          <div className="flex flex-col lg:flex-row items-center gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-base">
               <a
                 href="/contact"
-                className={`${
+                className={`$
                   isLight
                     ? "text-gray-600 hover:text-gray-900"
                     : "text-blue-200 hover:text-white"
@@ -31,7 +31,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
               </a>
               <a
                 href="/privacy-policy"
-                className={`${
+                className={`$
                   isLight
                     ? "text-gray-600 hover:text-gray-900"
                     : "text-blue-200 hover:text-white"
@@ -41,7 +41,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
               </a>
               <a
                 href="/terms"
-                className={`${
+                className={`$
                   isLight
                     ? "text-gray-600 hover:text-gray-900"
                     : "text-blue-200 hover:text-white"
@@ -56,7 +56,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
                 href="https://www.linkedin.com/company/virtual-strategy-tech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center gap-2 ${
+                className={`flex items-center gap-2 $
                   isLight
                     ? "text-gray-600 hover:text-gray-900"
                     : "text-blue-200 hover:text-white"
@@ -70,15 +70,16 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
           </div>
         </div>
 
-        <div className="text-center">
-          <p
+        {/* Compact and professionally spaced copyright */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mt-2 mb-0">
+          <span
             className={`text-sm ${
               isLight ? "text-gray-500" : "text-blue-200/80"
             }`}
           >
             &copy; {new Date().getFullYear()} Virtual Strategy Tech. All rights
             reserved.
-          </p>
+          </span>
         </div>
       </div>
     </footer>

@@ -216,7 +216,7 @@ function App() {
   }
 
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
       {/* Header/Navigation */}
       <header
         className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
@@ -939,8 +939,8 @@ function App() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-      {/* Footer - moved a bit lower, closer to the bottom */}
-      <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-24 pt-12">
+      {/* Footer - always at the bottom */}
+      <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-auto">
         <SiteFooter theme="dark" />
       </div>
     </div>
