@@ -15,6 +15,7 @@ import {
   MessageSquare,
   Database,
 } from "lucide-react";
+import SiteFooter from "../components/SiteFooter";
 
 interface ProductDevelopmentPageProps {
   onBackToHome: () => void;
@@ -568,6 +569,7 @@ export const ProductDevelopmentPage: React.FC<ProductDevelopmentPageProps> = ({
           </div>
         </div>
       </div>
+      <SiteFooter theme="dark" />
     </div>
   );
 };

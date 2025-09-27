@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
+import SiteFooter from "../components/SiteFooter";
 
 interface ResearchPageProps {
   onBackToHome: () => void;
@@ -734,5 +735,6 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
         Back to Use Cases
       </button>
     </main>
+    <SiteFooter theme="dark" />
   </div>
 );

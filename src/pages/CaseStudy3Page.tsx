@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
+import SiteFooter from "../components/SiteFooter";
 
 type CaseStudy3PageProps = {
   onBackToHome: () => void;
@@ -143,5 +144,6 @@ export const CaseStudy3Page = ({
         </li>
       </ul>
     </main>
+    <SiteFooter theme="dark" />
   </div>
 );

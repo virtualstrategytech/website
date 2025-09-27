@@ -14,6 +14,7 @@ import {
   Bot,
   Workflow,
 } from "lucide-react";
+import SiteFooter from "../components/SiteFooter";
 
 interface SmartTicketSchedulingPageProps {
   onBackToHome: () => void;
@@ -572,6 +573,7 @@ export const SmartTicketSchedulingPage: React.FC<
           </div>
         </div>
       </div>
+      <SiteFooter theme="dark" />
     </div>
   );
 };

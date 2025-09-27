@@ -939,8 +939,8 @@ function App() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-      <footer className="relative z-10 bg-transparent py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500 text-blue-100 mt-16">
-        <SiteFooter />
+      <footer className="relative z-10 bg-transparent transition-all duration-500 text-blue-100">
+        <SiteFooter theme="dark" />
       </footer>
     </div>
   );

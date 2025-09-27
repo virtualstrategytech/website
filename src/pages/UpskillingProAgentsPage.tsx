@@ -14,6 +14,7 @@ import {
   MessageSquare,
   Cpu,
 } from "lucide-react";
+import SiteFooter from "../components/SiteFooter";
 
 interface UpskillingAgentsPageProps {
   onBackToHome: () => void;
@@ -570,6 +571,7 @@ export const UpskillingProAgentsPage: React.FC<UpskillingAgentsPageProps> = ({
           </div>
         </div>
       </div>
+      <SiteFooter theme="dark" />
     </div>
   );
 };

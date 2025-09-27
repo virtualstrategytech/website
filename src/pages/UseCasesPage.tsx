@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowLeft, ArrowRight, BookOpen, Search } from "lucide-react";
+import SiteFooter from "../components/SiteFooter";
 
 interface UseCasesPageProps {
   onBackToHome: () => void;
@@ -250,6 +251,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
       </div>
     </div>
     {/* Closing tag for the main container div */}
+    <SiteFooter theme="dark" />
   </div>
 );
 export default UseCasesPage;
