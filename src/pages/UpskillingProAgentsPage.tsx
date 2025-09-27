@@ -37,11 +37,11 @@ export const UpskillingProAgentsPage: React.FC<UpskillingAgentsPageProps> = ({
             style={{ height: "calc(6rem * 1.3)" }}
           >
             {/* Logo */}
-            <div className="flex items-center">
+            <div className="flex items-start">
               <img
                 src="/Logo/VirtualStrategyTechLogoSVG.svg"
                 alt="Virtual Strategy Tech - Productivity Reimagined"
-                className="h-36 w-auto object-contain"
+                className="h-32 w-auto object-contain -mt-1"
               />
             </div>
 
