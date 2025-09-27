@@ -14,7 +14,7 @@ import {
   Bot,
   Workflow,
 } from "lucide-react";
-import SiteFooter from "../components/SiteFooter";
+import { SiteFooter } from "../components/SiteFooter";
 
 interface SmartTicketSchedulingPageProps {
   onBackToHome: () => void;

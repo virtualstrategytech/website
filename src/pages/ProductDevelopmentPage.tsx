@@ -15,7 +15,7 @@ import {
   MessageSquare,
   Database,
 } from "lucide-react";
-import SiteFooter from "../components/SiteFooter";
+import { SiteFooter } from "../components/SiteFooter";
 
 interface ProductDevelopmentPageProps {
   onBackToHome: () => void;

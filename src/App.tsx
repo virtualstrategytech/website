@@ -26,7 +26,7 @@ import { CaseStudy2Page } from "./pages/CaseStudy2Page";
 import { CaseStudy3Page } from "./pages/CaseStudy3Page";
 import { ResearchPageStudy1 } from "./pages/ResearchPageStudy1";
 import { UseCasesPage } from "./pages/UseCasesPage";
-import SiteFooter from "./components/SiteFooter";
+import { SiteFooter } from "./components/SiteFooter";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -939,9 +939,10 @@ function App() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-      <footer className="relative z-10 bg-transparent transition-all duration-500 text-blue-100">
+      {/* Footer - moved to extreme distance with maximum possible spacing */}
+      <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-[32rem] pt-[16rem]">
         <SiteFooter theme="dark" />
-      </footer>
+      </div>
     </div>
   );
 }

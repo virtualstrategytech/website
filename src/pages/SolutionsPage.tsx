@@ -17,7 +17,6 @@ import {
   Award,
   Lightbulb,
 } from "lucide-react";
-import SiteFooter from "../components/SiteFooter";
 
 interface SolutionsPageProps {
   onBackToHome: () => void;
@@ -483,7 +482,6 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
           </div>
         </div>
       </div>
-      <SiteFooter theme="dark" />
     </div>
   );
 };

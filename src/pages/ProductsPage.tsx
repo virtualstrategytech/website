@@ -8,7 +8,6 @@ import {
   Lightbulb,
   Brain,
 } from "lucide-react";
-import SiteFooter from "../components/SiteFooter";
 
 export type PageKey =
   | "home"
@@ -282,7 +281,6 @@ export default function ProductsPage({
           </div>
         </div>
       </section>
-      <SiteFooter theme="dark" />
     </div>
   );
 }

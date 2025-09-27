@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
-import SiteFooter from "../components/SiteFooter";
+import { SiteFooter } from "../components/SiteFooter";
 
 type CaseStudy2PageProps = {
   onBackToHome: () => void;

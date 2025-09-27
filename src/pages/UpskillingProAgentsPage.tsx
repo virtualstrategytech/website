@@ -14,7 +14,7 @@ import {
   MessageSquare,
   Cpu,
 } from "lucide-react";
-import SiteFooter from "../components/SiteFooter";
+import { SiteFooter } from "../components/SiteFooter";
 
 interface UpskillingAgentsPageProps {
   onBackToHome: () => void;
