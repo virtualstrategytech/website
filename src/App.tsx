@@ -234,125 +234,125 @@ function App() {
                 alt="Virtual Strategy Tech - Productivity Reimagined"
                 className="h-32 w-auto object-contain -mt-1"
               />
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a
-                href="#about"
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "22px" }}
-              >
-                About
-              </a>
-              <button
-                onClick={() => handleNavigateToPage("products")}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "22px" }}
-              >
-                Products
-              </button>
-              <button
-                onClick={() => handleNavigateToPage("solutions")}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "22px" }}
-              >
-                Solutions
-              </button>
-              <button
-                onClick={() => handleNavigateToPage("use-cases")}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "22px" }}
-              >
-                Use Cases
-              </button>
-              <button
-                onClick={() => handleCTAClick("header-cta")}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
-                style={{
-                  fontSize: "26px",
-                  paddingLeft: "1.5rem",
-                  paddingRight: "1.5rem",
-                  paddingTop: "0.75rem",
-                  paddingBottom: "0.75rem",
-                }}
-              >
-                Demo
-              </button>
-            </nav>
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
-              >
-                {isMobileMenuOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <Menu className="h-6 w-6" />
-                )}
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMobileMenuOpen && (
-            <div className="md:hidden border-t border-gray-100 py-4">
-              <div className="flex flex-col space-y-4">
+              {/* Desktop Navigation */}
+              <nav className="hidden md:flex items-center space-x-8">
                 <a
                   href="#about"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIsMobileMenuOpen(false);
-                    const section = document.getElementById("why-upskill-pro");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                  style={{ fontSize: "22px" }}
                 >
                   About
                 </a>
                 <button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    handleNavigateToPage("products");
-                  }}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-left"
+                  onClick={() => handleNavigateToPage("products")}
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                  style={{ fontSize: "22px" }}
                 >
                   Products
                 </button>
                 <button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    handleNavigateToPage("use-cases");
-                  }}
+                  onClick={() => handleNavigateToPage("solutions")}
                   className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                  style={{ fontSize: "18px" }}
-                >
-                  Case Studies
-                </button>
-                <button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    handleNavigateToPage("solutions");
-                  }}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-left"
+                  style={{ fontSize: "22px" }}
                 >
                   Solutions
                 </button>
                 <button
-                  onClick={() => {
-                    setIsModalOpen(true);
+                  onClick={() => handleNavigateToPage("use-cases")}
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                  style={{ fontSize: "22px" }}
+                >
+                  Use Cases
+                </button>
+                <button
+                  onClick={() => handleCTAClick("header-cta")}
+                  className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
+                  style={{
+                    fontSize: "26px",
+                    paddingLeft: "1.5rem",
+                    paddingRight: "1.5rem",
+                    paddingTop: "0.75rem",
+                    paddingBottom: "0.75rem",
                   }}
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
-                  style={{ fontSize: "16px", fontWeight: "600" }}
                 >
                   Demo
                 </button>
+              </nav>
+              {/* Mobile menu button */}
+              <div className="md:hidden">
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                >
+                  {isMobileMenuOpen ? (
+                    <X className="h-6 w-6" />
+                  ) : (
+                    <Menu className="h-6 w-6" />
+                  )}
+                </button>
+
+                {/* Mobile Navigation */}
+                {isMobileMenuOpen && (
+                  <div className="md:hidden border-t border-gray-100 py-4">
+                    <div className="flex flex-col space-y-4">
+                      <a
+                        href="#about"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setIsMobileMenuOpen(false);
+                          const section =
+                            document.getElementById("why-upskill-pro");
+                          if (section) {
+                            section.scrollIntoView({ behavior: "smooth" });
+                          }
+                        }}
+                        className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                      >
+                        About
+                      </a>
+                      <button
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          handleNavigateToPage("products");
+                        }}
+                        className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-left"
+                      >
+                        Products
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          handleNavigateToPage("use-cases");
+                        }}
+                        className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                        style={{ fontSize: "18px" }}
+                      >
+                        Case Studies
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          handleNavigateToPage("solutions");
+                        }}
+                        className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-left"
+                      >
+                        Solutions
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsModalOpen(true);
+                        }}
+                        className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
+                        style={{ fontSize: "16px", fontWeight: "600" }}
+                      >
+                        Demo
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
-          )}
+          </div>
         </div>
       </header>
       {/* Background Elements */}
@@ -939,10 +939,14 @@ function App() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-      {/* Footer - moved to extreme distance with maximum possible spacing */}
-      <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-[32rem] pt-[16rem]">
+      {/* Footer - moved to absolute maximum distance with extreme spacing */}
+      <div
+        className="relative z-10 bg-transparent transition-all duration-500 text-blue-100"
+        style={{ marginTop: "100vh", paddingTop: "50vh" }}
+      >
         <SiteFooter theme="dark" />
       </div>
+      <SiteFooter theme="dark" />
     </div>
   );
 }

@@ -76,7 +76,8 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
               isLight ? "text-gray-500" : "text-blue-200/80"
             }`}
           >
-            &copy; {new Date().getFullYear()} Virtual Strategy Tech. All rights reserved.
+            &copy; {new Date().getFullYear()} Virtual Strategy Tech. All rights
+            reserved.
           </p>
         </div>
       </div>
