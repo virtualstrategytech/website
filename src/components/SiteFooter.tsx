@@ -33,5 +33,4 @@ const SiteFooter: React.FC = () => (
     </div>
   </footer>
 );
-
 export default SiteFooter;
