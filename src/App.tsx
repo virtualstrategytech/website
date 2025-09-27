@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   ArrowRight,
   Users,
@@ -27,6 +26,7 @@ import { CaseStudy2Page } from "./pages/CaseStudy2Page";
 import { CaseStudy3Page } from "./pages/CaseStudy3Page";
 import { ResearchPageStudy1 } from "./pages/ResearchPageStudy1";
 import { UseCasesPage } from "./pages/UseCasesPage";
+
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -44,7 +44,9 @@ function App() {
     | "case-study-1"
     | "case-study-2"
     | "case-study-3"
+    | "research-study-1"
   >("home");
+
   const { trackLead } = useLeadTracking({
     // Configure your integrations here
     // hubspot: { apiKey: 'your-key', portalId: 'your-portal' },
@@ -75,10 +77,13 @@ function App() {
       | "case-study-2"
       | "case-study-3"
       | "research"
+      | "research-study-1"
   ) => {
     setCurrentPage(page);
     window.scrollTo(0, 0);
   };
+
+  // Navigation handlers
 
   // Render different pages based on current page state
   if (currentPage === "product-development") {
@@ -115,6 +120,7 @@ function App() {
     return (
       <ResearchPageStudy1
         onBackToHome={() => handleNavigateToPage("use-cases")}
+        onOpenModal={() => setIsModalOpen(true)}
       />
     );
   }
@@ -123,9 +129,13 @@ function App() {
     return (
       <UseCasesPage
         onBackToHome={() => handleNavigateToPage("home")}
-        onNavigateToCaseStudies={() => handleNavigateToPage("use-cases")}
         onOpenModal={() => setIsModalOpen(true)}
-        onNavigateToResearch={() => handleNavigateToPage("research")}
+        onNavigateToCaseStudy1={() => handleNavigateToPage("case-study-1")}
+        onNavigateToCaseStudy2={() => handleNavigateToPage("case-study-2")}
+        onNavigateToCaseStudy3={() => handleNavigateToPage("case-study-3")}
+        onNavigateToResearchStudy={() =>
+          handleNavigateToPage("research-study-1")
+        }
       />
     );
   }
@@ -195,6 +205,14 @@ function App() {
       <CaseStudy3Page onBackToHome={() => handleNavigateToPage("use-cases")} />
     );
   }
+  if (currentPage === "research-study-1") {
+    return (
+      <ResearchPageStudy1
+        onBackToHome={() => handleNavigateToPage("use-cases")}
+        onOpenModal={() => setIsModalOpen(true)}
+      />
+    );
+  }
 
   return (
     <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
@@ -234,18 +252,18 @@ function App() {
                 Products
               </button>
               <button
-                onClick={() => handleNavigateToPage("use-cases")}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "22px" }}
-              >
-                Use Cases
-              </button>
-              <button
                 onClick={() => handleNavigateToPage("solutions")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
                 Solutions
+              </button>
+              <button
+                onClick={() => handleNavigateToPage("use-cases")}
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                style={{ fontSize: "22px" }}
+              >
+                Use Cases
               </button>
               <button
                 onClick={() => handleCTAClick("header-cta")}
@@ -387,13 +405,13 @@ function App() {
           <div className="mb-16 animate-slide-up delay-400">
             <button
               onClick={() => handleCTAClick("hero-cta")}
-              className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
+              className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
                 Demo Prompt Lesson
               </span>
               <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </button>
           </div>
 
@@ -797,7 +815,7 @@ function App() {
 
               <button
                 onClick={() => handleCTAClick("comparison-cta")}
-                className="group bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl"
+                className="group bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl"
               >
                 Schedule Your Free Consultation
                 <ArrowRight className="w-5 h-5 ml-2 inline transition-transform duration-500 group-hover:translate-x-1" />
@@ -879,11 +897,11 @@ function App() {
               {/* Primary CTA - Schedule Consultation */}
               <button
                 onClick={() => handleCTAClick("final-cta-primary")}
-                className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50 min-w-[280px]"
+                className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50 min-w-[280px]"
               >
                 <span className="relative z-10">Demo Prompt Lesson</span>
                 <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:translate-x-1" />
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
               </button>
 
               {/* Secondary CTA - Request Solution */}
@@ -933,4 +951,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

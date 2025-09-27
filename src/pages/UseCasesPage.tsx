@@ -4,15 +4,18 @@ import { ArrowLeft, ArrowRight, BookOpen, Search } from "lucide-react";
 interface UseCasesPageProps {
   onBackToHome: () => void;
   onOpenModal: () => void;
-  onNavigateToCaseStudies: () => void;
-  onNavigateToResearch: () => void;
+  onNavigateToCaseStudy1: () => void;
+  onNavigateToCaseStudy2: () => void;
+  onNavigateToCaseStudy3: () => void;
+  onNavigateToResearchStudy: () => void;
 }
-
 export const UseCasesPage: React.FC<UseCasesPageProps> = ({
   onBackToHome,
   onOpenModal,
-  onNavigateToCaseStudies,
-  onNavigateToResearch,
+  onNavigateToCaseStudy1,
+  onNavigateToCaseStudy2,
+  onNavigateToCaseStudy3,
+  onNavigateToResearchStudy,
 }) => (
   <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans relative overflow-hidden scroll-smooth">
     {/* Header */}
@@ -91,7 +94,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
           {/* Case Studies Card */}
           <div
             className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 cursor-pointer"
-            onClick={onNavigateToCaseStudies}
+            onClick={onNavigateToCaseStudy1}
           >
             <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <BookOpen className="w-8 h-8 text-white" />
@@ -121,7 +124,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
           {/* Research Card */}
           <div
             className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 cursor-pointer"
-            onClick={onNavigateToResearch}
+            onClick={onNavigateToResearchStudy}
           >
             <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <Search className="w-8 h-8 text-white" />
@@ -170,7 +173,10 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             scaling headcount or increasing operational overhead extended its
             strategic reach through automation agents.
           </p>
-          <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
+          <button
+            className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
+            onClick={onNavigateToCaseStudy1}
+          >
             Read here
           </button>
         </div>
@@ -185,7 +191,10 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             strategy consulting function into a digital-first model and embedded
             co-creators in the firm's HR strategy playbook.
           </p>
-          <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
+          <button
+            className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
+            onClick={onNavigateToCaseStudy2}
+          >
             Read here
           </button>
         </div>
@@ -201,7 +210,10 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             regulatory strategy and leveled up their competitiveness with larger
             firms.
           </p>
-          <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
+          <button
+            className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
+            onClick={onNavigateToCaseStudy3}
+          >
             Read here
           </button>
         </div>
@@ -225,17 +237,19 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             <p className="text-gray-700 mb-4 flex-1">
               This research study explores how upskilling consulting teams in
               prompt engineering leads to improved operational efficiency,
-              faster client deliverables, and greater innovation. Key findings
-              highlight the importance of continuous learning and AI adoption in
-              the consulting sector.
+              faster client deliverables, and greater innovation. Key findings.
             </p>
-            <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
+            <button
+              className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
+              onClick={onNavigateToResearchStudy}
+            >
               Read here
             </button>
           </div>
         </div>
       </div>
     </div>
+    {/* Closing tag for the main container div */}
   </div>
 );
 export default UseCasesPage;

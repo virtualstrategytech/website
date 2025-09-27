@@ -216,42 +216,68 @@ export default function ProductsPage({
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productCards.map((card) => (
-              <div
-                key={card.title}
-                className={`group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100`}
-              >
+            {productCards.map((card) => {
+              let label: string | null = null;
+              if (
+                card.title === "Product Development" ||
+                card.title === "Upskilling Agents for Learning & Productivity"
+              ) {
+                label = "Beta Testing";
+              } else if (
+                card.title === "Support Ticket Management & Smart Scheduling"
+              ) {
+                label = "Coming Soon";
+              }
+              return (
                 <div
-                  className={`w-16 h-16 ${card.iconBg} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  key={card.title}
+                  className={`group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100 relative`}
                 >
-                  {card.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {card.title}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {card.description}
-                </p>
-                <ul className="space-y-2 mb-8">
-                  {card.bullets.map((b, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center text-sm text-gray-700"
+                  {/* Independent label for each card */}
+                  {label && (
+                    <span
+                      className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 text-white font-bold text-sm shadow-lg border-2 border-white z-20"
+                      style={{
+                        letterSpacing: "0.05em",
+                        fontSize: "1rem",
+                        fontWeight: 700,
+                      }}
                     >
-                      {card.bulletIcon}
-                      <span className="font-medium">{b}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={() => onNavigateToProductPage(card.page)}
-                  className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-semibold text-white ${card.btnBg} hover:from-blue-500 hover:to-indigo-500 shadow-md transition-all`}
-                >
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
-              </div>
-            ))}
+                      {label}
+                    </span>
+                  )}
+                  <div
+                    className={`w-16 h-16 ${card.iconBg} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    {card.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {card.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {card.description}
+                  </p>
+                  <ul className="space-y-2 mb-8">
+                    {card.bullets.map((b, i) => (
+                      <li
+                        key={i}
+                        className="flex items-center text-sm text-gray-700"
+                      >
+                        {card.bulletIcon}
+                        <span className="font-medium">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    onClick={() => onNavigateToProductPage(card.page)}
+                    className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-semibold text-white ${card.btnBg} hover:from-blue-500 hover:to-indigo-500 shadow-md transition-all`}
+                  >
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
