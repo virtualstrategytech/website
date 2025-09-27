@@ -1,6 +1,5 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
-import { SiteFooter } from "../components/SiteFooter";
 
 type CaseStudy1PageProps = {
   onBackToHome: () => void;
@@ -170,7 +169,6 @@ export const CaseStudy1Page = ({
           <li>4. Daugherty, P. R., & Wilson, H. J. (2023). Human + Machine.</li>
         </ul>
       </main>
-      <SiteFooter theme="dark" />
     </div>
   );
 };
