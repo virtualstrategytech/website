@@ -26,6 +26,8 @@ import { CaseStudy2Page } from "./pages/CaseStudy2Page";
 import { CaseStudy3Page } from "./pages/CaseStudy3Page";
 import { ResearchPageStudy1 } from "./pages/ResearchPageStudy1";
 import { UseCasesPage } from "./pages/UseCasesPage";
+import SiteFooter from "./components/SiteFooter";
+
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -51,6 +53,7 @@ function App() {
     // Configure your integrations here
     // hubspot: { apiKey: 'your-key', portalId: 'your-portal' },
     // calcom: { apiKey: 'your-key', userId: 'your-user-id' }
+    
   });
 
   const handleCTAClick = (source: string) => {
@@ -948,6 +951,19 @@ function App() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
+return (
+  <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
+    {/* ...all your main page content... */}
+    <SiteFooter />
+  </div>
+);
+
+
+
+
+
+
+
     </div>
   );
 }

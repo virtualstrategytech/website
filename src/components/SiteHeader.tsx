@@ -1,9 +1,17 @@
+import BrandBlock from "@/components/BrandBlock";
 import React from "react";
 
 type Props = {
   onDemoClick?: () => void;
   onNavigate?: (v: "home" | "solutions" | "products") => void;
 };
+
+<header className="...">
+  <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+    <BrandBlock />
+    {/* nav, etc. */}
+  </div>
+</header>;
 
 export default function SiteHeader({ onDemoClick, onNavigate }: Props) {
   return (
