@@ -939,8 +939,8 @@ function App() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-      {/* Footer - moved to absolute maximum distance with extreme spacing */}
-      <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-[40rem] pt-[20rem]">
+      {/* Footer - moved a bit lower, closer to the bottom */}
+      <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-24 pt-12">
         <SiteFooter theme="dark" />
       </div>
     </div>
