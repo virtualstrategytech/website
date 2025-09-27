@@ -28,7 +28,6 @@ import { ResearchPageStudy1 } from "./pages/ResearchPageStudy1";
 import { UseCasesPage } from "./pages/UseCasesPage";
 import SiteFooter from "./components/SiteFooter";
 
-
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -53,7 +52,6 @@ function App() {
     // Configure your integrations here
     // hubspot: { apiKey: 'your-key', portalId: 'your-portal' },
     // calcom: { apiKey: 'your-key', userId: 'your-user-id' }
-    
   });
 
   const handleCTAClick = (source: string) => {
@@ -357,15 +355,12 @@ function App() {
           )}
         </div>
       </header>
-
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
-
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl animate-pulse duration-4000"></div>
       <div className="absolute top-40 right-20 w-32 h-32 bg-indigo-500/20 rounded-full blur-xl animate-pulse delay-1000 duration-4000"></div>
       <div className="absolute bottom-40 left-20 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-2000 duration-4000"></div>
-
       {/* Hero Content */}
       <HeroVortex
         backgroundColor="black"
@@ -435,10 +430,8 @@ function App() {
           </div>
         </div>
       </HeroVortex>
-
       {/* Bottom Gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-
       {/* Value Proposition Section */}
       <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500">
         <div className="max-w-7xl mx-auto">
@@ -473,7 +466,6 @@ function App() {
           </div>
         </div>
       </div>
-
       {/* How It Works Section */}
       <div
         id="how-it-works"
@@ -484,7 +476,7 @@ function App() {
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               How It{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Works
               </span>
             </h2>
@@ -562,7 +554,6 @@ function App() {
           </div>
         </div>
       </div>
-
       {/* Upskilling Agents vs. Workforce Automation Section */}
       <div
         id="upskilling-comparison"
@@ -827,7 +818,6 @@ function App() {
           </div>
         </div>
       </div>
-
       {/* Testimonials Section */}
       <div
         id="testimonials"
@@ -846,7 +836,7 @@ function App() {
           {/* Trust Indicators */}
           <div className="mt-16 text-center animate-fade-in-up">
             <h3 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Trusted
               </span>{" "}
               <span className="text-gray-900">by industry leaders</span>
@@ -855,7 +845,6 @@ function App() {
           </div>
         </div>
       </div>
-
       {/* Final Call to Action Section */}
       <div
         id="cta"
@@ -873,7 +862,7 @@ function App() {
             {/* Headline */}
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
               Ready to{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Transform
               </span>{" "}
               Your Business?
@@ -945,25 +934,14 @@ function App() {
           </div>
         </div>
       </div>
-
       {/* Lead Capture Modal */}
       <LeadCaptureModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-return (
-  <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
-    {/* ...all your main page content... */}
-    <SiteFooter />
-  </div>
-);
-
-
-
-
-
-
-
+      <footer className="relative z-10 bg-transparent py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500 text-blue-100 mt-16">
+        <SiteFooter />
+      </footer>
     </div>
   );
 }

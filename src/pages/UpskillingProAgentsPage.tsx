@@ -88,13 +88,13 @@ export const UpskillingProAgentsPage: React.FC<UpskillingAgentsPageProps> = ({
           <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-200 text-lg font-medium mb-8 animate-fade-in">
             <Brain className="w-5 h-5 mr-2" />
             <span style={{ fontSize: "22px" }}>
-              AI-Powered Learning Companions
+              Prompt Engineering Coaching
             </span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            Empower Your Workforce with{" "}
+            Elevate Your Workforce with{" "}
             <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
               Upskilling Pro Agents
             </span>
@@ -518,7 +518,7 @@ export const UpskillingProAgentsPage: React.FC<UpskillingAgentsPageProps> = ({
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
               Ready to{" "}
               <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                Empower
+                Elevate
               </span>{" "}
               Your Team?
             </h2>
