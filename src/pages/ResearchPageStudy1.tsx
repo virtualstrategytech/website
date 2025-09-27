@@ -561,13 +561,13 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       <table className="min-w-full bg-blue-800 rounded-lg shadow my-8 text-white">
         <thead>
           <tr>
-            <th className="px-4 py-2 text-left font-bold bg-blue-800">
+            <th className="px-4 py-2 text-left font-bold bg-blue-600">
               Aspect
             </th>
-            <th className="px-4 py-2 text-left font-bold bg-blue-800">
+            <th className="px-4 py-2 text-left font-bold bg-blue-600">
               Benefits of Upskilling
             </th>
-            <th className="px-4 py-2 text-left font-bold bg-blue-800">
+            <th className="px-4 py-2 text-left font-bold bg-blue-600">
               Risks of Not Upskilling
             </th>
           </tr>
