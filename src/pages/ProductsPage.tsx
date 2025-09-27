@@ -8,7 +8,7 @@ import {
   Lightbulb,
   Brain,
 } from "lucide-react";
-
+import { SiteFooter } from "../components/SiteFooter";
 export type PageKey =
   | "home"
   | "product-development"
@@ -279,6 +279,9 @@ export default function ProductsPage({
               );
             })}
           </div>
+        </div>
+        <div className="text-gray-900">
+          <SiteFooter theme="light" />
         </div>
       </section>
     </div>
