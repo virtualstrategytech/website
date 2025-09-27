@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowLeft, ArrowRight, BookOpen, Search } from "lucide-react";
-
+import { SiteFooter } from "../components/SiteFooter";
 interface UseCasesPageProps {
   onBackToHome: () => void;
   onOpenModal: () => void;
@@ -248,7 +248,12 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
           </div>
         </div>
       </div>
+      {/* Footer - always at the bottom */}
+      <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-auto">
+        <SiteFooter theme="dark" />
+      </div>
     </div>
   </div>
 );
+
 export default UseCasesPage;
