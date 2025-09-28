@@ -17,7 +17,8 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
   onNavigateToCaseStudy3,
   onNavigateToResearchStudy,
 }) => (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans relative overflow-hidden scroll-smooth">
+  <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans relative overflow-hidden scroll-smooth">
+    <main className="flex-grow">
       {/* Header */}
       <header
         className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
@@ -63,7 +64,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
           </div>
         </div>
       </header>
-  
+
       {/* Hero Section */}
       <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
         <div className="max-w-6xl mx-auto text-center">
@@ -86,8 +87,9 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             </span>
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            See how these solutions drive results in real organizations. Dive into
-            case studies and research to discover these innovative strategies.
+            See how these solutions drive results in real organizations. Dive
+            into case studies and research to discover these innovative
+            strategies.
           </p>
           {/* Cards */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-12 mt-12">
@@ -129,7 +131,9 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Search className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Research</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Research
+              </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Explore our research, insights, and innovation in prompt
                 engineering and workforce elevation.
@@ -168,10 +172,10 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               Strategic Intelligence Acceleration in a Mid-Tier Consulting Firm
             </h3>
             <p className="text-gray-700 mb-4 flex-1">
-              A UK-based market research and business strategy firm faced growing
-              pressure to deliver faster, deeper insights to clients without
-              scaling headcount or increasing operational overhead extended its
-              strategic reach through automation agents.
+              A UK-based market research and business strategy firm faced
+              growing pressure to deliver faster, deeper insights to clients
+              without scaling headcount or increasing operational overhead
+              extended its strategic reach through automation agents.
             </p>
             <button
               className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
@@ -188,8 +192,8 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             </h3>
             <p className="text-gray-700 mb-4 flex-1">
               A multinational advisory firm sought to transform its internal HR
-              strategy consulting function into a digital-first model and embedded
-              co-creators in the firm's HR strategy playbook.
+              strategy consulting function into a digital-first model and
+              embedded co-creators in the firm's HR strategy playbook.
             </p>
             <button
               className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
@@ -207,8 +211,8 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               Explore how a consortium of boutique consulting firms specializing
               in financial services advisory sought scalable ways to offer
               high-impact insights to clients in wealth management, fintech, and
-              regulatory strategy and leveled up their competitiveness with larger
-              firms.
+              regulatory strategy and leveled up their competitiveness with
+              larger firms.
             </p>
             <button
               className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
@@ -237,7 +241,8 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               <p className="text-gray-700 mb-4 flex-1">
                 This research study explores how upskilling consulting teams in
                 prompt engineering leads to improved operational efficiency,
-                faster client deliverables, and greater innovation. Key findings.
+                faster client deliverables, and greater innovation. Key
+                findings.
               </p>
               <button
                 className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
@@ -248,12 +253,15 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             </div>
           </div>
         </div>
-        {/* Footer - always at the bottom */}
-        <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-auto">
+      </div>
+      {/* Footer - always at the bottom */}
+      <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-auto">
+        <div className="mt-auto">
           <SiteFooter theme="dark" />
         </div>
       </div>
-    </div>
-  );
-  
-  export default UseCasesPage;
+    </main>
+  </div>
+);
+
+export default UseCasesPage;
