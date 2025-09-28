@@ -39,13 +39,13 @@ const productCards: ProductCard[] = [
   {
     icon: <Users className="w-8 h-8 text-white" />,
     iconBg: "bg-gradient-to-br from-emerald-500 to-emerald-600",
-    title: "Product Development",
+    title: "Lead Capture and CRM Integration",
     description:
-      "Build scalable products with automation where it makes sense to grow your business. Improve the creativity of your workforce by making learning on-the-job fun and productive.",
+      "Revolutionize your sales process with intelligent lead capture and seamless CRM workflows that never let you miss a sales opportunity.",
     bullets: [
-      "Scalable Solutions",
-      "Automation where Needed",
-      "Enhanced Creativity",
+      "Fast Lead Responses",
+      "Seamless CRM Integration",
+      "Higher Conversions",
     ],
     bulletIcon: <Users className="w-4 h-4 text-emerald-500 mr-2" />,
     href: "#product-development",
@@ -217,9 +217,11 @@ export default function ProductsPage({
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {productCards.map((card) => {
+              // Set label independently for each card
               let label: string | null = null;
-              if (
-                card.title === "Product Development" ||
+              if (card.title === "Lead Capture and CRM Integration") {
+                label = "Coming Soon";
+              } else if (
                 card.title === "Upskilling Agents for Learning & Productivity"
               ) {
                 label = "Beta Launch";

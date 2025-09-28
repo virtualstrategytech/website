@@ -312,7 +312,7 @@ export const UpskillingProAgentsPage: React.FC<UpskillingAgentsPageProps> = ({
                 <span className="font-semibold">
                   Deterministic agent that is fully controlled:
                 </span>{" "}
-                Predictable, reliable, and transparent agentic flow.
+                Backed by proprietary knowledgebase and LLM logic.
               </span>
             </li>
             {/* New bullet: Obtain step-by-step clarity from strategy to prompt */}

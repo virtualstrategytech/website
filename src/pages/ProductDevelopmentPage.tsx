@@ -94,17 +94,17 @@ export const ProductDevelopmentPage: React.FC<ProductDevelopmentPageProps> = ({
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            Transform Your Sales with{" "}
+            Transform Your Workforce with{" "}
             <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-green-400 bg-clip-text text-transparent">
-              AI Lead Capture & CRM Integration
+              AI Lead Capture and CRM Integration
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-emerald-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            Revolutionize your sales process with intelligent lead capture and
-            seamless CRM workflows that never miss an opportunity and convert
-            prospects into loyal customers.
+            Revolutionize your workforce with intelligent and on-demand coaching
+            that accelerates skill development and boosts productivity. Don't
+            miss the chance to develop this exciting product.
           </p>
 
           {/* CTA Button */}
