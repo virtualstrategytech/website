@@ -222,7 +222,7 @@ export default function ProductsPage({
                 card.title === "Product Development" ||
                 card.title === "Upskilling Agents for Learning & Productivity"
               ) {
-                label = "Beta Testing";
+                label = "Beta Launch";
               } else if (
                 card.title === "Support Ticket Management & Smart Scheduling"
               ) {
