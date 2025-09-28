@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   ArrowRight,
   Users,
@@ -7,21 +6,27 @@ import {
   TrendingUp,
   Target,
   Lightbulb,
-  BarChart3,
   Settings,
   Rocket,
-  RefreshCw,
   Menu,
   X,
+  Brain,
 } from "lucide-react";
 import { LeadCaptureModal } from "./components/LeadCaptureModal";
 import { ImageBanner } from "./components/ImageBanner";
-import { AiLeadCapturePage } from "./pages/AiLeadCapturePage";
+import { ProductDevelopmentPage } from "./pages/ProductDevelopmentPage";
 import { useLeadTracking } from "./hooks/useLeadTracking";
 import HeroVortex from "./components/HeroVortex";
-import { UpskillingAgentsPage } from "./pages/UpskillingAgentsPage";
-import { SupportManagementPage } from "./pages/SupportManagementPage";
+import { UpskillingProAgentsPage } from "./pages/UpskillingProAgentsPage";
+import { SmartTicketSchedulingPage } from "./pages/SmartTicketSchedulingPage";
 import { SolutionsPage } from "./pages/SolutionsPage";
+import ProductsPage from "./pages/ProductsPage";
+import { CaseStudy1Page } from "./pages/CaseStudy1Page";
+import { CaseStudy2Page } from "./pages/CaseStudy2Page";
+import { CaseStudy3Page } from "./pages/CaseStudy3Page";
+import { ResearchPageStudy1 } from "./pages/ResearchPageStudy1";
+import { UseCasesPage } from "./pages/UseCasesPage";
+import { SiteFooter } from "./components/SiteFooter";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,9 +35,19 @@ function App() {
     | "home"
     | "ai-lead-capture"
     | "upskilling-agents"
-    | "support-management"
+    | "support-ticket-management"
     | "solutions"
+    | "products"
+    | "product-development"
+    | "use-cases"
+    | "case-studies"
+    | "research"
+    | "case-study-1"
+    | "case-study-2"
+    | "case-study-3"
+    | "research-study-1"
   >("home");
+
   const { trackLead } = useLeadTracking({
     // Configure your integrations here
     // hubspot: { apiKey: 'your-key', portalId: 'your-portal' },
@@ -52,20 +67,30 @@ function App() {
   const handleNavigateToPage = (
     page:
       | "home"
-      | "ai-lead-capture"
+      | "product-development"
       | "upskilling-agents"
-      | "support-management"
+      | "support-ticket-management"
       | "solutions"
+      | "products"
+      | "use-cases"
+      | "case-studies"
+      | "case-study-1"
+      | "case-study-2"
+      | "case-study-3"
+      | "research"
+      | "research-study-1"
   ) => {
     setCurrentPage(page);
     window.scrollTo(0, 0);
   };
 
+  // Navigation handlers
+
   // Render different pages based on current page state
-  if (currentPage === "ai-lead-capture") {
+  if (currentPage === "product-development") {
     return (
       <>
-        <AiLeadCapturePage
+        <ProductDevelopmentPage
           onBackToHome={() => handleNavigateToPage("home")}
           onOpenModal={() => setIsModalOpen(true)}
         />
@@ -80,7 +105,7 @@ function App() {
   if (currentPage === "upskilling-agents") {
     return (
       <>
-        <UpskillingAgentsPage
+        <UpskillingProAgentsPage
           onBackToHome={() => handleNavigateToPage("home")}
           onOpenModal={() => setIsModalOpen(true)}
         />
@@ -92,10 +117,34 @@ function App() {
     );
   }
 
-  if (currentPage === "support-management") {
+  if (currentPage === "research") {
+    return (
+      <ResearchPageStudy1
+        onBackToHome={() => handleNavigateToPage("use-cases")}
+        onOpenModal={() => setIsModalOpen(true)}
+      />
+    );
+  }
+
+  if (currentPage === "use-cases") {
+    return (
+      <UseCasesPage
+        onBackToHome={() => handleNavigateToPage("home")}
+        onOpenModal={() => setIsModalOpen(true)}
+        onNavigateToCaseStudy1={() => handleNavigateToPage("case-study-1")}
+        onNavigateToCaseStudy2={() => handleNavigateToPage("case-study-2")}
+        onNavigateToCaseStudy3={() => handleNavigateToPage("case-study-3")}
+        onNavigateToResearchStudy={() =>
+          handleNavigateToPage("research-study-1")
+        }
+      />
+    );
+  }
+
+  if (currentPage === "support-ticket-management") {
     return (
       <>
-        <SupportManagementPage
+        <SmartTicketSchedulingPage
           onBackToHome={() => handleNavigateToPage("home")}
           onOpenModal={() => setIsModalOpen(true)}
         />
@@ -109,17 +158,65 @@ function App() {
 
   if (currentPage === "solutions") {
     return (
+      <SolutionsPage
+        onBackToHome={() => handleNavigateToPage("home")}
+        onOpenModal={() => setIsModalOpen(true)}
+        onNavigateToProducts={() => handleNavigateToPage("products")}
+      />
+    );
+  }
+
+  if (window.location.pathname === "/smart-ticket-scheduling") {
+    return (
+      <SmartTicketSchedulingPage
+        onBackToHome={() => handleNavigateToPage("home")}
+        onOpenModal={() => setIsModalOpen(true)}
+      />
+    );
+  }
+
+  if (currentPage === "products") {
+    return (
       <>
-        <SolutionsPage
+        <ProductsPage
           onBackToHome={() => handleNavigateToPage("home")}
           onOpenModal={() => setIsModalOpen(true)}
+          onNavigateToProductPage={handleNavigateToPage}
+        />
+        <LeadCaptureModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
         />
       </>
     );
   }
 
+  if (currentPage === "case-study-1") {
+    return (
+      <CaseStudy1Page onBackToHome={() => handleNavigateToPage("use-cases")} />
+    );
+  }
+  if (currentPage === "case-study-2") {
+    return (
+      <CaseStudy2Page onBackToHome={() => handleNavigateToPage("use-cases")} />
+    );
+  }
+  if (currentPage === "case-study-3") {
+    return (
+      <CaseStudy3Page onBackToHome={() => handleNavigateToPage("use-cases")} />
+    );
+  }
+  if (currentPage === "research-study-1") {
+    return (
+      <ResearchPageStudy1
+        onBackToHome={() => handleNavigateToPage("use-cases")}
+        onOpenModal={() => setIsModalOpen(true)}
+      />
+    );
+  }
+
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
       {/* Header/Navigation */}
       <header
         className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
@@ -131,11 +228,11 @@ function App() {
             style={{ height: "calc(6rem * 1.3)" }}
           >
             {/* Logo */}
-            <div className="flex items-center">
+            <div className="flex items-start">
               <img
                 src="/Logo/VirtualStrategyTechLogoSVG.svg"
                 alt="Virtual Strategy Tech - Productivity Reimagined"
-                className="h-36 w-auto object-contain"
+                className="h-32 w-auto object-contain -mt-1"
               />
             </div>
 
@@ -148,19 +245,26 @@ function App() {
               >
                 About
               </a>
-              <a
-                href="#services"
+              <button
+                onClick={() => handleNavigateToPage("products")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
-                Services
-              </a>
+                Products
+              </button>
               <button
                 onClick={() => handleNavigateToPage("solutions")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
                 Solutions
+              </button>
+              <button
+                onClick={() => handleNavigateToPage("use-cases")}
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                style={{ fontSize: "22px" }}
+              >
+                Use Cases
               </button>
               <button
                 onClick={() => handleCTAClick("header-cta")}
@@ -176,7 +280,6 @@ function App() {
                 Demo
               </button>
             </nav>
-
             {/* Mobile menu button */}
             <div className="md:hidden">
               <button
@@ -210,27 +313,25 @@ function App() {
                 >
                   About
                 </a>
-                <a
-                  href="#services"
-                  onClick={(e) => {
-                    e.preventDefault();
+                <button
+                  onClick={() => {
                     setIsMobileMenuOpen(false);
-                    const section = document.getElementById("services");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
+                    handleNavigateToPage("products");
                   }}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-left"
                 >
-                  Services
-                </a>
-                <a
-                  href="#case-studies"
+                  Products
+                </button>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    handleNavigateToPage("use-cases");
+                  }}
                   className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                   style={{ fontSize: "18px" }}
                 >
                   Case Studies
-                </a>
+                </button>
                 <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
@@ -254,15 +355,12 @@ function App() {
           )}
         </div>
       </header>
-
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
-
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl animate-pulse duration-4000"></div>
       <div className="absolute top-40 right-20 w-32 h-32 bg-indigo-500/20 rounded-full blur-xl animate-pulse delay-1000 duration-4000"></div>
       <div className="absolute bottom-40 left-20 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-2000 duration-4000"></div>
-
       {/* Hero Content */}
       <HeroVortex
         backgroundColor="black"
@@ -272,37 +370,46 @@ function App() {
         className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-200 text-lg font-medium mb-8 animate-fade-in">
+          {/* Badge - Consistent with SolutionsPage */}
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-900 via-emerald-700 to-indigo-900 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <Lightbulb className="w-5 h-5 mr-2" />
-            <span style={{ fontSize: "22px" }}>
-              Strategic AI Prompt Engineering
+            <Brain className="w-5 h-5 mr-2 text-emerald-300" />
+            <span
+              style={{
+                fontSize: "22px",
+                fontWeight: 600,
+                letterSpacing: "0.02em",
+              }}
+            >
+              Strategic Prompt Engineering
             </span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             From Strategy to Prompt: Teach Teams{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
               Prompt Engineering
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            Transform your strategic challenges with prompt engineering coaching
-            and optional dynamic quizzes - for prompt upskilling that sticks.
+            Contextual microlearning for on-the-job prompt engineering that
+            sticks
           </p>
 
-          {/* CTA Button */}
+          {/* CTA Button - Consistent with SolutionsPage/Home style */}
           <div className="mb-16 animate-slide-up delay-400">
             <button
               onClick={() => handleCTAClick("hero-cta")}
-              className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:from-blue-500 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50"
+              className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
-              <span className="relative z-10">Demo Prompt Lesson</span>
-              <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <span className="relative z-10 tracking-wide drop-shadow">
+                Demo Prompt Lesson
+              </span>
+              <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </button>
           </div>
 
@@ -314,7 +421,7 @@ function App() {
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Lightbulb className="w-6 h-6 text-indigo-400" />
-              <span className="text-xl font-medium">AI Mastery</span>
+              <span className="text-xl font-medium">Prompt Mastery</span>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Rocket className="w-6 h-6 text-purple-400" />
@@ -323,135 +430,42 @@ function App() {
           </div>
         </div>
       </HeroVortex>
-
       {/* Bottom Gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-
       {/* Value Proposition Section */}
       <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Why{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Upskill Pro
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
+                Upskilling Pro
               </span>
-              ?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We deliver comprehensive strategy solutions that transform your
-              business through workforce optimization, strategic innovation,
-              process engineering for quantifiable results.
+            <p className="text-2xl text-gray-800 max-w-5xl mx-auto">
+              An automation agency where strategy meets prompt engineering:
+              <br />
+              <span className="text-2xl text-gray-800 max-w-5xl mx-auto">
+                elevating the work rather than replacing the workers.
+              </span>
             </p>
           </div>
 
           {/* Value Proposition Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-stagger-in">
-            {/* Strategy Consulting */}
-            <div className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Strategy Consulting
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Align your business objectives with cutting-edge automation
-                strategies that drive sustainable growth and competitive
-                advantage. Design comprehensive roadmaps and strategic
-                frameworks to drive competitive advantage and long-term value
-                creation.
-              </p>
-            </div>
-
-            {/* Innovation Management */}
-            <div className="group bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl border border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Lightbulb className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Innovation Management
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Foster a culture of continuous innovation that empowers your
-                team to embrace new technologies and creative problem-solving.
-                Transform ideas into market-ready solutions with our innovation
-                methodology.
-              </p>
-            </div>
-
-            {/* Analytics & Insights */}
-            <div className="group bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <BarChart3 className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Analytics & Insights
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Leverage data-driven insights to make informed decisions and
-                measure the real impact of your automation initiatives.
-                Data-driven decision making powered by advanced analytics,
-                insightful easy to understand dashboard, and market
-                intelligence.
-              </p>
-            </div>
-
-            {/* Process Optimization */}
-            <div className="group bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border border-emerald-100 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Settings className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Process Optimization
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Streamline your workflows with intelligent automation to
-                eliminate bottlenecks, maximize workforce productivity and
-                optimize operational efficiency. Enhance operational excellence
-                through workflow analysis, and continuous improvement
-                methodologies.
-              </p>
-            </div>
-
-            {/* Product Development */}
-            <div className="group bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-2xl border border-orange-100 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Rocket className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Product Development
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Build scalable, future-ready products with automation-first
-                design principles that grow with your business needs. Create new
-                products or improve existing ones to anticipate client's needs,
-                improve the creativity of your workforce by making learning on
-                the job more fun and challenging whilst driving business growth.
-              </p>
-            </div>
-
-            {/* Change Management */}
-            <div className="group bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-2xl border border-cyan-100 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <RefreshCw className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Change Management
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Ensure successful adoption of new automation and integration
-                technologies through comprehensive training and support that
-                empowers your workforce. Guide organizational transformation
-                through strategic leadership, employee engagement, and cultural
-                alignment.
-              </p>
-            </div>
+          <div className="flex justify-center my-12">
+            <button
+              onClick={() => handleNavigateToPage("products")}
+              className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
+            >
+              <span className="relative z-10 tracking-wide drop-shadow">
+                Discover Our Products
+              </span>
+              <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            </button>
           </div>
         </div>
       </div>
-
       {/* How It Works Section */}
       <div
         id="how-it-works"
@@ -462,12 +476,13 @@ function App() {
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               How It{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Works
               </span>
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Get started with our AI-powered solutions in three simple steps
+              Get started with our prompt engineering solutions in three simple
+              steps
             </p>
           </div>
 
@@ -539,7 +554,6 @@ function App() {
           </div>
         </div>
       </div>
-
       {/* Upskilling Agents vs. Workforce Automation Section */}
       <div
         id="upskilling-comparison"
@@ -795,7 +809,7 @@ function App() {
 
               <button
                 onClick={() => handleCTAClick("comparison-cta")}
-                className="group bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl"
+                className="group bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl"
               >
                 Schedule Your Free Consultation
                 <ArrowRight className="w-5 h-5 ml-2 inline transition-transform duration-500 group-hover:translate-x-1" />
@@ -804,14 +818,13 @@ function App() {
           </div>
         </div>
       </div>
-
       {/* Testimonials Section */}
       <div
         id="testimonials"
         className="relative z-10 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500 overflow-hidden"
       >
         {/* Enhanced Background Elements */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.4%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.4%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM36 6V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
 
         {/* Floating Accent Elements */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-200/30 rounded-full blur-2xl animate-pulse duration-6000"></div>
@@ -823,7 +836,7 @@ function App() {
           {/* Trust Indicators */}
           <div className="mt-16 text-center animate-fade-in-up">
             <h3 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight leading-tight">
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Trusted
               </span>{" "}
               <span className="text-gray-900">by industry leaders</span>
@@ -832,158 +845,6 @@ function App() {
           </div>
         </div>
       </div>
-
-      {/* Services Overview Section */}
-      <div
-        id="services"
-        className="relative z-10 bg-gradient-to-br from-gray-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500"
-      >
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Our{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Services
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive solutions designed to empower your workforce and
-              provide strategic counsel that transforms your business operations
-              and sustains your growth in the new digital era.
-            </p>
-          </div>
-
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-stagger-in">
-            {/* AI Lead Capture & CRM Integration */}
-            <div
-              id="ai-lead-capture"
-              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                AI Lead Capture & CRM Integration
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Revolutionize your sales process with intelligent lead capture
-                and seamless CRM workflows that never miss an opportunity.
-              </p>
-
-              {/* Key Benefits */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Fast Lead Responses</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Seamless CRM Integration</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Higher Conversions</span>
-                </div>
-              </div>
-
-              <button
-                onClick={() => handleNavigateToPage("ai-lead-capture")}
-                className="group/btn w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-emerald-500 hover:to-teal-500 transition-all duration-500 flex items-center justify-center hover:shadow-lg transform hover:scale-105"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-500 group-hover/btn:translate-x-1" />
-              </button>
-            </div>
-
-            {/* Upskilling Agents for Learning & Productivity */}
-            <div
-              id="upskilling-agents"
-              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <TrendingUp className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Upskilling Agents for Learning & Productivity
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Empower your workforce with AI-driven learning companions that
-                accelerate skill development and boost productivity.
-              </p>
-
-              {/* Key Benefits */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Personalized Learning</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Productivity Gains</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                  <span className="font-medium">
-                    Instant Knowledge Retrieval
-                  </span>
-                </div>
-              </div>
-
-              <button
-                onClick={() => handleNavigateToPage("upskilling-agents")}
-                className="group/btn w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-500 flex items-center justify-center hover:shadow-lg transform hover:scale-105"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-500 group-hover/btn:translate-x-1" />
-              </button>
-            </div>
-
-            {/* Support Ticket Management & Smart Scheduling */}
-            <div
-              id="support-management"
-              className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Settings className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Support Ticket Management & Smart Scheduling
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Transform customer support with intelligent ticket routing and
-                automated scheduling that delights customers.
-              </p>
-
-              {/* Key Benefits */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Improved Efficiency</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                  <span className="font-medium">24/7 Availability</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-700">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                  <span className="font-medium">Effortless Scheduling</span>
-                </div>
-              </div>
-
-              <button
-                onClick={() => handleNavigateToPage("support-management")}
-                className="group/btn w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 px-6 rounded-xl font-semibold hover:from-purple-500 hover:to-pink-500 transition-all duration-500 flex items-center justify-center hover:shadow-lg transform hover:scale-105"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-500 group-hover/btn:translate-x-1" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Final Call to Action Section */}
       <div
         id="cta"
@@ -1001,7 +862,7 @@ function App() {
             {/* Headline */}
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
               Ready to{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Transform
               </span>{" "}
               Your Business?
@@ -1028,11 +889,11 @@ function App() {
               {/* Primary CTA - Schedule Consultation */}
               <button
                 onClick={() => handleCTAClick("final-cta-primary")}
-                className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50 min-w-[280px]"
+                className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50 min-w-[280px]"
               >
                 <span className="relative z-10">Demo Prompt Lesson</span>
                 <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:translate-x-1" />
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
               </button>
 
               {/* Secondary CTA - Request Solution */}
@@ -1073,13 +934,17 @@ function App() {
           </div>
         </div>
       </div>
-
       {/* Lead Capture Modal */}
       <LeadCaptureModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
+      {/* Footer - always at the bottom */}
+      <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-auto">
+        <SiteFooter theme="dark" />
+      </div>
     </div>
   );
 }
+
 export default App;
