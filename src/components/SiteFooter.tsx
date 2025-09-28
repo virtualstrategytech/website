@@ -4,10 +4,15 @@ import BrandBlock from "./BrandBlock";
 
 interface SiteFooterProps {
   theme?: "light" | "dark";
+  grayLinks?: boolean; // NEW PROP
 }
 
-export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
+export const SiteFooter: React.FC<SiteFooterProps> = ({
+  theme = "dark",
+  grayLinks = false,
+}) => {
   const isLight = theme === "light";
+  const useGrayLinks = grayLinks || isLight;
 
   return (
     <footer className="bg-transparent w-full pt-16 pb-4 px-4">
@@ -21,9 +26,9 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
             <div className="flex flex-wrap items-center justify-center gap-6 text-base">
               <a
                 href="/contact"
-                className={`$
-                  isLight
-                    ? "text-gray-600 hover:text-gray-900"
+                className={`${
+                  useGrayLinks
+                    ? "text-gray-400 hover:text-gray-900"
                     : "text-blue-200 hover:text-white"
                 } transition-colors duration-300 font-medium`}
               >
@@ -31,9 +36,9 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
               </a>
               <a
                 href="/privacy-policy"
-                className={`$
-                  isLight
-                    ? "text-gray-600 hover:text-gray-900"
+                className={`${
+                  useGrayLinks
+                    ? "text-gray-400 hover:text-gray-900"
                     : "text-blue-200 hover:text-white"
                 } transition-colors duration-300 font-medium`}
               >
@@ -41,9 +46,9 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
               </a>
               <a
                 href="/terms"
-                className={`$
-                  isLight
-                    ? "text-gray-600 hover:text-gray-900"
+                className={`${
+                  useGrayLinks
+                    ? "text-gray-400 hover:text-gray-900"
                     : "text-blue-200 hover:text-white"
                 } transition-colors duration-300 font-medium`}
               >
@@ -56,9 +61,9 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
                 href="https://www.linkedin.com/company/virtual-strategy-tech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center gap-2 $
-                  isLight
-                    ? "text-gray-600 hover:text-gray-900"
+                className={`flex items-center gap-2 ${
+                  useGrayLinks
+                    ? "text-gray-400 hover:text-gray-900"
                     : "text-blue-200 hover:text-white"
                 } transition-colors duration-300 font-medium text-base`}
                 aria-label="Follow us on LinkedIn"
@@ -70,7 +75,6 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ theme = "dark" }) => {
           </div>
         </div>
 
-        {/* Compact and professionally spaced copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mt-2 mb-0">
           <span
             className={`text-sm ${
