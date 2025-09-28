@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
+import { SiteFooter } from "../components/SiteFooter";
 
 type CaseStudy1PageProps = {
   onBackToHome: () => void;
@@ -11,7 +12,7 @@ export const CaseStudy1Page = ({
   onOpenModal,
 }: CaseStudy1PageProps) => {
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
+    <div className="min-h-screen flex flex-col font-sans bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
       {/* Header */}
       <header
         className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
@@ -59,7 +60,7 @@ export const CaseStudy1Page = ({
           </div>
         </div>
       </header>
-      <main className="max-w-4xl mx-auto py-20 px-4 text-left">
+      <main className="flex-grow max-w-4xl mx-auto py-20 px-4 text-left">
         <h1 className="text-4xl font-bold text-blue-400 mb-8">
           Strategic Intelligence Acceleration in a Mid-Tier Consulting Firm
         </h1>
@@ -169,6 +170,9 @@ export const CaseStudy1Page = ({
           <li>4. Daugherty, P. R., & Wilson, H. J. (2023). Human + Machine.</li>
         </ul>
       </main>
+      <div className="mt-auto">
+        <SiteFooter theme="dark" />
+      </div>
     </div>
   );
 };

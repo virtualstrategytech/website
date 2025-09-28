@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
+import { SiteFooter } from "../components/SiteFooter";
 
 type CaseStudy3PageProps = {
   onBackToHome: () => void;
@@ -10,7 +11,7 @@ export const CaseStudy3Page = ({
   onBackToHome,
   onOpenModal,
 }: CaseStudy3PageProps) => (
-  <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
+  <div className="min-h-screen flex flex-col font-sans bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
     {/* Header */}
     <header
       className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
@@ -143,5 +144,8 @@ export const CaseStudy3Page = ({
         </li>
       </ul>
     </main>
+    <div className="mt-auto">
+      <SiteFooter theme="dark" />
+    </div>
   </div>
 );
