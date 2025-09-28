@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ArrowLeft,
   Users,
@@ -18,17 +18,19 @@ import {
   Lightbulb,
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
+import { LeadCaptureModal } from "../components/LeadCaptureModal";
 interface SolutionsPageProps {
   onBackToHome: () => void;
-  onOpenModal: () => void;
   onNavigateToProducts: () => void;
 }
 
 export const SolutionsPage: React.FC<SolutionsPageProps> = ({
   onBackToHome,
-  onOpenModal,
   onNavigateToProducts,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
   return (
     <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
       {/* Header with Back Button */}
@@ -61,7 +63,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
                 Back to Home
               </button>
               <button
-                onClick={onOpenModal}
+                onClick={handleOpenModal}
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
                 style={{
                   fontSize: "26px",
@@ -439,7 +441,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
               <button
-                onClick={onOpenModal}
+                onClick={handleOpenModal}
                 className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-emerald-600 to-blue-600 rounded-xl shadow-2xl hover:shadow-emerald-500/25 transition-all duration-500 transform hover:scale-105 hover:from-emerald-500 hover:to-blue-500 focus:outline-none focus:ring-4 focus:ring-emerald-500/50 min-w-[280px]"
               >
                 <span className="relative z-10">
@@ -485,6 +487,8 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
           <SiteFooter theme="light" />
         </div>
       </div>
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };
