@@ -146,7 +146,7 @@ export const UpskillingProAgentsPage: React.FC<UpskillingAgentsPageProps> = ({
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Powerful{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Features
               </span>
             </h2>
@@ -258,7 +258,7 @@ export const UpskillingProAgentsPage: React.FC<UpskillingAgentsPageProps> = ({
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               How It{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Works
               </span>
             </h2>
@@ -358,7 +358,7 @@ export const UpskillingProAgentsPage: React.FC<UpskillingAgentsPageProps> = ({
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Measurable{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Results
               </span>
             </h2>
@@ -518,7 +518,7 @@ export const UpskillingProAgentsPage: React.FC<UpskillingAgentsPageProps> = ({
           <div className="relative z-10 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
               Ready to{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Elevate
               </span>{" "}
               Your Team?
