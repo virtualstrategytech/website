@@ -489,6 +489,10 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
       </div>
       {/* Lead Capture Modal */}
       <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <LightVortex
+        className="absolute right-8 top-24 opacity-100 pointer-events-none z-10"
+        size={160}
+      />
     </div>
   );
 };

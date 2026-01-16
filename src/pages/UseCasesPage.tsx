@@ -76,6 +76,10 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
       <div className="absolute top-20 left-10 w-20 h-20 bg-emerald-500/20 rounded-full blur-xl animate-pulse duration-4000"></div>
       <div className="absolute top-40 right-20 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-pulse delay-1000 duration-4000"></div>
       <div className="absolute bottom-40 left-20 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-2000 duration-4000"></div>
+      <LightVortex
+        className="absolute right-12 top-28 opacity-100 pointer-events-none z-10"
+        size={160}
+      />
 
       {/* Hero Section (Use Cases content kept intact) */}
       <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
@@ -316,7 +320,7 @@ export const LightVortex: React.FC<LightVortexProps> = ({
             cy="50"
             r="40"
             stroke="#60a5fa"
-            strokeOpacity="0.06"
+            strokeOpacity="0.12"
             strokeWidth="6"
           >
             <animateTransform
@@ -334,7 +338,7 @@ export const LightVortex: React.FC<LightVortexProps> = ({
             cy="50"
             r="30"
             stroke="#34d399"
-            strokeOpacity="0.05"
+            strokeOpacity="0.09"
             strokeWidth="4"
           >
             <animateTransform
@@ -352,7 +356,7 @@ export const LightVortex: React.FC<LightVortexProps> = ({
             cy="50"
             r="20"
             stroke="#a78bfa"
-            strokeOpacity="0.04"
+            strokeOpacity="0.08"
             strokeWidth="3"
           >
             <animateTransform
