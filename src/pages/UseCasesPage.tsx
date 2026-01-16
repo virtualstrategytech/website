@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ArrowLeft, ArrowRight, BookOpen, Search } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
 import { LeadCaptureModal } from "../components/LeadCaptureModal";
+
 interface UseCasesPageProps {
   onBackToHome: () => void;
   onNavigateToCaseStudy1: () => void;
@@ -9,6 +10,7 @@ interface UseCasesPageProps {
   onNavigateToCaseStudy3: () => void;
   onNavigateToResearchStudy: () => void;
 }
+
 export const UseCasesPage: React.FC<UseCasesPageProps> = ({
   onBackToHome,
   onNavigateToCaseStudy1,
@@ -19,157 +21,168 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
-  return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans relative overflow-hidden scroll-smooth">
-      <main className="flex-grow">
-        {/* Header */}
-        <header
-          className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
-          style={{ height: "calc(6rem * 1.3)" }}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div
-              className="flex justify-between items-center"
-              style={{ height: "calc(6rem * 1.3)" }}
-            >
-              {/* Logo */}
-              <div className="flex items-start">
-                <img
-                  src="/Logo/VirtualStrategyTechLogoSVG.svg"
-                  alt="Virtual Strategy Tech - Productivity Reimagined"
-                  className="h-32 w-auto object-contain -mt-1"
-                />
-              </div>
-              {/* Navigation */}
-              <div className="flex items-center space-x-6">
-                <button
-                  onClick={onBackToHome}
-                  className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                  style={{ fontSize: "22px" }}
-                >
-                  <ArrowLeft className="w-5 h-5 mr-2" />
-                  Back to Home
-                </button>
-                <button
-                  onClick={handleOpenModal}
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
-                  style={{
-                    fontSize: "26px",
-                    paddingLeft: "1.5rem",
-                    paddingRight: "1.5rem",
-                    paddingTop: "0.75rem",
-                    paddingBottom: "0.75rem",
-                  }}
-                >
-                  Demo
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
 
-        {/* Hero Section */}
-        <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
-          <div className="max-w-6xl mx-auto text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
-              <BookOpen className="w-5 h-5 mr-2" />
-              <span
+  return (
+    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
+      {/* Header with Back Button (adapted from Solutions layout) */}
+      <header
+        className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
+        style={{ height: "calc(6rem * 1.3)" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className="flex justify-between items-center"
+            style={{ height: "calc(6rem * 1.3)" }}
+          >
+            {/* Logo */}
+            <div className="flex items-start">
+              <img
+                src="/Logo/VirtualStrategyTechLogoSVG.svg"
+                alt="Virtual Strategy Tech - Productivity Reimagined"
+                className="h-32 w-auto object-contain -mt-1"
+              />
+            </div>
+
+            {/* Navigation */}
+            <div className="flex items-center space-x-6">
+              <button
+                onClick={onBackToHome}
+                className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                style={{ fontSize: "22px" }}
+              >
+                <ArrowLeft className="w-5 h-5 mr-2" />
+                Back to Home
+              </button>
+              <button
+                onClick={handleOpenModal}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
                 style={{
-                  fontSize: "22px",
-                  fontWeight: 600,
-                  letterSpacing: "0.02em",
+                  fontSize: "26px",
+                  paddingLeft: "1.5rem",
+                  paddingRight: "1.5rem",
+                  paddingTop: "0.75rem",
+                  paddingBottom: "0.75rem",
                 }}
               >
-                Use Cases
-              </span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-              Explore Real-World{" "}
-              <span className="bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
-                Use Cases
-              </span>
-            </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-              See how these solutions drive results in real organizations. Dive
-              into case studies and research to discover these innovative
-              strategies.
-            </p>
-            {/* Cards */}
-            <div className="flex flex-col md:flex-row justify-center items-center gap-12 mt-12">
-              {/* Case Studies Card */}
-              <div
-                className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 cursor-pointer"
-                onClick={onNavigateToCaseStudy1}
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <BookOpen className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Case Studies
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  See how some clients achieved measurable results and
-                  transformed their business with similar solutions.
-                </p>
-                <button
-                  className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-md transition-all"
-                  onClick={() => {
-                    const section = document.getElementById(
-                      "detailed-case-studies"
-                    );
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                >
-                  View Case Studies
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
-              </div>
-              {/* Research Card */}
-              <div
-                className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 cursor-pointer"
-                onClick={onNavigateToResearchStudy}
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Search className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Research
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Explore our research, insights, and innovation in prompt
-                  engineering and workforce elevation.
-                </p>
-                <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
-                  View Research
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
-              </div>
+                Demo
+              </button>
             </div>
           </div>
         </div>
-        {/* This closes the cards container */}
-        {/* Summary Case Studies Section */}
-        <div className="max-w-5xl mx-auto py-6 px-4 text-left">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Case Study Summaries
-          </h2>
-          <div
-            id="detailed-case-studies"
-            className="max-w-3xl mx-auto py-4 px-1 text-left"
-          ></div>
-          {/* Spacer to raise the title above the use cases */}
-          <div className="mt-8"></div>
-          <div className="mt-2 mb-6">
-            <div className="mt-2 mb-2">
-              <h3 className="text-3xl font text-white mt-[-2.5rem] mb-6">
-                Automation Agents in Consulting
+      </header>
+
+      {/* Background & Floating Elements (from Solutions layout) */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
+      <div className="absolute top-20 left-10 w-20 h-20 bg-emerald-500/20 rounded-full blur-xl animate-pulse duration-4000"></div>
+      <div className="absolute top-40 right-20 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-pulse delay-1000 duration-4000"></div>
+      <div className="absolute bottom-40 left-20 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-2000 duration-4000"></div>
+
+      {/* Hero Section (Use Cases content kept intact) */}
+      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
+            <BookOpen className="w-5 h-5 mr-2" />
+            <span
+              style={{
+                fontSize: "22px",
+                fontWeight: 600,
+                letterSpacing: "0.02em",
+              }}
+            >
+              Use Cases
+            </span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
+            Explore Real-World{" "}
+            <span className="bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 bg-clip-text text-transparent">
+              Use Cases
+            </span>
+          </h1>
+
+          <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+            See how these solutions drive results in real organizations. Dive
+            into case studies and research to discover these innovative
+            strategies.
+          </p>
+
+          {/* Cards (kept content unchanged) */}
+          <div className="flex flex-col md:flex-row justify-center items-center gap-12 mt-12">
+            <div
+              className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 cursor-pointer"
+              onClick={onNavigateToCaseStudy1}
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <BookOpen className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Case Studies
               </h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                See how some clients achieved measurable results and transformed
+                their business with similar solutions.
+              </p>
+              <button
+                className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-md transition-all"
+                onClick={() => {
+                  const section = document.getElementById(
+                    "detailed-case-studies"
+                  );
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                View Case Studies
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </button>
+            </div>
+
+            <div
+              className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 cursor-pointer"
+              onClick={onNavigateToResearchStudy}
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Search className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Research
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Explore our research, insights, and innovation in prompt
+                engineering and workforce elevation.
+              </p>
+              <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
+                View Research
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </button>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Case Study Summaries & Research (kept content unchanged, wrapped in Solutions-style containers) */}
+      <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-left mb-8">
+            <h2 className="text-4xl font-bold text-gray-700 mb-6">
+              Case Study Summaries
+            </h2>
+            <div
+              id="detailed-case-studies"
+              className="max-w-3xl mx-auto py-4 px-1 text-left"
+            ></div>
+            <div className="mt-8"></div>
+            <div className="mt-2 mb-6">
+              <div>
+                <h3 className="text-3xl font-bold text-gray-700 mb-6">
+                  Prompt Engineering Agents in Consulting
+                </h3>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* Use Case 1 */}
             <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
               <h3 className="text-xl font-bold text-blue-600 mb-2">
                 Strategic Intelligence Acceleration in a Mid-Tier Consulting
@@ -188,7 +201,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
                 Read here
               </button>
             </div>
-            {/* Use Case 2 */}
+
             <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
               <h3 className="text-xl font-bold text-blue-600 mb-2">
                 Digital Human Resources Transformation in a Global Professional
@@ -206,7 +219,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
                 Read here
               </button>
             </div>
-            {/* Use Case 3 */}
+
             <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
               <h3 className="text-xl font-bold text-blue-600 mb-2">
                 Financial Services Advisory and Boutique Consulting Firms
@@ -226,16 +239,18 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               </button>
             </div>
           </div>
-          <div className="max-w-5xl mx-auto px-4 text-left mt-20">
-            <h2 className="text-4xl font-bold text-white mb-4">
+
+          <div className="mt-20">
+            <h2 className="text-4xl font-bold text-gray-700 mb-6">
               Research Study Summaries
             </h2>
             <div className="mt-8"></div>
             <div className="mt-2 mb-6">
-              <h3 className="text-3xl font text-white mb-6">
+              <h3 className="text-3xl font-bold text-gray-700 mb-6">
                 Prompt Engineering Agents in Consulting
               </h3>
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
               <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
                 <h3 className="text-xl font-bold text-blue-600 mb-2">
@@ -258,15 +273,99 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             </div>
           </div>
         </div>
-        {/* Footer - always at the bottom */}
-        <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-auto">
-          <div className="mt-auto">
-            <SiteFooter theme="dark" />
-          </div>
+      </div>
+
+      {/* Footer (kept theme consistent with original UseCasesPage) */}
+      <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-auto">
+        <div className="mt-auto">
+          <SiteFooter theme="dark" />
         </div>
-      </main>
+      </div>
+
       {/* Lead Capture Modal */}
       <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
+    </div>
+  );
+};
+
+interface LightVortexProps {
+  className?: string;
+  size?: number;
+}
+
+/**
+ * Lightweight SVG-based vortex animation (low CPU, no filters).
+ * Uses simple <animateTransform> for smooth, low-cost rotation.
+ */
+export const LightVortex: React.FC<LightVortexProps> = ({
+  className = "",
+  size = 220,
+}) => {
+  return (
+    <div className={className} aria-hidden>
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <g fill="none" strokeLinecap="round">
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke="#60a5fa"
+            strokeOpacity="0.06"
+            strokeWidth="6"
+          >
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 50 50"
+              to="360 50 50"
+              dur="28s"
+              repeatCount="indefinite"
+            />
+          </circle>
+
+          <circle
+            cx="50"
+            cy="50"
+            r="30"
+            stroke="#34d399"
+            strokeOpacity="0.05"
+            strokeWidth="4"
+          >
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="360 50 50"
+              to="0 50 50"
+              dur="20s"
+              repeatCount="indefinite"
+            />
+          </circle>
+
+          <circle
+            cx="50"
+            cy="50"
+            r="20"
+            stroke="#a78bfa"
+            strokeOpacity="0.04"
+            strokeWidth="3"
+          >
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 50 50"
+              to="360 50 50"
+              dur="36s"
+              repeatCount="indefinite"
+            />
+          </circle>
+        </g>
+      </svg>
     </div>
   );
 };

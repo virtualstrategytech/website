@@ -142,7 +142,7 @@ export default function ProductsPage({
 
       {/* Hero Section */}
 
-      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
         <div className="max-w-6xl w-full mx-auto text-center">
           {/*Strategic Product Solutions Badge*/}
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-700 via-blue-700 to-purple-700 backdrop-blur-sm border border-emerald-400/30 rounded-full text-emerald-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
@@ -238,10 +238,10 @@ export default function ProductsPage({
                   {/* Independent label for each card */}
                   {label && (
                     <span
-                      className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 text-white font-bold text-sm shadow-lg border-2 border-white z-20"
+                      className="absolute -top-5 left-1/2 -translate-x-1/2 px-5 py-2 rounded-full bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 text-white font-bold text-base shadow-lg border-2 border-white z-20"
                       style={{
-                        letterSpacing: "0.05em",
-                        fontSize: "1rem",
+                        letterSpacing: "0.04em",
+                        fontSize: "1.125rem",
                         fontWeight: 700,
                       }}
                     >
@@ -289,3 +289,95 @@ export default function ProductsPage({
     </div>
   );
 }
+
+interface LightVortexProps {
+  className?: string;
+  size?: number;
+}
+
+/**
+ * Lightweight SVG-based vortex animation (low CPU, no filters).
+ * Safe for older laptops — uses native SVG <animateTransform>.
+ */
+export const LightVortex: React.FC<LightVortexProps> = ({
+  className = "",
+  size = 220,
+}) => {
+  return (
+    <div className={className} aria-hidden>
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        {/* Outer ring — very subtle */}
+        <circle
+          cx="50"
+          cy="50"
+          r="36"
+          fill="none"
+          stroke="#60a5fa"
+          strokeOpacity="0.06"
+          strokeWidth="6"
+          strokeLinecap="round"
+        >
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0 50 50"
+            to="360 50 50"
+            dur="28s"
+            repeatCount="indefinite"
+          />
+        </circle>
+
+        {/* Middle ring */}
+        <circle
+          cx="50"
+          cy="50"
+          r="26"
+          fill="none"
+          stroke="#34d399"
+          strokeOpacity="0.05"
+          strokeWidth="4"
+          strokeLinecap="round"
+        >
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="360 50 50"
+            to="0 50 50"
+            dur="20s"
+            repeatCount="indefinite"
+          />
+        </circle>
+
+        {/* Inner ring */}
+        <circle
+          cx="50"
+          cy="50"
+          r="14"
+          fill="none"
+          stroke="#a78bfa"
+          strokeOpacity="0.045"
+          strokeWidth="3"
+          strokeLinecap="round"
+        >
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0 50 50"
+            to="360 50 50"
+            dur="14s"
+            repeatCount="indefinite"
+          />
+        </circle>
+      </svg>
+    </div>
+  );
+};
