@@ -28,7 +28,7 @@ const LightVortex: React.FC<LightVortexProps> = ({
             cy="50"
             r="40"
             stroke="#60a5fa"
-            strokeOpacity="0.06"
+            strokeOpacity="0.12"
             strokeWidth="6"
           >
             <animateTransform
@@ -46,7 +46,7 @@ const LightVortex: React.FC<LightVortexProps> = ({
             cy="50"
             r="30"
             stroke="#34d399"
-            strokeOpacity="0.045"
+            strokeOpacity="0.08"
             strokeWidth="4"
           >
             <animateTransform
@@ -64,7 +64,7 @@ const LightVortex: React.FC<LightVortexProps> = ({
             cy="50"
             r="20"
             stroke="#a78bfa"
-            strokeOpacity="0.04"
+            strokeOpacity="0.07"
             strokeWidth="3"
           >
             <animateTransform
