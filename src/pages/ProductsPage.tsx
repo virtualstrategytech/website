@@ -86,11 +86,29 @@ const productCards: ProductCard[] = [
   },
 ];
 
+function usePrefersReducedMotion() {
+  const [reduced, setReduced] = React.useState(false);
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduced(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReduced(e.matches);
+    if (mq.addEventListener) mq.addEventListener("change", handler);
+    else mq.addListener(handler);
+    return () => {
+      if (mq.removeEventListener) mq.removeEventListener("change", handler);
+      else mq.removeListener(handler);
+    };
+  }, []);
+  return reduced;
+}
+
 export default function ProductsPage({
   onBackToHome,
   onOpenModal,
   onNavigateToProductPage,
 }: ProductsPageProps) {
+  const prefersReducedMotion = usePrefersReducedMotion();
   return (
     <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
       {/* Header with Back Button */}
@@ -143,6 +161,15 @@ export default function ProductsPage({
       {/* Hero Section */}
 
       <div className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+        {/* TEST: force-render vortex (always) and bring forward for visibility */}
+        {!prefersReducedMotion && (
+          <div
+            className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-90"
+            style={{ zIndex: 0 }}
+          >
+            <LightVortex size={320} />
+          </div>
+        )}
         <div className="max-w-6xl w-full mx-auto text-center">
           {/*Strategic Product Solutions Badge*/}
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-700 via-blue-700 to-purple-700 backdrop-blur-sm border border-emerald-400/30 rounded-full text-emerald-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
