@@ -27,3 +27,4 @@ dist-ssr
 
 # Netlify local build/cache
 .netlify
+.vercel
