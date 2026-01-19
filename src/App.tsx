@@ -396,14 +396,13 @@ function App() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             From Strategy to Prompt: Teach Teams{" "}
             <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
-              Prompt Engineering
+              Strategy and Prompt Engineering
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            Contextual microlearning for on-the-job prompt engineering that
-            sticks
+            On-the-job strategy to prompt engineering learning that sticks
           </p>
 
           {/* CTA Button - Consistent with SolutionsPage/Home style */}
@@ -453,7 +452,7 @@ function App() {
               An automation agency where strategy meets prompt engineering:
               <br />
               <span className="text-2xl text-gray-800 max-w-5xl mx-auto">
-                elevating the work rather than replacing the workers.
+                elevating performance rather than replacing performers
               </span>
             </p>
           </div>
@@ -507,7 +506,7 @@ function App() {
           </span>
         </h2>
         <p className="text-xl text-cyan-100 max-w-2xl text-center mb-8 z-10 font-sans">
-          A two-agent system for real business learning and prompt mastery.
+          A two-agent system for business learning and prompt mastery.
           <br />
           <span className="text-emerald-200 font-medium">
             Join our Beta and help us shape the future of agentic flow!
@@ -530,11 +529,11 @@ function App() {
               Business Strategy Agent
             </h3>
             <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Users present a real business challenge.
+              Present your business strategy question
             </p>
             <p className="text-cyan-200 text-sm text-center font-sans">
-              Focused, actionable strategic lessons—practical insights, not
-              theory.
+              Obtain a personalized lesson delivered through two lenses:
+              business lens and prompt engineering lens with an optional quiz
             </p>
           </div>
           {/* Step 2 */}
@@ -546,11 +545,11 @@ function App() {
               Prompt Design Agent
             </h3>
             <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Translates the business strategy into an AI-ready prompt.
+              Translates business strategy into strategy or prompt lesson.
             </p>
             <p className="text-cyan-200 text-sm text-center font-sans">
-              Explains prompt structure and teaches prompt engineering with
-              context.
+              Explains strategy or prompt engineering structure and reinforces
+              it with a quiz delivered in each lens.
             </p>
           </div>
           {/* Step 3 */}
@@ -562,10 +561,12 @@ function App() {
               Optional Quiz (for retention)
             </h3>
             <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Reinforce learning by applying prompt design principles.
+              Reinforce learning by applying strategy or prompt design
+              principles
             </p>
             <p className="text-cyan-200 text-sm text-center font-sans">
-              Get feedback and solidify knowledge.
+              Obtain a grade andcustomized feedback for your open-answer
+              question.
             </p>
           </div>
         </div>
@@ -697,94 +698,6 @@ function App() {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <div
-        id="how-it-works"
-        className="relative z-10 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500"
-      >
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-              How It{" "}
-              <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
-                Works
-              </span>
-            </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Get started with our prompt engineering solutions in three simple
-              steps
-            </p>
-          </div>
-
-          {/* Steps */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 animate-stagger-in">
-            {/* Step 1: Schedule a Consultation */}
-            <div className="group text-center transform transition-all duration-500 hover:scale-105">
-              <div className="relative mb-8">
-                {/* Step Number */}
-                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-blue-500/25">
-                  <span className="text-2xl font-bold text-white">1</span>
-                </div>
-                {/* Connecting Line */}
-                <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-blue-400/50 to-indigo-400/50 transform translate-x-10"></div>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Schedule a Consultation
-                </h3>
-                <p className="text-blue-100 leading-relaxed">
-                  User schedules an initial free call to discuss your business
-                  needs and automation goals with our expert team.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 2: Customize Your Agents */}
-            <div className="group text-center transform transition-all duration-500 hover:scale-105">
-              <div className="relative mb-8">
-                {/* Step Number */}
-                <div className="w-20 h-20 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-indigo-500/25">
-                  <span className="text-2xl font-bold text-white">2</span>
-                </div>
-                {/* Connecting Line */}
-                <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-indigo-400/50 to-purple-400/50 transform translate-x-10"></div>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Customize Your Agents
-                </h3>
-                <p className="text-blue-100 leading-relaxed">
-                  Tailored solutions designed specifically for your business
-                  processes, workflows, and unique requirements.
-                </p>
-              </div>
-            </div>
-
-            {/* Step 3: Deploy & Empower Your Team */}
-            <div className="group text-center transform transition-all duration-500 hover:scale-105">
-              <div className="relative mb-8">
-                {/* Step Number */}
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-purple-500/25">
-                  <span className="text-2xl font-bold text-white">3</span>
-                </div>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Deploy & Empower Your Team
-                </h3>
-                <p className="text-blue-100 leading-relaxed">
-                  Rapid deployment with full support and training provided to
-                  ensure your team maximizes the benefits of automation.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       {/* Upskilling Agents vs. Workforce Automation Section */}
       <div
         id="upskilling-comparison"
