@@ -78,7 +78,7 @@ function App() {
       | "case-study-2"
       | "case-study-3"
       | "research"
-      | "research-study-1",
+      | "research-study-1"
   ) => {
     setCurrentPage(page);
     window.scrollTo(0, 0);
@@ -130,6 +130,7 @@ function App() {
     return (
       <UseCasesPage
         onBackToHome={() => handleNavigateToPage("home")}
+        onOpenModal={() => setIsModalOpen(true)}
         onNavigateToCaseStudy1={() => handleNavigateToPage("case-study-1")}
         onNavigateToCaseStudy2={() => handleNavigateToPage("case-study-2")}
         onNavigateToCaseStudy3={() => handleNavigateToPage("case-study-3")}
@@ -159,6 +160,7 @@ function App() {
     return (
       <SolutionsPage
         onBackToHome={() => handleNavigateToPage("home")}
+        onOpenModal={() => setIsModalOpen(true)}
         onNavigateToProducts={() => handleNavigateToPage("products")}
       />
     );

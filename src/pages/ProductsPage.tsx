@@ -9,7 +9,6 @@ import {
   Brain,
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
-// LightVortexLazy import removed for Products page
 export type PageKey =
   | "home"
   | "product-development"
@@ -211,8 +210,6 @@ export default function ProductsPage({
             </div>
           </div>
         </div>
-
-        {/* Light vortex removed from this page */}
       </div>
 
       {/* Product Cards Section */}
@@ -295,3 +292,95 @@ export default function ProductsPage({
     </div>
   );
 }
+
+interface LightVortexProps {
+  className?: string;
+  size?: number;
+}
+
+/**
+ * Lightweight SVG-based vortex animation (low CPU, no filters).
+ * Safe for older laptops — uses native SVG <animateTransform>.
+ */
+export const LightVortex: React.FC<LightVortexProps> = ({
+  className = "",
+  size = 220,
+}) => {
+  return (
+    <div className={className} aria-hidden>
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        {/* Outer ring — very subtle */}
+        <circle
+          cx="50"
+          cy="50"
+          r="36"
+          fill="none"
+          stroke="#60a5fa"
+          strokeOpacity="0.06"
+          strokeWidth="6"
+          strokeLinecap="round"
+        >
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0 50 50"
+            to="360 50 50"
+            dur="28s"
+            repeatCount="indefinite"
+          />
+        </circle>
+
+        {/* Middle ring */}
+        <circle
+          cx="50"
+          cy="50"
+          r="26"
+          fill="none"
+          stroke="#34d399"
+          strokeOpacity="0.05"
+          strokeWidth="4"
+          strokeLinecap="round"
+        >
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="360 50 50"
+            to="0 50 50"
+            dur="20s"
+            repeatCount="indefinite"
+          />
+        </circle>
+
+        {/* Inner ring */}
+        <circle
+          cx="50"
+          cy="50"
+          r="14"
+          fill="none"
+          stroke="#a78bfa"
+          strokeOpacity="0.045"
+          strokeWidth="3"
+          strokeLinecap="round"
+        >
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0 50 50"
+            to="360 50 50"
+            dur="14s"
+            repeatCount="indefinite"
+          />
+        </circle>
+      </svg>
+    </div>
+  );
+};
