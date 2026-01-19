@@ -11,6 +11,15 @@ import {
   Menu,
   X,
   Brain,
+  Sparkles,
+  BookOpenCheck,
+  ShieldCheck,
+  Cpu,
+  Settings2,
+  ListChecks,
+  HelpCircle,
+  Activity,
+  BadgePercent,
 } from "lucide-react";
 import { LeadCaptureModal } from "./components/LeadCaptureModal";
 import { ImageBanner } from "./components/ImageBanner";
@@ -78,7 +87,7 @@ function App() {
       | "case-study-2"
       | "case-study-3"
       | "research"
-      | "research-study-1"
+      | "research-study-1",
   ) => {
     setCurrentPage(page);
     window.scrollTo(0, 0);
@@ -130,7 +139,6 @@ function App() {
     return (
       <UseCasesPage
         onBackToHome={() => handleNavigateToPage("home")}
-        onOpenModal={() => setIsModalOpen(true)}
         onNavigateToCaseStudy1={() => handleNavigateToPage("case-study-1")}
         onNavigateToCaseStudy2={() => handleNavigateToPage("case-study-2")}
         onNavigateToCaseStudy3={() => handleNavigateToPage("case-study-3")}
@@ -160,7 +168,6 @@ function App() {
     return (
       <SolutionsPage
         onBackToHome={() => handleNavigateToPage("home")}
-        onOpenModal={() => setIsModalOpen(true)}
         onNavigateToProducts={() => handleNavigateToPage("products")}
       />
     );
@@ -466,6 +473,230 @@ function App() {
           </div>
         </div>
       </div>
+      {/* NovAIn Beta Launch Section */}
+      <section className="relative z-20 w-full bg-gradient-to-br from-cyan-400 via-cyan-700 to-emerald-600 py-28 px-4 flex flex-col items-center shadow-2xl overflow-hidden">
+        {/* Decorative turquoise/green blob top left */}
+        <div className="absolute -top-24 -left-24 w-[32rem] h-[32rem] bg-gradient-to-br from-emerald-300 via-cyan-300 to-emerald-400 rounded-full blur-[120px] opacity-80 pointer-events-none z-0"></div>
+        {/* Decorative turquoise blob bottom right */}
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-emerald-300/30 rounded-full blur-3xl pointer-events-none z-0"></div>
+        {/* Beta Badge */}
+        <span
+          className="mb-8 px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 via-emerald-400 to-cyan-400 text-white font-extrabold text-lg tracking-widest shadow-xl border-2 border-white/10 z-10 uppercase"
+          style={{ letterSpacing: "0.2em", fontSize: "1.25rem" }}
+        >
+          Beta Launch
+        </span>
+        {/* Logo */}
+        <div className="rounded-3xl shadow-2xl p-0 mb-10 flex items-center justify-center z-10">
+          <img
+            src="/Logo/Navy-NovAIn_SVGpadded_logo.svg"
+            alt="NovAIn Prompt Engineering Coach Logo"
+            className="h-80 w-auto object-contain drop-shadow-2xl"
+            style={{ filter: "drop-shadow(0 0 60px #06b6d4cc)" }}
+          />
+        </div>
+        {/* Headline */}
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-3 text-white tracking-tight z-10 font-sans">
+          Meet{" "}
+          <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            NovAIn
+          </span>
+          :<br />
+          <span className="text-xl font-semibold text-cyan-100">
+            Your Prompt Engineering Coach
+          </span>
+        </h2>
+        <p className="text-xl text-cyan-100 max-w-2xl text-center mb-8 z-10 font-sans">
+          A two-agent system for real business learning and prompt mastery.
+          <br />
+          <span className="text-emerald-200 font-medium">
+            Join our Beta and help us shape the future of agentic flow!
+          </span>
+        </p>
+        {/* CTA */}
+        <div className="mb-12 z-10">
+          <button className="px-10 py-5 rounded-2xl font-bold text-xl bg-gradient-to-r from-cyan-500 via-emerald-400 to-blue-500 text-white shadow-2xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 font-sans">
+            Join our Beta Launch!
+          </button>
+        </div>
+        {/* How NovAIn Works */}
+        <div className="w-full max-w-5xl flex flex-col md:flex-row justify-center items-stretch gap-8 mb-14 z-10">
+          {/* Step 1 */}
+          <div className="flex-1 bg-white/10 rounded-2xl p-10 flex flex-col items-center shadow-lg border border-cyan-800/30">
+            <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 mb-5 shadow-lg">
+              <Lightbulb className="w-9 h-9 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-1 text-center font-sans">
+              Business Strategy Agent
+            </h3>
+            <p className="text-cyan-100 text-base text-center mb-1 font-sans">
+              Users present a real business challenge.
+            </p>
+            <p className="text-cyan-200 text-sm text-center font-sans">
+              Focused, actionable strategic lessons—practical insights, not
+              theory.
+            </p>
+          </div>
+          {/* Step 2 */}
+          <div className="flex-1 bg-white/10 rounded-2xl p-10 flex flex-col items-center shadow-lg border border-cyan-800/30">
+            <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 via-cyan-400 to-blue-500 mb-5 shadow-lg">
+              <Sparkles className="w-9 h-9 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-1 text-center font-sans">
+              Prompt Design Agent
+            </h3>
+            <p className="text-cyan-100 text-base text-center mb-1 font-sans">
+              Translates the business strategy into an AI-ready prompt.
+            </p>
+            <p className="text-cyan-200 text-sm text-center font-sans">
+              Explains prompt structure and teaches prompt engineering with
+              context.
+            </p>
+          </div>
+          {/* Step 3 */}
+          <div className="flex-1 bg-white/10 rounded-2xl p-10 flex flex-col items-center shadow-lg border border-cyan-800/30">
+            <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 via-cyan-400 to-emerald-400 mb-5 shadow-lg">
+              <BookOpenCheck className="w-9 h-9 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-1 text-center font-sans">
+              Optional Quiz (for retention)
+            </h3>
+            <p className="text-cyan-100 text-base text-center mb-1 font-sans">
+              Reinforce learning by applying prompt design principles.
+            </p>
+            <p className="text-cyan-200 text-sm text-center font-sans">
+              Get feedback and solidify knowledge.
+            </p>
+          </div>
+        </div>
+        {/* Why It Works */}
+        <div className="w-full max-w-3xl bg-white/95 rounded-2xl shadow-xl p-12 z-10">
+          <h3 className="text-2xl font-bold text-center mb-6 font-sans">
+            <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-cyan-500 bg-clip-text text-transparent">
+              Why It Works
+            </span>
+          </h3>
+          <ul className="space-y-5 text-gray-900 text-lg font-sans">
+            <li className="flex items-start gap-3">
+              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5 text-white" />
+              </span>
+              <span>
+                <span className="font-semibold">
+                  Learner-centred, step-by-step clarity:
+                </span>{" "}
+                Strategy first, prompt second.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
+                <Cpu className="w-5 h-5 text-white" />
+              </span>
+              <span>
+                <span className="font-semibold">
+                  Context-embedded learning:
+                </span>{" "}
+                Prompts reflect real business scenarios.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-white" />
+              </span>
+              <span>
+                <span className="font-semibold">Immediate skill transfer:</span>{" "}
+                Learners move from concept to action seamlessly.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
+                <BookOpenCheck className="w-5 h-5 text-white" />
+              </span>
+              <span>
+                <span className="font-semibold">
+                  Quiz reinforcement (optional):
+                </span>{" "}
+                Solidifies knowledge and builds confidence.
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
+                <Brain className="w-5 h-5 text-white" />
+              </span>
+              <span>
+                <span className="font-semibold">Faster GPT performance:</span>{" "}
+                Enhances GPT usage efficiency for other tasks.
+              </span>
+            </li>
+            {/* New bullet: Deterministic agent that is fully controlled */}
+            <li className="flex items-start gap-3">
+              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
+                <Settings2 className="w-5 h-5 text-white" />
+              </span>
+              <span>
+                <span className="font-semibold">
+                  Deterministic agent that is fully controlled:
+                </span>{" "}
+                Backed by proprietary knowledgebase and LLM logic.
+              </span>
+            </li>
+            {/* New bullet: Obtain step-by-step clarity from strategy to prompt */}
+            <li className="flex items-start gap-3">
+              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
+                <ListChecks className="w-5 h-5 text-white" />
+              </span>
+              <span>
+                <span className="font-semibold">
+                  Obtain step-by-step clarity from strategy to prompt:
+                </span>{" "}
+                Every stage is explained and actionable.
+              </span>
+            </li>
+            {/* New bullet: Learn not just what works but why */}
+            <li className="flex items-start gap-3">
+              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
+                <HelpCircle className="w-5 h-5 text-white" />
+              </span>
+              <span>
+                <span className="font-semibold">
+                  Learn not just what works but why:
+                </span>{" "}
+                Build deep understanding for future prompt engineering.
+              </span>
+            </li>
+            {/* New bullet: Agent Activity and Monitoring */}
+            <li className="flex items-start gap-3">
+              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
+                <Activity className="w-5 h-5 text-white" />
+              </span>
+              <span>
+                <span className="font-semibold">
+                  Agent Activity and Monitoring:
+                </span>{" "}
+                Track agent actions and monitor performance for transparency and
+                improvement.
+              </span>
+            </li>
+            {/* New bullet: Front-end branding (white-label solution) */}
+            <li className="flex items-start gap-3">
+              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
+                <BadgePercent className="w-5 h-5 text-white" />
+              </span>
+              <span>
+                <span className="font-semibold">
+                  Front-end branding (white-label solution):
+                </span>{" "}
+                Seamlessly integrate your own branding for a custom experience.
+              </span>
+            </li>
+          </ul>
+          <div className="mt-10 text-center text-cyan-900 font-semibold text-xl font-sans">
+            Be part of the Beta and help us develop the agentic prompt
+            engineering coach!
+          </div>
+        </div>
+      </section>
+
       {/* How It Works Section */}
       <div
         id="how-it-works"
