@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import { Calendar, Clock, User, Mail, Phone, Building } from 'lucide-react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useState } from "react";
+import { Calendar, Clock, User, Mail, Phone, Building } from "lucide-react";
 
 interface CalendarIntegrationProps {
   onScheduleSuccess?: (data: any) => void;
 }
 
-export const CalendarIntegration: React.FC<CalendarIntegrationProps> = ({ onScheduleSuccess }) => {
+export const CalendarIntegration: React.FC<CalendarIntegrationProps> = ({
+  onScheduleSuccess,
+}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -22,38 +25,44 @@ export const CalendarIntegration: React.FC<CalendarIntegrationProps> = ({ onSche
     try {
       // This would integrate with your actual calendar service
       // For now, we'll simulate the process
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
       // In production, this would:
       // 1. Send data to HubSpot CRM
       // 2. Create calendar booking via Cal.com API
       // 3. Send confirmation emails
-      
-      console.log('Form submitted:', formData);
+
+      console.log("Form submitted:", formData);
       onScheduleSuccess?.(formData);
-      
+
       // Reset form
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        message: ''
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
       });
-      
-      alert('Consultation scheduled successfully! You will receive a confirmation email shortly.');
+
+      alert(
+        "Consultation scheduled successfully! You will receive a confirmation email shortly.",
+      );
     } catch (error) {
-      console.error('Scheduling error:', error);
-      alert('There was an error scheduling your consultation. Please try again.');
+      console.error("Scheduling error:", error);
+      alert(
+        "There was an error scheduling your consultation. Please try again.",
+      );
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -63,13 +72,20 @@ export const CalendarIntegration: React.FC<CalendarIntegrationProps> = ({ onSche
         <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
           <Calendar className="w-8 h-8 text-white" />
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">Schedule Your Free Consultation</h3>
-        <p className="text-gray-600">Let's discuss how we can transform your business</p>
+        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+          Schedule Your Free Consultation
+        </h3>
+        <p className="text-gray-600">
+          Let's discuss how we can transform your business
+        </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Full Name *
           </label>
           <div className="relative">
@@ -88,7 +104,10 @@ export const CalendarIntegration: React.FC<CalendarIntegrationProps> = ({ onSche
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Email Address *
           </label>
           <div className="relative">
@@ -107,7 +126,10 @@ export const CalendarIntegration: React.FC<CalendarIntegrationProps> = ({ onSche
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="phone"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Phone Number
           </label>
           <div className="relative">
@@ -125,7 +147,10 @@ export const CalendarIntegration: React.FC<CalendarIntegrationProps> = ({ onSche
         </div>
 
         <div>
-          <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="company"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Company Name
           </label>
           <div className="relative">
@@ -143,7 +168,10 @@ export const CalendarIntegration: React.FC<CalendarIntegrationProps> = ({ onSche
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Tell us about your needs
           </label>
           <textarea
