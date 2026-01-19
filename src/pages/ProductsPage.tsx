@@ -9,7 +9,7 @@ import {
   Brain,
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
-// LightVortexLazy import removed for Products page
+import LightVortexLazy from "../components/LightVortexLazy";
 export type PageKey =
   | "home"
   | "product-development"
@@ -212,7 +212,10 @@ export default function ProductsPage({
           </div>
         </div>
 
-        {/* Light vortex removed from this page */}
+        {/* Lazy Vortex Background - Hidden on Small Screens */}
+        <div className="hidden md:block absolute left-6 top-10 opacity-75 pointer-events-none">
+          <LightVortexLazy size={220} />
+        </div>
       </div>
 
       {/* Product Cards Section */}
