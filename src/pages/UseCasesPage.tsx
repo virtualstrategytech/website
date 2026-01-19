@@ -80,7 +80,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
 
       {/* Hero Section (Use Cases content kept intact) */}
       <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center relative">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <BookOpen className="w-5 h-5 mr-2" />
             <span
