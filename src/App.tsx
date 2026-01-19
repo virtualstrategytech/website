@@ -947,8 +947,7 @@ function App() {
               <p className="text-xl mb-6 text-blue-100">
                 Our upskilling agents do not just improve processes - they
                 transform people, creating a workforce that is more capable,
-                employees more energized, confident and an organization more
-                innovative than ever before.
+                more energized, confident and innovative than ever before.
               </p>
 
               <button
@@ -1023,9 +1022,9 @@ function App() {
                 {" "}
                 unprecedented employee satisfaction
               </span>
-              . Take the leap towards empowering your workforce with on-demand
+              Take the leap towards empowering your workforce with situational
               learning that unlocks human potential through creativity and
-              re-energizes your teams.
+              innovation
             </p>
 
             {/* CTA Buttons */}
