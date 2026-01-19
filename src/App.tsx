@@ -1023,9 +1023,9 @@ function App() {
                 {" "}
                 unprecedented employee satisfaction
               </span>
-              . Take the first step towards empowering your workforce with
-              on-demand learning that unlocks human potential through creativity
-              and re-energizes your teams.
+              . Take the leap towards empowering your workforce with on-demand
+              learning that unlocks human potential through creativity and
+              re-energizes your teams.
             </p>
 
             {/* CTA Buttons */}
@@ -1070,7 +1070,7 @@ function App() {
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-purple-400 rounded-full mr-3"></div>
                   <span className="text-sm font-medium">
-                    Tailored to your business
+                    Tailored to your knowledgebase
                   </span>
                 </div>
               </div>
