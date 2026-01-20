@@ -530,7 +530,7 @@ function App() {
               Business Strategy Agent
             </h3>
             <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Business strategy question
+              Elicits strategy question
             </p>
             <p className="text-cyan-200 text-sm text-center font-sans">
               Personalized lesson delivered through two lenses: business and/or
@@ -546,7 +546,7 @@ function App() {
               Prompt Design Agent
             </h3>
             <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Elicits strategy question
+              Designs prompt lesson
             </p>
             <p className="text-cyan-200 text-sm text-center font-sans">
               Provides a customized strategy or prompt engineering lesson for
