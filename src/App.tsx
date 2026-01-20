@@ -530,12 +530,11 @@ function App() {
               Business Strategy Agent
             </h3>
             <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Present your business strategy question
+              Business strategy question
             </p>
             <p className="text-cyan-200 text-sm text-center font-sans">
-              Obtain a personalized lesson delivered through two lenses:
-              business lens and prompt engineering lens with an optional quiz in
-              each
+              Personalized lesson delivered through two lenses: business and/or
+              prompt engineering lens with an optional quiz{" "}
             </p>
           </div>
           {/* Step 2 */}
@@ -547,14 +546,12 @@ function App() {
               Prompt Design Agent
             </h3>
             <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Elicits, clarifies and confirms understanding of your strategy
-              question
+              Elicits strategy question
             </p>
             <p className="text-cyan-200 text-sm text-center font-sans">
-              Provides a customized strategy or prompt engineering lesson
-              specific to solving your strategy question and delivers it through
-              a business and prompt lens with an optional quiz administered and
-              graded for each lens
+              Provides a customized strategy or prompt engineering lesson for
+              strategy question and delivers it through a business and/or prompt
+              lens
             </p>
           </div>
           {/* Step 3 */}
@@ -566,12 +563,10 @@ function App() {
               Optional Quiz (for retention)
             </h3>
             <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Reinforce your learning by applying strategy or prompt design
-              principles
+              Reinforce learning by applying strategy/prompt design
             </p>
             <p className="text-cyan-200 text-sm text-center font-sans">
-              Obtain a grade and relevant feedback for your open-answer question
-              as well as a "model answer".
+              Graded eedback for open-answer question with a "model answer".
             </p>
           </div>
         </div>
