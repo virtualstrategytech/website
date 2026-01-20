@@ -402,7 +402,7 @@ function App() {
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            On-the-job strategy to prompt engineering learning that sticks
+            On-the-job strategy and prompt engineering learning that sticks
           </p>
 
           {/* CTA Button - Consistent with SolutionsPage/Home style */}
@@ -506,10 +506,12 @@ function App() {
           </span>
         </h2>
         <p className="text-xl text-cyan-100 max-w-2xl text-center mb-8 z-10 font-sans">
-          A two-agent system for business learning and prompt mastery.
+          A two-agent system for strategy learning and mastering prompt
+          engineering
           <br />
           <span className="text-emerald-200 font-medium">
-            Join our Beta and help us shape the future of agentic flow!
+            Join our Beta and help us shape the future of stable, reliable
+            agentic flow!
           </span>
         </p>
         {/* CTA */}
@@ -533,7 +535,8 @@ function App() {
             </p>
             <p className="text-cyan-200 text-sm text-center font-sans">
               Obtain a personalized lesson delivered through two lenses:
-              business lens and prompt engineering lens with an optional quiz
+              business lens and prompt engineering lens with an optional quiz in
+              each
             </p>
           </div>
           {/* Step 2 */}
@@ -545,11 +548,14 @@ function App() {
               Prompt Design Agent
             </h3>
             <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Translates business strategy into strategy or prompt lesson.
+              Elicits, clarifies and confirms understanding of your strategy
+              question
             </p>
             <p className="text-cyan-200 text-sm text-center font-sans">
-              Explains strategy or prompt engineering structure and reinforces
-              it with a quiz delivered in each lens.
+              Provides a customized strategy or prompt engineering lesson
+              specific to solving your strategy question and delivers it through
+              a business and prompt lens with an optional quiz administered and
+              graded for each lens
             </p>
           </div>
           {/* Step 3 */}
@@ -561,12 +567,12 @@ function App() {
               Optional Quiz (for retention)
             </h3>
             <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Reinforce learning by applying strategy or prompt design
+              Reinforce your learning by applying strategy or prompt design
               principles
             </p>
             <p className="text-cyan-200 text-sm text-center font-sans">
-              Obtain a grade andcustomized feedback for your open-answer
-              question.
+              Obtain a grade and relevant feedback for your open-answer question
+              as well as a "model answer".
             </p>
           </div>
         </div>
@@ -597,7 +603,7 @@ function App() {
                 <span className="font-semibold">
                   Context-embedded learning:
                 </span>{" "}
-                Prompts reflect real business scenarios.
+                Prompts reflect contextual strategy questions
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -606,7 +612,8 @@ function App() {
               </span>
               <span>
                 <span className="font-semibold">Immediate skill transfer:</span>{" "}
-                Learners move from concept to action seamlessly.
+                Learners move from concept to action immediately without
+                training courses
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -617,7 +624,8 @@ function App() {
                 <span className="font-semibold">
                   Quiz reinforcement (optional):
                 </span>{" "}
-                Solidifies knowledge and builds confidence.
+                Solidifies knowledge and builds confidence for use of prompt
+                engineering.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -625,8 +633,10 @@ function App() {
                 <Brain className="w-5 h-5 text-white" />
               </span>
               <span>
-                <span className="font-semibold">Faster GPT performance:</span>{" "}
-                Enhances GPT usage efficiency for other tasks.
+                <span className="font-semibold">
+                  Elevanted on-the-job performance:
+                </span>{" "}
+                Creative use of AI where the learner remains in control
               </span>
             </li>
             {/* New bullet: Deterministic agent that is fully controlled */}
@@ -636,9 +646,10 @@ function App() {
               </span>
               <span>
                 <span className="font-semibold">
-                  Deterministic agent that is fully controlled:
+                  LLM reasoning on upstream is based on strict rubric & quality
+                  gate
                 </span>{" "}
-                Backed by proprietary knowledgebase and LLM logic.
+                Producing intelligent, but stable and predictable results
               </span>
             </li>
             {/* New bullet: Obtain step-by-step clarity from strategy to prompt */}
@@ -650,7 +661,8 @@ function App() {
                 <span className="font-semibold">
                   Obtain step-by-step clarity from strategy to prompt:
                 </span>{" "}
-                Every stage is explained and actionable.
+                Lessons are short, actionable and useful for solving your
+                specific problem.
               </span>
             </li>
             {/* New bullet: Learn not just what works but why */}
@@ -662,7 +674,8 @@ function App() {
                 <span className="font-semibold">
                   Learn not just what works but why:
                 </span>{" "}
-                Build deep understanding for future prompt engineering.
+                Build deeper understanding for building your prompt skills
+                without a data engineering background
               </span>
             </li>
             {/* New bullet: Agent Activity and Monitoring */}
@@ -672,10 +685,10 @@ function App() {
               </span>
               <span>
                 <span className="font-semibold">
-                  Agent Activity and Monitoring:
+                  Agent Activity and Monitoring Dashboard:
                 </span>{" "}
-                Track agent actions and monitor performance for transparency and
-                improvement.
+                Track agent actions and monitor performance for tracking what is
+                working and what needs improvement.
               </span>
             </li>
             {/* New bullet: Front-end branding (white-label solution) */}
@@ -687,13 +700,14 @@ function App() {
                 <span className="font-semibold">
                   Front-end branding (white-label solution):
                 </span>{" "}
-                Seamlessly integrate your own branding for a custom experience.
+                Seamlessly integrate your own brand label to the agent solution
+                and dashboard.
               </span>
             </li>
           </ul>
           <div className="mt-10 text-center text-cyan-900 font-semibold text-xl font-sans">
-            Be part of the Beta and help us develop the agentic prompt
-            engineering coach!
+            Join the limited Beta pilot and help us build the strategy and
+            prompt engineering coach!
           </div>
         </div>
       </section>
@@ -718,8 +732,8 @@ function App() {
                 empowering your workforce
               </span>
               , not replacing it. Our upskilling agents work alongside your team
-              to unlock human potential through learning and creativity to drive
-              unprecedented growth.
+              to unlock human potential through learning and creativity that
+              drives growth.
             </p>
           </div>
 
@@ -746,13 +760,13 @@ function App() {
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-red-700">
-                    Reduces workforce and eliminates jobs
+                    Reduces workforce by eliminating jobs
                   </span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-red-700">
-                    Creates fear and resistance to change
+                    Creates fear, uncertainty and resistance to change
                   </span>
                 </div>
                 <div className="flex items-start">
@@ -764,7 +778,7 @@ function App() {
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-red-700">
-                    Decreases employee morale and engagement
+                    Decreases employee morale, engagement and pursuit of mastery
                   </span>
                 </div>
               </div>
@@ -786,14 +800,14 @@ function App() {
                   <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-emerald-700">
                     <strong>Empowers human workers</strong> with customized
-                    learning at their fingertips.
+                    learning when they need it
                   </span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-emerald-700">
-                    <strong>Enhances capabilities</strong> to unlock new
-                    opportunities.
+                    <strong>Enhances capabilities</strong> that unlocks
+                    creativity and skill development
                   </span>
                 </div>
                 <div className="flex items-start">
@@ -812,7 +826,8 @@ function App() {
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-emerald-700">
-                    <strong>Increases job satisfaction</strong> and retention.
+                    <strong>Increases job satisfaction, morale</strong> and
+                    retention.
                   </span>
                 </div>
               </div>
@@ -840,8 +855,8 @@ function App() {
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     On-demand skill development eliminates redundant tasks
-                    freeing up time for employee's growth through continuous
-                    self-improvement.
+                    freeing up time for employee's growth through creativity,
+                    self-improvement and pursuit of mastery..
                   </p>
                 </div>
               </div>
@@ -857,8 +872,7 @@ function App() {
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Higher job satisfaction through greater variety of work
-                    leaves employees feeling not only valued but motivated and
-                    empowered.
+                    leaves employees feeling motivated and empowered.
                   </p>
                 </div>
               </div>
@@ -873,9 +887,8 @@ function App() {
                     Improved Productivity
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Streamlined workflows through intelligent integration that
-                    improves productivity by freeing up time for creative
-                    problem solving.
+                    Improved productivity leaves freed up time for creative
+                    problem solving of more complex problems.
                   </p>
                 </div>
               </div>
@@ -890,9 +903,7 @@ function App() {
                     Innovation Culture
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Fostered creative thinking through better time management
-                    enabled by human-AI collaboration for arriving at
-                    breakthrough solutions.
+                    Fosters creative thinking through better time management
                   </p>
                 </div>
               </div>
@@ -914,7 +925,7 @@ function App() {
                   Higher Productivity
                 </div>
                 <div className="text-sm text-blue-200">
-                  Companies investing in upskilling
+                  Companies investing in Upskilling
                 </div>
               </div>
 
@@ -945,9 +956,9 @@ function App() {
 
             <div className="border-t border-white/20 pt-8">
               <p className="text-xl mb-6 text-blue-100">
-                Our upskilling agents do not just improve processes - they
-                transform people, creating a workforce that is more capable,
-                more energized, confident and innovative than ever before.
+                Our upskilling agents transform how we work, creating a more
+                capable workforce that is more energized, confident and
+                innovative
               </p>
 
               <button
@@ -1008,7 +1019,7 @@ function App() {
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Transform
               </span>{" "}
-              Your Business?
+              Your Workforce?
             </h2>
             <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
               Do not let your competition get ahead. Join forward-thinking
@@ -1020,11 +1031,10 @@ function App() {
               and
               <span className="text-white font-semibold">
                 {" "}
-                unprecedented employee satisfaction
+                unprecedented employee satisfaction.
               </span>
               Take the leap towards empowering your workforce with situational
-              learning that unlocks human potential through creativity and
-              innovation
+              learning that unlocks human potential through creativity
             </p>
 
             {/* CTA Buttons */}
@@ -1061,15 +1071,9 @@ function App() {
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-3 h-3 bg-blue-400 rounded-full mr-3"></div>
-                  <span className="text-sm font-medium">
-                    No commitment required
-                  </span>
-                </div>
-                <div className="flex items-center">
                   <div className="w-3 h-3 bg-purple-400 rounded-full mr-3"></div>
                   <span className="text-sm font-medium">
-                    Tailored to your knowledgebase
+                    Tailored to your knowledgebase requirements
                   </span>
                 </div>
               </div>
