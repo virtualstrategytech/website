@@ -9,8 +9,6 @@ import {
   Brain,
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
-import { sendLead } from "../lib/leads";
-
 export type PageKey =
   | "home"
   | "product-development"
@@ -95,22 +93,6 @@ export default function ProductsPage({
   onOpenModal,
   onNavigateToProductPage,
 }: ProductsPageProps) {
-  // new: simple handler to send a lead from this page (call from a Contact button)
-  async function handleSendLeadExample() {
-    try {
-      await sendLead({
-        name: "Website visitor",
-        email: "contact@example.com",
-        source: "products-page",
-      });
-      console.log("Lead sent (products-page)");
-      // replace with UI success toast if desired
-    } catch (err) {
-      console.error("Lead submit failed", err);
-      // replace with UI error handling if desired
-    }
-  }
-
   return (
     <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
       {/* Header with Back Button */}
@@ -154,15 +136,6 @@ export default function ProductsPage({
                 }}
               >
                 Demo
-              </button>
-
-              {/* new Contact button wired to sendLead helper */}
-              <button
-                onClick={handleSendLeadExample}
-                className="bg-emerald-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-emerald-600 transition-colors"
-                style={{ fontSize: "16px" }}
-              >
-                Contact
               </button>
             </div>
           </div>
@@ -411,11 +384,3 @@ export const LightVortex: React.FC<LightVortexProps> = ({
     </div>
   );
 };
-
-// The sendLead helper is available; call sendLead directly from a form submit handler or button onClick where needed.
-// Example:
-// await sendLead({
-//   name: "Website visitor",
-//   email: "test@virtualstrategytech.com",
-//   source: "products-page",
-// });
