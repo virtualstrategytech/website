@@ -506,8 +506,7 @@ function App() {
           </span>
         </h2>
         <p className="text-xl text-cyan-100 max-w-2xl text-center mb-8 z-10 font-sans">
-          A two-agent system for strategy learning and mastering prompt
-          engineering
+          A two-agent system for learning strategy and prompt engineering
           <br />
           <span className="text-emerald-200 font-medium">
             Join our Beta and help us shape the future of stable, reliable
