@@ -78,7 +78,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
         </div>
       </header>
 
-      {/* HERO (lighter by default, consistent style, no orb) */}
+      {/* HERO (lighter but consistent, no orb) */}
       <HeroVortex
         variant="inner"
         className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
@@ -112,7 +112,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
 
           {/* HERO CARDS */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-12 mt-12">
-            {/* Case Studies card: scroll (NOT navigate) */}
+            {/* Case Studies */}
             <div
               className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 cursor-pointer"
               onClick={() => scrollToId("case-study-summaries")}
@@ -124,8 +124,8 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
                 Case Studies
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                See how some clients achieved measurable results and transformed
-                their business with similar solutions.
+                See how clients achieved measurable results with intelligent
+                upskilling and automation.
               </p>
               <button
                 className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-md transition-all"
@@ -139,7 +139,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               </button>
             </div>
 
-            {/* Research card: scroll (NOT navigate) */}
+            {/* Research */}
             <div
               className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 cursor-pointer"
               onClick={() => scrollToId("research-study-summaries")}
@@ -151,8 +151,8 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
                 Research
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Explore our research, insights, and innovation in prompt
-                engineering and workforce elevation.
+                Explore research on prompt engineering upskilling and workforce
+                performance elevation.
               </p>
               <button
                 className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
@@ -170,34 +170,25 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
       </HeroVortex>
 
       {/* BODY */}
-      <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500 flex-1">
+      <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 flex-1">
         <div className="max-w-7xl mx-auto">
           {/* CASE STUDIES */}
           <div id="case-study-summaries" className="text-left mb-10">
             <h2 className="text-4xl font-bold text-gray-700 mb-6">
               Case Study Summaries
             </h2>
-
-            <div className="mt-2 mb-6">
-              <div>
-                <h3 className="text-3xl font-bold text-gray-700 mb-6">
-                  Prompt Engineering Agents in Consulting
-                </h3>
-              </div>
-            </div>
+            <h3 className="text-3xl font-bold text-gray-700 mb-6">
+              Prompt Engineering Agents in Consulting
+            </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
+            <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col">
               <h3 className="text-xl font-bold text-blue-600 mb-2">
-                Strategic Intelligence Acceleration in a Mid-Tier Consulting
-                Firm
+                Strategic Intelligence Acceleration in a Mid-Tier Consulting Firm
               </h3>
               <p className="text-gray-700 mb-4 flex-1">
-                A UK-based market research and business strategy firm faced
-                growing pressure to deliver faster, deeper insights to clients
-                without scaling headcount or increasing operational overhead
-                extended its strategic reach through automation agents.
+                A UK-based strategy firm accelerated insight delivery without scaling headcount by deploying upskilling agents.
               </p>
               <button
                 className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
@@ -207,15 +198,12 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               </button>
             </div>
 
-            <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
+            <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col">
               <h3 className="text-xl font-bold text-blue-600 mb-2">
-                Digital Human Resources Transformation in a Global Professional
-                Services Network
+                Digital HR Transformation in a Global Professional Services Network
               </h3>
               <p className="text-gray-700 mb-4 flex-1">
-                A multinational advisory firm sought to transform its internal
-                HR strategy consulting function into a digital-first model and
-                embedded co-creators in the firm's HR strategy playbook.
+                A multinational firm modernized HR strategy delivery with embedded, on-demand upskilling support.
               </p>
               <button
                 className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
@@ -225,16 +213,12 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               </button>
             </div>
 
-            <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
+            <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col">
               <h3 className="text-xl font-bold text-blue-600 mb-2">
                 Financial Services Advisory and Boutique Consulting Firms
               </h3>
               <p className="text-gray-700 mb-4 flex-1">
-                Explore how a consortium of boutique consulting firms
-                specializing in financial services advisory sought scalable ways
-                to offer high-impact insights to clients in wealth management,
-                fintech, and regulatory strategy and leveled up their
-                competitiveness with larger firms.
+                Boutique firms scaled client insight delivery with prompt engineering upskilling workflows.
               </p>
               <button
                 className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
@@ -251,23 +235,13 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               Research Study Summaries
             </h2>
 
-            <div className="mt-2 mb-6">
-              <h3 className="text-3xl font-bold text-gray-700 mb-6">
-                Prompt Engineering Agents in Consulting
-              </h3>
-            </div>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
-              <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col cursor-pointer">
+              <div className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 mx-auto flex flex-col">
                 <h3 className="text-xl font-bold text-blue-600 mb-2">
-                  Research Study: Prompt Engineering for Small Business Strategy
-                  Consulting Firms
+                  Research Study: Prompt Engineering for Small Business Strategy Consulting Firms
                 </h3>
                 <p className="text-gray-700 mb-4 flex-1">
-                  This research study explores how upskilling consulting teams
-                  in prompt engineering leads to improved operational
-                  efficiency, faster client deliverables, and greater
-                  innovation. Key findings.
+                  How prompt engineering upskilling improves deliverable speed, quality, and innovation for consulting teams.
                 </p>
                 <button
                   className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
@@ -282,11 +256,10 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
       </div>
 
       {/* Footer */}
-      <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-auto">
+      <div className="relative z-10 bg-transparent text-blue-100 mt-auto">
         <SiteFooter theme="dark" />
       </div>
 
-      {/* Lead Capture Modal */}
       <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
