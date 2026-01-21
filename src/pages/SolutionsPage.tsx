@@ -113,13 +113,13 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
             <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
               Elevate Performance
             </span>{" "}
-            — Not Replace Teams
+            — Not Replace Performers
           </h1>
 
           {/* Subheading */}
           <p className="font-sans text-2xl text-blue-100 mb-12 max-w-4xl mx-auto font-normal leading-snug">
             Build scalable systems that improve productivity, knowledge transfer, and
-            execution speed — while keeping your workforce at the center.
+            execution speed — while keeping your workforce motivated
           </p>
 
           {/* CTA Button */}
