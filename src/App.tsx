@@ -370,10 +370,9 @@ function App() {
       <div className="absolute bottom-40 left-20 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-2000 duration-4000"></div>
       {/* Hero Content */}
       <HeroVortex
+        variant="home"
         backgroundColor="black"
         baseHue={220}
-        particleCount={500}
-        rangeY={800}
         className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-5xl mx-auto text-center">

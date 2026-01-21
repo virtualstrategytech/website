@@ -1,4 +1,5 @@
 import React from "react";
+import HeroVortex from "../components/HeroVortex";
 import {
   ArrowLeft,
   ArrowRight,
@@ -9,6 +10,7 @@ import {
   Brain,
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
+
 export type PageKey =
   | "home"
   | "product-development"
@@ -86,16 +88,14 @@ const productCards: ProductCard[] = [
   },
 ];
 
-// usePrefersReducedMotion removed because it was unused
-
 export default function ProductsPage({
   onBackToHome,
   onOpenModal,
   onNavigateToProductPage,
 }: ProductsPageProps) {
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
-      {/* Header with Back Button */}
+    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans relative overflow-hidden scroll-smooth">
+      {/* Header */}
       <header
         className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
         style={{ height: "calc(6rem * 1.3)" }}
@@ -114,7 +114,7 @@ export default function ProductsPage({
               />
             </div>
 
-            {/* Navigation */}
+            {/* Nav */}
             <div className="flex items-center space-x-6">
               <button
                 onClick={onBackToHome}
@@ -124,6 +124,7 @@ export default function ProductsPage({
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back to Home
               </button>
+
               <button
                 onClick={onOpenModal}
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
@@ -142,12 +143,13 @@ export default function ProductsPage({
         </div>
       </header>
 
-      {/* Hero Section */}
-
-      <div className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
-        {/* LightVortex removed from ProductsPage per request */}
+      {/* Hero (LIGHTER inner variant but same “home” aesthetic) */}
+      <HeroVortex
+        variant="inner"
+        className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
+      >
         <div className="max-w-6xl w-full mx-auto text-center">
-          {/*Strategic Product Solutions Badge*/}
+          {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-700 via-blue-700 to-purple-700 backdrop-blur-sm border border-emerald-400/30 rounded-full text-emerald-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <Lightbulb className="w-5 h-5 mr-2" />
             <Brain className="w-5 h-5 mr-2 text-emerald-300" />
@@ -162,7 +164,7 @@ export default function ProductsPage({
             </span>
           </div>
 
-          {/*Main Headline */}
+          {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             From Strategy to Prompt: Teach Teams{" "}
             <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
@@ -170,19 +172,19 @@ export default function ProductsPage({
             </span>
           </h1>
 
-          {/*Subheading*/}
+          {/* Subheading */}
           <p className="font-sans text-2xl text-blue-100 mb-12 max-w-4xl mx-auto font-normal leading-snug">
             Discover our comprehensive portfolio of intelligent automation
             solutions designed to transform every aspect of your business
             operations and unlock unprecedented growth potential.
           </p>
+
+          {/* CTA */}
           <div className="mb-16">
             <button
               onClick={() => {
                 const grid = document.getElementById("products-grid");
-                if (grid) {
-                  grid.scrollIntoView({ behavior: "smooth" });
-                }
+                if (grid) grid.scrollIntoView({ behavior: "smooth" });
               }}
               className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
@@ -194,7 +196,7 @@ export default function ProductsPage({
             </button>
           </div>
 
-          {/* Feature Chips */}
+          {/* Feature chips */}
           <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-emerald-200">
             <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <Users className="w-6 h-6 text-emerald-400" />
@@ -210,9 +212,9 @@ export default function ProductsPage({
             </div>
           </div>
         </div>
-      </div>
+      </HeroVortex>
 
-      {/* Product Cards Section */}
+      {/* Product Cards */}
       <section
         id="products-grid"
         className="relative z-10 bg-gradient-to-br from-emerald-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8"
@@ -220,25 +222,22 @@ export default function ProductsPage({
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {productCards.map((card) => {
-              // Set label independently for each card
               let label: string | null = null;
-              if (card.title === "Lead Capture and CRM Integration") {
+
+              if (card.title === "Lead Capture and CRM Integration")
                 label = "Coming Soon";
-              } else if (
+              if (
                 card.title === "Upskilling Agents for Learning & Productivity"
-              ) {
+              )
                 label = "Beta Launch";
-              } else if (
-                card.title === "Support Ticket Management & Smart Scheduling"
-              ) {
+              if (card.title === "Support Ticket Management & Smart Scheduling")
                 label = "Coming Soon";
-              }
+
               return (
                 <div
                   key={card.title}
-                  className={`group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100 relative`}
+                  className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100 relative"
                 >
-                  {/* Independent label for each card */}
                   {label && (
                     <span
                       className="absolute -top-5 left-1/2 -translate-x-1/2 px-5 py-2 rounded-full bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 text-white font-bold text-base shadow-lg border-2 border-white z-20"
@@ -251,17 +250,20 @@ export default function ProductsPage({
                       {label}
                     </span>
                   )}
+
                   <div
                     className={`w-16 h-16 ${card.iconBg} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
                   >
                     {card.icon}
                   </div>
+
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {card.title}
                   </h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {card.description}
                   </p>
+
                   <ul className="space-y-2 mb-8">
                     {card.bullets.map((b, i) => (
                       <li
@@ -273,9 +275,10 @@ export default function ProductsPage({
                       </li>
                     ))}
                   </ul>
+
                   <button
                     onClick={() => onNavigateToProductPage(card.page)}
-                    className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-semibold text-white ${card.btnBg} hover:from-blue-500 hover:to-indigo-500 shadow-md transition-all`}
+                    className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-semibold text-white ${card.btnBg} shadow-md transition-all`}
                   >
                     Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -285,6 +288,7 @@ export default function ProductsPage({
             })}
           </div>
         </div>
+
         <div className="text-gray-900">
           <SiteFooter theme="light" />
         </div>
@@ -292,95 +296,3 @@ export default function ProductsPage({
     </div>
   );
 }
-
-interface LightVortexProps {
-  className?: string;
-  size?: number;
-}
-
-/**
- * Lightweight SVG-based vortex animation (low CPU, no filters).
- * Safe for older laptops — uses native SVG <animateTransform>.
- */
-export const LightVortex: React.FC<LightVortexProps> = ({
-  className = "",
-  size = 220,
-}) => {
-  return (
-    <div className={className} aria-hidden>
-      <svg
-        width={size}
-        height={size}
-        viewBox="0 0 100 100"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid meet"
-      >
-        {/* Outer ring — very subtle */}
-        <circle
-          cx="50"
-          cy="50"
-          r="36"
-          fill="none"
-          stroke="#60a5fa"
-          strokeOpacity="0.06"
-          strokeWidth="6"
-          strokeLinecap="round"
-        >
-          <animateTransform
-            attributeName="transform"
-            attributeType="XML"
-            type="rotate"
-            from="0 50 50"
-            to="360 50 50"
-            dur="28s"
-            repeatCount="indefinite"
-          />
-        </circle>
-
-        {/* Middle ring */}
-        <circle
-          cx="50"
-          cy="50"
-          r="26"
-          fill="none"
-          stroke="#34d399"
-          strokeOpacity="0.05"
-          strokeWidth="4"
-          strokeLinecap="round"
-        >
-          <animateTransform
-            attributeName="transform"
-            attributeType="XML"
-            type="rotate"
-            from="360 50 50"
-            to="0 50 50"
-            dur="20s"
-            repeatCount="indefinite"
-          />
-        </circle>
-
-        {/* Inner ring */}
-        <circle
-          cx="50"
-          cy="50"
-          r="14"
-          fill="none"
-          stroke="#a78bfa"
-          strokeOpacity="0.045"
-          strokeWidth="3"
-          strokeLinecap="round"
-        >
-          <animateTransform
-            attributeName="transform"
-            attributeType="XML"
-            type="rotate"
-            from="0 50 50"
-            to="360 50 50"
-            dur="14s"
-            repeatCount="indefinite"
-          />
-        </circle>
-      </svg>
-    </div>
-  );
-};

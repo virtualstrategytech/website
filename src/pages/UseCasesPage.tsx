@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ArrowLeft, ArrowRight, BookOpen, Search } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
 import { LeadCaptureModal } from "../components/LeadCaptureModal";
+import HeroVortex from "../components/HeroVortex";
 
 interface UseCasesPageProps {
   onBackToHome: () => void;
@@ -22,9 +23,14 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
+  const scrollToId = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
-      {/* Header with Back Button (adapted from Solutions layout) */}
+    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth min-h-screen flex flex-col">
+      {/* Header */}
       <header
         className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
         style={{ height: "calc(6rem * 1.3)" }}
@@ -53,6 +59,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back to Home
               </button>
+
               <button
                 onClick={handleOpenModal}
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
@@ -71,15 +78,11 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
         </div>
       </header>
 
-      {/* Background & Floating Elements (from Solutions layout) */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
-      <div className="absolute top-20 left-10 w-20 h-20 bg-emerald-500/20 rounded-full blur-xl animate-pulse duration-4000"></div>
-
-      <div className="absolute bottom-40 left-20 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-2000 duration-4000"></div>
-      {/* Decorative vortex removed to avoid concentric circles */}
-
-      {/* Hero Section (Use Cases content kept intact) */}
-      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+      {/* HERO (lighter by default, consistent style, no orb) */}
+      <HeroVortex
+        variant="inner"
+        className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
+      >
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <BookOpen className="w-5 h-5 mr-2" />
@@ -107,11 +110,12 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             strategies.
           </p>
 
-          {/* Cards (kept content unchanged) */}
+          {/* HERO CARDS */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-12 mt-12">
+            {/* Case Studies card: scroll (NOT navigate) */}
             <div
               className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 cursor-pointer"
-              onClick={onNavigateToCaseStudy1}
+              onClick={() => scrollToId("case-study-summaries")}
             >
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <BookOpen className="w-8 h-8 text-white" />
@@ -125,13 +129,9 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               </p>
               <button
                 className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-md transition-all"
-                onClick={() => {
-                  const section = document.getElementById(
-                    "detailed-case-studies",
-                  );
-                  if (section) {
-                    section.scrollIntoView({ behavior: "smooth" });
-                  }
+                onClick={(e) => {
+                  e.stopPropagation();
+                  scrollToId("case-study-summaries");
                 }}
               >
                 View Case Studies
@@ -139,9 +139,10 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               </button>
             </div>
 
+            {/* Research card: scroll (NOT navigate) */}
             <div
               className="group bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105 w-80 cursor-pointer"
-              onClick={onNavigateToResearchStudy}
+              onClick={() => scrollToId("research-study-summaries")}
             >
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Search className="w-8 h-8 text-white" />
@@ -153,27 +154,30 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
                 Explore our research, insights, and innovation in prompt
                 engineering and workforce elevation.
               </p>
-              <button className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all">
+              <button
+                className="inline-flex items-center px-5 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-md transition-all"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  scrollToId("research-study-summaries");
+                }}
+              >
                 View Research
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
             </div>
           </div>
         </div>
-      </div>
+      </HeroVortex>
 
-      {/* Case Study Summaries & Research (kept content unchanged, wrapped in Solutions-style containers) */}
-      <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500">
+      {/* BODY */}
+      <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500 flex-1">
         <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-8">
+          {/* CASE STUDIES */}
+          <div id="case-study-summaries" className="text-left mb-10">
             <h2 className="text-4xl font-bold text-gray-700 mb-6">
               Case Study Summaries
             </h2>
-            <div
-              id="detailed-case-studies"
-              className="max-w-3xl mx-auto py-4 px-1 text-left"
-            ></div>
-            <div className="mt-8"></div>
+
             <div className="mt-2 mb-6">
               <div>
                 <h3 className="text-3xl font-bold text-gray-700 mb-6">
@@ -241,11 +245,12 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             </div>
           </div>
 
-          <div className="mt-20">
+          {/* RESEARCH */}
+          <div id="research-study-summaries" className="mt-20">
             <h2 className="text-4xl font-bold text-gray-700 mb-6">
               Research Study Summaries
             </h2>
-            <div className="mt-8"></div>
+
             <div className="mt-2 mb-6">
               <h3 className="text-3xl font-bold text-gray-700 mb-6">
                 Prompt Engineering Agents in Consulting
@@ -276,11 +281,9 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
         </div>
       </div>
 
-      {/* Footer (kept theme consistent with original UseCasesPage) */}
+      {/* Footer */}
       <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-auto">
-        <div className="mt-auto">
-          <SiteFooter theme="dark" />
-        </div>
+        <SiteFooter theme="dark" />
       </div>
 
       {/* Lead Capture Modal */}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import HeroVortex from "../components/HeroVortex";
 import {
   ArrowLeft,
   Users,
@@ -86,7 +87,10 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
       {/* Floating decorative orbs removed for a cleaner hero */}
 
       {/* Hero Section */}
-      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+      <HeroVortex
+        variant="inner"
+        className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
+      >
         <div className="max-w-6xl mx-auto text-center">
           {/* Strategic Prompt Engineering Badge - moved above headline, colors adapted */}
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-700 via-blue-700 to-purple-700 backdrop-blur-sm border border-emerald-400/30 rounded-full text-emerald-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
@@ -135,10 +139,6 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
               </span>
               <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-              <div
-                id="product-grid"
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              ></div>
             </button>
           </div>
 
@@ -158,7 +158,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
             </div>
           </div>
         </div>
-      </div>
+      </HeroVortex>
 
       {/* Solutions Overview Section */}
       <div
@@ -175,8 +175,8 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive AI-powered solutions that work together to transform
-              your entire business ecosystem.
+              Comprehensive AI-powered solutions transform
+              your business ecosystem.
             </p>
           </div>
 
@@ -417,7 +417,6 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
             </div>
           </div>
         </div>
-      </div>
 
       {/* Call to Action Section */}
       <div className="relative z-10 bg-gradient-to-br from-emerald-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500">
@@ -428,7 +427,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
               <span className="bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Transform
               </span>{" "}
-              Your Business?
+              Your Workforce?
             </h2>
             <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
               Discover how our comprehensive AI solutions can revolutionize your
