@@ -187,8 +187,7 @@ function App() {
       <>
         <ProductsPage
           onBackToHome={() => handleNavigateToPage("home")}
-          onOpenModal={() => setIsModalOpen(true)}
-          onNavigateToProductPage={handleNavigateToPage}
+          onNavigate={handleNavigateToPage}
         />
         <LeadCaptureModal
           isOpen={isModalOpen}
@@ -448,7 +447,8 @@ function App() {
               </span>
             </h2>
             <p className="text-2xl text-gray-800 max-w-5xl mx-auto">
-              An automation agency where strategy meets prompt engineering:
+              A knowledge-as-a-service agency where strategy meets prompt
+              engineering:
               <br />
               <span className="text-2xl text-gray-800 max-w-5xl mx-auto">
                 elevating performance rather than replacing performers
