@@ -850,7 +850,7 @@ function App() {
                   <p className="text-gray-600 text-sm leading-relaxed">
                     On-demand skill development eliminates redundant tasks
                     freeing up time for employee's growth through creativity,
-                    self-improvement and pursuit of mastery..
+                    self-improvement and pursuit of mastery
                   </p>
                 </div>
               </div>
