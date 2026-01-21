@@ -1,25 +1,25 @@
 import React, { useState } from "react";
-import HeroVortex from "../components/HeroVortex";
 import {
   ArrowLeft,
-  ArrowRight,
-  Brain,
-  CheckCircle,
-  Cpu,
-  Database,
-  Lightbulb,
-  Rocket,
-  Shield,
-  Target,
-  TrendingUp,
   Users,
-  Workflow,
   Zap,
+  TrendingUp,
+  Target,
+  CheckCircle,
+  Shield,
   BarChart3,
+  Rocket,
+  ArrowRight,
+  Workflow,
+  Brain,
+  Database,
+  Cpu,
   Award,
+  Lightbulb,
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
 import { LeadCaptureModal } from "../components/LeadCaptureModal";
+import HeroVortex from "../components/HeroVortex";
 
 interface SolutionsPageProps {
   onBackToHome: () => void;
@@ -31,12 +31,11 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
   onNavigateToProducts,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth min-h-screen">
+    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
       {/* Header */}
       <header
         className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
@@ -51,17 +50,17 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
             <div className="flex items-start">
               <img
                 src="/Logo/VirtualStrategyTechLogoSVG.svg"
-                alt="Virtual Strategy Tech - Productivity Reimagined"
+                alt="Virtual Strategy Tech"
                 className="h-32 w-auto object-contain -mt-1"
               />
             </div>
 
-            {/* Nav */}
-            <div className="flex items-center space-x-6">
+            {/* Navigation */}
+            <div className="flex items-center space-x-4">
               <button
                 onClick={onBackToHome}
-                className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "22px" }}
+                className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium"
+                style={{ fontSize: "20px" }}
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back to Home
@@ -69,7 +68,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
 
               <button
                 onClick={handleOpenModal}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
+                className="px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 shadow-md hover:shadow-lg transition-all duration-300"
                 style={{
                   fontSize: "26px",
                   paddingLeft: "1.5rem",
@@ -85,17 +84,14 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
         </div>
       </header>
 
-      {/* Subtle grid texture over the dark background */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10" />
-
-      {/* HERO (inner vortex = consistent with home colors, lighter load, no orb spheres) */}
+      {/* Hero Section (LIGHT animated, consistent with home) */}
       <HeroVortex
         variant="inner"
         className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
       >
         <div className="max-w-6xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-700 via-blue-700 to-purple-700 backdrop-blur-sm border border-emerald-400/30 rounded-full text-emerald-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
+          <div className="inline-flex items-center px-4 py-3 rounded-full bg-gradient-to-r from-emerald-600/40 to-indigo-600/40 border border-white/15 text-emerald-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <Lightbulb className="w-5 h-5 mr-2" />
             <Brain className="w-5 h-5 mr-2 text-emerald-300" />
             <span
@@ -105,57 +101,56 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
                 letterSpacing: "0.02em",
               }}
             >
-              Strategic Prompt Engineering
+              Strategic Prompt Engineering Solutions
             </span>
           </div>
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             AI Solutions That{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
               Elevate Performance
             </span>{" "}
-            — Not Replace Teams
+            — Not Replace Performers
           </h1>
 
-          {/* Subheading */}
-          <p className="text-xl sm:text-2xl md:text-3xl text-emerald-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-100/90 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in">
             Build scalable systems that improve productivity, knowledge
-            transfer, and execution speed — while keeping your workforce at the
-            center.
+            transfer, and execution speed — while keeping your workforce
+            motivated
           </p>
 
           {/* CTA */}
-          <div className="mb-16 animate-slide-up delay-400">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16 animate-bounce-in">
             <button
               onClick={() => {
                 onNavigateToProducts();
                 setTimeout(() => {
                   const el = document.getElementById("products-grid");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
-                }, 250);
+                }, 300);
               }}
-              className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
+              className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-gradient-to-r from-emerald-600 to-indigo-600 rounded-2xl shadow-2xl hover:shadow-emerald-500/25 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
                 Discover Our Products
               </span>
-              <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+              <ArrowRight className="w-6 h-6 ml-4 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
             </button>
           </div>
 
-          {/* Chips */}
-          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-emerald-200 animate-slide-up delay-600">
-            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+          {/* Value props */}
+          <div className="flex flex-wrap justify-center gap-4 text-blue-100 animate-fade-in-up">
+            <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <Zap className="w-6 h-6 text-emerald-400" />
               <span className="text-xl font-medium">End-to-End Automation</span>
             </div>
-            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+            <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <TrendingUp className="w-6 h-6 text-blue-400" />
               <span className="text-xl font-medium">Scalable Growth</span>
             </div>
-            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+            <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <Shield className="w-6 h-6 text-purple-400" />
               <span className="text-xl font-medium">Enterprise Security</span>
             </div>
@@ -163,46 +158,41 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
         </div>
       </HeroVortex>
 
-      {/* ✅ Portfolio Section (LIGHT GREEN TINT so cards pop) */}
-      <section
+      {/* Solutions Overview Section (more color so sections don’t blend) */}
+      <div
         id="solutions-portfolio"
-        className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-50 via-white to-blue-50"
+        className="relative z-10 bg-gradient-to-br from-white via-emerald-50/40 to-blue-50/60 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500 border-t border-emerald-100/60"
       >
-        {/* Subtle background wash */}
-        <div className="pointer-events-none absolute inset-0 opacity-70">
-          <div className="absolute -top-24 -left-24 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl" />
-          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Our{" "}
               <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
                 Solution Portfolio
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive AI-powered solutions that work together to transform
-              your business ecosystem.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Comprehensive automation and upskilling solutions designed to
+              transform how your organization operates, learns, and scales.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Solutions Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-stagger-in">
             {/* Product Management */}
-            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="group bg-gradient-to-br from-emerald-50 to-white rounded-3xl p-8 border border-emerald-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Rocket className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Product Management
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Build scalable products with automation where it makes sense.
-                Improve the creativity of your workforce by making learning
-                on-the-job fun and productive.
+                Build scalable products with automation where it makes sense to
+                reduce cost and accelerate delivery.
               </p>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
                   Scalable products
@@ -218,99 +208,131 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
               </ul>
             </div>
 
-            {/* Process Optimization */}
-            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-orange-100 shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Workflow className="w-8 h-8 text-white" />
+            {/* Upskilling AI Agents */}
+            <div className="group bg-gradient-to-br from-emerald-50 to-white rounded-3xl p-8 border border-emerald-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Brain className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Process Optimization
+                Upskilling AI Agents
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Optimize and enhance business processes through intelligent
-                analysis and strategic improvements.
+                Elevate performance with AI learning companions that deliver
+                personalized, on-demand training.
               </p>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-orange-500 mr-2" />
-                  Process Analysis & Mapping
+                  <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
+                  Personalized Learning
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-orange-500 mr-2" />
-                  Performance Optimization
+                  <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
+                  Skill Assessments
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-orange-500 mr-2" />
-                  Efficiency Improvements
+                  <CheckCircle className="w-4 h-4 text-emerald-500 mr-2" />
+                  Progress Tracking
                 </li>
               </ul>
             </div>
 
-            {/* Data Analytics */}
-            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-cyan-100 shadow-sm hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            {/* Knowledge Base Intelligence */}
+            <div className="group bg-gradient-to-br from-purple-50 to-white rounded-3xl p-8 border border-purple-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Database className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Knowledge Base Intelligence
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Transform organizational knowledge into an intelligent system
+                that delivers instant answers and insights.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-purple-500 mr-2" />
+                  Smart Search
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-purple-500 mr-2" />
+                  Context Retrieval
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-purple-500 mr-2" />
+                  Knowledge Sync
+                </li>
+              </ul>
+            </div>
+
+            {/* Intelligent Workflow Automation */}
+            <div className="group bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 border border-blue-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Workflow className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Intelligent Workflow Automation
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Streamline operations with AI-powered workflows that adapt to
+                your processes and scale efficiently.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-blue-500 mr-2" />
+                  Process Optimization
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-blue-500 mr-2" />
+                  Automated Routing
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-blue-500 mr-2" />
+                  Performance Analytics
+                </li>
+              </ul>
+            </div>
+
+            {/* Data Analytics & Insights */}
+            <div className="group bg-gradient-to-br from-cyan-50 to-white rounded-3xl p-8 border border-cyan-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-cyan-600 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <BarChart3 className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Data Analytics & Insights
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Transform raw data into actionable insights with AI-powered
-                analytics that drive decision-making.
+                Turn raw data into actionable insights with AI-powered analytics
+                that drive decision-making.
               </p>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-cyan-500 mr-2" />
-                  Real-time Dashboards
+                  KPI Dashboards
                 </li>
                 <li className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-cyan-500 mr-2" />
-                  Custom Reporting
+                  Forecasting Models
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle className="w-4 h-4 text-cyan-500 mr-2" />
+                  ROI Measurement
                 </li>
               </ul>
             </div>
 
-            {/* Strategy */}
-            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-teal-100 shadow-sm hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Strategy Consulting
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Align AI initiatives with business objectives for sustainable
-                growth and real-world outcomes.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-teal-500 mr-2" />
-                  Strategic Planning & Roadmapping
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-teal-500 mr-2" />
-                  Digital Transformation Strategy
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="w-4 h-4 text-teal-500 mr-2" />
-                  Performance Optimization
-                </li>
-              </ul>
-            </div>
-
-            {/* Change */}
-            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-indigo-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            {/* Change Management */}
+            <div className="group bg-gradient-to-br from-indigo-50 to-white rounded-3xl p-8 border border-indigo-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Change Management
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Drive adoption with smooth organizational transformation and
-                measurable rollout progress.
+                Navigate transformation with adoption tracking and rollout
+                support that drives measurable progress.
               </p>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-indigo-500 mr-2" />
                   Change Impact Assessment
@@ -327,196 +349,204 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* ✅ “How We Implement Solutions” (the part you liked) */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-emerald-50 to-blue-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+      {/* Implementation Process Section (adds strong demarcation + color) */}
+      <section
+        id="implementation-process"
+        className="relative z-10 bg-gradient-to-b from-emerald-50 via-emerald-100/60 to-white py-24 px-4 sm:px-6 lg:px-8 border-t border-emerald-100/70"
+      >
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute -top-32 -left-32 h-[28rem] w-[28rem] rounded-full bg-emerald-400/10 blur-3xl" />
+          <div className="absolute -bottom-40 right-0 h-[32rem] w-[32rem] rounded-full bg-blue-500/10 blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center mb-14 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               How We Implement{" "}
               <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
                 Solutions
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A proven approach designed to de-risk adoption and drive results.
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              A proven rollout plan designed to de-risk adoption, deliver
+              results fast, and scale cleanly across your organization.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
-                <Target className="w-6 h-6 text-blue-600" />
-              </div>
-              <div className="text-sm font-bold text-gray-900 mb-2">
-                1. Diagnose
-              </div>
-              <div className="text-gray-600 text-sm leading-relaxed">
-                Identify bottlenecks, inefficiencies, and high-leverage wins.
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-              <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-6">
-                <Workflow className="w-6 h-6 text-emerald-600" />
-              </div>
-              <div className="text-sm font-bold text-gray-900 mb-2">
-                2. Build
-              </div>
-              <div className="text-gray-600 text-sm leading-relaxed">
-                Implement automation + knowledge workflows with clear ROI.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 animate-stagger-in">
+            <div className="group bg-white/80 backdrop-blur rounded-2xl border border-emerald-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+              <div className="p-8">
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-6">
+                  <Target className="w-6 h-6 text-emerald-600" />
+                </div>
+                <div className="text-sm font-semibold text-emerald-700 mb-2">
+                  1. Diagnose
+                </div>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Identify bottlenecks, inefficiencies, and high-leverage wins
+                  with a clear ROI case.
+                </p>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-              <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-6">
-                <Shield className="w-6 h-6 text-purple-600" />
-              </div>
-              <div className="text-sm font-bold text-gray-900 mb-2">
-                3. Deploy
-              </div>
-              <div className="text-gray-600 text-sm leading-relaxed">
-                Roll out safely with tracking + iteration loops.
+            <div className="group bg-white/80 backdrop-blur rounded-2xl border border-blue-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+              <div className="p-8">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
+                  <Workflow className="w-6 h-6 text-blue-600" />
+                </div>
+                <div className="text-sm font-semibold text-blue-700 mb-2">
+                  2. Build
+                </div>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Implement automation + knowledge workflows with governance and
+                  a clean handoff.
+                </p>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
-              <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-6">
-                <Rocket className="w-6 h-6 text-orange-600" />
+            <div className="group bg-white/80 backdrop-blur rounded-2xl border border-purple-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+              <div className="p-8">
+                <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-purple-600" />
+                </div>
+                <div className="text-sm font-semibold text-purple-700 mb-2">
+                  3. Deploy
+                </div>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Roll out safely with training, feedback loops, and adoption
+                  tracking that sticks.
+                </p>
               </div>
-              <div className="text-sm font-bold text-gray-900 mb-2">
-                4. Scale
-              </div>
-              <div className="text-gray-600 text-sm leading-relaxed">
-                Expand across teams with governance + support.
+            </div>
+
+            <div className="group bg-white/80 backdrop-blur rounded-2xl border border-amber-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+              <div className="p-8">
+                <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-6">
+                  <Rocket className="w-6 h-6 text-amber-600" />
+                </div>
+                <div className="text-sm font-semibold text-amber-700 mb-2">
+                  4. Scale
+                </div>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Expand across teams with playbooks, change management, and
+                  ongoing support.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Integrated ecosystem section (dark) */}
-      <section className="relative z-10 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-20 px-4 sm:px-6 lg:px-8">
+      {/* Integration Benefits Section */}
+      <div className="relative z-10 bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
               Integrated{" "}
               <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
                 Ecosystem
               </span>
             </h2>
-            <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
-              Our solutions work together to create a unified, intelligent
-              business ecosystem.
+            <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed">
+              A unified foundation that connects automation, knowledge, and
+              learning to unlock compounding impact.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
-              <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-6">
-                <Database className="w-6 h-6 text-emerald-400" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10 hover:border-emerald-400/40 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4">
+                <Cpu className="w-6 h-6 text-emerald-300" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">
-                Unified Data Platform
+                AI-First Execution
               </h3>
-              <p className="text-emerald-100 leading-relaxed text-sm">
-                A shared data foundation that enables powerful cross-functional
-                insights.
+              <p className="text-purple-100 leading-relaxed text-sm">
+                Deploy AI where it drives measurable throughput and reduces
+                operational drag.
               </p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
-              <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6">
-                <Cpu className="w-6 h-6 text-blue-400" />
+            <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10 hover:border-blue-400/40 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4">
+                <Database className="w-6 h-6 text-blue-300" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">
-                Seamless Integration
+                Knowledge Intelligence
               </h3>
-              <p className="text-blue-100 leading-relaxed text-sm">
-                Works with your existing systems and scales without complexity.
+              <p className="text-purple-100 leading-relaxed text-sm">
+                Make your knowledge base queryable, reliable, and useful in
+                real-time.
               </p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
-              <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
-                <Award className="w-6 h-6 text-purple-400" />
+            <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10 hover:border-purple-400/40 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
+                <Award className="w-6 h-6 text-purple-300" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">
+                Workforce Enablement
+              </h3>
+              <p className="text-purple-100 leading-relaxed text-sm">
+                Upskill teams with prompt engineering + systems thinking baked
+                into workflows.
+              </p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/10 hover:border-emerald-400/40 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-emerald-300" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">
                 Scalable Architecture
               </h3>
               <p className="text-purple-100 leading-relaxed text-sm">
-                Built to grow from startup to enterprise without performance
-                tradeoffs.
+                Built to grow with your business without compromising
+                performance.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* CTA + Footer */}
-      <section className="relative z-10 bg-gradient-to-br from-emerald-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-            Ready to{" "}
-            <span className="bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Transform
-            </span>{" "}
-            Your Workforce?
-          </h2>
+      {/* Call to Action */}
+      <div className="relative z-10 bg-gradient-to-br from-white via-emerald-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="animate-fade-in-up">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+              Ready to{" "}
+              <span className="bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Transform
+              </span>{" "}
+              Your Business?
+            </h2>
+            <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Discover how our comprehensive AI solutions can revolutionize your
+              operations, boost productivity, and drive unprecedented growth.
+            </p>
 
-          <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Discover how our AI solutions can boost productivity, improve
-            execution speed, and drive measurable growth.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button
-              onClick={handleOpenModal}
-              className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-emerald-600 to-blue-600 rounded-xl shadow-2xl hover:shadow-emerald-500/25 transition-all duration-500 transform hover:scale-105 hover:from-emerald-500 hover:to-blue-500 focus:outline-none focus:ring-4 focus:ring-emerald-500/50 min-w-[280px]"
-            >
-              <span className="relative z-10">Schedule Your Consultation</span>
-              <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:translate-x-1" />
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-            </button>
-
-            <button
-              onClick={onBackToHome}
-              className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-gray-700 bg-white border-2 border-gray-300 rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-500 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gray-300/30 min-w-[280px]"
-            >
-              <span className="relative z-10">Explore Individual Services</span>
-              <Rocket className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:rotate-12" />
-            </button>
-          </div>
-
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-gray-600">
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-emerald-400 rounded-full mr-3" />
-                <span className="text-sm font-medium">Free consultation</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-blue-400 rounded-full mr-3" />
-                <span className="text-sm font-medium">
-                  Custom implementation
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
+              <button
+                onClick={handleOpenModal}
+                className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-gradient-to-r from-emerald-600 to-indigo-600 rounded-2xl shadow-2xl hover:shadow-emerald-500/25 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
+              >
+                <span className="relative z-10 tracking-wide drop-shadow">
+                  Book a Demo
                 </span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-purple-400 rounded-full mr-3" />
-                <span className="text-sm font-medium">Ongoing support</span>
-              </div>
+                <ArrowRight className="w-6 h-6 ml-4 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+              </button>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="text-gray-900 mt-16">
-          <SiteFooter theme="light" />
-        </div>
-      </section>
+      <SiteFooter />
 
+      {/* Lead Capture Modal */}
       <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };
-
-export default SolutionsPage;

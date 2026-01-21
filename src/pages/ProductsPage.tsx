@@ -1,5 +1,4 @@
 import React from "react";
-import HeroVortex from "../components/HeroVortex";
 import {
   ArrowLeft,
   ArrowRight,
@@ -10,6 +9,7 @@ import {
   Brain,
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
+import HeroVortex from "../components/HeroVortex";
 
 export type PageKey =
   | "home"
@@ -21,11 +21,10 @@ export type PageKey =
 
 interface ProductsPageProps {
   onBackToHome: () => void;
-  onOpenModal: () => void;
-  onNavigateToProductPage: (page: PageKey) => void;
+  onNavigate: (page: PageKey) => void;
 }
 
-interface ProductCard {
+type ProductCard = {
   icon: React.ReactNode;
   iconBg: string;
   title: string;
@@ -33,9 +32,9 @@ interface ProductCard {
   bullets: string[];
   bulletIcon: React.ReactNode;
   href: string;
-  btnBg: string;
   page: PageKey;
-}
+  btnBg: string;
+};
 
 const productCards: ProductCard[] = [
   {
@@ -43,7 +42,7 @@ const productCards: ProductCard[] = [
     iconBg: "bg-gradient-to-br from-emerald-500 to-emerald-600",
     title: "Lead Capture and CRM Integration",
     description:
-      "Revolutionize your sales process with intelligent lead capture and seamless CRM workflows that never let you miss a sales opportunity.",
+      "Revolutionize your sales process with intelligent lead capture systems that convert prospects into customers automatically and efficiently.",
     bullets: [
       "Fast Lead Responses",
       "Seamless CRM Integration",
@@ -62,8 +61,8 @@ const productCards: ProductCard[] = [
       "Empower your workforce with AI-driven learning companions that accelerate skill development and boost productivity.",
     bullets: [
       "Personalized Learning",
-      "Productivity Gains",
-      "Instant Knowledge Retrieval",
+      "Skill Assessments",
+      "Progress Tracking",
     ],
     bulletIcon: <TrendingUp className="w-4 h-4 text-blue-500 mr-2" />,
     href: "#upskilling-agents",
@@ -81,20 +80,19 @@ const productCards: ProductCard[] = [
       "24/7 Availability",
       "Effortless Scheduling",
     ],
-    bulletIcon: <LifeBuoy className="w-4 h-4 text-fuchsia-500 mr-2" />,
+    bulletIcon: <LifeBuoy className="w-4 h-4 text-purple-500 mr-2" />,
     href: "#support-ticket-management",
     page: "support-ticket-management",
-    btnBg: "bg-gradient-to-r from-fuchsia-600 to-purple-600",
+    btnBg: "bg-gradient-to-r from-purple-600 to-fuchsia-600",
   },
 ];
 
 export default function ProductsPage({
   onBackToHome,
-  onOpenModal,
-  onNavigateToProductPage,
+  onNavigate,
 }: ProductsPageProps) {
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans relative overflow-hidden scroll-smooth">
+    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
       {/* Header */}
       <header
         className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
@@ -109,25 +107,24 @@ export default function ProductsPage({
             <div className="flex items-start">
               <img
                 src="/Logo/VirtualStrategyTechLogoSVG.svg"
-                alt="Virtual Strategy Tech - Productivity Reimagined"
+                alt="Virtual Strategy Tech"
                 className="h-32 w-auto object-contain -mt-1"
               />
             </div>
 
-            {/* Nav */}
-            <div className="flex items-center space-x-6">
+            {/* Navigation */}
+            <div className="flex items-center space-x-4">
               <button
                 onClick={onBackToHome}
-                className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "22px" }}
+                className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium"
+                style={{ fontSize: "20px" }}
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back to Home
               </button>
 
               <button
-                onClick={onOpenModal}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
+                className="px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 shadow-md hover:shadow-lg transition-all duration-300"
                 style={{
                   fontSize: "26px",
                   paddingLeft: "1.5rem",
@@ -143,14 +140,14 @@ export default function ProductsPage({
         </div>
       </header>
 
-      {/* Hero (LIGHTER inner variant but same “home” aesthetic) */}
+      {/* Hero Section (LIGHT animated, consistent with home colors) */}
       <HeroVortex
         variant="inner"
         className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
       >
         <div className="max-w-6xl w-full mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-emerald-700 via-blue-700 to-purple-700 backdrop-blur-sm border border-emerald-400/30 rounded-full text-emerald-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
+          <div className="inline-flex items-center px-4 py-3 rounded-full bg-gradient-to-r from-emerald-600/40 to-indigo-600/40 border border-white/15 text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <Lightbulb className="w-5 h-5 mr-2" />
             <Brain className="w-5 h-5 mr-2 text-emerald-300" />
             <span
@@ -167,37 +164,37 @@ export default function ProductsPage({
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             From Strategy to Prompt: Teach Teams{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
               Prompt Engineering
             </span>
           </h1>
 
-          {/* Subheading */}
-          <p className="font-sans text-2xl text-blue-100 mb-12 max-w-4xl mx-auto font-normal leading-snug">
+          {/* Subheadline */}
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-100/90 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in">
             Discover our comprehensive portfolio of intelligent automation
             solutions designed to transform every aspect of your business
             operations and unlock unprecedented growth potential.
           </p>
 
           {/* CTA */}
-          <div className="mb-16">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16 animate-bounce-in">
             <button
               onClick={() => {
-                const grid = document.getElementById("products-grid");
-                if (grid) grid.scrollIntoView({ behavior: "smooth" });
+                const el = document.getElementById("products-grid");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
+              className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-gradient-to-r from-emerald-600 to-indigo-600 rounded-2xl shadow-2xl hover:shadow-emerald-500/25 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
                 Discover Our Products
               </span>
-              <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <ArrowRight className="w-6 h-6 ml-4 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
             </button>
           </div>
 
-          {/* Feature chips */}
-          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-emerald-200">
+          {/* Value props */}
+          <div className="flex flex-wrap justify-center gap-4 text-blue-100 animate-fade-in-up">
             <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <Users className="w-6 h-6 text-emerald-400" />
               <span className="text-xl font-medium">Scalable Solutions</span>
@@ -214,85 +211,66 @@ export default function ProductsPage({
         </div>
       </HeroVortex>
 
-      {/* Product Cards */}
+      {/* Product Cards Section */}
       <section
         id="products-grid"
         className="relative z-10 bg-gradient-to-br from-emerald-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {productCards.map((card) => {
-              let label: string | null = null;
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+              Product{" "}
+              <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+                Portfolio
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Three core solutions designed to modernize operations, elevate
+              productivity, and scale your organization intelligently.
+            </p>
+          </div>
 
-              if (card.title === "Lead Capture and CRM Integration")
-                label = "Coming Soon";
-              if (
-                card.title === "Upskilling Agents for Learning & Productivity"
-              )
-                label = "Beta Launch";
-              if (card.title === "Support Ticket Management & Smart Scheduling")
-                label = "Coming Soon";
-
-              return (
-                <div
-                  key={card.title}
-                  className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 border border-gray-100 relative"
-                >
-                  {label && (
-                    <span
-                      className="absolute -top-5 left-1/2 -translate-x-1/2 px-5 py-2 rounded-full bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 text-white font-bold text-base shadow-lg border-2 border-white z-20"
-                      style={{
-                        letterSpacing: "0.04em",
-                        fontSize: "1.125rem",
-                        fontWeight: 700,
-                      }}
-                    >
-                      {label}
-                    </span>
-                  )}
-
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {productCards.map((card) => (
+              <div
+                key={card.title}
+                className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden"
+              >
+                <div className="p-8">
                   <div
-                    className={`w-16 h-16 ${card.iconBg} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-16 h-16 ${card.iconBg} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}
                   >
                     {card.icon}
                   </div>
-
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {card.title}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     {card.description}
                   </p>
-
-                  <ul className="space-y-2 mb-8">
-                    {card.bullets.map((b, i) => (
-                      <li
-                        key={i}
-                        className="flex items-center text-sm text-gray-700"
-                      >
+                  <ul className="space-y-3 mb-8">
+                    {card.bullets.map((b) => (
+                      <li key={b} className="flex items-center text-gray-700">
                         {card.bulletIcon}
-                        <span className="font-medium">{b}</span>
+                        <span>{b}</span>
                       </li>
                     ))}
                   </ul>
-
                   <button
-                    onClick={() => onNavigateToProductPage(card.page)}
-                    className={`inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-semibold text-white ${card.btnBg} shadow-md transition-all`}
+                    onClick={() => onNavigate(card.page)}
+                    className={`w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold ${card.btnBg} shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-[1.02]`}
                   >
                     Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
-
-        <div className="text-gray-900">
-          <SiteFooter theme="light" />
-        </div>
       </section>
+
+      <SiteFooter />
     </div>
   );
 }
