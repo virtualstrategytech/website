@@ -520,13 +520,12 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
               <span className="bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Transform
               </span>{" "}
-              Your Business?
+              Your Workforce?
             </h2>
             <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
               Discover how our comprehensive AI solutions can revolutionize your
-              operations, boost productivity, and drive unprecedented growth.
+              operations, boost productivity, and drive growth.
             </p>
-
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
               <button
                 onClick={handleOpenModal}
