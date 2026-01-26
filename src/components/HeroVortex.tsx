@@ -1,92 +1,282 @@
-import React, { PropsWithChildren, useEffect, useMemo, useState } from "react";
-import { Vortex } from "./ui/vortex";
-import { shouldEnableHeavyEffects } from "@/utils/animationGate";
-import StarfieldLite from "./StarfieldLite";
+import React, { useEffect, useMemo, useRef } from "react";
 
 type Variant = "home" | "inner";
 
-type Props = {
-  className?: string;
-  backgroundColor?: string;
-  baseHue?: number;
-  particleCount?: number;
-  rangeY?: number;
-
-  /**
-   * home = heavy/rich animation (Home page only)
-   * inner = lightweight, consistent particle hero (Products/Solutions/UseCases)
-   */
+export type HeroVortexComponentProps = {
+  /** "home" = richer/denser, "inner" = lighter but same vibe */
   variant?: Variant;
+  /** Optional override for particle count */
+  density?: number;
+  /** Optional additional wrapper classes */
+  className?: string;
+  /** Content rendered above the canvas */
+  children?: React.ReactNode;
 };
 
-export default function HeroVortex({
-  children,
-  className,
-  backgroundColor = "black",
-  baseHue = 220,
-  particleCount = 1200,
-  rangeY = 800,
+/**
+ * HeroVortexComponent
+ * - Zero external deps
+ * - Canvas-based "star/bubble" field using the same purple/blue texture across pages
+ * - Supports lighter inner pages while keeping the home hero immersive
+ */
+export function HeroVortexComponent({
   variant = "home",
-}: PropsWithChildren<Props>) {
-  const [enableHeavy, setEnableHeavy] = useState(false);
+  density,
+  className = "",
+  children,
+}: HeroVortexComponentProps) {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const rafRef = useRef<number | null>(null);
+
+  const config = useMemo(() => {
+    const base = {
+      // tuned to your current brand palette
+      bgTopLeft: "#050814",
+      bgMid: "#07112a",
+      bgBottomRight: "#0b2a63",
+      // particle colors (purple/blue heavy, slight teal)
+      colors: ["#7c3aed", "#8b5cf6", "#3b82f6", "#60a5fa", "#06b6d4"],
+      // glow colors
+      glow: ["#a855f7", "#6366f1", "#22c55e", "#3b82f6"],
+    };
+
+    const isInner = variant === "inner";
+    return {
+      ...base,
+      count:
+        typeof density === "number"
+          ? Math.max(30, Math.floor(density))
+          : isInner
+            ? 120
+            : 220,
+      minR: isInner ? 0.7 : 0.9,
+      maxR: isInner ? 2.2 : 2.8,
+      speed: isInner ? 0.12 : 0.18,
+      twinkle: isInner ? 0.012 : 0.018,
+      hazeAlpha: isInner ? 0.12 : 0.18,
+    };
+  }, [variant, density]);
 
   useEffect(() => {
-    if (variant === "home") {
-      setEnableHeavy(shouldEnableHeavyEffects());
-    } else {
-      setEnableHeavy(false);
-    }
-  }, [variant]);
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-  const innerBg = useMemo(() => {
-    return (
-      <>
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950" />
+    const ctx = canvas.getContext("2d", { alpha: true });
+    if (!ctx) return;
 
-        <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.25%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] pointer-events-none" />
+    let width = 0;
+    let height = 0;
+    let dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
 
-        <StarfieldLite className="opacity-70" />
+    type P = {
+      x: number;
+      y: number;
+      r: number;
+      vx: number;
+      vy: number;
+      a: number;
+      tw: number;
+      c: string;
+      g: string;
+    };
 
-        <div className="absolute -top-16 left-10 w-40 h-40 bg-blue-500/15 rounded-full blur-3xl animate-pulse pointer-events-none" />
-        <div className="absolute top-24 right-10 w-52 h-52 bg-indigo-500/15 rounded-full blur-3xl animate-pulse delay-1000 pointer-events-none" />
-        <div className="absolute bottom-24 left-20 w-48 h-48 bg-purple-500/15 rounded-full blur-3xl animate-pulse delay-2000 pointer-events-none" />
+    const rand = (min: number, max: number) =>
+      min + Math.random() * (max - min);
+    const pick = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20 pointer-events-none" />
-      </>
-    );
-  }, []);
+    let particles: P[] = [];
 
-  if (variant === "inner") {
-    return (
-      <div className={`relative overflow-hidden ${className ?? ""}`}>
-        {innerBg}
-        <div className="relative z-10">{children}</div>
-      </div>
-    );
-  }
+    const resize = () => {
+      const parent = canvas.parentElement;
+      if (!parent) return;
 
-  if (enableHeavy) {
-    return (
-      <Vortex
-        backgroundColor={backgroundColor}
-        baseHue={baseHue}
-        particleCount={particleCount}
-        rangeY={rangeY}
-        baseSpeed={0.05}
-        rangeSpeed={0.4}
-        baseRadius={1.5}
-        rangeRadius={1.5}
-        className={className}
-      >
-        {children}
-      </Vortex>
-    );
-  }
+      const rect = parent.getBoundingClientRect();
+      width = Math.max(1, Math.floor(rect.width));
+      height = Math.max(1, Math.floor(rect.height));
+
+      dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      // Re-seed particles on resize for stability
+      particles = Array.from({ length: config.count }).map(() => ({
+        x: rand(0, width),
+        y: rand(0, height),
+        r: rand(config.minR, config.maxR),
+        vx: rand(-config.speed, config.speed),
+        vy: rand(-config.speed, config.speed),
+        a: rand(0.35, 0.95),
+        tw: rand(0.6, 1.4) * config.twinkle,
+        c: pick(config.colors),
+        g: pick(config.glow),
+      }));
+    };
+
+    const drawBackground = () => {
+      const grad = ctx.createLinearGradient(0, 0, width, height);
+      grad.addColorStop(0, config.bgTopLeft);
+      grad.addColorStop(0.55, config.bgMid);
+      grad.addColorStop(1, config.bgBottomRight);
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, width, height);
+
+      // Soft vignette for depth
+      const vignette = ctx.createRadialGradient(
+        width * 0.55,
+        height * 0.45,
+        Math.min(width, height) * 0.2,
+        width * 0.55,
+        height * 0.45,
+        Math.max(width, height) * 0.75,
+      );
+      vignette.addColorStop(0, "rgba(0,0,0,0)");
+      vignette.addColorStop(1, "rgba(0,0,0,0.55)");
+      ctx.fillStyle = vignette;
+      ctx.fillRect(0, 0, width, height);
+    };
+
+    const drawHaze = () => {
+      // Very subtle fog to match home texture
+      ctx.globalCompositeOperation = "screen";
+      ctx.fillStyle = `rgba(99, 102, 241, ${config.hazeAlpha})`;
+      ctx.beginPath();
+      ctx.ellipse(
+        width * 0.22,
+        height * 0.58,
+        width * 0.28,
+        height * 0.26,
+        0.2,
+        0,
+        Math.PI * 2,
+      );
+      ctx.fill();
+
+      ctx.fillStyle = `rgba(168, 85, 247, ${config.hazeAlpha * 0.85})`;
+      ctx.beginPath();
+      ctx.ellipse(
+        width * 0.78,
+        height * 0.42,
+        width * 0.34,
+        height * 0.28,
+        -0.25,
+        0,
+        Math.PI * 2,
+      );
+      ctx.fill();
+
+      ctx.globalCompositeOperation = "source-over";
+    };
+
+    const drawParticle = (p: P) => {
+      // Glow ring
+      ctx.globalCompositeOperation = "lighter";
+
+      const glowR = p.r * 6.5;
+      const glow = ctx.createRadialGradient(
+        p.x,
+        p.y,
+        p.r * 0.2,
+        p.x,
+        p.y,
+        glowR,
+      );
+      glow.addColorStop(0, `rgba(255,255,255,${p.a * 0.1})`);
+      glow.addColorStop(0.25, hexToRgba(p.g, p.a * 0.18));
+      glow.addColorStop(1, "rgba(0,0,0,0)");
+
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, glowR, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Core
+      ctx.fillStyle = hexToRgba(p.c, p.a);
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.globalCompositeOperation = "source-over";
+    };
+
+    const step = () => {
+      // clear + background
+      drawBackground();
+      drawHaze();
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+
+        // move
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // wrap
+        if (p.x < -20) p.x = width + 20;
+        if (p.x > width + 20) p.x = -20;
+        if (p.y < -20) p.y = height + 20;
+        if (p.y > height + 20) p.y = -20;
+
+        // twinkle
+        p.a += (Math.random() - 0.5) * p.tw;
+        p.a = Math.max(0.25, Math.min(0.95, p.a));
+
+        drawParticle(p);
+      }
+
+      rafRef.current = window.requestAnimationFrame(step);
+    };
+
+    const onResize = () => resize();
+
+    resize();
+    step();
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+      if (rafRef.current) window.cancelAnimationFrame(rafRef.current);
+    };
+  }, [config]);
 
   return (
-    <div className={`relative overflow-hidden ${className ?? ""}`}>
-      {innerBg}
+    <div className={`relative w-full ${className}`}>
+      <canvas
+        ref={canvasRef}
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full"
+      />
       <div className="relative z-10">{children}</div>
     </div>
   );
+}
+
+/** Default export used by the homepage: richer vibe */
+export default function HeroVortex({
+  className = "",
+  children,
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <HeroVortexComponent variant="home" className={className}>
+      {children}
+    </HeroVortexComponent>
+  );
+}
+
+// ---------- helpers ----------
+
+function hexToRgba(hex: string, alpha: number) {
+  const h = hex.replace("#", "").trim();
+  if (h.length !== 6) return `rgba(255,255,255,${alpha})`;
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return `rgba(${r},${g},${b},${alpha})`;
 }
