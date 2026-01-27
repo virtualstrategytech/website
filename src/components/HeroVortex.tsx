@@ -19,6 +19,10 @@ type Props = {
   variant?: Variant;
 };
 
+function clamp(n: number, min: number, max: number) {
+  return Math.max(min, Math.min(max, n));
+}
+
 function hsla(h: number, s: number, l: number, a: number) {
   const hh = ((h % 360) + 360) % 360;
   return `hsla(${hh}, ${s}%, ${l}%, ${a})`;
@@ -44,71 +48,114 @@ export default function HeroVortex({
   }, [variant]);
 
   const innerBg = useMemo(() => {
-    // Tuned to match the Home "space" feel, but lighter (no Vortex)
-    // baseHue controls the glow tint (blue/purple by default).
-    const glowA = hsla(baseHue + 0, 92, 60, 0.22);
-    const glowB = hsla(baseHue + 35, 92, 62, 0.18);
-    const glowC = hsla(baseHue - 35, 92, 58, 0.16);
+    // Goal: make INNER pages feel ~60% like the home hero:
+    // - same “space” palette + small particle density + gentle motion
+    // - NO big glow blobs / orbs
+    // - lightweight: CSS layers + StarfieldLite
 
-    // A navy/space baseline even if backgroundColor is passed as "#070A12"
+    const pc = clamp(particleCount, 300, 1600);
+    const ry = clamp(rangeY, 300, 1200);
+
+    // Density: higher particleCount -> smaller spacing (denser dots)
+    // Spacing range roughly 26px (sparse) down to 14px (dense)
+    const t = (pc - 300) / (1600 - 300);
+    const spacing1 = clamp(Math.round(26 - t * 12), 14, 26); // main dots
+    const spacing2 = clamp(Math.round(spacing1 * 1.65), 22, 44); // micro dots
+
+    // Opacity tuned so it reads like “small bubbles” but not noisy
+    const dotA1 = clamp(0.08 + t * 0.07, 0.08, 0.16);
+    const dotA2 = clamp(0.05 + t * 0.05, 0.05, 0.12);
+
+    // Motion: rangeY influences drift distance a bit (subtle)
+    const drift = clamp(Math.round((ry / 800) * 70), 40, 110);
+
+    // Space tint (blue/purple)
+    const glowA = hsla(baseHue + 0, 92, 60, 0.18);
+    const glowB = hsla(baseHue + 35, 92, 62, 0.14);
+    const glowC = hsla(baseHue - 35, 92, 58, 0.12);
+
+    // Base is your navy/space baseline even if passed "#070A12"
     const base = backgroundColor || "black";
+
+    const dotsMain = `radial-gradient(circle, rgba(255,255,255,${dotA1}) 1px, transparent 1.25px)`;
+    const dotsMicro = `radial-gradient(circle, rgba(255,255,255,${dotA2}) 0.8px, transparent 1.1px)`;
 
     return (
       <>
-        {/* Base: spacey gradient + subtle tinted radials */}
+        {/* Local CSS for drift/twinkle without touching tailwind config */}
+        <style>{`
+          @keyframes vstDriftA {
+            0%   { transform: translate3d(0,0,0); opacity: 1; }
+            50%  { transform: translate3d(${Math.round(drift * 0.45)}px, -${Math.round(
+              drift * 0.6,
+            )}px, 0); opacity: 0.85; }
+            100% { transform: translate3d(0,0,0); opacity: 1; }
+          }
+          @keyframes vstDriftB {
+            0%   { transform: translate3d(0,0,0); opacity: 0.95; }
+            50%  { transform: translate3d(-${Math.round(drift * 0.35)}px, ${Math.round(
+              drift * 0.55,
+            )}px, 0); opacity: 0.8; }
+            100% { transform: translate3d(0,0,0); opacity: 0.95; }
+          }
+          @keyframes vstTwinkle {
+            0%, 100% { opacity: 0.55; }
+            50%      { opacity: 0.9; }
+          }
+          .vst-dotlayer {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            will-change: transform, opacity;
+          }
+          .vst-dotlayer--a { animation: vstDriftA 18s ease-in-out infinite; }
+          .vst-dotlayer--b { animation: vstDriftB 26s ease-in-out infinite; }
+          .vst-twinkle { animation: vstTwinkle 7s ease-in-out infinite; }
+        `}</style>
+
+        {/* Base: spacey gradient + subtle tinted radials (keeps your matching color) */}
         <div
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(1100px 700px at 18% 12%, ${glowA}, transparent 60%),
-              radial-gradient(900px 650px at 88% 18%, ${glowB}, transparent 58%),
-              radial-gradient(950px 700px at 40% 92%, ${glowC}, transparent 62%),
-              linear-gradient(135deg, ${base} 0%, #071431 45%, #0b1c4a 100%)
+              radial-gradient(1200px 760px at 18% 10%, ${glowA}, transparent 62%),
+              radial-gradient(980px 720px at 88% 14%, ${glowB}, transparent 60%),
+              radial-gradient(1050px 780px at 42% 92%, ${glowC}, transparent 64%),
+              linear-gradient(135deg, ${base} 0%, #071431 48%, #0b1c4a 100%)
             `,
           }}
         />
 
-        {/* Texture overlay (very light) */}
-        <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.25%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] pointer-events-none" />
+        {/* Very light texture (keeps the “premium” feel) */}
+        <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.22%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] pointer-events-none" />
 
-        {/* Extra “bubble density”: subtle dot layer */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.10] bg-[radial-gradient(circle,rgba(255,255,255,0.35)_1px,transparent_1.2px)] bg-[length:18px_18px]" />
-
-        {/* Starfield */}
-        <StarfieldLite className="opacity-75" />
-
-        {/* More glow blobs (bubbly, but lightweight) */}
+        {/* Small “bubble” particles: dense dots + micro dots, drifting + twinkling */}
         <div
-          className="absolute -top-20 left-8 w-44 h-44 rounded-full blur-3xl animate-pulse pointer-events-none"
-          style={{ background: glowA }}
+          className="vst-dotlayer vst-dotlayer--a vst-twinkle"
+          style={{
+            backgroundImage: dotsMain,
+            backgroundSize: `${spacing1}px ${spacing1}px`,
+            opacity: 0.85,
+          }}
         />
         <div
-          className="absolute top-20 right-10 w-56 h-56 rounded-full blur-3xl animate-pulse delay-1000 pointer-events-none"
-          style={{ background: glowB }}
-        />
-        <div
-          className="absolute bottom-20 left-24 w-52 h-52 rounded-full blur-3xl animate-pulse delay-2000 pointer-events-none"
-          style={{ background: glowC }}
-        />
-
-        <div
-          className="absolute top-40 left-1/2 -translate-x-1/2 w-60 h-60 rounded-full blur-3xl animate-pulse delay-[1500ms] pointer-events-none"
-          style={{ background: hsla(baseHue + 15, 90, 60, 0.12) }}
-        />
-        <div
-          className="absolute bottom-40 right-28 w-44 h-44 rounded-full blur-3xl animate-pulse delay-[2500ms] pointer-events-none"
-          style={{ background: hsla(baseHue + 60, 90, 60, 0.1) }}
-        />
-        <div
-          className="absolute top-16 left-1/3 w-40 h-40 rounded-full blur-3xl animate-pulse delay-[500ms] pointer-events-none"
-          style={{ background: hsla(baseHue - 60, 90, 60, 0.1) }}
+          className="vst-dotlayer vst-dotlayer--b"
+          style={{
+            backgroundImage: dotsMicro,
+            backgroundSize: `${spacing2}px ${spacing2}px`,
+            opacity: 0.75,
+            filter: "blur(0.15px)",
+          }}
         />
 
-        {/* Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/25 pointer-events-none" />
+        {/* Starfield (kept, but tuned to stay subtle) */}
+        <StarfieldLite className="opacity-70" />
+
+        {/* Vignette (adds depth, keeps text readable) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/20 pointer-events-none" />
       </>
     );
-  }, [baseHue, backgroundColor]);
+  }, [baseHue, backgroundColor, particleCount, rangeY]);
 
   // Inner pages: always lightweight (no Vortex)
   if (variant === "inner") {
