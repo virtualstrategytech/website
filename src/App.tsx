@@ -446,13 +446,13 @@ function App() {
                 Upskilling Pro
               </span>
             </h2>
-            <p className="text-2xl text-gray-800 max-w-5xl mx-auto">
-              A knowledge-as-a-service agency where strategy meets prompt
-              engineering:
-              <br />
-              <span className="text-2xl text-gray-800 max-w-5xl mx-auto">
-                elevating performance rather than replacing performers
-              </span>
+            <p className="text-2xl text-gray-900 max-w-4xl mx-auto leading-relaxed font-semibold mb-6">
+              A knowledge-as-a-service agency: translating strategy questions
+              into prompt engineering lessons and quizzes for on-the-job
+              learning.
+            </p>
+            <p className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
+              Elevating performance rather than replacing performers
             </p>
           </div>
 
@@ -500,15 +500,16 @@ function App() {
             NovAIn
           </span>
           :<br />
-          <span className="text-xl font-semibold text-cyan-100">
+          <span className="text-3xl font-semibold text-cyan-100">
             Your Prompt Engineering Coach
           </span>
         </h2>
-        <p className="text-xl text-cyan-100 max-w-2xl text-center mb-8 z-10 font-sans">
+        <p className="text-2xl text-cyan-100 max-w-2xl text-center mb-8 z-10 font-sans leading-relaxed">
           A dual-agent collaborative system for learning strategy and prompt
           engineering
           <br />
-          <span className="text-emerald-200 font-medium">
+          <br />
+          <span className="text-emerald-200 font-semibold">
             Join our Beta and help us shape the future of stable, reliable,
             agentic flow!
           </span>
@@ -529,12 +530,12 @@ function App() {
             <h3 className="text-xl font-bold text-white mb-1 text-center font-sans">
               Business Strategy Agent
             </h3>
-            <p className="text-cyan-100 text-base text-center mb-1 font-sans">
+            <p className="text-cyan-50 text-lg text-center mb-1 font-sans font-bold">
               Elicits strategy question
             </p>
-            <p className="text-cyan-200 text-sm text-center font-sans">
-              Personalized lesson delivered through two lenses: business and/or
-              prompt engineering lens with an optional quiz{" "}
+            <p className="text-cyan-200 text-md text-center font-sans font-bold">
+              Confirms understanding of strategy or business challenge and
+              delivers a lesson to solve it{" "}
             </p>
           </div>
           {/* Step 2 */}
@@ -545,13 +546,11 @@ function App() {
             <h3 className="text-xl font-bold text-white mb-1 text-center font-sans">
               Prompt Design Agent
             </h3>
-            <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Designs prompt lesson
+            <p className="text-cyan-50 text-base text-center mb-1 font-sans font-bold">
+              Translates it into a prompt
             </p>
-            <p className="text-cyan-200 text-sm text-center font-sans">
-              Provides a customized strategy or prompt engineering lesson for
-              strategy question and delivers it through a business and/or prompt
-              lens
+            <p className="text-cyan-200 text-md text-center font-sans font-bold">
+              Answers the question through a business or prompt engineering lens
             </p>
           </div>
           {/* Step 3 */}
@@ -560,13 +559,13 @@ function App() {
               <BookOpenCheck className="w-9 h-9 text-white" />
             </div>
             <h3 className="text-xl font-bold text-white mb-1 text-center font-sans">
-              Optional Quiz (for retention)
+              Optional Quiz
             </h3>
-            <p className="text-cyan-100 text-base text-center mb-1 font-sans">
-              Reinforce learning by applying strategy/prompt design
+            <p className="text-cyan-50 text-base text-center mb-1 font-sans font-bold">
+              Reinforces Learning
             </p>
-            <p className="text-cyan-200 text-sm text-center font-sans">
-              Graded eedback for open-answer question with a "model answer".
+            <p className="text-cyan-200 text-md text-center font-sans font-bold">
+              Receive graded feedback including a "model answer".
             </p>
           </div>
         </div>
@@ -725,9 +724,8 @@ function App() {
               <span className="font-semibold text-gray-900">
                 empowering your workforce
               </span>
-              , not replacing it. Our upskilling agents work alongside your team
-              to unlock human potential through learning and creativity that
-              drives growth.
+              , not replacing it. Our upskilling agents work collaboratively to
+              unlock potential through learning and creativity
             </p>
           </div>
 
@@ -845,12 +843,12 @@ function App() {
                     <TrendingUp className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
-                    Employee Growth
+                    Employee's Growth
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    On-demand skill development eliminates redundant tasks
-                    freeing up time for employee's growth through creativity,
-                    self-improvement and pursuit of mastery
+                    On-demand skill development eliminates redundant GPT trials
+                    of figuring out which prompt works,freeing up time for
+                    employee's growth through learning a new skill.
                   </p>
                 </div>
               </div>
@@ -865,8 +863,8 @@ function App() {
                     Increased Morale
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Higher job satisfaction through greater variety of work
-                    leaves employees feeling motivated and empowered.
+                    Greater learning opportunities on the job ensures results in
+                    in higher employee motivation.
                   </p>
                 </div>
               </div>
@@ -878,11 +876,11 @@ function App() {
                     <Zap className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-3">
-                    Improved Productivity
+                    Higher Productivity
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Improved productivity leaves freed up time for creative
-                    problem solving of more complex problems.
+                    Improved productivity leaves more time for creative problem
+                    solving of complex problems.
                   </p>
                 </div>
               </div>
@@ -1015,7 +1013,7 @@ function App() {
               </span>{" "}
               Your Workforce?
             </h2>
-            <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-blue-200 mb-12 max-w-3xl mx-auto leading-relaxed">
               Do not let your competition get ahead. Join forward-thinking
               companies that are already experiencing
               <span className="text-white font-semibold">
