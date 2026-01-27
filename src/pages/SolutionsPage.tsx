@@ -89,8 +89,8 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
         variant="inner"
         backgroundColor="#070A12"
         baseHue={245}
-        particleCount={650}
-        rangeY={500}
+        particleCount={900}
+        rangeY={800}
         className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
       >
         <div className="max-w-6xl mx-auto text-center">
