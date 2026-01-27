@@ -76,7 +76,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
       <HeroVortex
         variant="inner"
         backgroundColor="#070A12"
-        baseHue={225}
+        baseHue={245}
         particleCount={650}
         rangeY={500}
         className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"

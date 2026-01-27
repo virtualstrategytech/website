@@ -88,7 +88,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
       <HeroVortex
         variant="inner"
         backgroundColor="#070A12"
-        baseHue={225}
+        baseHue={245}
         particleCount={650}
         rangeY={500}
         className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
@@ -385,7 +385,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
                 <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-6">
                   <Target className="w-6 h-6 text-emerald-600" />
                 </div>
-                <div className="text-sm font-semibold text-emerald-700 mb-2">
+                <div className="text-lg font-semibold text-emerald-700 mb-2">
                   1. Diagnose
                 </div>
                 <p className="text-gray-600 leading-relaxed text-sm">
@@ -400,7 +400,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
                 <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6">
                   <Workflow className="w-6 h-6 text-blue-600" />
                 </div>
-                <div className="text-sm font-semibold text-blue-700 mb-2">
+                <div className="text-lg font-semibold text-blue-700 mb-2">
                   2. Build
                 </div>
                 <p className="text-gray-600 leading-relaxed text-sm">
@@ -415,7 +415,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
                 <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center mb-6">
                   <Shield className="w-6 h-6 text-purple-600" />
                 </div>
-                <div className="text-sm font-semibold text-purple-700 mb-2">
+                <div className="text-lg font-semibold text-purple-700 mb-2">
                   3. Deploy
                 </div>
                 <p className="text-gray-600 leading-relaxed text-sm">
@@ -430,7 +430,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
                 <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-6">
                   <Rocket className="w-6 h-6 text-amber-600" />
                 </div>
-                <div className="text-sm font-semibold text-amber-700 mb-2">
+                <div className="text-lg font-semibold text-amber-700 mb-2">
                   4. Scale
                 </div>
                 <p className="text-gray-600 leading-relaxed text-sm">
