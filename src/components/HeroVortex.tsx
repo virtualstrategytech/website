@@ -46,22 +46,22 @@ export default function HeroVortex({
 
         {/* Starfield canvas (this is the “moving particles” layer) */}
         <StarfieldLite
-          className="opacity-80"
+          className="opacity-90"
           // tuned for “~60% of home feel” but laptop-safe
-          density={0.00016}
-          speed={0.12}
-          dotOpacity={0.78}
+          density={0.01195}
+          speed={1.25}
+          dotOpacity={0.88}
           minParticles={160}
           maxParticles={440}
-          sizeMin={0.85}
-          sizeMax={1.75}
+          sizeMin={0.95}
+          sizeMax={2.25}
           twinkle
-          twinkleStrength={0.32}
+          twinkleStrength={1.95}
           glow
-          glowScale={2.35}
-          glowOpacity={0.18}
+          glowScale={1.55}
+          glowOpacity={1.94}
           sparkle
-          sparkleStrength={0.22}
+          sparkleStrength={1.92}
         />
 
         {/* Small, subtle color accents (NOT big orbs) */}
