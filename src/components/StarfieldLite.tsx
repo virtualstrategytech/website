@@ -4,13 +4,7 @@ type StarfieldLiteProps = {
   className?: string;
 
   /**
-   * Particles per pixel (very small number).
-   * Scales dot count with screen area, but capped internally.
-   */
-  density?: number;
-
-  /**
-   * Base drift speed. Keep low for “premium subtle motion”.
+   * Base drift speed (tuned in HeroVortex).
    */
   speed?: number;
 
@@ -33,13 +27,12 @@ type StarfieldLiteProps = {
 
   /**
    * Hue range (HSL) for dot colors.
-   * Keep in blue/purple/pink space to match your home vibe.
    */
   hueMin?: number;
   hueMax?: number;
 
   /**
-   * Subtle twinkle for “alive” feel (cheap + tasteful).
+   * Subtle twinkle for “alive” feel.
    */
   twinkle?: boolean;
   twinkleStrength?: number;
@@ -54,7 +47,6 @@ type Particle = {
   a: number;
   hue: number;
 
-  // twinkle params
   tw: number; // frequency
   ph: number; // phase
 };
@@ -66,27 +58,27 @@ function clamp(n: number, min: number, max: number) {
 export default function StarfieldLite({
   className = "",
 
-  // Denser by default (inner pages closer to home) but still capped.
-  density = 0.00014,
-  speed = 0.1,
-  dotOpacity = 0.72,
+  speed = 0.12,
+  dotOpacity = 0.75,
 
-  minParticles = 160,
-  maxParticles = 420,
+  minParticles = 220,
+  maxParticles = 520,
 
-  // Smaller dots = more “home hero” feel
-  sizeMin = 0.6,
-  sizeMax = 1.25,
+  sizeMin = 0.45,
+  sizeMax = 1.15,
 
   hueMin = 215,
-  hueMax = 300,
+  hueMax = 305,
 
   twinkle = true,
   twinkleStrength = 0.22,
 }: StarfieldLiteProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const rafRef = useRef<number | null>(null);
+
+  const lastTRef = useRef<number>(0);
   const lastPaintRef = useRef<number>(0);
+
   const particlesRef = useRef<Particle[]>([]);
   const sizeRef = useRef<{ w: number; h: number }>({ w: 1, h: 1 });
 
@@ -108,7 +100,6 @@ export default function StarfieldLite({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Pause animation if hero not on screen (saves CPU)
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
@@ -136,7 +127,7 @@ export default function StarfieldLite({
       return;
     }
 
-    // Slightly adaptive cap based on typical laptop capability
+    // Adaptive cap based on laptop capability
     const hc =
       typeof navigator !== "undefined" ? navigator.hardwareConcurrency : 4;
     const perfFactor = hc && hc >= 8 ? 1 : hc && hc >= 4 ? 0.9 : 0.75;
@@ -154,12 +145,13 @@ export default function StarfieldLite({
         const a = 0.35 + Math.random() * 0.65;
 
         const angle = Math.random() * Math.PI * 2;
-        const sp = (0.18 + Math.random() * 0.42) * speed;
+
+        // velocity in px/sec (we dt-scale below)
+        const sp = (6 + Math.random() * 14) * speed; // 6..20 * speed
         const vx = Math.cos(angle) * sp;
         const vy = Math.sin(angle) * sp;
 
-        // twinkle frequency & phase
-        const tw = 0.8 + Math.random() * 1.6; // gentle variety
+        const tw = 0.8 + Math.random() * 1.6;
         const ph = Math.random() * Math.PI * 2;
 
         arr.push({
@@ -179,7 +171,7 @@ export default function StarfieldLite({
 
     const resize = () => {
       const rect = parent.getBoundingClientRect();
-      const dpr = Math.min(window.devicePixelRatio || 1, 2); // cap DPR for perf
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
       canvas.width = Math.max(1, Math.floor(rect.width * dpr));
       canvas.height = Math.max(1, Math.floor(rect.height * dpr));
@@ -191,10 +183,11 @@ export default function StarfieldLite({
 
       sizeRef.current = { w: rect.width, h: rect.height };
 
-      const area = rect.width * rect.height;
-      const rawTarget = Math.floor(area * density);
-
-      const target = clamp(rawTarget, minParticles, capMax);
+      const target = clamp(
+        Math.floor((minParticles + capMax) / 2),
+        minParticles,
+        capMax,
+      );
       particlesRef.current = buildParticles(target, rect.width, rect.height);
     };
 
@@ -208,47 +201,51 @@ export default function StarfieldLite({
         if (rafRef.current) cancelAnimationFrame(rafRef.current);
         rafRef.current = null;
       } else {
-        lastPaintRef.current = performance.now();
-        tick(lastPaintRef.current);
+        lastTRef.current = performance.now();
+        lastPaintRef.current = lastTRef.current;
+        tick(lastTRef.current);
       }
     };
 
     document.addEventListener("visibilitychange", onVis);
 
-    // throttle: ~30fps (dt >= 33ms)
+    // throttle: ~30fps
     const tick = (t: number) => {
       if (!isVisible) {
         rafRef.current = requestAnimationFrame(tick);
         return;
       }
 
-      const dt = t - lastPaintRef.current;
-      if (dt < 33) {
+      const dtPaint = t - lastPaintRef.current;
+      if (dtPaint < 33) {
         rafRef.current = requestAnimationFrame(tick);
         return;
       }
       lastPaintRef.current = t;
 
-      const { w, h } = sizeRef.current;
+      const dt = Math.min(80, Math.max(10, t - (lastTRef.current || t))); // ms
+      lastTRef.current = t;
+      const dtSec = dt / 1000;
 
+      const { w, h } = sizeRef.current;
       ctx.clearRect(0, 0, w, h);
 
-      const time = t * 0.001; // seconds
+      const time = t * 0.001;
 
       for (const p of particlesRef.current) {
-        p.x += p.vx;
-        p.y += p.vy;
+        // move (dt-scaled)
+        p.x += p.vx * dtSec;
+        p.y += p.vy * dtSec;
 
-        // wrap edges
-        if (p.x < -5) p.x = w + 5;
-        if (p.x > w + 5) p.x = -5;
-        if (p.y < -5) p.y = h + 5;
-        if (p.y > h + 5) p.y = -5;
+        // wrap
+        if (p.x < -8) p.x = w + 8;
+        if (p.x > w + 8) p.x = -8;
+        if (p.y < -8) p.y = h + 8;
+        if (p.y > h + 8) p.y = -8;
 
         let alpha = p.a * dotOpacity;
 
         if (twinkle) {
-          // subtle, not flickery
           const tw = 1 + twinkleStrength * Math.sin(time * p.tw + p.ph);
           alpha *= tw;
         }
@@ -264,7 +261,8 @@ export default function StarfieldLite({
       rafRef.current = requestAnimationFrame(tick);
     };
 
-    lastPaintRef.current = performance.now();
+    lastTRef.current = performance.now();
+    lastPaintRef.current = lastTRefRefFallback(lastTRef.current);
     rafRef.current = requestAnimationFrame(tick);
 
     return () => {
@@ -274,7 +272,6 @@ export default function StarfieldLite({
       rafRef.current = null;
     };
   }, [
-    density,
     speed,
     dotOpacity,
     minParticles,
@@ -298,4 +295,9 @@ export default function StarfieldLite({
       aria-hidden
     />
   );
+}
+
+// small helper so TS doesn't complain if we reorder refs later
+function lastTRefRefFallback(n: number) {
+  return n;
 }

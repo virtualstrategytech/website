@@ -144,7 +144,7 @@ export default function ProductsPage({
       <HeroVortex
         variant="inner"
         backgroundColor="#070A12"
-        baseHue={245}
+        baseHue={235}
         particleCount={900}
         rangeY={900}
         className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
