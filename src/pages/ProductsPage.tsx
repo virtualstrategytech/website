@@ -145,8 +145,8 @@ export default function ProductsPage({
         variant="inner"
         backgroundColor="#070A12"
         baseHue={245}
-        particleCount={1200}
-        rangeY={800}
+        particleCount={900}
+        rangeY={900}
         className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
       >
         <div className="max-w-6xl w-full mx-auto text-center">
