@@ -15,6 +15,7 @@ import {
   Cpu,
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
+import HeroVortex from "@/components/HeroVortex";
 
 interface UpskillingAgentsPageProps {
   onBackToHome: () => void;
@@ -83,61 +84,76 @@ export const UpskillingProAgentsPage: React.FC<UpskillingAgentsPageProps> = ({
       <div className="absolute bottom-40 left-20 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-2000 duration-4000"></div>
 
       {/* Hero Section */}
-      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
-        <div className="max-w-6xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-200 text-lg font-medium mb-8 animate-fade-in">
-            <Brain className="w-5 h-5 mr-2" />
-            <span style={{ fontSize: "22px" }}>
-              Prompt Engineering Coaching
-            </span>
-          </div>
+      <HeroVortex
+        variant="inner"
+        backgroundColor="#070A12"
+        baseHue={555}
+        particleCount={1100}
+        rangeY={100}
+        className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
+      >
+        <div className="max-w-6xl w-full mx-auto text-center">
+          <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+            <div className="max-w-6xl mx-auto text-center">
+              {/* Badge */}
+              <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-200 text-lg font-medium mb-8 animate-fade-in">
+                <Brain className="w-5 h-5 mr-2" />
+                <span style={{ fontSize: "22px" }}>
+                  Prompt Engineering Coaching
+                </span>
+              </div>
 
-          {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            Elevate Your Workforce with{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
-              Upskilling Pro Agents
-            </span>
-          </h1>
+              {/* Main Headline */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
+                Elevate Your Workforce with{" "}
+                <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
+                  Upskilling Pro Agents
+                </span>
+              </h1>
 
-          {/* Subheading */}
-          <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            Transform your team's capabilities with AI-driven learning
-            companions that accelerate skill development, boost productivity,
-            and unlock human potential through personalized, on-demand
-            education.
-          </p>
+              {/* Subheading */}
+              <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+                Transform your team's capabilities with AI-driven learning
+                companions that accelerate skill development, boost
+                productivity, and unlock human potential through personalized,
+                on-demand education.
+              </p>
 
-          {/* CTA Button */}
-          <div className="mb-16 animate-slide-up delay-400">
-            <button
-              onClick={onOpenModal}
-              className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50"
-            >
-              <span className="relative z-10">Schedule Your Free Demo</span>
-              <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </button>
-          </div>
+              {/* CTA Button */}
+              <div className="mb-16 animate-slide-up delay-400">
+                <button
+                  onClick={onOpenModal}
+                  className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50"
+                >
+                  <span className="relative z-10">Schedule Your Free Demo</span>
+                  <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                </button>
+              </div>
 
-          {/* Key Benefits */}
-          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-blue-200 animate-slide-up delay-600">
-            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
-              <BookOpen className="w-6 h-6 text-blue-400" />
-              <span className="text-xl font-medium">Personalized Learning</span>
-            </div>
-            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
-              <TrendingUp className="w-6 h-6 text-indigo-400" />
-              <span className="text-xl font-medium">Productivity Gains</span>
-            </div>
-            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
-              <Zap className="w-6 h-6 text-purple-400" />
-              <span className="text-xl font-medium">Instant Knowledge</span>
+              {/* Key Benefits */}
+              <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-blue-200 animate-slide-up delay-600">
+                <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+                  <BookOpen className="w-6 h-6 text-blue-400" />
+                  <span className="text-xl font-medium">
+                    Personalized Learning
+                  </span>
+                </div>
+                <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+                  <TrendingUp className="w-6 h-6 text-indigo-400" />
+                  <span className="text-xl font-medium">
+                    Productivity Gains
+                  </span>
+                </div>
+                <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+                  <Zap className="w-6 h-6 text-purple-400" />
+                  <span className="text-xl font-medium">Instant Knowledge</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </HeroVortex>
 
       {/* Key Features Section */}
       <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500">

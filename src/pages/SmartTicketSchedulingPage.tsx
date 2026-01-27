@@ -15,6 +15,7 @@ import {
   Workflow,
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
+import HeroVortex from "@/components/HeroVortex";
 
 interface SmartTicketSchedulingPageProps {
   onBackToHome: () => void;
@@ -82,8 +83,15 @@ export const SmartTicketSchedulingPage: React.FC<
       <div className="absolute bottom-40 left-20 w-24 h-24 bg-indigo-500/20 rounded-full blur-xl animate-pulse delay-2000 duration-4000"></div>
 
       {/* Hero Section */}
-      <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
-        <div className="max-w-6xl mx-auto text-center">
+      <HeroVortex
+        variant="inner"
+        backgroundColor="#070A12"
+        baseHue={555}
+        particleCount={1100}
+        rangeY={1000}
+        className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
+      >
+        <div className="max-w-6xl w-full mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 rounded-full text-purple-200 text-lg font-medium mb-8 animate-fade-in">
             <Settings className="w-5 h-5 mr-2" />
@@ -136,7 +144,7 @@ export const SmartTicketSchedulingPage: React.FC<
             </div>
           </div>
         </div>
-      </div>
+      </HeroVortex>
 
       {/* Key Features Section */}
       <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500">
