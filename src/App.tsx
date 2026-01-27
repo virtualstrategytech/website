@@ -173,15 +173,6 @@ function App() {
     );
   }
 
-  if (window.location.pathname === "/smart-ticket-scheduling") {
-    return (
-      <SmartTicketSchedulingPage
-        onBackToHome={() => handleNavigateToPage("home")}
-        onOpenModal={() => setIsModalOpen(true)}
-      />
-    );
-  }
-
   if (currentPage === "products") {
     return (
       <>
