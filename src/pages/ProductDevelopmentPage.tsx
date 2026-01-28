@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { LeadCaptureModal } from "../components/LeadCaptureModal";
 import {
   ArrowLeft,
   Users,
@@ -18,7 +19,6 @@ import {
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
 import HeroVortex from "../components/HeroVortex";
-import { LeadCaptureModal } from "../components/LeadCaptureModal";
 
 export const ProductDevelopmentPage: React.FC = () => {
   const navigate = useNavigate();
@@ -51,12 +51,12 @@ export const ProductDevelopmentPage: React.FC = () => {
             {/* Navigation */}
             <div className="flex items-center space-x-6">
               <button
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/products")}
                 className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
-                Back to Home
+                Back to Products
               </button>
               <button
                 onClick={handleOpenModal}
@@ -573,12 +573,11 @@ export const ProductDevelopmentPage: React.FC = () => {
                   </span>
                 </div>
               </div>
-              s
             </div>
           </div>
         </div>
       </div>
-      <SiteFooter />
+      <SiteFooter onContactClick={handleOpenModal} />
       <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
