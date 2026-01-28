@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
+import { LeadCaptureModal } from "../components/LeadCaptureModal";
 type CaseStudy2PageProps = {
   onBackToHome: () => void;
-  onOpenModal?: () => void;
 };
 
-export const CaseStudy2Page = ({
-  onBackToHome,
-  onOpenModal,
-}: CaseStudy2PageProps) => {
+export const CaseStudy2Page = ({ onBackToHome }: CaseStudy2PageProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <div className="min-h-screen flex flex-col font-sans bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
       {/* Header */}
@@ -38,27 +39,26 @@ export const CaseStudy2Page = ({
                 style={{ fontSize: "22px" }}
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
-                Back to Use Cases
+                Back to Home
               </button>
-              {onOpenModal && (
-                <button
-                  onClick={onOpenModal}
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
-                  style={{
-                    fontSize: "26px",
-                    paddingLeft: "1.5rem",
-                    paddingRight: "1.5rem",
-                    paddingTop: "0.75rem",
-                    paddingBottom: "0.75rem",
-                  }}
-                >
-                  Demo
-                </button>
-              )}
+              <button
+                onClick={handleOpenModal}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
+                style={{
+                  fontSize: "26px",
+                  paddingLeft: "1.5rem",
+                  paddingRight: "1.5rem",
+                  paddingTop: "0.75rem",
+                  paddingBottom: "0.75rem",
+                }}
+              >
+                Demo
+              </button>
             </div>
           </div>
         </div>
       </header>
+
       <main className="flex-grow max-w-4xl mx-auto py-20 px-4 text-left">
         <h1 className="text-4xl font-bold text-blue-400 mb-8">
           Digital Human Resources Transformation in a Global Professional
@@ -149,6 +149,8 @@ export const CaseStudy2Page = ({
           <li>4. Superagency Report. (2025). Ibid.</li>
         </ul>
       </main>
+
+      <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
       <div className="mt-auto">
         <SiteFooter grayLinks />
       </div>

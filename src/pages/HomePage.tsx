@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
   Users,
@@ -21,47 +22,18 @@ import {
   Activity,
   BadgePercent,
 } from "lucide-react";
-import { LeadCaptureModal } from "./components/LeadCaptureModal";
-import { ImageBanner } from "./components/ImageBanner";
-import { ProductDevelopmentPage } from "./pages/ProductDevelopmentPage";
-import { useLeadTracking } from "./hooks/useLeadTracking";
-import HeroVortex from "./components/HeroVortex";
-import { UpskillingProAgentsPage } from "./pages/UpskillingProAgentsPage";
-import { SmartTicketSchedulingPage } from "./pages/SmartTicketSchedulingPage";
-import { SolutionsPage } from "./pages/SolutionsPage";
-import ProductsPage from "./pages/ProductsPage";
-import { CaseStudy1Page } from "./pages/CaseStudy1Page";
-import { CaseStudy2Page } from "./pages/CaseStudy2Page";
-import { CaseStudy3Page } from "./pages/CaseStudy3Page";
-import { ResearchPageStudy1 } from "./pages/ResearchPageStudy1";
-import { UseCasesPage } from "./pages/UseCasesPage";
-import { SiteFooter } from "./components/SiteFooter";
+import { LeadCaptureModal } from "../components/LeadCaptureModal";
+import { ImageBanner } from "../components/ImageBanner";
+import { useLeadTracking } from "../hooks/useLeadTracking";
+import HeroVortex from "../components/HeroVortex";
+import { SiteFooter } from "../components/SiteFooter";
 
-function App() {
+export function HomePage() {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState<
-    | "home"
-    | "ai-lead-capture"
-    | "upskilling-agents"
-    | "support-ticket-management"
-    | "solutions"
-    | "products"
-    | "product-development"
-    | "use-cases"
-    | "case-studies"
-    | "research"
-    | "case-study-1"
-    | "case-study-2"
-    | "case-study-3"
-    | "research-study-1"
-  >("home");
 
-  const { trackLead } = useLeadTracking({
-    // Configure your integrations here
-    // hubspot: { apiKey: 'your-key', portalId: 'your-portal' },
-    // calcom: { apiKey: 'your-key', userId: 'your-user-id' }
-  });
+  const { trackLead } = useLeadTracking({});
 
   const handleCTAClick = (source: string) => {
     setIsModalOpen(true);
@@ -71,155 +43,6 @@ function App() {
       source,
     });
   };
-
-  // Handle page navigation
-  const handleNavigateToPage = (
-    page:
-      | "home"
-      | "product-development"
-      | "upskilling-agents"
-      | "support-ticket-management"
-      | "solutions"
-      | "products"
-      | "use-cases"
-      | "case-studies"
-      | "case-study-1"
-      | "case-study-2"
-      | "case-study-3"
-      | "research"
-      | "research-study-1",
-  ) => {
-    setCurrentPage(page);
-    window.scrollTo(0, 0);
-  };
-
-  // Navigation handlers
-
-  // Render different pages based on current page state
-  if (currentPage === "product-development") {
-    return (
-      <>
-        <ProductDevelopmentPage
-          onBackToHome={() => handleNavigateToPage("home")}
-          onOpenModal={() => setIsModalOpen(true)}
-        />
-        <LeadCaptureModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
-      </>
-    );
-  }
-
-  if (currentPage === "upskilling-agents") {
-    return (
-      <>
-        <UpskillingProAgentsPage
-          onBackToHome={() => handleNavigateToPage("home")}
-          onOpenModal={() => setIsModalOpen(true)}
-        />
-        <LeadCaptureModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
-      </>
-    );
-  }
-
-  if (currentPage === "research") {
-    return (
-      <ResearchPageStudy1
-        onBackToHome={() => handleNavigateToPage("use-cases")}
-        onOpenModal={() => setIsModalOpen(true)}
-      />
-    );
-  }
-
-  if (currentPage === "use-cases") {
-    return (
-      <UseCasesPage
-        onBackToHome={() => handleNavigateToPage("home")}
-        onNavigateToCaseStudy1={() => handleNavigateToPage("case-study-1")}
-        onNavigateToCaseStudy2={() => handleNavigateToPage("case-study-2")}
-        onNavigateToCaseStudy3={() => handleNavigateToPage("case-study-3")}
-        onNavigateToResearchStudy={() =>
-          handleNavigateToPage("research-study-1")
-        }
-      />
-    );
-  }
-
-  if (currentPage === "support-ticket-management") {
-    return (
-      <>
-        <SmartTicketSchedulingPage
-          onBackToHome={() => handleNavigateToPage("home")}
-          onOpenModal={() => setIsModalOpen(true)}
-        />
-        <LeadCaptureModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
-      </>
-    );
-  }
-
-  if (currentPage === "solutions") {
-    return (
-      <SolutionsPage
-        onBackToHome={() => handleNavigateToPage("home")}
-        onNavigateToProducts={() => handleNavigateToPage("products")}
-      />
-    );
-  }
-
-  if (window.location.pathname === "/smart-ticket-scheduling") {
-    return (
-      <SmartTicketSchedulingPage
-        onBackToHome={() => handleNavigateToPage("home")}
-        onOpenModal={() => setIsModalOpen(true)}
-      />
-    );
-  }
-
-  if (currentPage === "products") {
-    return (
-      <>
-        <ProductsPage
-          onBackToHome={() => handleNavigateToPage("home")}
-          onNavigate={handleNavigateToPage}
-        />
-        <LeadCaptureModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
-      </>
-    );
-  }
-
-  if (currentPage === "case-study-1") {
-    return (
-      <CaseStudy1Page onBackToHome={() => handleNavigateToPage("use-cases")} />
-    );
-  }
-  if (currentPage === "case-study-2") {
-    return (
-      <CaseStudy2Page onBackToHome={() => handleNavigateToPage("use-cases")} />
-    );
-  }
-  if (currentPage === "case-study-3") {
-    return (
-      <CaseStudy3Page onBackToHome={() => handleNavigateToPage("use-cases")} />
-    );
-  }
-  if (currentPage === "research-study-1") {
-    return (
-      <ResearchPageStudy1
-        onBackToHome={() => handleNavigateToPage("use-cases")}
-        onOpenModal={() => setIsModalOpen(true)}
-      />
-    );
-  }
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
@@ -252,21 +75,21 @@ function App() {
                 About
               </a>
               <button
-                onClick={() => handleNavigateToPage("products")}
+                onClick={() => navigate("/products")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
                 Products
               </button>
               <button
-                onClick={() => handleNavigateToPage("solutions")}
+                onClick={() => navigate("/solutions")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
                 Solutions
               </button>
               <button
-                onClick={() => handleNavigateToPage("use-cases")}
+                onClick={() => navigate("/use-cases")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
@@ -322,7 +145,7 @@ function App() {
                 <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
-                    handleNavigateToPage("products");
+                    navigate("/products");
                   }}
                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-left"
                 >
@@ -331,7 +154,7 @@ function App() {
                 <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
-                    handleNavigateToPage("use-cases");
+                    navigate("/use-cases");
                   }}
                   className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                   style={{ fontSize: "18px" }}
@@ -341,9 +164,9 @@ function App() {
                 <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
-                    handleNavigateToPage("solutions");
+                    navigate("/solutions");
                   }}
-                  className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-left"
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-left"
                 >
                   Solutions
                 </button>
@@ -361,12 +184,15 @@ function App() {
           )}
         </div>
       </header>
+
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
+
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full blur-xl animate-pulse duration-4000"></div>
       <div className="absolute top-40 right-20 w-32 h-32 bg-indigo-500/20 rounded-full blur-xl animate-pulse delay-1000 duration-4000"></div>
       <div className="absolute bottom-40 left-20 w-24 h-24 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-2000 duration-4000"></div>
+
       {/* Hero Content */}
       <HeroVortex
         variant="home"
@@ -375,7 +201,7 @@ function App() {
         className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-5xl mx-auto text-center">
-          {/* Badge - Consistent with SolutionsPage */}
+          {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-900 via-emerald-700 to-indigo-900 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <Lightbulb className="w-5 h-5 mr-2" />
             <Brain className="w-5 h-5 mr-2 text-emerald-300" />
@@ -403,7 +229,7 @@ function App() {
             On-the-job strategy and prompt engineering learning that sticks
           </p>
 
-          {/* CTA Button - Consistent with SolutionsPage/Home style */}
+          {/* CTA Button */}
           <div className="mb-16 animate-slide-up delay-400">
             <button
               onClick={() => handleCTAClick("hero-cta")}
@@ -434,8 +260,10 @@ function App() {
           </div>
         </div>
       </HeroVortex>
+
       {/* Bottom Gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+
       {/* Value Proposition Section */}
       <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500">
         <div className="max-w-7xl mx-auto">
@@ -456,10 +284,10 @@ function App() {
             </p>
           </div>
 
-          {/* Value Proposition Grid */}
+          {/* CTA Button */}
           <div className="flex justify-center my-12">
             <button
-              onClick={() => handleNavigateToPage("products")}
+              onClick={() => navigate("/products")}
               className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
@@ -471,12 +299,13 @@ function App() {
           </div>
         </div>
       </div>
+
       {/* NovAIn Beta Launch Section */}
       <section className="relative z-20 w-full bg-gradient-to-br from-cyan-400 via-cyan-700 to-emerald-600 py-28 px-4 flex flex-col items-center shadow-2xl overflow-hidden">
-        {/* Decorative turquoise/green blob top left */}
+        {/* Decorative blobs */}
         <div className="absolute -top-24 -left-24 w-[32rem] h-[32rem] bg-gradient-to-br from-emerald-300 via-cyan-300 to-emerald-400 rounded-full blur-[120px] opacity-80 pointer-events-none z-0"></div>
-        {/* Decorative turquoise blob bottom right */}
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-emerald-300/30 rounded-full blur-3xl pointer-events-none z-0"></div>
+
         {/* Beta Badge */}
         <span
           className="mb-8 px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 via-emerald-400 to-cyan-400 text-white font-extrabold text-lg tracking-widest shadow-xl border-2 border-white/10 z-10 uppercase"
@@ -484,6 +313,7 @@ function App() {
         >
           Beta Launch
         </span>
+
         {/* Logo */}
         <div className="rounded-3xl shadow-2xl p-0 mb-10 flex items-center justify-center z-10">
           <img
@@ -493,6 +323,7 @@ function App() {
             style={{ filter: "drop-shadow(0 0 60px #06b6d4cc)" }}
           />
         </div>
+
         {/* Headline */}
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-3 text-white tracking-tight z-10 font-sans">
           Meet{" "}
@@ -504,21 +335,25 @@ function App() {
             Your Prompt Engineering Coach
           </span>
         </h2>
+
         <p className="text-2xl text-cyan-100 max-w-2xl text-center mb-8 z-10 font-sans leading-relaxed">
           A dual-agent collaborative system for learning strategy and prompt
           engineering
+          <br />
           <br />
           <span className="text-emerald-200 font-semibold">
             Join our Beta and help us shape the future of stable, reliable,
             agentic flow!
           </span>
         </p>
+
         {/* CTA */}
         <div className="mb-12 z-10">
           <button className="px-10 py-5 rounded-2xl font-bold text-xl bg-gradient-to-r from-cyan-500 via-emerald-400 to-blue-500 text-white shadow-2xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 font-sans">
             Join our Beta Launch!
           </button>
         </div>
+
         {/* How NovAIn Works */}
         <div className="w-full max-w-5xl flex flex-col md:flex-row justify-center items-stretch gap-8 mb-14 z-10">
           {/* Step 1 */}
@@ -537,6 +372,7 @@ function App() {
               delivers a lesson to solve it{" "}
             </p>
           </div>
+
           {/* Step 2 */}
           <div className="flex-1 bg-white/10 rounded-2xl p-10 flex flex-col items-center shadow-lg border border-cyan-800/30">
             <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 via-cyan-400 to-blue-500 mb-5 shadow-lg">
@@ -552,6 +388,7 @@ function App() {
               Answers the question through a business or prompt engineering lens
             </p>
           </div>
+
           {/* Step 3 */}
           <div className="flex-1 bg-white/10 rounded-2xl p-10 flex flex-col items-center shadow-lg border border-cyan-800/30">
             <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 via-cyan-400 to-emerald-400 mb-5 shadow-lg">
@@ -568,6 +405,7 @@ function App() {
             </p>
           </div>
         </div>
+
         {/* Why It Works */}
         <div className="w-full max-w-3xl bg-white/95 rounded-2xl shadow-xl p-12 z-10">
           <h3 className="text-2xl font-bold text-center mb-6 font-sans">
@@ -631,7 +469,6 @@ function App() {
                 Creative use of AI where the learner remains in control
               </span>
             </li>
-            {/* New bullet: Deterministic agent that is fully controlled */}
             <li className="flex items-start gap-3">
               <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
                 <Settings2 className="w-5 h-5 text-white" />
@@ -644,7 +481,6 @@ function App() {
                 Producing intelligent, but stable and predictable results
               </span>
             </li>
-            {/* New bullet: Obtain step-by-step clarity from strategy to prompt */}
             <li className="flex items-start gap-3">
               <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
                 <ListChecks className="w-5 h-5 text-white" />
@@ -657,7 +493,6 @@ function App() {
                 specific problem.
               </span>
             </li>
-            {/* New bullet: Learn not just what works but why */}
             <li className="flex items-start gap-3">
               <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
                 <HelpCircle className="w-5 h-5 text-white" />
@@ -670,7 +505,6 @@ function App() {
                 without a data engineering background
               </span>
             </li>
-            {/* New bullet: Agent Activity and Monitoring */}
             <li className="flex items-start gap-3">
               <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
                 <Activity className="w-5 h-5 text-white" />
@@ -683,7 +517,6 @@ function App() {
                 working and what needs improvement.
               </span>
             </li>
-            {/* New bullet: Front-end branding (white-label solution) */}
             <li className="flex items-start gap-3">
               <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
                 <BadgePercent className="w-5 h-5 text-white" />
@@ -846,7 +679,7 @@ function App() {
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     On-demand skill development eliminates redundant GPT trials
-                    of figuring out which prompt works,freeing up time for
+                    of figuring out which prompt works, freeing up time for
                     employee's growth through learning a new skill.
                   </p>
                 </div>
@@ -963,12 +796,13 @@ function App() {
           </div>
         </div>
       </div>
+
       {/* Testimonials Section */}
       <div
         id="testimonials"
         className="relative z-10 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500 overflow-hidden"
       >
-        {/* Enhanced Background Elements */}
+        {/* Background Elements */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.4%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM36 6V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
 
         {/* Floating Accent Elements */}
@@ -990,6 +824,7 @@ function App() {
           </div>
         </div>
       </div>
+
       {/* Final Call to Action Section */}
       <div
         id="cta"
@@ -1015,12 +850,12 @@ function App() {
             <p className="text-xl sm:text-2xl text-blue-200 mb-12 max-w-3xl mx-auto leading-relaxed">
               Do not let your competition get ahead. Join forward-thinking
               companies that are already experiencing
-              <span className="text-white font-semibold">
+              <span className="text-blue-200 font-semibold">
                 {" "}
                 2.4x higher productivity
               </span>{" "}
               and
-              <span className="text-white font-semibold">
+              <span className="text-blue-200 font-semibold">
                 {" "}
                 unprecedented employee satisfaction.
               </span>
@@ -1030,7 +865,7 @@ function App() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
-              {/* Primary CTA - Schedule Consultation */}
+              {/* Primary CTA */}
               <button
                 onClick={() => handleCTAClick("final-cta-primary")}
                 className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50 min-w-[280px]"
@@ -1040,7 +875,7 @@ function App() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
               </button>
 
-              {/* Secondary CTA - Request Solution */}
+              {/* Secondary CTA */}
               <button
                 onClick={() => handleCTAClick("final-cta-secondary")}
                 className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-blue-200 bg-white/10 backdrop-blur-sm border-2 border-blue-400/30 rounded-xl hover:bg-white/20 hover:border-blue-300/50 transition-all duration-500 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500/30 min-w-[280px]"
@@ -1072,17 +907,17 @@ function App() {
           </div>
         </div>
       </div>
+
       {/* Lead Capture Modal */}
       <LeadCaptureModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-      {/* Footer - always at the bottom */}
+
+      {/* Footer */}
       <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-auto">
         <SiteFooter theme="dark" />
       </div>
     </div>
   );
 }
-
-export default App;
