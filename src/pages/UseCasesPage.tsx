@@ -1,24 +1,12 @@
 import React, { useState } from "react";
 import { ArrowLeft, ArrowRight, BookOpen, Search } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { SiteFooter } from "../components/SiteFooter";
 import { LeadCaptureModal } from "../components/LeadCaptureModal";
 import HeroVortex from "../components/HeroVortex";
 
-interface UseCasesPageProps {
-  onBackToHome: () => void;
-  onNavigateToCaseStudy1: () => void;
-  onNavigateToCaseStudy2: () => void;
-  onNavigateToCaseStudy3: () => void;
-  onNavigateToResearchStudy: () => void;
-}
-
-export const UseCasesPage: React.FC<UseCasesPageProps> = ({
-  onBackToHome,
-  onNavigateToCaseStudy1,
-  onNavigateToCaseStudy2,
-  onNavigateToCaseStudy3,
-  onNavigateToResearchStudy,
-}) => {
+export const UseCasesPage: React.FC = () => {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
@@ -46,8 +34,8 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
             {/* Navigation */}
             <div className="flex items-center space-x-4">
               <button
-                onClick={onBackToHome}
-                className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium"
+                onClick={() => navigate("/")}
+                className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "20px" }}
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
@@ -62,7 +50,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
                   paddingLeft: "1.5rem",
                   paddingRight: "1.5rem",
                   paddingTop: "0.75rem",
-                  paddingBottom: "0.75rem",
+                  paddingBottom: "0.75rem"
                 }}
               >
                 Demo
@@ -88,7 +76,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               style={{
                 fontSize: "22px",
                 fontWeight: 600,
-                letterSpacing: "0.02em",
+                letterSpacing: "0.02em"
               }}
             >
               Use Cases
@@ -121,7 +109,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
               className="inline-flex items-center px-5 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-md hover:shadow-lg transition-all"
               onClick={() => {
                 const section = document.getElementById(
-                  "detailed-case-studies",
+                  "detailed-case-studies"
                 );
                 if (section) section.scrollIntoView({ behavior: "smooth" });
               }}
@@ -168,7 +156,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
 
                 <div className="space-y-3">
                   <button
-                    onClick={onNavigateToCaseStudy1}
+                    onClick={() => navigate("/case-study-1")}
                     className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     View Case Study 1
@@ -176,7 +164,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
                   </button>
 
                   <button
-                    onClick={onNavigateToCaseStudy2}
+                    onClick={() => navigate("/case-study-2")}
                     className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     View Case Study 2
@@ -184,7 +172,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
                   </button>
 
                   <button
-                    onClick={onNavigateToCaseStudy3}
+                    onClick={() => navigate("/case-study-3")}
                     className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     View Case Study 3
@@ -207,7 +195,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
                   workforce performance elevation.
                 </p>
                 <button
-                  onClick={onNavigateToResearchStudy}
+                  onClick={() => navigate("/research")}
                   className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   View Research
@@ -219,7 +207,7 @@ export const UseCasesPage: React.FC<UseCasesPageProps> = ({
         </div>
       </section>
 
-      <SiteFooter />
+      <SiteFooter onContactClick={handleOpenModal} />
 
       <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>

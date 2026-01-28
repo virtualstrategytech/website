@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
   TrendingUp,
@@ -12,19 +13,19 @@ import {
   Calendar,
   Headphones,
   Bot,
-  Workflow,
+  Workflow
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
 import HeroVortex from "@/components/HeroVortex";
+import { LeadCaptureModal } from "../components/LeadCaptureModal";
 
-interface SmartTicketSchedulingPageProps {
-  onBackToHome: () => void;
-  onOpenModal: () => void;
-}
+export const SmartTicketSchedulingPage: React.FC = () => {
+  const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-export const SmartTicketSchedulingPage: React.FC<
-  SmartTicketSchedulingPageProps
-> = ({ onBackToHome, onOpenModal }) => {
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
       {/* Header with Back Button */}
@@ -49,7 +50,7 @@ export const SmartTicketSchedulingPage: React.FC<
             {/* Navigation */}
             <div className="flex items-center space-x-6">
               <button
-                onClick={onBackToHome}
+                onClick={() => navigate("/")}
                 className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
@@ -57,14 +58,14 @@ export const SmartTicketSchedulingPage: React.FC<
                 Back to Home
               </button>
               <button
-                onClick={onOpenModal}
+                onClick={handleOpenModal}
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
                 style={{
                   fontSize: "26px",
                   paddingLeft: "1.5rem",
                   paddingRight: "1.5rem",
                   paddingTop: "0.75rem",
-                  paddingBottom: "0.75rem",
+                  paddingBottom: "0.75rem"
                 }}
               >
                 Demo
@@ -116,10 +117,10 @@ export const SmartTicketSchedulingPage: React.FC<
             efficiency.
           </p>
 
-          {/* CTA Button */}
+          {/* CTA Button in Hero Section */}
           <div className="mb-16 animate-slide-up delay-400">
             <button
-              onClick={onOpenModal}
+              onClick={handleOpenModal}
               className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 hover:from-purple-500 hover:to-pink-500 focus:outline-none focus:ring-4 focus:ring-purple-500/50"
             >
               <span className="relative z-10">Schedule Your Free Demo</span>
@@ -542,7 +543,7 @@ export const SmartTicketSchedulingPage: React.FC<
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
               <button
-                onClick={onOpenModal}
+                onClick={handleOpenModal}
                 className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 transform hover:scale-105 hover:from-purple-500 hover:to-pink-500 focus:outline-none focus:ring-4 focus:ring-purple-500/50 min-w-[280px]"
               >
                 <span className="relative z-10">Schedule Your Free Demo</span>
@@ -551,7 +552,7 @@ export const SmartTicketSchedulingPage: React.FC<
               </button>
 
               <button
-                onClick={onBackToHome}
+                onClick={() => navigate("/solutions")}
                 className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-purple-200 bg-white/10 backdrop-blur-sm border-2 border-purple-400/30 rounded-xl hover:bg-white/20 hover:border-purple-300/50 transition-all duration-500 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-500/30 min-w-[280px]"
               >
                 <span className="relative z-10">Explore Other Solutions</span>
@@ -581,8 +582,8 @@ export const SmartTicketSchedulingPage: React.FC<
           </div>
         </div>
       </div>
-      <SiteFooter theme="dark" />
+      <SiteFooter />
+      <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };
-export default SmartTicketSchedulingPage;

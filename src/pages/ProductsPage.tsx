@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -6,23 +6,12 @@ import {
   TrendingUp,
   LifeBuoy,
   Lightbulb,
-  Brain,
+  Brain
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
 import HeroVortex from "../components/HeroVortex";
-
-export type PageKey =
-  | "home"
-  | "product-development"
-  | "upskilling-agents"
-  | "support-ticket-management"
-  | "solutions"
-  | "products";
-
-interface ProductsPageProps {
-  onBackToHome: () => void;
-  onNavigate: (page: PageKey) => void;
-}
+import { useNavigate } from "react-router-dom";
+import { LeadCaptureModal } from "../components/LeadCaptureModal";
 
 type ProductCard = {
   icon: React.ReactNode;
@@ -32,7 +21,7 @@ type ProductCard = {
   bullets: string[];
   bulletIcon: React.ReactNode;
   href: string;
-  page: PageKey;
+  page: string;
   btnBg: string;
 };
 
@@ -46,12 +35,12 @@ const productCards: ProductCard[] = [
     bullets: [
       "Fast Lead Responses",
       "Seamless CRM Integration",
-      "Higher Conversions",
+      "Higher Conversions"
     ],
     bulletIcon: <Users className="w-4 h-4 text-emerald-500 mr-2" />,
     href: "#product-development",
-    page: "product-development",
-    btnBg: "bg-gradient-to-r from-emerald-600 to-teal-500",
+    page: "/product-development",
+    btnBg: "bg-gradient-to-r from-emerald-600 to-teal-500"
   },
   {
     icon: <TrendingUp className="w-8 h-8 text-white" />,
@@ -62,12 +51,12 @@ const productCards: ProductCard[] = [
     bullets: [
       "Personalized Learning",
       "Skill Assessments",
-      "Progress Tracking",
+      "Progress Tracking"
     ],
     bulletIcon: <TrendingUp className="w-4 h-4 text-blue-500 mr-2" />,
     href: "#upskilling-agents",
-    page: "upskilling-agents",
-    btnBg: "bg-gradient-to-r from-blue-600 to-indigo-600",
+    page: "/upskilling-agents",
+    btnBg: "bg-gradient-to-r from-blue-600 to-indigo-600"
   },
   {
     icon: <LifeBuoy className="w-8 h-8 text-white" />,
@@ -78,19 +67,22 @@ const productCards: ProductCard[] = [
     bullets: [
       "Improved Efficiency",
       "24/7 Availability",
-      "Effortless Scheduling",
+      "Effortless Scheduling"
     ],
     bulletIcon: <LifeBuoy className="w-4 h-4 text-purple-500 mr-2" />,
     href: "#support-ticket-management",
-    page: "support-ticket-management",
-    btnBg: "bg-gradient-to-r from-purple-600 to-fuchsia-600",
-  },
+    page: "/support-ticket-management",
+    btnBg: "bg-gradient-to-r from-purple-600 to-fuchsia-600"
+  }
 ];
 
-export default function ProductsPage({
-  onBackToHome,
-  onNavigate,
-}: ProductsPageProps) {
+const ProductsPage = () => {
+  const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen font-sans">
       {/* Header */}
@@ -115,22 +107,22 @@ export default function ProductsPage({
             {/* Navigation */}
             <div className="flex items-center space-x-4">
               <button
-                onClick={onBackToHome}
+                onClick={() => navigate("/")}
                 className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium"
                 style={{ fontSize: "20px" }}
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back to Home
               </button>
-
               <button
+                onClick={() => setIsModalOpen(true)}
                 className="px-6 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 shadow-md hover:shadow-lg transition-all duration-300"
                 style={{
                   fontSize: "26px",
                   paddingLeft: "1.5rem",
                   paddingRight: "1.5rem",
                   paddingTop: "0.75rem",
-                  paddingBottom: "0.75rem",
+                  paddingBottom: "0.75rem"
                 }}
               >
                 Demo
@@ -140,13 +132,13 @@ export default function ProductsPage({
         </div>
       </header>
 
-      {/* Hero Section (LIGHT animated, consistent with home colors) */}
+      {/* Hero Section */}
       <HeroVortex
         variant="inner"
         backgroundColor="#070A12"
         baseHue={555}
         particleCount={1100}
-        rangeY={1000}
+        rangeY={800}
         className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
       >
         <div className="max-w-6xl w-full mx-auto text-center">
@@ -158,7 +150,7 @@ export default function ProductsPage({
               style={{
                 fontSize: "22px",
                 fontWeight: 600,
-                letterSpacing: "0.02em",
+                letterSpacing: "0.02em"
               }}
             >
               Strategic Product Solutions
@@ -167,12 +159,11 @@ export default function ProductsPage({
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            From Strategy to Prompt: Teach Teams{" "}
-            <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
+            From Strategy to Prompt: Teach Teams
+            <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent inline-block pb-1">
               Prompt Engineering
             </span>
           </h1>
-
           {/* Subheadline */}
           <p className="text-lg sm:text-xl md:text-2xl text-blue-100/90 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in">
             Discover our comprehensive portfolio of intelligent automation
@@ -223,7 +214,7 @@ export default function ProductsPage({
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Product{" "}
+              Product
               <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
                 Portfolio
               </span>
@@ -261,7 +252,7 @@ export default function ProductsPage({
                     ))}
                   </ul>
                   <button
-                    onClick={() => onNavigate(card.page)}
+                    onClick={() => navigate(card.page)}
                     className={`w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold ${card.btnBg} shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-[1.02]`}
                   >
                     Learn More
@@ -274,7 +265,12 @@ export default function ProductsPage({
         </div>
       </section>
 
-      <SiteFooter />
+      <div>
+        <SiteFooter onContactClick={handleOpenModal} />
+        <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      </div>
     </div>
   );
-}
+};
+
+export default ProductsPage; // Ensure it's exported as default

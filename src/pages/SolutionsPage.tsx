@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
   Users,
@@ -15,22 +16,16 @@ import {
   Database,
   Cpu,
   Award,
-  Lightbulb,
+  Lightbulb
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
 import { LeadCaptureModal } from "../components/LeadCaptureModal";
 import HeroVortex from "../components/HeroVortex";
 
-interface SolutionsPageProps {
-  onBackToHome: () => void;
-  onNavigateToProducts: () => void;
-}
-
-export const SolutionsPage: React.FC<SolutionsPageProps> = ({
-  onBackToHome,
-  onNavigateToProducts,
-}) => {
+export const SolutionsPage: React.FC = () => {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
@@ -58,7 +53,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
             {/* Navigation */}
             <div className="flex items-center space-x-4">
               <button
-                onClick={onBackToHome}
+                onClick={() => navigate("/")}
                 className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium"
                 style={{ fontSize: "20px" }}
               >
@@ -74,7 +69,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
                   paddingLeft: "1.5rem",
                   paddingRight: "1.5rem",
                   paddingTop: "0.75rem",
-                  paddingBottom: "0.75rem",
+                  paddingBottom: "0.75rem"
                 }}
               >
                 Demo
@@ -102,7 +97,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
               style={{
                 fontSize: "22px",
                 fontWeight: 600,
-                letterSpacing: "0.02em",
+                letterSpacing: "0.02em"
               }}
             >
               Strategic Prompt Engineering Solutions
@@ -112,8 +107,12 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             AI Solutions That{" "}
-            <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-              Elevate Performance
+            <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent inline-block pb-2">
+              Elevate
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent inline-block pb-2">
+              Performance
             </span>{" "}
             — Not Replace Performers
           </h1>
@@ -128,7 +127,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16 animate-bounce-in">
             <button
               onClick={() => {
-                onNavigateToProducts();
+                navigate("/products");
                 setTimeout(() => {
                   const el = document.getElementById("products-grid");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -162,7 +161,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
         </div>
       </HeroVortex>
 
-      {/* Solutions Overview Section (more color so sections don’t blend) */}
+      {/* Solutions Overview Section (more color so sections don't blend) */}
       <div
         id="solutions-portfolio"
         className="relative z-10 bg-gradient-to-br from-white via-emerald-50/40 to-blue-50/60 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500 border-t border-emerald-100/60"
@@ -546,7 +545,7 @@ export const SolutionsPage: React.FC<SolutionsPageProps> = ({
         </div>
       </div>
 
-      <SiteFooter />
+      <SiteFooter onContactClick={handleOpenModal} />
 
       {/* Lead Capture Modal */}
       <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />

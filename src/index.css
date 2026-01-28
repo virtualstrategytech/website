@@ -95,8 +95,8 @@ a:focus-visible {
 
 /* Optimized transitions for better performance */
 * {
-  transition-property: transform, opacity, box-shadow, background-color,
-    border-color;
+  transition-property:
+    transform, opacity, box-shadow, background-color, border-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -105,6 +105,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Fix for cut-off text in gradients */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow: visible !important;
+  line-height: 1.2; /* Ensure enough space for descenders */
 }
 
 /* Responsive typography scaling */
@@ -149,16 +161,21 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-bottom: 0.15em; /* Increased from 0.1em to 0.15em */
+  display: inline-block;
+  line-height: 1.2; /* Add explicit line-height */
 }
 
 /* Improved shadow effects */
 .shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .shadow-xl {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
@@ -190,11 +207,8 @@ body {
 .hero {
   position: relative;
   z-index: 0;
-  background: radial-gradient(
-      1200px circle at 20% -10%,
-      #0b1020 0%,
-      transparent 60%
-    ),
+  background:
+    radial-gradient(1200px circle at 20% -10%, #0b1020 0%, transparent 60%),
     radial-gradient(1200px circle at 80% 120%, #321b56 0%, transparent 55%),
     linear-gradient(180deg, #1b2550 0%, #16234a 50%, #321b56 100%);
   overflow: hidden; /* ensures orbs stay inside */
@@ -237,7 +251,8 @@ body {
   z-index: 0;
   pointer-events: none;
   /* IMPORTANT: start with a background property (prevents PostCSS parse errors) */
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 15% 30%,
       rgba(158, 199, 255, 0.78) 0 2px,
       transparent 2px
@@ -257,7 +272,11 @@ body {
         --hero-gradient,
         radial-gradient(1200px circle at 20% 0%, #0b1020, #05070f 60%)
       );
-  background-size: 260px 280px, 300px 320px, 240px 260px, cover;
+  background-size:
+    260px 280px,
+    300px 320px,
+    240px 260px,
+    cover;
   background-repeat: repeat, repeat, repeat, no-repeat;
   mix-blend-mode: screen; /* makes dots pop without washing text */
   opacity: 0.7; /* was around .45–.55; now brighter */
@@ -280,7 +299,8 @@ body {
   inset: -10% -10% -10% -10%;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       420px 420px at 18% 22%,
       rgba(90, 125, 255, 0.18) 0%,
       transparent 65%

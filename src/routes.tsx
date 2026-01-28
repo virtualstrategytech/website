@@ -6,43 +6,21 @@ export const routes: RouteObject[] = [
     lazy: async () => {
       const { HomePage } = await import("./pages/HomePage");
       return { Component: HomePage };
-    },
+    }
   },
   {
     path: "/products",
     lazy: async () => {
-      const { default: ProductsPage } = await import("./pages/ProductsPage"); // Changed import to default
-      return {
-        Component: () => (
-          <ProductsPage
-            onBackToHome={() => {
-              window.location.pathname = "/";
-            }}
-            onNavigate={(path: string) => {
-              window.location.pathname = path;
-            }}
-          />
-        ),
-      };
-    },
+      const ProductsPage = (await import("./pages/ProductsPage")).default;
+      return { Component: ProductsPage };
+    }
   },
   {
     path: "/solutions",
     lazy: async () => {
       const { SolutionsPage } = await import("./pages/SolutionsPage");
-      return {
-        Component: () => (
-          <SolutionsPage
-            onBackToHome={() => {
-              window.location.pathname = "/";
-            }}
-            onNavigateToProducts={() => {
-              window.location.pathname = "/products";
-            }}
-          />
-        ),
-      };
-    },
+      return { Component: SolutionsPage };
+    }
   },
   {
     path: "/upskilling-agents",
@@ -50,62 +28,17 @@ export const routes: RouteObject[] = [
       const { UpskillingProAgentsPage } = await import(
         "./pages/UpskillingProAgentsPage"
       );
-      return {
-        Component: () => (
-          <UpskillingProAgentsPage
-            onBackToHome={() => {
-              window.location.pathname = "/";
-            }}
-            onOpenModal={() => {}}
-          />
-        ),
-      };
-    },
+      return { Component: UpskillingProAgentsPage };
+    }
   },
   {
     path: "/support-ticket-management",
     lazy: async () => {
-      const { default: SmartTicketSchedulingPage } = await import(
+      const { SmartTicketSchedulingPage } = await import(
         "./pages/SmartTicketSchedulingPage"
       );
-      return {
-        Component: () => (
-          <SmartTicketSchedulingPage
-            onBackToHome={() => {
-              window.location.pathname = "/";
-            }}
-            onOpenModal={() => {}}
-          />
-        ),
-      };
-    },
-  },
-  {
-    path: "/use-cases",
-    lazy: async () => {
-      const { UseCasesPage } = await import("./pages/UseCasesPage");
-      return {
-        Component: () => (
-          <UseCasesPage
-            onBackToHome={() => {
-              window.location.pathname = "/";
-            }}
-            onNavigateToCaseStudy1={() => {
-              window.location.pathname = "/";
-            }}
-            onNavigateToCaseStudy2={() => {
-              window.location.pathname = "/";
-            }}
-            onNavigateToCaseStudy3={() => {
-              window.location.pathname = "/";
-            }}
-            onNavigateToResearchStudy={() => {
-              window.location.pathname = "/research";
-            }}
-          />
-        ),
-      };
-    },
+      return { Component: SmartTicketSchedulingPage };
+    }
   },
   {
     path: "/product-development",
@@ -113,31 +46,42 @@ export const routes: RouteObject[] = [
       const { ProductDevelopmentPage } = await import(
         "./pages/ProductDevelopmentPage"
       );
-      return {
-        Component: () => (
-          <ProductDevelopmentPage
-            onBackToHome={() => {
-              window.location.pathname = "/";
-            }}
-            onOpenModal={() => {}}
-          />
-        ),
-      };
-    },
+      return { Component: ProductDevelopmentPage };
+    }
   },
   {
     path: "/research",
     lazy: async () => {
       const { ResearchPageStudy1 } = await import("./pages/ResearchPageStudy1");
-      return {
-        Component: () => (
-          <ResearchPageStudy1
-            onBackToHome={() => {
-              window.location.pathname = "/";
-            }}
-          />
-        ),
-      };
-    },
+      return { Component: ResearchPageStudy1 };
+    }
   },
+  {
+    path: "/use-cases",
+    lazy: async () => {
+      const { UseCasesPage } = await import("./pages/UseCasesPage");
+      return { Component: UseCasesPage };
+    }
+  },
+  {
+    path: "/case-study-1",
+    lazy: async () => {
+      const { CaseStudy1Page } = await import("./pages/CaseStudy1Page");
+      return { Component: CaseStudy1Page };
+    }
+  },
+  {
+    path: "/case-study-2",
+    lazy: async () => {
+      const { CaseStudy2Page } = await import("./pages/CaseStudy2Page");
+      return { Component: CaseStudy2Page };
+    }
+  },
+  {
+    path: "/case-study-3",
+    lazy: async () => {
+      const { CaseStudy3Page } = await import("./pages/CaseStudy3Page");
+      return { Component: CaseStudy3Page };
+    }
+  }
 ];
