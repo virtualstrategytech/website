@@ -4,18 +4,33 @@ import BrandBlock from "./BrandBlock";
 
 interface SiteFooterProps {
   theme?: "light" | "dark";
-  grayLinks?: boolean; // NEW PROP
+  grayLinks?: boolean;
+  onContactClick?: () => void; // NEW PROP
 }
 
 export const SiteFooter: React.FC<SiteFooterProps> = ({
   theme = "dark",
   grayLinks = false,
+  onContactClick
 }) => {
   const isLight = theme === "light";
   const useGrayLinks = grayLinks || isLight;
 
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (onContactClick) {
+      onContactClick();
+    }
+  };
+
   return (
-    <footer className="bg-transparent w-full pt-16 pb-4 px-4">
+    <footer
+      className={`w-full pt-16 pb-4 px-4 ${
+        isLight
+          ? "bg-white"
+          : "bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-900"
+      }`}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-2">
           <div className="flex-shrink-0">
@@ -25,12 +40,13 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
           <div className="flex flex-col lg:flex-row items-center gap-6">
             <div className="flex flex-wrap items-center justify-center gap-6 text-base">
               <a
-                href="/contact"
+                href="#"
+                onClick={handleContactClick}
                 className={`${
                   useGrayLinks
                     ? "text-gray-400 hover:text-gray-900"
-                    : "text-blue-200 hover:text-white"
-                } transition-colors duration-300 font-medium`}
+                    : "text-blue-100 hover:text-white font-semibold"
+                } transition-colors duration-300 cursor-pointer`}
               >
                 Contact
               </a>
@@ -39,8 +55,8 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
                 className={`${
                   useGrayLinks
                     ? "text-gray-400 hover:text-gray-900"
-                    : "text-blue-200 hover:text-white"
-                } transition-colors duration-300 font-medium`}
+                    : "text-blue-100 hover:text-white font-semibold"
+                } transition-colors duration-300`}
               >
                 Privacy Policy
               </a>
@@ -49,8 +65,8 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
                 className={`${
                   useGrayLinks
                     ? "text-gray-400 hover:text-gray-900"
-                    : "text-blue-200 hover:text-white"
-                } transition-colors duration-300 font-medium`}
+                    : "text-blue-100 hover:text-white font-semibold"
+                } transition-colors duration-300`}
               >
                 Terms of Service
               </a>
@@ -64,8 +80,8 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
                 className={`flex items-center gap-2 ${
                   useGrayLinks
                     ? "text-gray-400 hover:text-gray-900"
-                    : "text-blue-200 hover:text-white"
-                } transition-colors duration-300 font-medium text-base`}
+                    : "text-blue-100 hover:text-white font-semibold"
+                } transition-colors duration-300 text-base`}
                 aria-label="Follow us on LinkedIn"
               >
                 <FaLinkedin className="w-5 h-5" />
@@ -77,9 +93,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mt-2 mb-0">
           <span
-            className={`text-sm ${
-              isLight ? "text-gray-500" : "text-blue-200/80"
-            }`}
+            className={`text-sm ${isLight ? "text-gray-500" : "text-blue-200"}`}
           >
             &copy; {new Date().getFullYear()} Virtual Strategy Tech. All rights
             reserved.

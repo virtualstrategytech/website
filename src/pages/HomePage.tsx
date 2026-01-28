@@ -20,7 +20,7 @@ import {
   ListChecks,
   HelpCircle,
   Activity,
-  BadgePercent,
+  BadgePercent
 } from "lucide-react";
 import { LeadCaptureModal } from "../components/LeadCaptureModal";
 import { ImageBanner } from "../components/ImageBanner";
@@ -40,8 +40,13 @@ export function HomePage() {
     trackLead({
       name: "",
       email: "",
-      source,
+      source
     });
+  };
+
+  const handleNavigateToPage = (path: string) => {
+    navigate(path);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -75,21 +80,21 @@ export function HomePage() {
                 About
               </a>
               <button
-                onClick={() => navigate("/products")}
+                onClick={() => handleNavigateToPage("/products")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
                 Products
               </button>
               <button
-                onClick={() => navigate("/solutions")}
+                onClick={() => handleNavigateToPage("/solutions")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
                 Solutions
               </button>
               <button
-                onClick={() => navigate("/use-cases")}
+                onClick={() => handleNavigateToPage("/use-cases")}
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
@@ -103,7 +108,7 @@ export function HomePage() {
                   paddingLeft: "1.5rem",
                   paddingRight: "1.5rem",
                   paddingTop: "0.75rem",
-                  paddingBottom: "0.75rem",
+                  paddingBottom: "0.75rem"
                 }}
               >
                 Demo
@@ -145,7 +150,7 @@ export function HomePage() {
                 <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
-                    navigate("/products");
+                    handleNavigateToPage("/products");
                   }}
                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 text-left"
                 >
@@ -154,7 +159,7 @@ export function HomePage() {
                 <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
-                    navigate("/use-cases");
+                    handleNavigateToPage("/use-cases");
                   }}
                   className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                   style={{ fontSize: "18px" }}
@@ -164,7 +169,7 @@ export function HomePage() {
                 <button
                   onClick={() => {
                     setIsMobileMenuOpen(false);
-                    navigate("/solutions");
+                    handleNavigateToPage("/solutions");
                   }}
                   className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-left"
                 >
@@ -209,7 +214,7 @@ export function HomePage() {
               style={{
                 fontSize: "22px",
                 fontWeight: 600,
-                letterSpacing: "0.02em",
+                letterSpacing: "0.02em"
               }}
             >
               Strategic Prompt Engineering
@@ -219,8 +224,8 @@ export function HomePage() {
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             From Strategy to Prompt: Teach Teams{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
-              Strategy and Prompt Engineering
+            <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent inline-block pb-1">
+              Prompt Engineering
             </span>
           </h1>
 
@@ -279,7 +284,7 @@ export function HomePage() {
               into prompt engineering lessons and quizzes for on-the-job
               learning.
             </p>
-            <p className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
+            <p className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent inline-block pb-1">
               Elevating performance rather than replacing performers
             </p>
           </div>
@@ -916,7 +921,11 @@ export function HomePage() {
 
       {/* Footer */}
       <div className="relative z-10 bg-transparent transition-all duration-500 text-blue-100 mt-auto">
-        <SiteFooter theme="dark" />
+        <SiteFooter onContactClick={() => handleCTAClick("footer-contact")} />
+        <LeadCaptureModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </div>
     </div>
   );
