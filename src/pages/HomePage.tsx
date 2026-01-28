@@ -73,11 +73,11 @@ export function HomePage() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               <a
-                href="#about"
+                href="#"
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
-                About
+                Home
               </a>
               <button
                 onClick={() => handleNavigateToPage("/products")}
@@ -134,18 +134,15 @@ export function HomePage() {
             <div className="md:hidden border-t border-gray-100 py-4">
               <div className="flex flex-col space-y-4">
                 <a
-                  href="#about"
+                  href="#"
                   onClick={(e) => {
                     e.preventDefault();
                     setIsMobileMenuOpen(false);
-                    const section = document.getElementById("why-upskill-pro");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
+                    window.scrollTo({ top: 0, behavior: "smooth" });
                   }}
                   className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
                 >
-                  About
+                  Home
                 </a>
                 <button
                   onClick={() => {
@@ -280,9 +277,9 @@ export function HomePage() {
               </span>
             </h2>
             <p className="text-2xl text-gray-900 max-w-4xl mx-auto leading-relaxed font-semibold mb-6">
-              A knowledge-as-a-service agency: translating strategy questions
-              into prompt engineering lessons and quizzes for on-the-job
-              learning.
+              A knowledge-as-a-service automation agency: translating strategy
+              questions into prompt engineering lessons and quizzes for
+              on-the-job learning.
             </p>
             <p className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent inline-block pb-1">
               Elevating performance rather than replacing performers

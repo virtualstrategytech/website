@@ -16,11 +16,9 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
   const isLight = theme === "light";
   const useGrayLinks = grayLinks || isLight;
 
-  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (onContactClick) {
-      onContactClick();
-    }
+    onContactClick?.();
   };
 
   return (
@@ -39,8 +37,8 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
 
           <div className="flex flex-col lg:flex-row items-center gap-6">
             <div className="flex flex-wrap items-center justify-center gap-6 text-base">
-              <a
-                href="#"
+              <button
+                type="button"
                 onClick={handleContactClick}
                 className={`${
                   useGrayLinks
@@ -49,7 +47,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
                 } transition-colors duration-300 cursor-pointer`}
               >
                 Contact
-              </a>
+              </button>
               <a
                 href="/privacy-policy"
                 className={`${
