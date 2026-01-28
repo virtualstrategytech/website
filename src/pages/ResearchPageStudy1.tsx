@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
+import { LeadCaptureModal } from "../components/LeadCaptureModal";
 
 interface ResearchPageProps {
   onBackToHome: () => void;
-  onOpenModal: () => void;
 }
 
 export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
   onBackToHome,
-  onOpenModal,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <div className="min-h-screen flex flex-col font-sans bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
       {/* Header */}
@@ -42,7 +45,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
                 Back to Home
               </button>
               <button
-                onClick={onOpenModal}
+                onClick={handleOpenModal}
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
                 style={{
                   fontSize: "26px",
@@ -58,6 +61,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
           </div>
         </div>
       </header>
+
       <main className="flex-grow max-w-4xl mx-auto py-20 px-4 text-left">
         <h1 className="text-4xl font-bold text-blue-400 mb-8">
           Targeting Small Business Strategy Consulting Firms for Upskilling
@@ -564,7 +568,8 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
             Establish performance metrics that link prompt engineering
             improvements to business outcomes. Key performance indicators might
             include faster report turnaround times, higher client satisfaction
-            scores, and reduced iterative corrections in AI-generated content.{" "}
+            scores, and reduced iterative corrections in AI-generated
+            content.{" "}
           </li>
           <li>
             <span className="font-bold text-white-300">Scalable Models: </span>{" "}
@@ -574,7 +579,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
             mechanisms.
           </li>
         </ul>
-        <h2 className="text-2xl font-semibold text-blue-100 mb-2">
+        <h2 className="text-2xl font-semibold text-white mb-4">
           7.0 Visualizations: Comparative Analysis
         </h2>
         <h3 className="text-xl font-semibold text-white mb-4">
@@ -763,6 +768,7 @@ export const ResearchPageStudy1: React.FC<ResearchPageProps> = ({
       <div className="mt-auto">
         <SiteFooter grayLinks />
       </div>
+      <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };
