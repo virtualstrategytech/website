@@ -1,0 +1,12 @@
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  /* tighten spacing, add subtle transform for refinement */
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  text-transform: none;
+  transform: translateY(-1px);
+  /* optional: add a neutral drop shadow for depth */
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.06));
+}
+/* If logo is an SVG, consider adding this class to the <svg> wrapper */
