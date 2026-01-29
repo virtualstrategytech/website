@@ -557,19 +557,11 @@ export const ProductDevelopmentPage: React.FC = () => {
 
             {/* Trust Elements */}
             <div className="mt-12 pt-8 border-t border-white/20 animate-fade-in-up">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-emerald-200">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-emerald-400 rounded-full mr-3"></div>
-                  <span className="text-sm font-medium">Free 30-day trial</span>
-                </div>
+              <div className="flex items-center justify-center gap-8 text-emerald-200">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-teal-400 rounded-full mr-3"></div>
-                  <span className="text-sm font-medium">No setup fees</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-green-400 rounded-full mr-3"></div>
                   <span className="text-sm font-medium">
-                    24/7 support included
+                    Tailored to your requirements
                   </span>
                 </div>
               </div>

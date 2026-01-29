@@ -564,17 +564,9 @@ export const SmartTicketSchedulingPage: React.FC = () => {
             <div className="mt-12 pt-8 border-t border-white/20 animate-fade-in-up">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-purple-200">
                 <div className="flex items-center">
-                  <div className="w-3 h-3 bg-purple-400 rounded-full mr-3"></div>
-                  <span className="text-sm font-medium">Free 30-day trial</span>
-                </div>
-                <div className="flex items-center">
                   <div className="w-3 h-3 bg-pink-400 rounded-full mr-3"></div>
-                  <span className="text-sm font-medium">No setup fees</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-indigo-400 rounded-full mr-3"></div>
                   <span className="text-sm font-medium">
-                    24/7 support included
+                    Tailored to your requirements
                   </span>
                 </div>
               </div>
