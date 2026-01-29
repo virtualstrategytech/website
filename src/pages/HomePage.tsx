@@ -277,9 +277,9 @@ export function HomePage() {
               </span>
             </h2>
             <p className="text-2xl text-gray-900 max-w-4xl mx-auto leading-relaxed font-semibold mb-6">
-              A knowledge-as-a-service automation agency: translating strategy
-              questions into prompt engineering lessons and quizzes for
-              on-the-job learning.
+              A knowledge-as-a-service agency: translating strategy questions
+              into prompt engineering lessons and quizzes for on-the-job
+              learning.
             </p>
             <p className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent inline-block pb-1">
               Elevating performance rather than replacing performers
@@ -892,12 +892,6 @@ export function HomePage() {
             {/* Trust Elements */}
             <div className="mt-12 pt-8 border-t border-white/20 animate-fade-in-up">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-blue-200">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-emerald-400 rounded-full mr-3"></div>
-                  <span className="text-sm font-medium">
-                    Free 30-minute consultation
-                  </span>
-                </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-purple-400 rounded-full mr-3"></div>
                   <span className="text-sm font-medium">
