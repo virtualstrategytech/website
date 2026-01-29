@@ -84,14 +84,7 @@ export function HomePage() {
                 className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
                 style={{ fontSize: "22px" }}
               >
-                Products
-              </button>
-              <button
-                onClick={() => handleNavigateToPage("/solutions")}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "22px" }}
-              >
-                Solutions
+                Product
               </button>
               <button
                 onClick={() => handleNavigateToPage("/use-cases")}
@@ -162,15 +155,6 @@ export function HomePage() {
                   style={{ fontSize: "18px" }}
                 >
                   Case Studies
-                </button>
-                <button
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    handleNavigateToPage("/solutions");
-                  }}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 text-left"
-                >
-                  Solutions
                 </button>
                 <button
                   onClick={() => {
