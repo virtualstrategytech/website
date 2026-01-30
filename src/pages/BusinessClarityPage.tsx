@@ -28,7 +28,7 @@ export const ProductDevelopmentPage: React.FC = () => {
   const handleCloseModal = () => setIsModalOpen(false);
 
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
       {/* Header with Back Button */}
       <header
         className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"

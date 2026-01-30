@@ -29,49 +29,45 @@ const productCards: ProductCard[] = [
   {
     icon: <Users className="w-8 h-8 text-white" />,
     iconBg: "bg-gradient-to-br from-emerald-500 to-emerald-600",
-    title: "Lead Capture and CRM Integration",
+    title: "Business Clarity Module",
     description:
-      "Revolutionize your sales process with intelligent lead capture systems that convert prospects into customers automatically and efficiently.",
+      "Turn unstructured business questions into a decision-ready brief: problem, decision + metric, assumptions, next steps.",
     bullets: [
-      "Fast Lead Responses",
-      "Seamless CRM Integration",
-      "Higher Conversions"
+      "Problem statement (1 sentence)",
+      "Decision + success metric",
+      "Assumptions & constraints"
     ],
     bulletIcon: <Users className="w-4 h-4 text-emerald-500 mr-2" />,
     href: "#product-development",
-    page: "/product-development",
+    page: "/business-clarity",
     btnBg: "bg-gradient-to-r from-emerald-600 to-teal-500"
   },
   {
     icon: <TrendingUp className="w-8 h-8 text-white" />,
     iconBg: "bg-gradient-to-br from-blue-600 to-indigo-600",
-    title: "Upskilling Agents for Learning & Productivity",
+    title: "Analytics Translator Module",
     description:
-      "Empower your workforce with AI-driven learning companions that accelerate skill development and boost productivity.",
-    bullets: [
-      "Personalized Learning",
-      "Skill Assessments",
-      "Progress Tracking"
-    ],
+      "Translate business questions into KPI defs, event taxonomy, tracking plans and dashboard specs; includes prompt lessons + quiz.",
+    bullets: ["KPI definitions", "Event taxonomy", "Tracking plan"],
     bulletIcon: <TrendingUp className="w-4 h-4 text-blue-500 mr-2" />,
     href: "#upskilling-agents",
-    page: "/upskilling-agents",
+    page: "/analytics-translator",
     btnBg: "bg-gradient-to-r from-blue-600 to-indigo-600"
   },
   {
     icon: <LifeBuoy className="w-8 h-8 text-white" />,
     iconBg: "bg-gradient-to-br from-fuchsia-600 to-purple-600",
-    title: "Support Ticket Management & Smart Scheduling",
+    title: "ML Readiness Module (Beta)",
     description:
-      "Transform customer support with intelligent ticket routing and automated scheduling that delights customers.",
+      "Assess ML suitability, data needs, candidate approaches, evaluation and deployment risks — business-first, low‑jargon.",
     bullets: [
-      "Improved Efficiency",
-      "24/7 Availability",
-      "Effortless Scheduling"
+      "ML decision rubric",
+      "Data requirements checklist",
+      "Evaluation & risks"
     ],
     bulletIcon: <LifeBuoy className="w-4 h-4 text-purple-500 mr-2" />,
     href: "#support-ticket-management",
-    page: "/support-ticket-management",
+    page: "/ml-readiness",
     btnBg: "bg-gradient-to-r from-purple-600 to-fuchsia-600"
   }
 ];
@@ -214,9 +210,9 @@ const ProductsPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Product
+              NovAIn
               <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
-                Portfolio
+                Modules
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -273,4 +269,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage; // Ensure it's exported as default
+export default ProductsPage;
