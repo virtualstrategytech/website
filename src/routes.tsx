@@ -19,7 +19,7 @@ export const routes: RouteObject[] = [
     path: "/upskilling-agents",
     lazy: async () => {
       const { UpskillingProAgentsPage } = await import(
-        "./pages/UpskillingProAgentsPage"
+        "./pages/AnalyticsTranslatorPage"
       );
       return { Component: UpskillingProAgentsPage };
     }
@@ -28,7 +28,7 @@ export const routes: RouteObject[] = [
     path: "/support-ticket-management",
     lazy: async () => {
       const { SmartTicketSchedulingPage } = await import(
-        "./pages/SmartTicketSchedulingPage"
+        "./pages/MLReadinessPage"
       );
       return { Component: SmartTicketSchedulingPage };
     }
@@ -37,7 +37,7 @@ export const routes: RouteObject[] = [
     path: "/product-development",
     lazy: async () => {
       const { ProductDevelopmentPage } = await import(
-        "./pages/ProductDevelopmentPage"
+        "./pages/BusinessClarityPage"
       );
       return { Component: ProductDevelopmentPage };
     }
@@ -75,6 +75,33 @@ export const routes: RouteObject[] = [
     lazy: async () => {
       const { CaseStudy3Page } = await import("./pages/CaseStudy3Page");
       return { Component: CaseStudy3Page };
+    }
+  },
+  {
+    path: "/analytics-translator",
+    lazy: async () => {
+      const { UpskillingProAgentsPage } = await import(
+        "./pages/AnalyticsTranslatorPage"
+      );
+      return { Component: UpskillingProAgentsPage };
+    }
+  },
+  {
+    path: "/ml-readiness",
+    lazy: async () => {
+      const { SmartTicketSchedulingPage } = await import(
+        "./pages/MLReadinessPage"
+      );
+      return { Component: SmartTicketSchedulingPage };
+    }
+  },
+  {
+    path: "/business-clarity",
+    lazy: async () => {
+      const { ProductDevelopmentPage } = await import(
+        "./pages/BusinessClarityPage"
+      );
+      return { Component: ProductDevelopmentPage };
     }
   }
 ];

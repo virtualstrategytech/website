@@ -16,7 +16,7 @@ const ProductCard: React.FC<CardProps> = ({
   toneClass,
   title,
   bullets,
-  href,
+  href
 }) => (
   <section
     id={id}
@@ -62,7 +62,10 @@ export default function ProductsSection() {
   return (
     <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div
+          id="products-grid"
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
           <ProductCard
             id="product-development"
             Icon={Rocket}
@@ -71,7 +74,7 @@ export default function ProductsSection() {
             bullets={[
               "Scalable solutions",
               "Automation where it makes sense",
-              "Enhance creativity & speed",
+              "Enhance creativity & speed"
             ]}
             href="/products#product-development"
           />
@@ -83,7 +86,7 @@ export default function ProductsSection() {
             bullets={[
               "Personalized learning paths",
               "Productivity gains",
-              "Instant knowledge retrieval",
+              "Instant knowledge retrieval"
             ]}
             href="/products#upskilling-agents"
           />
@@ -95,7 +98,7 @@ export default function ProductsSection() {
             bullets={[
               "Improved efficiency",
               "24/7 availability",
-              "Effortless scheduling",
+              "Effortless scheduling"
             ]}
             href="/products#support-ticket-management"
           />

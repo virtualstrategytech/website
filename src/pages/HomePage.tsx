@@ -204,7 +204,7 @@ export function HomePage() {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            From Strategy to Prompt: Teach Teams{" "}
+            From Strategy to Prompt: Teach Teams
             <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent inline-block pb-1">
               Prompt Engineering
             </span>
@@ -287,7 +287,13 @@ export function HomePage() {
       </div>
 
       {/* NovAIn Beta Launch Section */}
-      <section className="relative z-20 w-full bg-gradient-to-br from-cyan-400 via-cyan-700 to-emerald-600 py-28 px-4 flex flex-col items-center shadow-2xl overflow-hidden">
+      <section
+        className="relative z-20 w-full py-28 px-4 flex flex-col items-center shadow-2xl overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(135deg, #020C2C 0%, #031234 50%, #020C2C 100%)"
+        }}
+      >
         {/* Decorative blobs */}
         <div className="absolute -top-24 -left-24 w-[32rem] h-[32rem] bg-gradient-to-br from-emerald-300 via-cyan-300 to-emerald-400 rounded-full blur-[120px] opacity-80 pointer-events-none z-0"></div>
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-emerald-300/30 rounded-full blur-3xl pointer-events-none z-0"></div>
@@ -312,11 +318,12 @@ export function HomePage() {
 
         {/* Headline */}
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-3 text-white tracking-tight z-10 font-sans">
-          Meet{" "}
+          Meet
           <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">
             NovAIn
           </span>
-          :<br />
+          :
+          <br />
           <span className="text-3xl font-semibold text-cyan-100">
             Your Prompt Engineering Coach
           </span>
@@ -355,7 +362,7 @@ export function HomePage() {
             </p>
             <p className="text-cyan-200 text-md text-center font-sans font-bold">
               Confirms understanding of strategy or business challenge and
-              delivers a lesson to solve it{" "}
+              delivers a lesson to solve it
             </p>
           </div>
 
@@ -538,7 +545,7 @@ export function HomePage() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              We believe in{" "}
+              We believe in
               <span className="font-semibold text-gray-900">
                 empowering your workforce
               </span>
@@ -647,7 +654,7 @@ export function HomePage() {
           {/* Key Benefits Section */}
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-12 rounded-3xl border border-blue-200 mb-16 animate-fade-in-up transform transition-all duration-500 hover:shadow-xl">
             <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              The Power of{" "}
+              The Power of
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Human-AI Collaboration
               </span>
@@ -803,7 +810,7 @@ export function HomePage() {
             <h3 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight leading-tight">
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Trusted
-              </span>{" "}
+              </span>
               <span className="text-gray-900">by industry leaders</span>
             </h3>
             <ImageBanner />
@@ -827,10 +834,10 @@ export function HomePage() {
           <div className="relative z-10 animate-fade-in-up">
             {/* Headline */}
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-              Ready to{" "}
+              Ready to
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Transform
-              </span>{" "}
+              </span>
               Your Workforce?
             </h2>
             <p className="text-xl sm:text-2xl text-blue-200 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -839,7 +846,7 @@ export function HomePage() {
               <span className="text-blue-200 font-semibold">
                 {" "}
                 2.4x higher productivity
-              </span>{" "}
+              </span>
               and
               <span className="text-blue-200 font-semibold">
                 {" "}
