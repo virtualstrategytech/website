@@ -24,9 +24,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
   return (
     <footer
       className={`w-full pt-16 pb-4 px-4 ${
-        isLight
-          ? "bg-white"
-          : "bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-900"
+        isLight ? "bg-white" : "bg-[#020C2C]"
       }`}
     >
       <div className="max-w-7xl mx-auto">
