@@ -731,7 +731,10 @@ export function HomePage() {
           </div>
 
           {/* Statistics Section */}
-          <div className="bg-gradient-to-r from-gray-900 to-blue-900 p-12 rounded-3xl text-white text-center animate-fade-in-up transform transition-all duration-500 hover:shadow-2xl">
+          <div
+            className="bg-gradient-to-r from-gray-900 to-blue-900 p-12 rounded-3xl text-white text-center animate-fade-in-up transform transition-all duration-500 hover:shadow-2xl"
+            style={{ background: "#020C2C" }}
+          >
             <h3 className="text-3xl font-bold mb-8">
               Proven Results That Speak for Themselves
             </h3>
