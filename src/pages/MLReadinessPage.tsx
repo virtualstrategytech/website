@@ -9,10 +9,7 @@ import {
   BarChart3,
   ArrowRight,
   Settings,
-  MessageSquare,
   Calendar,
-  Headphones,
-  Bot,
   Workflow
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
@@ -144,115 +141,228 @@ export const SmartTicketSchedulingPage: React.FC = () => {
         </div>
       </HeroVortex>
 
-      {/* Key Features Section */}
+      {/* Key Features / Use Cases Section */}
       <div className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Powerful{" "}
+              Use{" "}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Features
+                Cases
               </span>
             </h2>
             <p className="text-xl sm:text-xl md:text-3xl text-gray-900 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-              Our upskilling pro agents provide comprehensive learning solutions
-              Our intelligent support management system transforms how you
-              handle customer inquiries and streamlines your entire support
-              workflow.
+              Decide if a problem should be ML, what data you need, and how to
+              ship safely—before wasting time or budget.
             </p>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-stagger-in">
-            {/* Intelligent Ticket Routing */}
-            <div className="group bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Workflow className="w-8 h-8 text-white" />
+          {/* Use Cases Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-stagger-in">
+            {/* Support ticket triage / routing */}
+            <div className="group bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="flex items-start mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
+                  <Workflow className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Support ticket triage / routing
+                  </h3>
+                  <p className="text-base mt-1">
+                    <span className="font-semibold text-gray-900">Input:</span>{" "}
+                    <span className="italic text-gray-700">
+                      “Can we auto-route tickets to the right team and reduce
+                      response time?”
+                    </span>
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Intelligent Ticket Routing
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                AI-powered system automatically categorizes and routes support
-                tickets to the most qualified team members based on expertise,
-                workload, and priority levels.
-              </p>
+
+              <div className="mt-4 border-t border-purple-100 pt-4">
+                <h4 className="text-sm font-semibold text-purple-600 uppercase tracking-wider mb-2">
+                  Output
+                </h4>
+                <ul className="text-gray-700 space-y-2 mb-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+                    <span>
+                      ML suitability verdict (rule-based vs ML vs hybrid)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+                    <span>
+                      data requirements checklist (labeled historical tickets,
+                      categories, SLA outcomes)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+                    <span>
+                      baseline plan (keyword rules → simple classifier →
+                      human-in-the-loop)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+                    <span>
+                      evaluation plan (accuracy + SLA impact + escalation rate)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+                    <span>
+                      deployment risks (privacy, sensitive data, drift, feedback
+                      loops)
+                    </span>
+                  </li>
+                </ul>
+
+                <h4 className="text-base font-semibold text-gray-900 mb-2">
+                  Why it’s valuable
+                </h4>
+                <p className="text-base text-gray-800">
+                  Avoids expensive ML projects that fail in production.
+                </p>
+              </div>
             </div>
 
-            {/* Automated Scheduling */}
-            <div className="group bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-2xl border border-pink-100 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Calendar className="w-8 h-8 text-white" />
+            {/* Demand forecasting */}
+            <div className="group bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-2xl border border-pink-100 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="flex items-start mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mr-4">
+                  <TrendingUp className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Demand forecasting
+                  </h3>
+                  <p className="text-base mt-1">
+                    <span className="font-semibold text-gray-900">Input:</span>{" "}
+                    <span className="italic text-gray-700">
+                      “Can we predict next month’s demand to plan
+                      inventory/staffing?”
+                    </span>
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Automated Scheduling
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Smart calendar integration that automatically schedules
-                follow-ups, callbacks, and meetings based on customer
-                preferences and agent availability.
-              </p>
+
+              <div className="mt-4 border-t border-pink-100 pt-4">
+                <h4 className="text-sm font-semibold text-pink-600 uppercase tracking-wider mb-2">
+                  Output
+                </h4>
+                <ul className="text-gray-700 space-y-2 mb-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" />
+                    <span>
+                      feasibility (data volume, seasonality, known drivers)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" />
+                    <span>
+                      candidate approaches (moving average → ARIMA/Prophet → ML
+                      regression)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" />
+                    <span>
+                      required features (promotions, holidays, pricing, supply
+                      constraints)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" />
+                    <span>
+                      evaluation plan (MAPE/SMAPE + business cost of error)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" />
+                    <span>
+                      monitoring plan (drift checks, re-train cadence)
+                    </span>
+                  </li>
+                </ul>
+
+                <h4 className="text-base font-semibold text-gray-900 mb-2">
+                  Why it’s valuable
+                </h4>
+                <p className="text-base text-gray-800">
+                  Frames ML in business cost terms, not hype.
+                </p>
+              </div>
             </div>
 
-            {/* 24/7 AI Assistant */}
-            <div className="group bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl border border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Bot className="w-8 h-8 text-white" />
+            {/* Churn prediction */}
+            <div className="group bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl border border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="flex items-start mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4">
+                  <BarChart3 className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    Churn prediction
+                  </h3>
+                  <p className="text-base mt-1">
+                    <span className="font-semibold text-gray-900">Input:</span>{" "}
+                    <span className="italic text-gray-700">
+                      “Can we predict churn and intervene early?”
+                    </span>
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                24/7 AI Assistant
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Always-available AI chatbot that handles common inquiries,
-                collects initial information, and escalates complex issues to
-                human agents when needed.
-              </p>
-            </div>
 
-            {/* Real-time Analytics */}
-            <div className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <BarChart3 className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Real-time Analytics
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Comprehensive dashboards providing insights into response times,
-                resolution rates, customer satisfaction scores, and team
-                performance metrics.
-              </p>
-            </div>
+              <div className="mt-4 border-t border-indigo-100 pt-4">
+                <h4 className="text-sm font-semibold text-indigo-600 uppercase tracking-wider mb-2">
+                  Output
+                </h4>
+                <ul className="text-gray-700 space-y-2 mb-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-indigo-500 mt-1 flex-shrink-0" />
+                    <span>
+                      definition of churn (time window, contract terms,
+                      inactivity vs cancel)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-indigo-500 mt-1 flex-shrink-0" />
+                    <span>
+                      label + feature requirements (usage signals, support
+                      signals, billing events)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-indigo-500 mt-1 flex-shrink-0" />
+                    <span>
+                      baseline + intervention design (risk tiers + playbooks)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-indigo-500 mt-1 flex-shrink-0" />
+                    <span>
+                      evaluation plan (precision/recall + lift in retention +
+                      intervention ROI)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-indigo-500 mt-1 flex-shrink-0" />
+                    <span>
+                      ethics/risks (bias, unfair targeting, false positives)
+                    </span>
+                  </li>
+                </ul>
 
-            {/* Multi-channel Support */}
-            <div className="group bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border border-emerald-100 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <MessageSquare className="w-8 h-8 text-white" />
+                <h4 className="text-base font-semibold text-gray-900 mb-2">
+                  Why it’s valuable
+                </h4>
+                <p className="text-base text-gray-800">
+                  Stops teams from building models with no action path.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Multi-channel Support
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Unified platform that manages tickets from email, chat, phone,
-                social media, and web forms in one centralized dashboard for
-                seamless support.
-              </p>
-            </div>
-
-            {/* Customer Self-Service */}
-            <div className="group bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl border border-orange-100 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Headphones className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Customer Self-Service
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Intelligent knowledge base and FAQ system that helps customers
-                find answers quickly, reducing ticket volume and improving
-                satisfaction.
-              </p>
             </div>
           </div>
         </div>
@@ -273,7 +383,7 @@ export const SmartTicketSchedulingPage: React.FC = () => {
               </span>
             </h2>
             <p className="text-xl text-purple-100 max-w-3xl mx-auto">
-              Transform your support operations in four simple steps
+              Transform your data science capabilities in four steps
             </p>
           </div>
 
@@ -290,12 +400,11 @@ export const SmartTicketSchedulingPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Ticket Creation
+                  ML Necessity Check
                 </h3>
                 <p className="text-purple-100 leading-relaxed text-sm">
-                  Customer submits inquiry through any channel - email, chat,
-                  phone, or web form. System automatically creates and
-                  categorizes ticket.
+                  Confirm whether rules or analytics is enough or if ML is
+                  justified.
                 </p>
               </div>
             </div>
@@ -311,12 +420,11 @@ export const SmartTicketSchedulingPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Intelligent Routing
+                  Use Case Definition
                 </h3>
                 <p className="text-pink-100 leading-relaxed text-sm">
-                  AI analyzes ticket content, priority, and complexity to route
-                  to the most qualified agent based on expertise and current
-                  workload.
+                  Define precision target, decision it powers, value hypothesis
+                  and constraints
                 </p>
               </div>
             </div>
@@ -332,11 +440,11 @@ export const SmartTicketSchedulingPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Automated Scheduling
+                  Data Readiness Audit
                 </h3>
                 <p className="text-indigo-100 leading-relaxed text-sm">
-                  System automatically schedules follow-ups, callbacks, and
-                  meetings based on customer preferences and agent availability.
+                  Define availability, quality, labeling strategy, leakage risks
+                  and governance needs
                 </p>
               </div>
             </div>
@@ -351,11 +459,11 @@ export const SmartTicketSchedulingPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Resolution & Analytics
+                  Experiment Plan
                 </h3>
                 <p className="text-blue-100 leading-relaxed text-sm">
-                  Agent resolves issue with AI assistance. System tracks metrics
-                  and provides insights for continuous improvement.
+                  Define baseline approach, evaluation metrics, rollout plan and
+                  monitoring plan
                 </p>
               </div>
             </div>
@@ -375,52 +483,57 @@ export const SmartTicketSchedulingPage: React.FC = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See the transformative impact our support management system has on
-              your customer satisfaction and operational efficiency.
+              Impact our NovAIn Decision Platform can have on your Productivity
             </p>
           </div>
 
           {/* Statistics Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 animate-stagger-in">
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-purple-600 mb-2">75%</div>
+              <div className="text-2xl font-bold text-purple-600 mb-2">
+                Readiness Score
+              </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
-                Faster Resolution
+                Data Quality Rubric
               </div>
               <div className="text-sm text-gray-600">
-                Average ticket resolution time
+                Rubric across volume, labels, governance and feasibility
               </div>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-pink-600 mb-2">94%</div>
+              <div className="text-2xl font-bold text-pink-600 mb-2">
+                Benchmarking
+              </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
-                Customer Satisfaction
+                Baseline Performance
               </div>
               <div className="text-sm text-gray-600">
-                Improved satisfaction scores
+                Define simple baseline before implementing ML
               </div>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-indigo-600 mb-2">60%</div>
+              <div className="text-2xl font-bold text-indigo-600 mb-2">
+                Proof of Concept
+              </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
-                Cost Reduction
+                Time to Proof of Concept
               </div>
               <div className="text-sm text-gray-600">
-                Lower support operational costs
+                Weeks from first use case to first measurable experiment
               </div>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">
-                24/7
+              <div className="text-2xl font-bold text-emerald-600 mb-2">
+                Model Risk
               </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
-                Availability
+                Failure Modes
               </div>
               <div className="text-sm text-gray-600">
-                Round-the-clock support coverage
+                Monitoring coverage, drift checks and failure
               </div>
             </div>
           </div>
@@ -430,7 +543,7 @@ export const SmartTicketSchedulingPage: React.FC = () => {
             <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
               Why Choose Our{" "}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Support Management Solution
+                NovAIn Decision Platform
               </span>
             </h3>
 
@@ -440,11 +553,10 @@ export const SmartTicketSchedulingPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-purple-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Intelligent Automation
+                      Avoid Improper Use of ML
                     </h4>
                     <p className="text-gray-600">
-                      AI-powered routing and scheduling that learns from
-                      patterns to continuously improve efficiency.
+                      Only pursue ML when it actually adds value
                     </p>
                   </div>
                 </div>
@@ -453,11 +565,11 @@ export const SmartTicketSchedulingPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-purple-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Seamless Integration
+                      Clear Return on Investment
                     </h4>
                     <p className="text-gray-600">
-                      Works with your existing CRM, helpdesk, and communication
-                      tools without disrupting workflows.
+                      Risk is known upfront with value hypothesis and
+                      constraints defined early
                     </p>
                   </div>
                 </div>
@@ -466,11 +578,10 @@ export const SmartTicketSchedulingPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-purple-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Scalable Solution
+                      Faster POC without Rework
                     </h4>
                     <p className="text-gray-600">
-                      Grows with your business, handling increased ticket volume
-                      without additional overhead.
+                      Data and evaluation are planned properly
                     </p>
                   </div>
                 </div>
@@ -481,11 +592,10 @@ export const SmartTicketSchedulingPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-purple-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Enhanced Customer Experience
+                      Better Governance Posture
                     </h4>
                     <p className="text-gray-600">
-                      Faster response times and personalized service that
-                      delights customers and builds loyalty.
+                      Privacy, security, auditability are considered early
                     </p>
                   </div>
                 </div>
@@ -494,11 +604,10 @@ export const SmartTicketSchedulingPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-purple-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Data-Driven Insights
+                      Safer Deployment
                     </h4>
                     <p className="text-gray-600">
-                      Comprehensive analytics that provide actionable insights
-                      for continuous improvement.
+                      Monitoring of failure modes are part of the plan
                     </p>
                   </div>
                 </div>
@@ -507,11 +616,10 @@ export const SmartTicketSchedulingPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-purple-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Team Empowerment
+                      Reusable ML Playbook
                     </h4>
                     <p className="text-gray-600">
-                      Equips support agents with AI assistance and tools to
-                      resolve issues more effectively.
+                      Repeatable framework for future use cases
                     </p>
                   </div>
                 </div>
@@ -540,12 +648,10 @@ export const SmartTicketSchedulingPage: React.FC = () => {
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-[#10B981] bg-clip-text text-transparent">
                 Transform
               </span>{" "}
-              Your Team?
+              Your Model Approach?
             </h2>
             <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Join innovative companies that are transforming their workforce
-              with AI-powered upskilling. See measurable improvements in
-              productivity, retention, and employee satisfaction.
+              Join our Beta Pilot and help shape the future of decision-making!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">

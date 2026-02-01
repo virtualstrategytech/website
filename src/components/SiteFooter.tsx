@@ -16,14 +16,14 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({
   const isLight = theme === "light";
   const useGrayLinks = grayLinks || isLight;
 
-  const handleContactClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+  const handleContactClick = () => {
+    // removed preventDefault and ensure click reaches page (fix overlay/click-blocking)
     onContactClick?.();
   };
 
   return (
     <footer
-      className={`w-full pt-16 pb-4 px-4 ${
+      className={`relative z-50 w-full pt-16 pb-4 px-4 ${
         isLight ? "bg-white" : "bg-[#020C2C]"
       }`}
     >

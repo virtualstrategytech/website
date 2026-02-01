@@ -85,7 +85,7 @@ export const UseCasesPage: React.FC = () => {
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             Explore Real-World{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400 bg-clip-text text-transparent">
               Use Cases
             </span>
           </h1>
@@ -157,7 +157,7 @@ export const UseCasesPage: React.FC = () => {
                 <div className="space-y-3">
                   <button
                     onClick={() => navigate("/case-study-1")}
-                    className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/30"
                   >
                     View Case Study 1
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -165,7 +165,7 @@ export const UseCasesPage: React.FC = () => {
 
                   <button
                     onClick={() => navigate("/case-study-2")}
-                    className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/30"
                   >
                     View Case Study 2
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -173,7 +173,7 @@ export const UseCasesPage: React.FC = () => {
 
                   <button
                     onClick={() => navigate("/case-study-3")}
-                    className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/30"
                   >
                     View Case Study 3
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -196,7 +196,7 @@ export const UseCasesPage: React.FC = () => {
                 </p>
                 <button
                   onClick={() => navigate("/research")}
-                  className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="w-full inline-flex items-center justify-center px-6 py-4 rounded-2xl text-white font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/30"
                 >
                   View Research
                   <ArrowRight className="w-5 h-5 ml-2" />

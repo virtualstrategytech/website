@@ -5,16 +5,11 @@ import {
   ArrowLeft,
   Users,
   TrendingUp,
-  Target,
   CheckCircle,
   Clock,
   Shield,
-  BarChart3,
-  ArrowRight,
-  Mail,
-  Calendar,
-  MessageSquare,
-  Database
+  Target,
+  ArrowRight
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
 import HeroVortex from "../components/HeroVortex";
@@ -101,7 +96,7 @@ export const ProductDevelopmentPage: React.FC = () => {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            Turn Real Business Questions{" "}
+            Turn Real Business Questions
             <span className="bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 bg-clip-text text-transparent">
               Into Decision Ready Analytics
             </span>
@@ -153,108 +148,195 @@ export const ProductDevelopmentPage: React.FC = () => {
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Powerful{" "}
+              Use{" "}
               <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                Features
+                Cases
               </span>
             </h2>
             <p className="text-xl sm:text-xl md:text-3xl text-gray-900 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-              Our upskilling pro agents provide comprehensive learning solutions
-              Our AI-powered lead capture system transforms how you connect with
-              prospects and manage your sales pipeline.
+              Turn messy business questions into a decision-ready brief in
+              minutes—problem, options, success metric, and next steps.
             </p>
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-stagger-in">
-            {/* Intelligent Lead Scoring */}
-            <div className="group bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border border-emerald-100 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-8 h-8 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-stagger-in">
+            {/* Pricing change decision (left) */}
+            <div className="group bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border border-emerald-100 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                    <Target className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      Pricing change decision
+                    </h3>
+                    <p className="text-sm mt-1">
+                      <span className="font-semibold text-gray-900">
+                        Input:
+                      </span>{" "}
+                      <span className="italic text-gray-700">
+                        “Should we raise prices by 15% on our Pro plan?”
+                      </span>
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Intelligent Lead Scoring
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                AI algorithms automatically score and prioritize leads based on
-                engagement, behavior, and conversion probability to focus your
-                team's efforts on the most promising prospects.
-              </p>
+
+              <div className="mt-4 border-t border-emerald-100 pt-4">
+                <h4 className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-2">
+                  Output
+                </h4>
+                <ul className="text-gray-700 space-y-2 mb-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" />
+                    <span>1-sentence problem statement + decision to make</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" />
+                    <span>
+                      Success metric (net revenue retention / churn tolerance)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" />
+                    <span>
+                      Assumptions/constraints (competitive landscape, contracts)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" />
+                    <span>
+                      2–3 options with tradeoffs + recommended next step & 7‑day
+                      experiment
+                    </span>
+                  </li>
+                </ul>
+
+                <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                  Why it’s valuable
+                </h4>
+                <p className="text-base text-gray-800">
+                  A manager can be confident with a tough decision.
+                </p>
+              </div>
             </div>
 
-            {/* Real-time CRM Sync */}
-            <div className="group bg-gradient-to-br from-teal-50 to-cyan-40 p-8 rounded-2xl border border-teal-100 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Database className="w-8 h-8 text-white" />
+            {/* Go-to-market focus (center) */}
+            <div className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      Go-to-market focus
+                    </h3>
+                    <p className="text-sm mt-1">
+                      <span className="font-semibold text-gray-900">
+                        Input:
+                      </span>{" "}
+                      <span className="italic text-gray-700">
+                        “Which segment should we focus on in Q2?”
+                      </span>
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Real-time CRM Sync
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Seamlessly integrate with HubSpot, Salesforce, and other major
-                CRM platforms. All lead data is automatically synchronized in
-                real-time without manual data entry.
-              </p>
+
+              <div className="mt-4 border-t border-blue-100 pt-4">
+                <h4 className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-2">
+                  Output
+                </h4>
+                <ul className="text-gray-700 space-y-2 mb-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                    <span>
+                      Segment comparison rubric (TAM, urgency, ACV, cycle,
+                      competition)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                    <span>
+                      Decision + success metric (pipeline created / win rate)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                    <span>
+                      Next steps (landing page test, 10 interviews, offer
+                      positioning)
+                    </span>
+                  </li>
+                </ul>
+
+                <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                  Why it’s valuable
+                </h4>
+                <p className="text-base text-gray-800">
+                  A crisp, defensible direction that your team can execute.
+                </p>
+              </div>
             </div>
 
-            {/* Automated Follow-up */}
-            <div className="group bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-2xl border border-cyan-100 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Mail className="w-8 h-8 text-white" />
+            {/* Customer retention strategy (right) */}
+            <div className="group bg-gradient-to-br from-teal-50 to-cyan-40 p-8 rounded-2xl border border-teal-100 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center">
+                    <Shield className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      Customer retention strategy
+                    </h3>
+                    <p className="text-sm mt-1">
+                      <span className="font-semibold text-gray-900">
+                        Input:
+                      </span>{" "}
+                      <span className="italic text-gray-700">
+                        “Churn increased this quarter — what should we do
+                        first?”
+                      </span>
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Automated Follow-up
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Intelligent email sequences and personalized follow-up campaigns
-                that nurture leads through the sales funnel with the right
-                message at the right time.
-              </p>
-            </div>
 
-            {/* Multi-channel Capture */}
-            <div className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <MessageSquare className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Multi-channel Capture
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Capture leads from websites, social media, chat, phone calls,
-                and events. All channels feed into a unified system for
-                comprehensive lead management.
-              </p>
-            </div>
+              <div className="mt-4 border-t border-teal-100 pt-4">
+                <h4 className="text-sm font-semibold text-teal-600 uppercase tracking-wider mb-2">
+                  Output
+                </h4>
+                <ul className="text-gray-700 space-y-2 mb-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mt-1 flex-shrink-0" />
+                    <span>
+                      Root-cause hypotheses (pricing, onboarding, product,
+                      support)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mt-1 flex-shrink-0" />
+                    <span>The “first diagnostic” decision tree</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-teal-500 mt-1 flex-shrink-0" />
+                    <span>
+                      Prioritized action list (what to investigate this week)
+                    </span>
+                  </li>
+                </ul>
 
-            {/* Smart Scheduling */}
-            <div className="group bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl border border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-1 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Calendar className="w-8 h-8 text-white" />
+                <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                  Why it’s valuable
+                </h4>
+                <p className="text-base text-gray-800">
+                  Turns vague panic into a structured, prioritized plan.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Smart Scheduling
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                AI-powered calendar integration that automatically schedules
-                meetings based on lead priority, sales rep availability, and
-                optimal conversion timing.
-              </p>
-            </div>
-
-            {/* Advanced Analytics */}
-            <div className="group bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <BarChart3 className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Advanced Analytics
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Comprehensive dashboards and reports that provide insights into
-                lead quality, conversion rates, sales sales, and ROI
-                optimization opportunities.
-              </p>
             </div>
           </div>
         </div>
@@ -275,7 +357,7 @@ export const ProductDevelopmentPage: React.FC = () => {
               </span>
             </h2>
             <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
-              Transform your lead management process in four simple steps
+              Transform your business problem in four steps
             </p>
           </div>
 
@@ -292,11 +374,11 @@ export const ProductDevelopmentPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Lead Capture
+                  Frame the Problem
                 </h3>
                 <p className="text-emerald-100 leading-relaxed text-sm">
-                  AI automatically captures leads from all channels and enriches
-                  data with behavioral insights.
+                  Convert the question into a crisp problem statement with scope
+                  and constraints
                 </p>
               </div>
             </div>
@@ -312,11 +394,11 @@ export const ProductDevelopmentPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Intelligent Scoring
+                  Define Success
                 </h3>
                 <p className="text-teal-100 leading-relaxed text-sm">
-                  Advanced algorithms score and prioritize leads based on
-                  conversion probability and value.
+                  Establish 1–3 success metrics + targets (what “good” looks
+                  like).
                 </p>
               </div>
             </div>
@@ -332,11 +414,11 @@ export const ProductDevelopmentPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  CRM Integration
+                  Generate Options
                 </h3>
                 <p className="text-cyan-100 leading-relaxed text-sm">
-                  Seamless synchronization with your existing CRM system for
-                  unified lead management.
+                  Produce 3–5 decision options with tradeoffs, risks,
+                  assumptions.
                 </p>
               </div>
             </div>
@@ -351,11 +433,11 @@ export const ProductDevelopmentPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Automated Follow-up
+                  Decision Brief
                 </h3>
                 <p className="text-blue-100 leading-relaxed text-sm">
-                  Intelligent nurturing campaigns convert prospects into
-                  customers automatically.
+                  Deliver a one-page recommendation with next steps + what to
+                  measure.
                 </p>
               </div>
             </div>
@@ -375,52 +457,57 @@ export const ProductDevelopmentPage: React.FC = () => {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See the impact our AI lead capture system has on your sales
-              performance and business growth
+              Impact our NovAIn Decision Platform can have on your Productivity
             </p>
           </div>
 
           {/* Statistics Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 animate-stagger-in">
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">
-                3.5×
+              <div className="text-2xl font-bold text-emerald-600 mb-2">
+                Decision Cycle Time
               </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
                 Faster Response
               </div>
               <div className="text-sm text-gray-600">
-                Average lead response time
+                Days from question to decision
               </div>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-teal-600 mb-2">67%</div>
+              <div className="text-2xl font-bold text-teal-600 mb-2">
+                Rework Rate
+              </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
-                Higher Conversion
+                Revisited Decisions
               </div>
               <div className="text-sm text-gray-600">
-                Lead to customer conversion rate
+                % of Decisions revisited due to unclear scope or assumptions
               </div>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-cyan-600 mb-2">89%</div>
+              <div className="text-2xl font-bold text-cyan-600 mb-2">
+                Stakeholder Alignment Time
+              </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
                 Time Savings
               </div>
               <div className="text-sm text-gray-600">
-                Reduction in manual data entry
+                # of Meetings or revisions to reach approval
               </div>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-blue-600 mb-2">245%</div>
+              <div className="text-2xl font-bold text-blue-600 mb-2">
+                Decision Quality Score
+              </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
-                ROI Increase
+                Risk Handling
               </div>
               <div className="text-sm text-gray-600">
-                Return on investment within 6 months
+                Internal rubric: clarity, assumptions and measurability
               </div>
             </div>
           </div>
@@ -430,7 +517,7 @@ export const ProductDevelopmentPage: React.FC = () => {
             <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
               Why Choose Our{" "}
               <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-                AI Lead Capture Solution
+                NovAIn Decision Platform
               </span>
             </h3>
 
@@ -440,11 +527,10 @@ export const ProductDevelopmentPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-emerald-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Never Miss a Lead
+                      Less Ambiguity, Faster Decisions
                     </h4>
                     <p className="text-gray-600">
-                      24/7 automated capture ensures no opportunity slips
-                      through the cracks, even outside business hours.
+                      Clear problem and constraints
                     </p>
                   </div>
                 </div>
@@ -453,12 +539,9 @@ export const ProductDevelopmentPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-emerald-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Intelligent Prioritization
+                      Alignment Without Chaos
                     </h4>
-                    <p className="text-gray-600">
-                      AI scoring helps your sales team focus on the most
-                      promising leads first, maximizing conversion rates.
-                    </p>
+                    <p className="text-gray-600">Shared definition of "done"</p>
                   </div>
                 </div>
 
@@ -466,11 +549,10 @@ export const ProductDevelopmentPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-emerald-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Seamless Integration
+                      Decision Options you can Defend
                     </h4>
                     <p className="text-gray-600">
-                      Works with your existing CRM and marketing tools without
-                      disrupting current workflows.
+                      Trade-ffs and assumptions are explicit
                     </p>
                   </div>
                 </div>
@@ -481,11 +563,10 @@ export const ProductDevelopmentPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-emerald-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Personalized Engagement
+                      Better Prioritization
                     </h4>
                     <p className="text-gray-600">
-                      AI-driven personalization ensures each lead receives
-                      relevant, timely communication that resonates.
+                      Knowing what matters and why
                     </p>
                   </div>
                 </div>
@@ -494,12 +575,9 @@ export const ProductDevelopmentPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-emerald-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Actionable Insights
+                      Lower Execution Risk
                     </h4>
-                    <p className="text-gray-600">
-                      Comprehensive analytics provide clear visibility into
-                      what's working and where to optimize.
-                    </p>
+                    <p className="text-gray-600">Risks are surfaced early</p>
                   </div>
                 </div>
 
@@ -507,11 +585,10 @@ export const ProductDevelopmentPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-emerald-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Scalable Growth
+                      Repeatable Decision Muscle
                     </h4>
                     <p className="text-gray-600">
-                      System grows with your business, handling increased lead
-                      volume without additional overhead.
+                      Teams learn the same structure every time
                     </p>
                   </div>
                 </div>
@@ -538,14 +615,12 @@ export const ProductDevelopmentPage: React.FC = () => {
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
               Ready to{" "}
               <span className="bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 bg-clip-text text-transparent">
-                Revolutionize
-              </span>{" "}
+                Revolutionize{" "}
+              </span>
               Your Strategy?
             </h2>
             <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Join hundreds of companies that have transformed their lead
-              management with our AI-powered solution. See results in as little
-              as 30 days with our proven system.
+              Join our Beta Pilot and help shape the future of decision-making!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">

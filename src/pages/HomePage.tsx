@@ -849,19 +849,7 @@ export function HomePage() {
               Your Workforce?
             </h2>
             <p className="text-xl sm:text-2xl text-blue-200 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Do not let your competition get ahead. Join forward-thinking
-              companies that are already experiencing
-              <span className="text-blue-200 font-semibold">
-                {" "}
-                2.4x higher productivity
-              </span>
-              and
-              <span className="text-blue-200 font-semibold">
-                {" "}
-                unprecedented employee satisfaction.
-              </span>
-              Take the leap towards empowering your workforce with situational
-              learning that unlocks human potential through creativity
+              Join our Beta Pilot and help shape the future of decision-making!
             </p>
 
             {/* CTA Buttons */}

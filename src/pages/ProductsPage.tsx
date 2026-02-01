@@ -149,7 +149,7 @@ const ProductsPage = () => {
                 letterSpacing: "0.02em"
               }}
             >
-              Strategic Product Solutions
+              Strategic Decision Product
             </span>
           </div>
 
@@ -204,7 +204,7 @@ const ProductsPage = () => {
       {/* Product Cards Section */}
       <section
         id="products-grid"
-        className="relative z-10 bg-gradient-to-br from-emerald-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8"
+        className="relative z-10 bg-gradient-to-br from-emerald-100 to-blue-50 py-20 px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -216,8 +216,8 @@ const ProductsPage = () => {
             </h2>
             <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
               Integrated modular platform designed to improve decision quality
-              based on analytics specfications, and address feasibility,
-              evaluation and risk associated with machine learning requirements.
+              based on analytics specfications, evaluation, and risk associated
+              with machine learning requirements.
             </p>
           </div>
 
