@@ -7,7 +7,6 @@ import {
   CheckCircle,
   Clock,
   BarChart3,
-  Rocket,
   ArrowRight,
   Settings,
   MessageSquare,
@@ -27,7 +26,7 @@ export const SmartTicketSchedulingPage: React.FC = () => {
   const handleCloseModal = () => setIsModalOpen(false);
 
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
+    <main className="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
       {/* Header with Back Button */}
       <header
         className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
@@ -96,25 +95,21 @@ export const SmartTicketSchedulingPage: React.FC = () => {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 rounded-full text-purple-200 text-lg font-medium mb-8 animate-fade-in">
             <Settings className="w-5 h-5 mr-2" />
-            <span style={{ fontSize: "22px" }}>
-              Intelligent Support Automation
-            </span>
+            <span style={{ fontSize: "22px" }}>ML Readiness</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            Transform Customer Support with{" "}
+            Turn Analytics Specifications{" "}
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent">
-              Smart Ticket Management & Scheduling
+              Into Machine Learning Requirements
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-purple-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            Revolutionize your customer support operations with intelligent
-            ticket routing, automated scheduling, and AI-powered assistance that
-            delivers exceptional customer experiences while maximizing team
-            efficiency.
+            And Upskill Your Team With Prompt Engineering Lessons and Quizzes As
+            You Do It
           </p>
 
           {/* CTA Button in Hero Section */}
@@ -133,15 +128,17 @@ export const SmartTicketSchedulingPage: React.FC = () => {
           <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-purple-200 animate-slide-up delay-600">
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Clock className="w-6 h-6 text-purple-400" />
-              <span className="text-xl font-medium">24/7 Availability</span>
+              <span className="text-xl font-medium">ML Requirements</span>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <TrendingUp className="w-6 h-6 text-pink-400" />
-              <span className="text-xl font-medium">Improved Efficiency</span>
+              <span className="text-xl font-medium">Validation Gates</span>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Calendar className="w-6 h-6 text-indigo-400" />
-              <span className="text-xl font-medium">Effortless Scheduling</span>
+              <span className="text-xl font-medium">
+                Reduced Hallucinations
+              </span>
             </div>
           </div>
         </div>
@@ -158,7 +155,8 @@ export const SmartTicketSchedulingPage: React.FC = () => {
                 Features
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-xl md:text-3xl text-gray-900 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+              Our upskilling pro agents provide comprehensive learning solutions
               Our intelligent support management system transforms how you
               handle customer inquiries and streamlines your entire support
               workflow.
@@ -553,18 +551,11 @@ export const SmartTicketSchedulingPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
               <button
                 onClick={handleOpenModal}
-                className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 min-w-[280px]"
+                className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-fuchsia-700 via-pink-600 to-fuchsia-500 rounded-xl shadow-2xl shadow-fuchsia-700/40 hover:shadow-fuchsia-800/45 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-fuchsia-600/40 border border-fuchsia-600/10"
               >
                 <span className="relative z-10">Schedule Your Free Demo</span>
-                <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:translate-x-1" />
-              </button>
-
-              <button
-                onClick={() => navigate("/solutions")}
-                className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-blue-200 bg-white/10 backdrop-blur-sm border-2 border-blue-400/30 rounded-xl hover:bg-white/20 transition-all duration-500 transform hover:scale-105 min-w-[280px]"
-              >
-                <span className="relative z-10">Explore Other Solutions</span>
-                <Rocket className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:rotate-12" />
+                <ArrowRight className="w-5 h-5 ml-3 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-fuchsia-800 via-pink-600 to-fuchsia-600 opacity-0 group-hover:opacity-30 transition-opacity duration-300 filter blur-sm"></div>
               </button>
             </div>
 
@@ -583,6 +574,6 @@ export const SmartTicketSchedulingPage: React.FC = () => {
       </div>
       <SiteFooter onContactClick={handleOpenModal} />
       <LeadCaptureModal isOpen={isModalOpen} onClose={handleCloseModal} />
-    </div>
+    </main>
   );
 };

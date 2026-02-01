@@ -204,7 +204,7 @@ export function HomePage() {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            From Strategy to Prompt: Teach Teams
+            From Strategy to Prompt: Teach Teams{" "}
             <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent inline-block pb-1">
               Prompt Engineering
             </span>
@@ -212,7 +212,8 @@ export function HomePage() {
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            On-the-job strategy and prompt engineering learning that sticks
+            On-the-job strategy and analytics prompt engineering learning that
+            sticks
           </p>
 
           {/* CTA Button */}
@@ -241,7 +242,7 @@ export function HomePage() {
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Rocket className="w-6 h-6 text-purple-400" />
-              <span className="text-xl font-medium">Competitive Edge</span>
+              <span className="text-xl font-medium">Personal Fulfillment</span>
             </div>
           </div>
         </div>
@@ -260,7 +261,7 @@ export function HomePage() {
                 Upskilling Pro
               </span>
             </h2>
-            <p className="text-2xl text-gray-900 max-w-4xl mx-auto leading-relaxed font-semibold mb-6">
+            <p className="text-xl sm:text-2xl md:text-3xl text-gray-900 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
               A knowledge-as-a-service agency: translating strategy questions
               into prompt engineering lessons and quizzes for on-the-job
               learning.
@@ -321,7 +322,7 @@ export function HomePage() {
 
         {/* Headline */}
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-3 text-white tracking-tight z-10 font-sans">
-          Meet
+          Meet{" "}
           <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">
             NovAIn
           </span>
@@ -358,7 +359,7 @@ export function HomePage() {
               <Lightbulb className="w-9 h-9 text-white" />
             </div>
             <h3 className="text-xl font-bold text-white mb-1 text-center font-sans">
-              Business Strategy Agent
+              Business Strategy Lens
             </h3>
             <p className="text-cyan-50 text-lg text-center mb-1 font-sans font-bold">
               Elicits strategy question
@@ -375,7 +376,7 @@ export function HomePage() {
               <Sparkles className="w-9 h-9 text-white" />
             </div>
             <h3 className="text-xl font-bold text-white mb-1 text-center font-sans">
-              Prompt Design Agent
+              Prompt Design Lens
             </h3>
             <p className="text-cyan-50 text-base text-center mb-1 font-sans font-bold">
               Translates it into a prompt
@@ -657,7 +658,7 @@ export function HomePage() {
           {/* Key Benefits Section */}
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-12 rounded-3xl border border-blue-200 mb-16 animate-fade-in-up transform transition-all duration-500 hover:shadow-xl">
             <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              The Power of
+              The Power of{" "}
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Human-AI Collaboration
               </span>
@@ -816,7 +817,7 @@ export function HomePage() {
             <h3 className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight leading-tight">
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Trusted
-              </span>
+              </span>{" "}
               <span className="text-gray-900">by industry leaders</span>
             </h3>
             <ImageBanner />
@@ -841,9 +842,9 @@ export function HomePage() {
           <div className="relative z-10 animate-fade-in-up">
             {/* Headline */}
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-              Ready to
+              Ready to{" "}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-[#10B981] bg-clip-text text-transparent">
-                Transform
+                Transform{" "}
               </span>
               Your Workforce?
             </h2>

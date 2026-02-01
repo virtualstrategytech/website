@@ -10,7 +10,6 @@ import {
   Clock,
   Shield,
   BarChart3,
-  Rocket,
   ArrowRight,
   Mail,
   Calendar,
@@ -97,26 +96,25 @@ export const ProductDevelopmentPage: React.FC = () => {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-full text-emerald-200 text-lg font-medium mb-8 animate-fade-in">
             <Users className="w-5 h-5 mr-2" />
-            <span style={{ fontSize: "22px" }}>AI-Powered Lead Management</span>
+            <span style={{ fontSize: "22px" }}>Business Clarity</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            Transform Your Workforce with{" "}
-            <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-green-400 bg-clip-text text-transparent">
-              AI Lead Capture and CRM Integration
+            Turn Real Business Questions{" "}
+            <span className="bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 bg-clip-text text-transparent">
+              Into Decision Ready Analytics
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-emerald-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            Revolutionize your workforce with intelligent and on-demand coaching
-            that accelerates skill development and boosts productivity. Don't
-            miss the chance to develop this exciting product.
+            And Upskill Your Team With Prompt Engineering Lessons And Quizzes As
+            You Do It
           </p>
 
           {/* CTA Button */}
-          <div className="mb-16 animate-slide-up delay-400">
+          <div className="mb-11 animate-slide-up delay-400">
             <button
               onClick={handleOpenModal}
               className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 rounded-xl shadow-2xl hover:shadow-emerald-800/30 transition-all duration-500 transform hover:scale-105 min-w-[280px]"
@@ -128,18 +126,22 @@ export const ProductDevelopmentPage: React.FC = () => {
           </div>
 
           {/* Key Benefits */}
-          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-emerald-200 animate-slide-up delay-600">
+          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-emerald-200 animate-slide-slide delay-600">
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Clock className="w-6 h-6 text-emerald-400" />
-              <span className="text-xl font-medium">Instant Response</span>
+              <span className="text-xl font-medium">Strategic Clarity</span>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <TrendingUp className="w-6 h-6 text-teal-400" />
-              <span className="text-xl font-medium">Higher Conversions</span>
+              <span className="text-xl font-medium">
+                Assumptions & Constraints
+              </span>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Shield className="w-6 h-6 text-green-400" />
-              <span className="text-xl font-medium">Seamless Integration</span>
+              <span className="text-xl font-medium">
+                Decision Success Metrics
+              </span>
             </div>
           </div>
         </div>
@@ -156,7 +158,8 @@ export const ProductDevelopmentPage: React.FC = () => {
                 Features
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-xl md:text-3xl text-gray-900 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+              Our upskilling pro agents provide comprehensive learning solutions
               Our AI-powered lead capture system transforms how you connect with
               prospects and manage your sales pipeline.
             </p>
@@ -180,7 +183,7 @@ export const ProductDevelopmentPage: React.FC = () => {
             </div>
 
             {/* Real-time CRM Sync */}
-            <div className="group bg-gradient-to-br from-teal-50 to-cyan-50 p-8 rounded-2xl border border-teal-100 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+            <div className="group bg-gradient-to-br from-teal-50 to-cyan-40 p-8 rounded-2xl border border-teal-100 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
               <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Database className="w-8 h-8 text-white" />
               </div>
@@ -225,7 +228,7 @@ export const ProductDevelopmentPage: React.FC = () => {
             </div>
 
             {/* Smart Scheduling */}
-            <div className="group bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl border border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+            <div className="group bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl border border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-1 hover:scale-105">
               <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Calendar className="w-8 h-8 text-white" />
               </div>
@@ -249,7 +252,7 @@ export const ProductDevelopmentPage: React.FC = () => {
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 Comprehensive dashboards and reports that provide insights into
-                lead quality, conversion rates, sales performance, and ROI
+                lead quality, conversion rates, sales sales, and ROI
                 optimization opportunities.
               </p>
             </div>
@@ -373,7 +376,7 @@ export const ProductDevelopmentPage: React.FC = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               See the impact our AI lead capture system has on your sales
-              performance and business growth.
+              performance and business growth
             </p>
           </div>
 
@@ -534,10 +537,10 @@ export const ProductDevelopmentPage: React.FC = () => {
           <div className="relative z-10 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
               Ready to{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-[#10B981] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 bg-clip-text text-transparent">
                 Revolutionize
               </span>{" "}
-              Your Sales?
+              Your Strategy?
             </h2>
             <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
               Join hundreds of companies that have transformed their lead
@@ -548,22 +551,13 @@ export const ProductDevelopmentPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
               <button
                 onClick={handleOpenModal}
-                className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-[#34D399] to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 min-w-[280px]"
+                className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 rounded-xl shadow-2xl hover: shadow-emerald-800/30 transition-all duration-500 transform hover:scale-105 min-w-[280px]"
               >
                 <span className="relative z-10">Schedule Your Free Demo</span>
                 <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:translate-x-1" />
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-[#34D399] to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              </button>
-
-              <button
-                onClick={() => navigate("/")}
-                className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-blue-200 bg-white/10 backdrop-blur-sm border-2 border-blue-400/30 rounded-xl hover:bg-white/20 transition-all duration-500 transform hover:scale-105 min-w-[280px]"
-              >
-                <span className="relative z-10">Explore Other Solutions</span>
-                <Rocket className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:rotate-12" />
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 rounded-xl opacity-0 group-hover:opacity-25 transition-opacity duration-500"></div>
               </button>
             </div>
-
             <div className="mt-12 pt-8 border-t border-white/20 animate-fade-in-up">
               <div className="flex items-center justify-center gap-8 text-blue-200">
                 <div className="flex items-center">

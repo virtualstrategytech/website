@@ -155,16 +155,15 @@ const ProductsPage = () => {
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            From Strategy to Prompt: Teach Teams
+            From Strategy to Prompt: Teach Teams{" "}
             <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent inline-block pb-1">
               Prompt Engineering
             </span>
           </h1>
           {/* Subheadline */}
-          <p className="text-lg sm:text-xl md:text-2xl text-blue-100/90 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in">
-            Discover our comprehensive portfolio of intelligent automation
-            solutions designed to transform every aspect of your business
-            operations and unlock unprecedented growth potential.
+          <p className="text-xl sm:text-xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+            Integrated module platform designed to turn real business questions
+            into analytics and machine learning readiness.
           </p>
 
           {/* CTA */}
@@ -177,7 +176,7 @@ const ProductsPage = () => {
               className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-semibold text-white bg-gradient-to-r from-emerald-600 to-indigo-600 rounded-2xl shadow-2xl hover:shadow-emerald-500/25 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
-                Discover Our Products
+                Discover Our Product
               </span>
               <ArrowRight className="w-6 h-6 ml-4 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-indigo-500 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
@@ -188,15 +187,15 @@ const ProductsPage = () => {
           <div className="flex flex-wrap justify-center gap-4 text-blue-100 animate-fade-in-up">
             <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <Users className="w-6 h-6 text-emerald-400" />
-              <span className="text-xl font-medium">Scalable Solutions</span>
+              <span className="text-xl font-medium">On-the-job Upskilling</span>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <TrendingUp className="w-6 h-6 text-blue-400" />
-              <span className="text-xl font-medium">Productivity Gains</span>
+              <span className="text-xl font-medium">Time Efficiency</span>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <LifeBuoy className="w-6 h-6 text-purple-400" />
-              <span className="text-xl font-medium">Effortless Support</span>
+              <span className="text-xl font-medium">Personal Fulfillment</span>
             </div>
           </div>
         </div>
@@ -210,14 +209,15 @@ const ProductsPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              NovAIn
               <span className="bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
-                Modules
-              </span>
+                NovAIn Integrated
+              </span>{" "}
+              Modules
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Three core solutions designed to modernize operations, elevate
-              productivity, and scale your organization intelligently.
+            <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+              Integrated modular platform designed to improve decision quality
+              based on analytics specfications, and address feasibility,
+              evaluation and risk associated with machine learning requirements.
             </p>
           </div>
 
