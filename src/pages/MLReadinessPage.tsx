@@ -121,11 +121,11 @@ export const SmartTicketSchedulingPage: React.FC = () => {
           <div className="mb-16 animate-slide-up delay-400">
             <button
               onClick={handleOpenModal}
-              className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 hover:from-purple-500 hover:to-pink-500 focus:outline-none focus:ring-4 focus:ring-purple-500/50"
+              className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-fuchsia-700 via-pink-600 to-fuchsia-500 rounded-xl shadow-2xl shadow-fuchsia-700/40 hover:shadow-fuchsia-800/45 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-fuchsia-600/40 border border-fuchsia-600/10"
             >
               <span className="relative z-10">Schedule Your Free Demo</span>
-              <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <ArrowRight className="w-5 h-5 ml-3 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-fuchsia-800 via-pink-600 to-fuchsia-600 opacity-0 group-hover:opacity-30 transition-opacity duration-300 filter blur-sm"></div>
             </button>
           </div>
 
