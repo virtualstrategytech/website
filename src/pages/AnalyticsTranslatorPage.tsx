@@ -11,9 +11,7 @@ import {
   BarChart3,
   ArrowRight,
   BookOpen,
-  Brain,
-  MessageSquare,
-  Cpu
+  Brain
 } from "lucide-react";
 import { SiteFooter } from "../components/SiteFooter";
 import HeroVortex from "@/components/HeroVortex";
@@ -155,107 +153,216 @@ export const UpskillingProAgentsPage: React.FC = () => {
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Powerful{" "}
+              Use{" "}
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
-                Features
+                Cases
               </span>
             </h2>
             <p className="text-xl sm:text-xl md:text-3xl text-gray-900 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-              Our upskilling pro agents provide comprehensive learning solutions
-              that adapt to your team's unique needs and accelerate professional
-              development.
+              Analytics Translator Module — Translate business questions into
+              KPI definitions, event taxonomy, and a tracking plan your team can
+              implement immediately.
             </p>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-stagger-in">
-            {/* Personalized Learning Paths */}
-            <div className="group bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <BookOpen className="w-8 h-8 text-white" />
+          {/* Features Grid (Use Cases) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-stagger-in">
+            {/* Funnel + conversion tracking */}
+            <div className="group bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border border-blue-200 hover:shadow-xl hover:shadow-blue-400/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                    <Target className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      Funnel + conversion tracking
+                    </h3>
+                    <p className="text-base mt-1">
+                      <span className="font-semibold text-gray-900">
+                        Input:
+                      </span>{" "}
+                      <span className="italic text-gray-700">
+                        “Where are users dropping off in onboarding?”
+                      </span>
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Personalized Learning Paths
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                AI-driven curriculum that adapts to individual learning styles,
-                skill levels, and career goals, ensuring maximum engagement and
-                knowledge retention.
-              </p>
+
+              <div className="mt-4 border-t border-blue-100 pt-4">
+                <h4 className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-2">
+                  Output
+                </h4>
+                <ul className="text-gray-700 space-y-2 mb-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                    <span>
+                      KPI definitions (activation rate, step drop-off rate,
+                      time-to-value)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                    <span>
+                      event taxonomy (signup_completed,
+                      onboarding_step_completed, first_value_event)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                    <span>
+                      tracking plan (properties required, user_id/session_id
+                      rules, QA checks)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                    <span>
+                      dashboard spec (funnel by channel/device, time-to-value
+                      distribution)
+                    </span>
+                  </li>
+                </ul>
+
+                <h4 className="text-base font-semibold text-gray-900 mb-2">
+                  Why it’s valuable
+                </h4>
+                <p className="text-base text-gray-800">
+                  Product + engineering can implement immediately.
+                </p>
+              </div>
             </div>
 
-            {/* Real-time Knowledge Assistance */}
-            <div className="group bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl border border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <MessageSquare className="w-8 h-8 text-white" />
+            {/* Feature adoption measurement */}
+            <div className="group bg-gradient-to-br from-indigo-50 to-indigo-100 p-8 rounded-2xl border border-indigo-200 hover:shadow-xl hover:shadow-indigo-400/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      Feature adoption measurement
+                    </h3>
+                    <p className="text-base mt-1">
+                      <span className="font-semibold text-gray-900">
+                        Input:
+                      </span>{" "}
+                      <span className="italic text-gray-700">
+                        “Did our new feature actually improve retention?”
+                      </span>
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Real-time Knowledge Assistance
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Instant access to relevant information and guidance while
-                working, providing contextual learning that enhances
-                productivity and decision-making.
-              </p>
+
+              <div className="mt-4 border-t border-indigo-100 pt-4">
+                <h4 className="text-sm font-semibold text-indigo-600 uppercase tracking-wider mb-2">
+                  Output
+                </h4>
+                <ul className="text-gray-700 space-y-2 mb-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-indigo-500 mt-1 flex-shrink-0" />
+                    <span>
+                      “adoption” definition (eligible users, usage thresholds)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-indigo-500 mt-1 flex-shrink-0" />
+                    <span>
+                      cohort design (adopters vs non-adopters; pre/post windows)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-indigo-500 mt-1 flex-shrink-0" />
+                    <span>
+                      events/properties needed (feature_used, feature_depth,
+                      user_segment)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-indigo-500 mt-1 flex-shrink-0" />
+                    <span>
+                      dashboard spec (adoption curve + retention lift + segment
+                      breakdown)
+                    </span>
+                  </li>
+                </ul>
+
+                <h4 className="text-base font-semibold text-gray-900 mb-2">
+                  Why it’s valuable
+                </h4>
+                <p className="text-base text-gray-800">
+                  Prevents fake wins and vanity metrics.
+                </p>
+              </div>
             </div>
 
-            {/* Skill Gap Analysis */}
-            <div className="group bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-8 h-8 text-white" />
+            {/* Revenue / pricing analytics */}
+            <div className="group bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl border border-purple-200 hover:shadow-xl hover:shadow-purple-400/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <BarChart3 className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      Revenue / pricing analytics
+                    </h3>
+                    <p className="text-base mt-1">
+                      <span className="font-semibold text-gray-900">
+                        Input:
+                      </span>{" "}
+                      <span className="italic text-gray-700">
+                        “Which plan drives the highest lifetime value?”
+                      </span>
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Skill Gap Analysis
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Comprehensive assessment of current capabilities versus required
-                skills, with targeted recommendations for professional
-                development and growth.
-              </p>
-            </div>
 
-            {/* Interactive Learning Modules */}
-            <div className="group bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border border-emerald-100 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Cpu className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Interactive Learning Modules
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Engaging, hands-on learning experiences with simulations, case
-                studies, and practical exercises that reinforce knowledge
-                through application.
-              </p>
-            </div>
+              <div className="mt-4 border-t border-purple-100 pt-4">
+                <h4 className="text-sm font-semibold text-purple-600 uppercase tracking-wider mb-2">
+                  Output
+                </h4>
+                <ul className="text-gray-700 space-y-2 mb-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+                    <span>
+                      KPI definitions (ARPA, gross margin proxy, LTV, payback
+                      period)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+                    <span>
+                      event taxonomy (plan_selected, upgrade, downgrade, cancel,
+                      payment_failed)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+                    <span>
+                      tracking QA checklist (revenue normalization, refunds,
+                      currency handling)
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+                    <span>
+                      dashboards (MRR waterfall, cohort LTV, churn by plan)
+                    </span>
+                  </li>
+                </ul>
 
-            {/* Progress Tracking & Analytics */}
-            <div className="group bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl border border-orange-100 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <BarChart3 className="w-8 h-8 text-white" />
+                <h4 className="text-base font-semibold text-gray-900 mb-2">
+                  Why it’s valuable
+                </h4>
+                <p className="text-base text-gray-800">
+                  Gives finance/product a shared truth.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Progress Tracking & Analytics
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Detailed insights into learning progress, skill development, and
-                performance improvements with actionable recommendations for
-                continued growth.
-              </p>
-            </div>
-
-            {/* Collaborative Learning Environment */}
-            <div className="group bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-2xl border border-cyan-100 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-500 hover:-translate-y-2 hover:scale-105">
-              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Collaborative Learning Environment
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Foster team-based learning with peer-to-peer knowledge sharing,
-                group challenges, and collaborative problem-solving exercises.
-              </p>
             </div>
           </div>
         </div>
@@ -276,7 +383,7 @@ export const UpskillingProAgentsPage: React.FC = () => {
               </span>
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Transform your workforce capabilities in four simple steps
+              Transform your analytics capabilities in four steps
             </p>
           </div>
 
@@ -293,11 +400,10 @@ export const UpskillingProAgentsPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Assessment & Onboarding
+                  Translate the Business Goal
                 </h3>
                 <p className="text-blue-100 leading-relaxed text-sm">
-                  Comprehensive skill assessment to identify current
-                  capabilities and learning objectives for each team member.
+                  Define a measurable question: what are we trying to prove?
                 </p>
               </div>
             </div>
@@ -313,11 +419,11 @@ export const UpskillingProAgentsPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Personalized Learning Plan
+                  Define KPIs and Metric Logic
                 </h3>
                 <p className="text-indigo-100 leading-relaxed text-sm">
-                  AI creates customized learning paths tailored to individual
-                  roles, goals, and preferred learning styles.
+                  Define numerator, denominator, filters, segments and time
+                  windows
                 </p>
               </div>
             </div>
@@ -333,11 +439,11 @@ export const UpskillingProAgentsPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Interactive Learning
+                  Map Instrumentation
                 </h3>
                 <p className="text-purple-100 leading-relaxed text-sm">
-                  Engage with dynamic content, simulations, and real-world
-                  scenarios that reinforce learning through practice.
+                  Map events and properties, data sources, tracking plan and QA
+                  checks.
                 </p>
               </div>
             </div>
@@ -352,11 +458,10 @@ export const UpskillingProAgentsPage: React.FC = () => {
 
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-500">
                 <h3 className="text-xl font-bold text-white mb-3">
-                  Continuous Improvement
+                  Output Specification
                 </h3>
                 <p className="text-pink-100 leading-relaxed text-sm">
-                  Ongoing support, progress tracking, and adaptive learning that
-                  evolves with your team's growing expertise.
+                  Define dashboard and reporting requirements
                 </p>
               </div>
             </div>
@@ -369,59 +474,65 @@ export const UpskillingProAgentsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-5xl font-bold text-gray-900 mb-6">
               Measurable{" "}
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 Results
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See the transformative impact our upskilling pro agents have on
-              your workforce and business performance.
+              Impact our NovAIn Decision Platform can have on your Productivity
             </p>
           </div>
 
           {/* Statistics Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 animate-stagger-in">
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-blue-600 mb-2">2.4×</div>
+              <div className="text-2xl font-bold text-blue-600 mb-2">
+                Dashboard
+              </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
-                Faster Learning
+                Time-to-first Dashboard
               </div>
               <div className="text-sm text-gray-600">
-                Skill acquisition speed
+                #Days from goal setting to usable reporting
               </div>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-indigo-600 mb-2">87%</div>
+              <div className="text-2xl font-bold text-indigo-600 mb-2">
+                Metrics
+              </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
-                Employee Retention
+                Metric Consistency
               </div>
               <div className="text-sm text-gray-600">
-                Improved job satisfaction
+                % of Teams using the same definition of a KPI
               </div>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-purple-600 mb-2">65%</div>
+              <div className="text-2xl font-bold text-purple-600 mb-2">
+                Coverage
+              </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
-                Productivity Increase
+                Tracking Coverage
               </div>
               <div className="text-sm text-gray-600">
-                Enhanced work efficiency
+                % Required of events or properties instrumented
               </div>
             </div>
 
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center transform transition-all duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-emerald-600 mb-2">
-                92%
+              <div className="text-2xl font-bold text-emerald-600 mb-2">
+                Error Rate
               </div>
               <div className="text-lg font-semibold text-gray-900 mb-1">
-                Knowledge Retention
+                Data QA Error Rate
               </div>
               <div className="text-sm text-gray-600">
-                Long-term skill retention
+                # of Broken events, missing properties, or mismatched
+                definitions
               </div>
             </div>
           </div>
@@ -431,7 +542,7 @@ export const UpskillingProAgentsPage: React.FC = () => {
             <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
               Why Choose Our{" "}
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                Upskilling Pro Agents
+                NovAIn Decision Platform
               </span>
             </h3>
 
@@ -441,11 +552,10 @@ export const UpskillingProAgentsPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Adaptive Learning Technology
+                      No More KPI Confusion
                     </h4>
                     <p className="text-gray-600">
-                      AI-powered system that adjusts to individual learning pace
-                      and style for optimal knowledge absorption.
+                      Single source of truth definitions
                     </p>
                   </div>
                 </div>
@@ -454,11 +564,10 @@ export const UpskillingProAgentsPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Real-world Application
+                      Faster Analytics Execution
                     </h4>
                     <p className="text-gray-600">
-                      Practical learning experiences that directly apply to
-                      daily work challenges and responsibilities.
+                      Clear specifications reduce back-and-forth communication
                     </p>
                   </div>
                 </div>
@@ -467,11 +576,10 @@ export const UpskillingProAgentsPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Continuous Support
+                      Better Stakeholder Trust
                     </h4>
                     <p className="text-gray-600">
-                      24/7 access to learning resources and instant assistance
-                      when facing new challenges.
+                      Numbers mean the same thing to everyone
                     </p>
                   </div>
                 </div>
@@ -482,11 +590,10 @@ export const UpskillingProAgentsPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Measurable Progress
+                      Clarity in "What to Build" for Engineering Teams
                     </h4>
                     <p className="text-gray-600">
-                      Clear metrics and analytics that demonstrate skill
-                      development and performance improvements.
+                      Events and properties are listed explicitly
                     </p>
                   </div>
                 </div>
@@ -495,11 +602,11 @@ export const UpskillingProAgentsPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Team Collaboration
+                      More Actionable Dashboards
                     </h4>
                     <p className="text-gray-600">
-                      Foster knowledge sharing and collaborative learning across
-                      your entire organization.
+                      Not superficial charts, but meaningful, decision-ready
+                      views
                     </p>
                   </div>
                 </div>
@@ -508,11 +615,10 @@ export const UpskillingProAgentsPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Future-Ready Skills
+                      Foundation for Experiments and Machine Learning
                     </h4>
                     <p className="text-gray-600">
-                      Prepare your workforce for emerging technologies and
-                      evolving industry requirements.
+                      Clean data and consistent metrics
                     </p>
                   </div>
                 </div>
@@ -544,9 +650,7 @@ export const UpskillingProAgentsPage: React.FC = () => {
               Your Analytics?
             </h2>
             <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Join innovative companies that are transforming their workforce
-              with AI-powered upskilling. See measurable improvements in
-              productivity, retention, and employee satisfaction.
+              Join our Beta Pilot and help shape the future of decision making!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
