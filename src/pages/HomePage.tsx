@@ -26,6 +26,7 @@ import { LeadCaptureModal } from "../components/LeadCaptureModal";
 import { ImageBanner } from "../components/ImageBanner";
 import { useLeadTracking } from "../hooks/useLeadTracking";
 import HeroVortex from "../components/HeroVortex";
+import { NovAInPlatformDiagram } from "../components/NovAInPlatformDiagram";
 import { SiteFooter } from "../components/SiteFooter";
 
 export function HomePage() {
@@ -533,6 +534,11 @@ export function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* NovAIn Decision Platform Diagram Section */}
+      <div className="relative z-10 bg-[#C3CFD9] py-16 px-4 sm:px-6 lg:px-8">
+        <NovAInPlatformDiagram />
+      </div>
 
       {/* Upskilling Agents vs. Workforce Automation Section */}
       <div
