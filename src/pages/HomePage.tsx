@@ -549,12 +549,13 @@ export function HomePage() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              We believe in
+              We are building{" "}
               <span className="font-semibold text-gray-900">
-                empowering your workforce
+                Human-AI collaboration{" "}
               </span>
-              , not replacing it. Our upskilling agents work collaboratively to
-              unlock potential through learning and creativity
+              that increases capability - not headcount reduction. Teams learn
+              while solving real business problems without need for external
+              training.
             </p>
           </div>
 
@@ -575,31 +576,33 @@ export function HomePage() {
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-red-700">
-                    Replaces human workers with machines
+                    Optimizes for task replacement, not skill development
                   </span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-red-700">
-                    Reduces workforce by eliminating jobs
+                    Creates brittle workflows that break when context changes
                   </span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-red-700">
-                    Creates fear, uncertainty and resistance to change
+                    Pushes expertise into tools, pulling real work away from
+                    people
                   </span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-red-700">
-                    Limited to repetitive, rule-based tasks
+                    Increases dependency and "black box" decision risks
                   </span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-red-700">
-                    Decreases employee morale, engagement and pursuit of mastery
+                    Reduces engagement by removing autonomy and pursuit of
+                    mastery
                   </span>
                 </div>
               </div>
@@ -620,35 +623,37 @@ export function HomePage() {
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-emerald-700">
-                    <strong>Empowers human workers</strong> with customized
-                    learning when they need it
+                    <strong>Keeps humans in control</strong> with guided
+                    reasoning and clear{}
+                    outputs
                   </span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-emerald-700">
-                    <strong>Enhances capabilities</strong> that unlocks
-                    creativity and skill development
+                    <strong>Builds reusable playbooks</strong> (decision briefs,
+                    prompts, KPIs,) in the flow of work
                   </span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-emerald-700">
-                    <strong>Builds excitement</strong> for continuous learning.
+                    <strong>Improves quality</strong> through structure,
+                    feedback and consistency
                   </span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-emerald-700">
-                    <strong>Enables complex problem-solving</strong> through
-                    creativity.
+                    <strong>Increases speed</strong> without sacrificing
+                    judgement creativity.
                   </span>
                 </div>
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <span className="text-emerald-700">
-                    <strong>Increases job satisfaction, morale</strong> and
-                    retention.
+                    <strong>Creates a culture of continuous learning</strong>{" "}
+                    tied to tangible outcomes
                   </span>
                 </div>
               </div>
@@ -672,12 +677,11 @@ export function HomePage() {
                     <TrendingUp className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
-                    Employee's Growth
+                    Accelerated Growth
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    On-demand skill development eliminates redundant GPT trials
-                    of figuring out which prompt works, freeing up time for
-                    employee's growth through learning a new skill.
+                    Learn the right approach on-the-job with reusable prompts
+                    and short lessons.
                   </p>
                 </div>
               </div>
@@ -689,11 +693,11 @@ export function HomePage() {
                     <Users className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-3">
-                    Increased Morale
+                    Stronger Morale
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Greater learning opportunities on the job ensures results in
-                    in higher employee motivation.
+                    Less busy work, more empowerment towards mastery. People
+                    feel supported - not replaced.
                   </p>
                 </div>
               </div>
@@ -705,11 +709,11 @@ export function HomePage() {
                     <Zap className="w-8 h-8 text-white" />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-3">
-                    Higher Productivity
+                    Higher Throughput
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Improved productivity leaves more time for creative problem
-                    solving of complex problems.
+                    Quicker and more accurate analysis means more work gets done
+                    in less time.
                   </p>
                 </div>
               </div>
@@ -724,7 +728,8 @@ export function HomePage() {
                     Innovation Culture
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Fosters creative thinking through better time management
+                    Teams spend time on thinking and experimentation, rather
+                    than formatting and grunt work.
                   </p>
                 </div>
               </div>
@@ -742,47 +747,38 @@ export function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 animate-stagger-in">
               <div className="border-r border-white/20 last:border-r-0 md:border-r md:last:border-r-0 transform transition-all duration-500 hover:scale-110">
-                <div className="text-4xl font-bold text-blue-400 mb-2">
-                  2.4×
+                <div className="text-2xl font-bold text-blue-400 mb-2">
+                  Productivity Uplift
                 </div>
                 <div className="text-lg font-semibold mb-1">
-                  Higher Productivity
-                </div>
-                <div className="text-sm text-blue-200">
-                  Companies investing in Upskilling
+                  Less rework, clearer next steps
                 </div>
               </div>
 
               <div className="border-r border-white/20 last:border-r-0 md:border-r md:last:border-r-0 transform transition-all duration-500 hover:scale-110">
-                <div className="text-4xl font-bold text-emerald-400 mb-2">
-                  87%
+                <div className="text-2xl font-bold text-emerald-400 mb-2">
+                  Retention Lift
                 </div>
                 <div className="text-lg font-semibold mb-1">
-                  Employee Retention
-                </div>
-                <div className="text-sm text-emerald-200">
-                  Improved with upskilling programs
+                  Engagement with on-the-job learning
                 </div>
               </div>
 
               <div className="transform transition-all duration-500 hover:scale-110">
-                <div className="text-4xl font-bold text-purple-400 mb-2">
-                  65%
-                </div>
-                <div className="text-lg font-semibold mb-1">
+                <div className="text-2xl font-bold text-purple-400 mb-2">
                   Faster Innovation
                 </div>
-                <div className="text-sm text-purple-200">
-                  Time to market for new solutions
+                <div className="text-lg font-semibold mb-1">
+                  Shorter path from idea to execution
                 </div>
               </div>
             </div>
 
             <div className="border-t border-white/20 pt-8">
               <p className="text-xl mb-6 text-blue-100">
-                Our upskilling agents transform how we work, creating a more
-                capable workforce that is more energized, confident and
-                innovative
+                Our upskilling agents don't just automate outputs, they{" "}
+                <strong> standardize decision quality</strong>
+                to help teams improve over time.
               </p>
 
               <button
