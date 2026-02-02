@@ -92,7 +92,7 @@ export const SmartTicketSchedulingPage: React.FC = () => {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 rounded-full text-purple-200 text-lg font-medium mb-8 animate-fade-in">
             <Settings className="w-5 h-5 mr-2" />
-            <span style={{ fontSize: "22px" }}>ML Readiness (Beta)</span>
+            <span style={{ fontSize: "22px" }}>ML Readiness</span>
           </div>
 
           {/* Main Headline */}
