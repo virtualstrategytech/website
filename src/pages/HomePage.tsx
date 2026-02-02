@@ -777,8 +777,8 @@ export function HomePage() {
             <div className="border-t border-white/20 pt-8">
               <p className="text-xl mb-6 text-blue-100">
                 Our upskilling agents don't just automate outputs, they{" "}
-                <strong> standardize decision quality</strong>
-                to help teams improve over time.
+                <strong> standardize decision quality</strong> to help teams
+                improve over time.
               </p>
 
               <button
