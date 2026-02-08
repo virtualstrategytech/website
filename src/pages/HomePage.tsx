@@ -258,22 +258,70 @@ export function HomePage() {
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+              Why Teams Choose{" "}
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
-                Upskilling Pro
+                NovAIn
               </span>
             </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-900 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-              A knowledge-as-a-service agency: translating strategy questions
-              into prompt engineering lessons and quizzes for on-the-job
-              learning.
-            </p>
-            <p className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent inline-block pb-1">
+          </div>
+
+          {/* Value Proposition Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {/* Card 1 - Learn from your work */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Lightbulb className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+                Learn from your work
+              </h3>
+              <p className="text-gray-600 text-center leading-relaxed">
+                Translate business strategy questions into prompt engineering
+                education through our dual translation lens with seamless
+                switching between the two.
+              </p>
+            </div>
+
+            {/* Card 2 - Standardize prompt quality */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <ListChecks className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+                Standardize prompt quality
+              </h3>
+              <p className="text-gray-600 text-center leading-relaxed">
+                Reusable prompt packages equip your whole team with a library of
+                artifacts that build shared understanding, less variance, few
+                hallucinated outputs and overall consistency.
+              </p>
+            </div>
+
+            {/* Card 3 - Proven skill lift */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <TrendingUp className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+                Proven skill lift
+              </h3>
+              <p className="text-gray-600 text-center leading-relaxed">
+                Track your improvement in implementing LLMs on-the-job through
+                quizzes, rubrics and dashboards without investing extra time to
+                data science education.{" "}
+              </p>
+            </div>
+          </div>
+
+          {/* Tagline */}
+          <div className="text-center mb-12">
+            <p className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent inline-block pb-1">
               Elevating performance rather than replacing performers
             </p>
           </div>
 
           {/* CTA Button */}
-          <div className="flex justify-center my-12">
+          <div className="flex justify-center">
             <button
               onClick={() => navigate("/products")}
               className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
@@ -540,6 +588,117 @@ export function HomePage() {
         <NovAInPlatformDiagram />
       </div>
 
+      {/* Target Market Section */}
+      <div className="relative z-10 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+              Built For{" "}
+              <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
+                Teams Like Yours
+              </span>
+            </h2>
+          </div>
+
+          {/* ICP Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            {/* ICP A - Consulting & Client-Facing Teams */}
+            <div className="bg-gradient-to-br from-emerald-50 to-green-50 p-8 rounded-2xl border-2 border-emerald-200 transform transition-all duration-300 hover:scale-105">
+              <div className="flex items-center mb-4">
+                <Users className="w-6 h-6 text-emerald-600 mr-3" />
+                <h3 className="text-xl font-bold text-emerald-800">
+                  Consulting & Client-Facing Teams
+                </h3>
+              </div>
+              <p className="text-sm text-emerald-700 mb-3 font-semibold">
+                10–200 people
+              </p>
+              <p className="text-md text-emerald-700 mb-2 italic">
+                Strategy, operations, analytics, product, customer success teams
+              </p>
+              <div className="mb-4">
+                <p className="text-sm font-bold text-emerald-800 mb-2">Need:</p>
+                <p className="text-sm text-emerald-700">
+                  Faster thinking, better deliverables, repeatable methods
+                </p>
+              </div>
+              <div className="bg-white/60 p-3 rounded-lg">
+                <p className="text-sm font-semibold text-emerald-900 italic">
+                  Turn ad-hoc analysis into a repeatable playbook.
+                </p>
+              </div>
+            </div>
+
+            {/* ICP B - Tech-Adjacent Business Teams */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border-2 border-blue-200 transform transition-all duration-300 hover:scale-105">
+              <div className="flex items-center mb-4">
+                <Cpu className="w-6 h-6 text-blue-600 mr-3" />
+                <h3 className="text-xl font-bold text-blue-800">
+                  Tech-Adjacent Business Teams
+                </h3>
+              </div>
+              <p className="text-md text-blue-700 mb-3 font-semibold">
+                SMB / Mid-Market
+              </p>
+              <p className="text-md text-blue-700 mb-2 italic">
+                Revenue operations, product operations, marketing operations,
+                finance
+              </p>
+              <div className="mb-4">
+                <p className="text-sm font-bold text-blue-800 mb-2">Need:</p>
+                <p className="text-sm text-blue-700">
+                  Translate goals → metrics → prompts → decisions
+                </p>
+              </div>
+              <div className="bg-white/60 p-3 rounded-lg">
+                <p className="text-sm font-semibold text-blue-900 italic">
+                  Reduce rework and confusion by aligning prompts to the
+                  business outcome.
+                </p>
+              </div>
+            </div>
+
+            {/* ICP C - L&D / Enablement Leaders */}
+            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl border-2 border-purple-200 transform transition-all duration-300 hover:scale-105">
+              <div className="flex items-center mb-4">
+                <BookOpenCheck className="w-6 h-6 text-purple-600 mr-3" />
+                <h3 className="text-xl font-bold text-purple-800">
+                  L&D / Enablement Leaders
+                </h3>
+              </div>
+              <p className="text-md text-purple-700 mb-3 font-semibold">
+                Tired of low adoption
+              </p>
+              <p className="text-md text-purple-700 mb-2 italic">
+                Training that actually gets used
+              </p>
+              <div className="mb-4">
+                <p className="text-sm font-bold text-purple-800 mb-2">Need:</p>
+                <p className="text-sm text-purple-700">
+                  Learning that happens inside the workflow, not in a portal or
+                  offsite.
+                </p>
+              </div>
+              <div className="bg-white/60 p-3 rounded-lg">
+                <p className="text-sm font-semibold text-purple-900 italic">
+                  Training that happens inside the workflow, not in a portal or
+                  offsite.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Disclaimer Line */}
+          <div className="text-center">
+            <p className="text-lg text-gray-900 italic max-w-4xl mx-auto leading-relaxed">
+              Best for teams who already use ChatGPT/Claude but lack shared
+              prompt standards, struggling with implementation, qualty control, and/or measurable progression.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Upskilling Agents vs. Workforce Automation Section */}
       <div
         id="upskilling-comparison"
@@ -670,7 +829,7 @@ export function HomePage() {
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-12 rounded-3xl border border-blue-200 mb-16 animate-fade-in-up transform transition-all duration-500 hover:shadow-xl">
             <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
               The Power of{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
                 Human-AI Collaboration
               </span>
             </h3>
@@ -798,6 +957,32 @@ export function HomePage() {
           </div>
         </div>
       </div>
+
+      {/* Vision Statement Section */}
+      <section
+        className="relative z-10 w-full py-28 px-4 overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(135deg, #020C2C 0%, #031234 50%, #020C2C 100%)"
+        }}
+      >
+        {/* Decorative blobs */}
+        <div className="absolute -top-24 -left-24 w-[32rem] h-[32rem] bg-gradient-to-br from-blue-400/20 via-indigo-400/20 to-purple-400/20 rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h2 className="text-5xl sm:text-6xl font-bold text-white mb-8">
+            Our{" "}
+            <span className="bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
+              Vision
+            </span>
+          </h2>
+          <p className="text-xl sm:text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto">
+            We're building the most practical upskilling tool for
+            knowledge workers — where rather than replacing performers, we empower them in how work gets done. 
+          </p>
+        </div>
+      </section>
 
       {/* Testimonials Section */}
       <div
