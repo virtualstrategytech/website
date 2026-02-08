@@ -980,8 +980,8 @@ export function HomePage() {
           </h2>
           <p className="text-xl sm:text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto">
             We're building the most practical upskilling tool for knowledge
-            workers — where rather than replacing performers, we empower them in
-            how work gets done.
+            workers — rather than replacing performers, we empower them to
+            better ways of working.
           </p>
         </div>
       </section>
