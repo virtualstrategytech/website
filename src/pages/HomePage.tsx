@@ -611,7 +611,7 @@ export function HomePage() {
                   Consulting & Client-Facing Teams
                 </h3>
               </div>
-              <p className="text-sm text-emerald-700 mb-3 font-semibold">
+              <p className="text-md text-emerald-700 mb-3 font-semibold">
                 10–200 people
               </p>
               <p className="text-md text-emerald-700 mb-2 italic">
