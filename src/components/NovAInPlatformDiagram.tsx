@@ -182,7 +182,7 @@ export function NovAInPlatformDiagram() {
               fontSize="90"
               fontWeight="bold"
             >
-              NovAIn Decision Platform
+              NovAIn Upskilling Platform
             </tspan>
           </text>
         </motion.g>
