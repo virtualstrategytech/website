@@ -327,7 +327,7 @@ export function HomePage() {
               className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
-                Discover Our Products
+                Discover Our Product
               </span>
               <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
@@ -693,7 +693,8 @@ export function HomePage() {
           <div className="text-center">
             <p className="text-lg text-gray-900 italic max-w-4xl mx-auto leading-relaxed">
               Best for teams who already use ChatGPT/Claude but lack shared
-              prompt standards, struggling with implementation, qualty control, and/or measurable progression.
+              prompt standards, struggling with implementation, qualty control,
+              and/or measurable progression.
             </p>
           </div>
         </div>
@@ -978,8 +979,9 @@ export function HomePage() {
             </span>
           </h2>
           <p className="text-xl sm:text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto">
-            We're building the most practical upskilling tool for
-            knowledge workers — where rather than replacing performers, we empower them in how work gets done. 
+            We're building the most practical upskilling tool for knowledge
+            workers — where rather than replacing performers, we empower them in
+            how work gets done.
           </p>
         </div>
       </section>
