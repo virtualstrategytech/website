@@ -258,7 +258,7 @@ export function HomePage() {
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Why Teams Choose{" "}
+              Why Choose{" "}
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                 NovAIn
               </span>
@@ -278,10 +278,19 @@ export function HomePage() {
                 </span>
               </h3>
               <p className="text-gray-700 text-center leading-relaxed">
-                Translate <span className="font-bold text-blue-700">business strategy questions</span> into{" "}
-                <span className="font-bold text-indigo-700">prompt engineering education</span> through our{" "}
-                <span className="font-semibold text-blue-600">dual translation lens</span> with seamless
-                switching between the two.
+                Translate{" "}
+                <span className="font-bold text-blue-700">
+                  business strategy questions
+                </span>{" "}
+                into{" "}
+                <span className="font-bold text-indigo-700">
+                  prompt engineering education
+                </span>{" "}
+                through our{" "}
+                <span className="font-semibold text-blue-600">
+                  dual translation lens
+                </span>{" "}
+                with seamless switching between the two.
               </p>
             </div>
 
@@ -296,11 +305,20 @@ export function HomePage() {
                 </span>
               </h3>
               <p className="text-gray-700 text-center leading-relaxed">
-                <span className="font-bold text-emerald-700">Reusable prompt packages</span> equip your whole team with a library of
-                artifacts that build <span className="font-semibold text-emerald-600">shared understanding</span>,{" "}
-                <span className="font-bold text-green-700">less variance</span>, few
-                hallucinated outputs and{" "}
-                <span className="font-bold text-emerald-700">overall consistency</span>.
+                <span className="font-bold text-emerald-700">
+                  Reusable prompt packages
+                </span>{" "}
+                equip your whole team with a library of artifacts that build{" "}
+                <span className="font-semibold text-emerald-600">
+                  shared understanding
+                </span>
+                ,{" "}
+                <span className="font-bold text-green-700">less variance</span>,
+                few hallucinated outputs and{" "}
+                <span className="font-bold text-emerald-700">
+                  overall consistency
+                </span>
+                .
               </p>
             </div>
 
@@ -315,9 +333,15 @@ export function HomePage() {
                 </span>
               </h3>
               <p className="text-gray-700 text-center leading-relaxed">
-                <span className="font-bold text-purple-700">Track your improvement</span> in implementing LLMs on-the-job through
-                <span className="font-semibold text-indigo-600"> quizzes, rubrics and dashboards</span> without investing extra time to
-                data science education.{" "}
+                <span className="font-bold text-purple-700">
+                  Track your improvement
+                </span>{" "}
+                in implementing LLMs on-the-job through
+                <span className="font-semibold text-indigo-600">
+                  {" "}
+                  quizzes, rubrics and dashboards
+                </span>{" "}
+                without investing extra time to data science education.{" "}
               </p>
             </div>
           </div>
@@ -593,7 +617,7 @@ export function HomePage() {
       </section>
 
       {/* NovAIn Decision Platform Diagram Section */}
-      <div className="relative z-10 bg-[#C3CFD9] py-16 px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 bg-[#E5EBF0] py-16 px-4 sm:px-6 lg:px-8">
         <NovAInPlatformDiagram />
       </div>
 
@@ -614,8 +638,8 @@ export function HomePage() {
               </span>
             </h2>
             <p className="text-xl text-gray-900 max-w-3xl mx-auto leading-relaxed">
-              Whether you're in consulting, operations, or enablement, our of the-box-solution
-              will fit your workflow
+              Whether you're in consulting, operations, or enablement, our of
+              the-box-solution will fit your workflow
             </p>
           </div>
 
