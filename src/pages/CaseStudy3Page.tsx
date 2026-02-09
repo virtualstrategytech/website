@@ -10,7 +10,7 @@ export const CaseStudy3Page: React.FC = () => {
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
-  const handleBackToHome = () => navigate("/");
+  const handleBackToHome = () => navigate("/use-cases");
 
   return (
     <div className="min-h-screen flex flex-col font-sans bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50">
@@ -40,7 +40,7 @@ export const CaseStudy3Page: React.FC = () => {
                 style={{ fontSize: "22px" }}
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
-                Back to Home
+                Back to Use Cases
               </button>
               <button
                 onClick={handleOpenModal}
