@@ -589,8 +589,13 @@ export function HomePage() {
       </div>
 
       {/* Target Market Section */}
-      <div className="relative z-10 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <div
+        className="relative z-10 py-20 px-4 sm:px-6 lg:px-8"
+        style={{
+          backgroundColor: "#FFEDC4"
+        }}
+      >
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
@@ -599,12 +604,16 @@ export function HomePage() {
                 Teams Like Yours
               </span>
             </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Whether you're in consulting, ops, or enablement—we've built
+              solutions that fit your workflow
+            </p>
           </div>
 
           {/* ICP Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
             {/* ICP A - Consulting & Client-Facing Teams */}
-            <div className="bg-gradient-to-br from-emerald-50 to-green-50 p-8 rounded-2xl border-2 border-emerald-200 transform transition-all duration-300 hover:scale-105">
+            <div className="bg-gradient-to-br from-emerald-50 via-emerald-100 to-emerald-200 p-8 rounded-2xl shadow-2xl border border-emerald-200 transform transition-all duration-300 hover:scale-105 hover:shadow-emerald-300/60 hover:from-emerald-100 hover:to-emerald-300">
               <div className="flex items-center mb-4">
                 <Users className="w-6 h-6 text-emerald-600 mr-3" />
                 <h3 className="text-xl font-bold text-emerald-800">
@@ -631,7 +640,7 @@ export function HomePage() {
             </div>
 
             {/* ICP B - Tech-Adjacent Business Teams */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border-2 border-blue-200 transform transition-all duration-300 hover:scale-105">
+            <div className="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 p-8 rounded-2xl shadow-2xl border border-blue-200 transform transition-all duration-300 hover:scale-105 hover:shadow-blue-300/60 hover:from-blue-100 hover:to-blue-300">
               <div className="flex items-center mb-4">
                 <Cpu className="w-6 h-6 text-blue-600 mr-3" />
                 <h3 className="text-xl font-bold text-blue-800">
@@ -660,7 +669,7 @@ export function HomePage() {
             </div>
 
             {/* ICP C - L&D / Enablement Leaders */}
-            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl border-2 border-purple-200 transform transition-all duration-300 hover:scale-105">
+            <div className="bg-gradient-to-br from-purple-50 via-purple-100 to-purple-200 p-8 rounded-2xl shadow-2xl border border-purple-200 transform transition-all duration-300 hover:scale-105 hover:shadow-purple-300/60 hover:from-purple-100 hover:to-purple-300">
               <div className="flex items-center mb-4">
                 <BookOpenCheck className="w-6 h-6 text-purple-600 mr-3" />
                 <h3 className="text-xl font-bold text-purple-800">
@@ -689,13 +698,21 @@ export function HomePage() {
             </div>
           </div>
 
-          {/* Disclaimer Line */}
-          <div className="text-center">
-            <p className="text-lg text-gray-900 italic max-w-4xl mx-auto leading-relaxed">
-              Best for teams who already use ChatGPT/Claude but lack shared
-              prompt standards, struggling with implementation, qualty control,
-              and/or measurable progression.
-            </p>
+          {/* Best Fit Card */}
+          <div className="flex justify-center">
+            <div className="bg-gradient-to-br from-cyan-50 via-cyan-100 to-blue-200 p-8 rounded-2xl shadow-2xl border border-cyan-200 max-w-4xl transform transition-all duration-300 hover:scale-105 hover:shadow-cyan-300/60 hover:from-cyan-100 hover:to-blue-300">
+              <div className="flex items-center justify-center mb-4">
+                <Target className="w-8 h-8 text-blue-600 mr-3" />
+                <h3 className="text-2xl font-bold text-blue-800">
+                  Best Fit For
+                </h3>
+              </div>
+              <p className="text-lg text-gray-900 text-center leading-relaxed">
+                Teams who already use ChatGPT/Claude but lack shared prompt
+                standards, struggling with implementation, quality control,
+                and/or measurable progression.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -703,7 +720,10 @@ export function HomePage() {
       {/* Upskilling Agents vs. Workforce Automation Section */}
       <div
         id="upskilling-comparison"
-        className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500"
+        className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 transition-all duration-500"
+        style={{
+          backgroundColor: "#FFF9F0"
+        }}
       >
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
@@ -728,7 +748,7 @@ export function HomePage() {
           {/* Comparison Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 animate-stagger-in">
             {/* Traditional Workforce Automation */}
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-2xl border-2 border-red-200 transform transition-all duration-500 hover:scale-105 hover:shadow-lg">
+            <div className="bg-gradient-to-br from-red-100 via-red-50 to-orange-100 p-8 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-red-300/60">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mr-4">
                   <Settings className="w-6 h-6 text-white" />
@@ -775,7 +795,7 @@ export function HomePage() {
             </div>
 
             {/* Our Upskilling Agents Approach */}
-            <div className="bg-gradient-to-br from-emerald-50 to-green-50 p-8 rounded-2xl border-2 border-emerald-200 transform transition-all duration-500 hover:scale-105 hover:shadow-lg">
+            <div className="bg-gradient-to-br from-emerald-100 via-emerald-50 to-green-100 p-8 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-emerald-300/60">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mr-4">
                   <TrendingUp className="w-6 h-6 text-white" />
@@ -837,7 +857,7 @@ export function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 animate-stagger-in">
               {/* Employee Growth */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 cursor-pointer transform transition-all duration-300 hover:scale-105">
+              <div className="bg-gradient-to-br from-white via-blue-50 to-indigo-50 p-8 rounded-2xl shadow-2xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-blue-300/60">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <TrendingUp className="w-8 h-8 text-white" />
@@ -853,7 +873,7 @@ export function HomePage() {
               </div>
 
               {/* Increased Morale */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 cursor-pointer transform transition-all duration-300 hover:scale-105">
+              <div className="bg-gradient-to-br from-white via-emerald-50 to-green-50 p-8 rounded-2xl shadow-2xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-emerald-300/60">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Users className="w-8 h-8 text-white" />
@@ -869,7 +889,7 @@ export function HomePage() {
               </div>
 
               {/* Improved Productivity */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 cursor-pointer transform transition-all duration-300 hover:scale-105">
+              <div className="bg-gradient-to-br from-white via-purple-50 to-purple-100 p-8 rounded-2xl shadow-2xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-purple-300/60">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Zap className="w-8 h-8 text-white" />
@@ -885,7 +905,7 @@ export function HomePage() {
               </div>
 
               {/* Innovation Culture */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 cursor-pointer transform transition-all duration-300 hover:scale-105">
+              <div className="bg-gradient-to-br from-white via-pink-50 to-purple-50 p-8 rounded-2xl shadow-2xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-pink-300/60">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Lightbulb className="w-8 h-8 text-white" />
