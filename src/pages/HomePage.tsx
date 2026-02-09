@@ -268,46 +268,55 @@ export function HomePage() {
           {/* Value Proposition Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {/* Card 1 - Learn from your work */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <div className="bg-gradient-to-br from-white via-blue-50 to-indigo-50 p-8 rounded-2xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-blue-300/60 hover:from-blue-50 hover:to-indigo-100">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Lightbulb className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Learn from your work
+              <h3 className="text-2xl font-bold mb-4 text-center">
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  Learn from your work
+                </span>
               </h3>
-              <p className="text-gray-600 text-center leading-relaxed">
-                Translate business strategy questions into prompt engineering
-                education through our dual translation lens with seamless
+              <p className="text-gray-700 text-center leading-relaxed">
+                Translate <span className="font-bold text-blue-700">business strategy questions</span> into{" "}
+                <span className="font-bold text-indigo-700">prompt engineering education</span> through our{" "}
+                <span className="font-semibold text-blue-600">dual translation lens</span> with seamless
                 switching between the two.
               </p>
             </div>
 
             {/* Card 2 - Standardize prompt quality */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <div className="bg-gradient-to-br from-white via-emerald-50 to-green-50 p-8 rounded-2xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-emerald-300/60 hover:from-emerald-50 hover:to-green-100">
               <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <ListChecks className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Standardize prompt quality
+              <h3 className="text-2xl font-bold mb-4 text-center">
+                <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">
+                  Standardize prompt quality
+                </span>
               </h3>
-              <p className="text-gray-600 text-center leading-relaxed">
-                Reusable prompt packages equip your whole team with a library of
-                artifacts that build shared understanding, less variance, few
-                hallucinated outputs and overall consistency.
+              <p className="text-gray-700 text-center leading-relaxed">
+                <span className="font-bold text-emerald-700">Reusable prompt packages</span> equip your whole team with a library of
+                artifacts that build <span className="font-semibold text-emerald-600">shared understanding</span>,{" "}
+                <span className="font-bold text-green-700">less variance</span>, few
+                hallucinated outputs and{" "}
+                <span className="font-bold text-emerald-700">overall consistency</span>.
               </p>
             </div>
 
             {/* Card 3 - Proven skill lift */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <div className="bg-gradient-to-br from-white via-purple-50 to-indigo-50 p-8 rounded-2xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-purple-300/60 hover:from-purple-50 hover:to-indigo-100">
               <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Proven skill lift
+              <h3 className="text-2xl font-bold mb-4 text-center">
+                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                  Proven skill lift
+                </span>
               </h3>
-              <p className="text-gray-600 text-center leading-relaxed">
-                Track your improvement in implementing LLMs on-the-job through
-                quizzes, rubrics and dashboards without investing extra time to
+              <p className="text-gray-700 text-center leading-relaxed">
+                <span className="font-bold text-purple-700">Track your improvement</span> in implementing LLMs on-the-job through
+                <span className="font-semibold text-indigo-600"> quizzes, rubrics and dashboards</span> without investing extra time to
                 data science education.{" "}
               </p>
             </div>
