@@ -97,14 +97,6 @@ export const ResearchPageStudy1: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
             <button
-              className="inline-flex items-center px-5 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-600 rounded-xl shadow-md hover:shadow-lg transition-all"
-              onClick={handleOpenModal}
-            >
-              Request Access
-              <ArrowLeft className="ml-2 h-4 w-4 rotate-180" />
-            </button>
-
-            <button
               className="inline-flex items-center px-5 py-4 text-lg font-semibold text-white bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl shadow-md hover:shadow-lg transition-all"
               onClick={() => {
                 const section = document.getElementById("research-content");
