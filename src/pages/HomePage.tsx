@@ -613,9 +613,9 @@ export function HomePage() {
                 Teams Like Yours
               </span>
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Whether you're in consulting, ops, or enablement—we've built
-              solutions that fit your workflow
+            <p className="text-xl text-gray-900 max-w-3xl mx-auto leading-relaxed">
+              Whether you're in consulting, operations, or enablement, our of the-box-solution
+              will fit your workflow
             </p>
           </div>
 
@@ -739,7 +739,7 @@ export function HomePage() {
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               Upskilling Agents vs.{" "}
-              <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
                 Workforce Automation
               </span>
             </h2>
@@ -749,7 +749,7 @@ export function HomePage() {
                 Human-AI collaboration{" "}
               </span>
               that increases capability - not headcount reduction. Teams learn
-              while solving real business problems without need for external
+              while solving real business problems without the need for external
               training.
             </p>
           </div>
@@ -757,45 +757,45 @@ export function HomePage() {
           {/* Comparison Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 animate-stagger-in">
             {/* Traditional Workforce Automation */}
-            <div className="bg-gradient-to-br from-red-100 via-red-50 to-orange-100 p-8 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-red-300/60">
+            <div className="bg-gradient-to-br from-orange-100 via-amber-50 to-yellow-100 p-8 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-orange-300/60">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mr-4">
                   <Settings className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-red-800">
+                <h3 className="text-2xl font-bold text-orange-800">
                   Traditional Workforce Automation
                 </h3>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-red-700">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-orange-800">
                     Optimizes for task replacement, not skill development
                   </span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-red-700">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-orange-800">
                     Creates brittle workflows that break when context changes
                   </span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-red-700">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-orange-800">
                     Pushes expertise into tools, pulling real work away from
                     people
                   </span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-red-700">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-orange-800">
                     Increases dependency and "black box" decision risks
                   </span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-red-700">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-orange-800">
                     Reduces engagement by removing autonomy and pursuit of
                     mastery
                   </span>
@@ -804,49 +804,49 @@ export function HomePage() {
             </div>
 
             {/* Our Upskilling Agents Approach */}
-            <div className="bg-gradient-to-br from-emerald-100 via-emerald-50 to-green-100 p-8 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-emerald-300/60">
+            <div className="bg-gradient-to-br from-blue-100 via-cyan-50 to-indigo-100 p-8 rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-blue-300/60">
               <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-emerald-800">
+                <h3 className="text-2xl font-bold text-blue-800">
                   Our Upskilling Agents Approach
                 </h3>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-emerald-700">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-blue-800">
                     <strong>Keeps humans in control</strong> with guided
                     reasoning and clear{}
                     outputs
                   </span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-emerald-700">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-blue-800">
                     <strong>Builds reusable playbooks</strong> (decision briefs,
                     prompts, KPIs,) in the flow of work
                   </span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-emerald-700">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-blue-800">
                     <strong>Improves quality</strong> through structure,
                     feedback and consistency
                   </span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-emerald-700">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-blue-800">
                     <strong>Increases speed</strong> without sacrificing
                     judgement creativity.
                   </span>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-emerald-700">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-blue-800">
                     <strong>Creates a culture of continuous learning</strong>{" "}
                     tied to tangible outcomes
                   </span>
