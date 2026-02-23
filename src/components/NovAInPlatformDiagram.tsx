@@ -174,15 +174,15 @@ export function NovAInPlatformDiagram() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: baseDelay, duration: 0.6 }}
         >
-          <text fill="#293845">
+          <text fill="#293845" textAnchor="middle">
             <tspan
-              x="1141.7700805664062"
+              x="1650"
               y="388"
               fontFamily="DIN Next, system-ui, sans-serif"
               fontSize="90"
               fontWeight="bold"
             >
-              NovAIn Upskilling Platform
+              NovAIn Analytics and Upskilling Platform
             </tspan>
           </text>
         </motion.g>
@@ -193,9 +193,9 @@ export function NovAInPlatformDiagram() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: baseDelay + stagger, duration: 0.6 }}
         >
-          <text fill="#293845">
+          <text fill="#293845" textAnchor="middle">
             <tspan
-              x="819.3401565551758"
+              x="1650"
               y="537"
               fontFamily="DIN Next, system-ui, sans-serif"
               fontSize="60"
