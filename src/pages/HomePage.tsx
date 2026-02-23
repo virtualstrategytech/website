@@ -18,9 +18,7 @@ import {
   Cpu,
   Settings2,
   ListChecks,
-  HelpCircle,
-  Activity,
-  BadgePercent
+  HelpCircle
 } from "lucide-react";
 import { LeadCaptureModal } from "../components/LeadCaptureModal";
 import { ImageBanner } from "../components/ImageBanner";
@@ -199,22 +197,23 @@ export function HomePage() {
                 letterSpacing: "0.02em"
               }}
             >
-              Strategic Prompt Engineering
+              Product and Analytics Enablement
             </span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            From Strategy to Prompt: Teach Teams{" "}
+            Make Better Decisions:{" "}
             <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent inline-block pb-1">
-              Prompt Engineering
+              Execute with Confidence
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            On-the-job strategy and analytics prompt engineering learning that
-            sticks
+            Turn Strategy Questions into Decision Briefs and Analytics
+            Specifications your Team can Execute then Reinforce with Prompt
+            Upskilling.
           </p>
 
           {/* CTA Button */}
@@ -224,7 +223,7 @@ export function HomePage() {
               className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
-                Demo Prompt Lesson
+                Generate a Decision Brief
               </span>
               <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
@@ -239,11 +238,11 @@ export function HomePage() {
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Lightbulb className="w-6 h-6 text-indigo-400" />
-              <span className="text-xl font-medium">Prompt Mastery</span>
+              <span className="text-xl font-medium">Analytics Accuracy</span>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Rocket className="w-6 h-6 text-purple-400" />
-              <span className="text-xl font-medium">Personal Fulfillment</span>
+              <span className="text-xl font-medium">Consistent Delivery</span>
             </div>
           </div>
         </div>
@@ -411,13 +410,13 @@ export function HomePage() {
           :
           <br />
           <span className="text-3xl font-semibold text-cyan-100">
-            Your Prompt Engineering Coach
+            Your Decision Briefing Coach
           </span>
         </h2>
 
         <p className="text-2xl text-cyan-100 max-w-2xl text-center mb-8 z-10 font-sans leading-relaxed">
-          A dual-agent collaborative system for learning strategy and prompt
-          engineering
+          A dual-agent collaborative system for standardizing analytics and
+          learning prompt engineering
           <br />
           <br />
           <span className="text-emerald-200 font-semibold">
@@ -489,7 +488,7 @@ export function HomePage() {
         <div className="w-full max-w-3xl bg-white/95 rounded-2xl shadow-xl p-12 z-10">
           <h3 className="text-2xl font-bold text-center mb-6 font-sans">
             <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-cyan-500 bg-clip-text text-transparent">
-              Why It Works
+              From Question to Decision Brief
             </span>
           </h3>
           <ul className="space-y-5 text-gray-900 text-lg font-sans">
@@ -498,10 +497,9 @@ export function HomePage() {
                 <ShieldCheck className="w-5 h-5 text-white" />
               </span>
               <span>
-                <span className="font-semibold">
-                  Learner-centred, step-by-step clarity:
-                </span>{" "}
-                Strategy first, prompt second.
+                <span className="font-semibold">Decision-first outputs:</span>{" "}
+                Decision brief and analytics specification for consistent
+                execution.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -510,9 +508,9 @@ export function HomePage() {
               </span>
               <span>
                 <span className="font-semibold">
-                  Context-embedded learning:
+                  Tailored to your question:
                 </span>{" "}
-                Prompts reflect contextual strategy questions
+                Packages are specific to product and constraints.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -520,9 +518,8 @@ export function HomePage() {
                 <Sparkles className="w-5 h-5 text-white" />
               </span>
               <span>
-                <span className="font-semibold">Immediate skill transfer:</span>{" "}
-                Learners move from concept to action immediately without
-                training courses
+                <span className="font-semibold">Execute immediately:</span>{" "}
+                Paste into your project management tool and assign next steps.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -531,10 +528,9 @@ export function HomePage() {
               </span>
               <span>
                 <span className="font-semibold">
-                  Quiz reinforcement (optional):
+                  Optional quiz for reinforcement:
                 </span>{" "}
-                Solidifies knowledge and builds confidence for use of prompt
-                engineering.
+                Solidify knowledge and build prompt engineering confidence
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -543,9 +539,9 @@ export function HomePage() {
               </span>
               <span>
                 <span className="font-semibold">
-                  Elevanted on-the-job performance:
+                  Humans own and drive the decisions:
                 </span>{" "}
-                Creative use of AI where the learner remains in control
+                The tool drafs possibilities and eliminates blind spots.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -553,11 +549,8 @@ export function HomePage() {
                 <Settings2 className="w-5 h-5 text-white" />
               </span>
               <span>
-                <span className="font-semibold">
-                  LLM reasoning on upstream is based on strict rubric & quality
-                  gate
-                </span>{" "}
-                Producing intelligent, but stable and predictable results
+                <span className="font-semibold">Stable Beta:</span>{" "}
+                Deterministic today; upstream intelligence coming soon.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -565,11 +558,8 @@ export function HomePage() {
                 <ListChecks className="w-5 h-5 text-white" />
               </span>
               <span>
-                <span className="font-semibold">
-                  Obtain step-by-step clarity from strategy to prompt:
-                </span>{" "}
-                Lessons are short, actionable and useful for solving your
-                specific problem.
+                <span className="font-semibold">Clear structure:</span> Options,
+                trade-offs, assumptions and measurements are all in one place.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -577,35 +567,8 @@ export function HomePage() {
                 <HelpCircle className="w-5 h-5 text-white" />
               </span>
               <span>
-                <span className="font-semibold">
-                  Learn not just what works but why:
-                </span>{" "}
-                Build deeper understanding for building your prompt skills
-                without a data engineering background
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
-                <Activity className="w-5 h-5 text-white" />
-              </span>
-              <span>
-                <span className="font-semibold">
-                  Agent Activity and Monitoring Dashboard:
-                </span>{" "}
-                Track agent actions and monitor performance for tracking what is
-                working and what needs improvement.
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="mt-1 w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 via-emerald-400 to-blue-500 flex items-center justify-center">
-                <BadgePercent className="w-5 h-5 text-white" />
-              </span>
-              <span>
-                <span className="font-semibold">
-                  Front-end branding (white-label solution):
-                </span>{" "}
-                Seamlessly integrate your own brand label to the agent solution
-                and dashboard.
+                <span className="font-semibold">Reusable prompts:</span> Save
+                the playbook to re-run and refine it at anytime.
               </span>
             </li>
           </ul>
