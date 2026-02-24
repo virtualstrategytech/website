@@ -485,7 +485,7 @@ export function HomePage() {
               business or prompt lenses
             </p>
             <p className="text-cyan-200 text-md text-center font-sans font-medium">
-              Receive graded feedback including a model answer.
+              Receives graded feedback including a model answer
             </p>
           </div>
         </div>
@@ -803,7 +803,7 @@ export function HomePage() {
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-blue-800">
-                  Our Upskilling Agents Approach
+                  Our Decision Brief Upskilling Approach
                 </h3>
               </div>
 
