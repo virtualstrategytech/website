@@ -223,7 +223,7 @@ export function HomePage() {
               className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
-                Generate a Decision Brief
+                Schedule your Free Demo
               </span>
               <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
@@ -427,7 +427,10 @@ export function HomePage() {
 
         {/* CTA */}
         <div className="mb-12 z-10">
-          <button className="px-10 py-5 rounded-2xl font-bold text-xl bg-gradient-to-r from-cyan-500 via-emerald-400 to-blue-500 text-white shadow-2xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 font-sans">
+          <button
+            onClick={() => handleCTAClick("beta-launch-cta")}
+            className="px-10 py-5 rounded-2xl font-bold text-xl bg-gradient-to-r from-cyan-500 via-emerald-400 to-blue-500 text-white shadow-2xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 font-sans"
+          >
             Join our Beta Launch!
           </button>
         </div>
@@ -704,9 +707,9 @@ export function HomePage() {
                 </h3>
               </div>
               <p className="text-lg text-gray-900 text-center leading-relaxed">
-                Teams who already use ChatGPT/Claude but lack shared prompt
-                standards, struggling with implementation, quality control,
-                and/or measurable progression.
+                Teams who already use ChatGPT or Claude but lack analytics
+                clarity,prompt standards or are struggling with implementation
+                and quality control.
               </p>
             </div>
           </div>
@@ -967,7 +970,7 @@ export function HomePage() {
                 onClick={() => handleCTAClick("comparison-cta")}
                 className="group bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl"
               >
-                Schedule Your Free Consultation
+                Schedule your Free Demo
                 <ArrowRight className="w-5 h-5 ml-2 inline transition-transform duration-500 group-hover:translate-x-1" />
               </button>
             </div>
@@ -1064,20 +1067,9 @@ export function HomePage() {
                 onClick={() => handleCTAClick("final-cta-primary")}
                 className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-[#10B981] to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-[#10B981] hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50 min-w-[280px]"
               >
-                <span className="relative z-10">Demo Prompt Lesson</span>
+                <span className="relative z-10">Schedule your Free Demo</span>
                 <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:translate-x-1" />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-[#10B981] to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-              </button>
-
-              {/* Secondary CTA */}
-              <button
-                onClick={() => handleCTAClick("final-cta-secondary")}
-                className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-blue-200 bg-white/10 backdrop-blur-sm border-2 border-blue-400/30 rounded-xl hover:bg-white/20 hover:border-blue-300/50 transition-all duration-500 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500/30 min-w-[280px]"
-              >
-                <span className="relative z-10">
-                  Request a Customized Solution
-                </span>
-                <Lightbulb className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:rotate-12" />
               </button>
             </div>
 
