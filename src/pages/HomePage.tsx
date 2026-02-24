@@ -211,7 +211,7 @@ export function HomePage() {
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            Turn Strategy Questions into Decision Briefs and Analytics
+            Turn Business Questions into Decision Briefs and Analytics
             Specifications your Team can Execute then Reinforce with Prompt
             Upskilling.
           </p>
@@ -443,14 +443,15 @@ export function HomePage() {
               <Lightbulb className="w-9 h-9 text-white" />
             </div>
             <h3 className="text-xl font-bold text-white mb-1 text-center font-sans">
-              Business Strategy Lens
+              Decision Brief (Product)
             </h3>
-            <p className="text-cyan-50 text-lg text-center mb-1 font-sans font-bold">
-              Elicits strategy question
+            <p className="text-cyan-50 text-md text-center mb-1 font-sans font-medium">
+              Clarifies the decision, options, tradeoffs, assumptions, and next
+              steps.
             </p>
-            <p className="text-cyan-200 text-md text-center font-sans font-bold">
-              Confirms understanding of strategy or business challenge and
-              delivers a lesson to solve it
+            <p className="text-cyan-200 text-md text-center font-sans font-medium">
+              Confirms understanding of business question and delivers a
+              decision brief.
             </p>
           </div>
 
@@ -460,12 +461,13 @@ export function HomePage() {
               <Sparkles className="w-9 h-9 text-white" />
             </div>
             <h3 className="text-xl font-bold text-white mb-1 text-center font-sans">
-              Prompt Design Lens
+              Analytics Specification (Measurement)
             </h3>
-            <p className="text-cyan-50 text-base text-center mb-1 font-sans font-bold">
-              Translates it into a prompt
+            <p className="text-cyan-50 text-base text-center mb-1 font-sans font-medium">
+              Defines KPIs, event taxonomy, properties, and dashboard outline to
+              measure success.
             </p>
-            <p className="text-cyan-200 text-md text-center font-sans font-bold">
+            <p className="text-cyan-200 text-md text-center font-sans font-medium">
               Answers the question through a business or prompt engineering lens
             </p>
           </div>
@@ -476,13 +478,14 @@ export function HomePage() {
               <BookOpenCheck className="w-9 h-9 text-white" />
             </div>
             <h3 className="text-xl font-bold text-white mb-1 text-center font-sans">
-              Optional Quiz
+              Optional Reinforcement
             </h3>
-            <p className="text-cyan-50 text-base text-center mb-1 font-sans font-bold">
-              Reinforces Learning
+            <p className="text-cyan-50 text-base text-center mb-1 font-sans font-medium">
+              Prompt lesson and quiz delivered through two interchangeable
+              business or prompt lenses
             </p>
-            <p className="text-cyan-200 text-md text-center font-sans font-bold">
-              Receive graded feedback including a "model answer".
+            <p className="text-cyan-200 text-md text-center font-sans font-medium">
+              Receive graded feedback including a model answer.
             </p>
           </div>
         </div>
@@ -513,7 +516,7 @@ export function HomePage() {
                 <span className="font-semibold">
                   Tailored to your question:
                 </span>{" "}
-                Packages are specific to product and constraints.
+                Built from your product, constraints, and goals.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -522,7 +525,7 @@ export function HomePage() {
               </span>
               <span>
                 <span className="font-semibold">Execute immediately:</span>{" "}
-                Paste into your project management tool and assign next steps.
+                Paste into your document and tracking tool to assign next steps.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -544,7 +547,7 @@ export function HomePage() {
                 <span className="font-semibold">
                   Humans own and drive the decisions:
                 </span>{" "}
-                The tool drafs possibilities and eliminates blind spots.
+                The tool drafs structure, your team reviews and decides.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -562,7 +565,7 @@ export function HomePage() {
               </span>
               <span>
                 <span className="font-semibold">Clear structure:</span> Options,
-                trade-offs, assumptions and measurements are all in one place.
+                trade-offs, assumptions, KPIs and measurements in one place.
               </span>
             </li>
             <li className="flex items-start gap-3">
@@ -998,8 +1001,8 @@ export function HomePage() {
             </span>
           </h2>
           <p className="text-xl sm:text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto">
-            We're building the most practical upskilling tool for knowledge
-            workers — rather than replacing performers, we empower them to
+            Bulding the most practical upskilling tool for knowledge workers —
+            rather than replacing performers, we empower them with analytics to
             better ways of working.
           </p>
         </div>
