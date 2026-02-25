@@ -149,7 +149,7 @@ const ProductsPage = () => {
                 letterSpacing: "0.02em"
               }}
             >
-              Strategic Decision Product
+              Product and Analytics Enablement
             </span>
           </div>
 
