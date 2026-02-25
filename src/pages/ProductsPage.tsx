@@ -187,15 +187,15 @@ const ProductsPage = () => {
           <div className="flex flex-wrap justify-center gap-4 text-blue-100 animate-fade-in-up">
             <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <Users className="w-6 h-6 text-emerald-400" />
-              <span className="text-xl font-medium">On-the-job Upskilling</span>
+              <span className="text-xl font-medium">Strategic Clarity</span>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <TrendingUp className="w-6 h-6 text-blue-400" />
-              <span className="text-xl font-medium">Time Efficiency</span>
+              <span className="text-xl font-medium">Analytics Accuracy</span>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <LifeBuoy className="w-6 h-6 text-purple-400" />
-              <span className="text-xl font-medium">Personal Fulfillment</span>
+              <span className="text-xl font-medium">Consistent Delivery</span>
             </div>
           </div>
         </div>
