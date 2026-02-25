@@ -273,7 +273,7 @@ export function HomePage() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-center">
                 <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  Learn from your work
+                  Decision Packs from real questions
                 </span>
               </h3>
               <p className="text-gray-700 text-center leading-relaxed">
@@ -328,7 +328,7 @@ export function HomePage() {
               </div>
               <h3 className="text-2xl font-bold mb-4 text-center">
                 <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  Proven skill lift
+                  Optional reinforcement (lesson + quiz)
                 </span>
               </h3>
               <p className="text-gray-700 text-center leading-relaxed">
@@ -613,7 +613,7 @@ export function HomePage() {
           </div>
 
           {/* ICP Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 max-w-5xl mx-auto">
             {/* ICP A - Consulting & Client-Facing Teams */}
             <div className="bg-gradient-to-br from-emerald-50 via-emerald-100 to-emerald-200 p-8 rounded-2xl shadow-2xl border border-emerald-200 transform transition-all duration-300 hover:scale-105 hover:shadow-emerald-300/60 hover:from-emerald-100 hover:to-emerald-300">
               <div className="flex items-center mb-4">
@@ -666,35 +666,6 @@ export function HomePage() {
                 <p className="text-sm font-semibold text-blue-900 italic">
                   Reduce rework and confusion by aligning prompts to the
                   business outcome.
-                </p>
-              </div>
-            </div>
-
-            {/* ICP C - L&D / Enablement Leaders */}
-            <div className="bg-gradient-to-br from-purple-50 via-purple-100 to-purple-200 p-8 rounded-2xl shadow-2xl border border-purple-200 transform transition-all duration-300 hover:scale-105 hover:shadow-purple-300/60 hover:from-purple-100 hover:to-purple-300">
-              <div className="flex items-center mb-4">
-                <BookOpenCheck className="w-6 h-6 text-purple-600 mr-3" />
-                <h3 className="text-xl font-bold text-purple-800">
-                  L&D / Enablement Leaders
-                </h3>
-              </div>
-              <p className="text-md text-purple-700 mb-3 font-semibold">
-                Tired of low adoption
-              </p>
-              <p className="text-md text-purple-700 mb-2 italic">
-                Training that actually gets used
-              </p>
-              <div className="mb-4">
-                <p className="text-sm font-bold text-purple-800 mb-2">Need:</p>
-                <p className="text-sm text-purple-700">
-                  Learning that happens inside the workflow, not in a portal or
-                  offsite.
-                </p>
-              </div>
-              <div className="bg-white/60 p-3 rounded-lg">
-                <p className="text-sm font-semibold text-purple-900 italic">
-                  Training that happens inside the workflow, not in a portal or
-                  offsite.
                 </p>
               </div>
             </div>
