@@ -221,8 +221,9 @@ const ProductsPage = () => {
             {/* Question 1 */}
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-blue-500">
               <p className="text-gray-800 text-lg italic leading-relaxed">
-                How should we define activation for our product, and what events
-                and properties do we need to track?
+                How should we define activation for our product in real value
+                for the customer, and what events and properties do we need to
+                track?
               </p>
             </div>
 
@@ -230,7 +231,7 @@ const ProductsPage = () => {
             <div className="bg-gradient-to-br from-emerald-50 to-green-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-emerald-500">
               <p className="text-gray-800 text-lg italic leading-relaxed">
                 We're launching a new feature, what are the success metrics,
-                instrumentation plan, and dashboard outlines we need to
+                instrumentation plan, and dashboard blueprint that we need to
                 consider?
               </p>
             </div>
@@ -239,7 +240,7 @@ const ProductsPage = () => {
             <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-indigo-500">
               <p className="text-gray-800 text-lg italic leading-relaxed">
                 Conversion is flat-lining, what decisions do we need to consider
-                to improve it and how will we measure its impact?
+                to improve it and how will we measure their impact?
               </p>
             </div>
 
@@ -255,7 +256,8 @@ const ProductsPage = () => {
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-purple-500 lg:col-span-2 max-w-3xl mx-auto">
               <p className="text-gray-800 text-lg italic leading-relaxed">
                 Where are our users dropping off during onboarding, and what is
-                the minimum event taxonomy to diagnose it?
+                the minimum event taxonomy that would help us diagnose and fix
+                it?
               </p>
             </div>
           </div>
