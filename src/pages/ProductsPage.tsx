@@ -201,6 +201,67 @@ const ProductsPage = () => {
         </div>
       </HeroVortex>
 
+      {/* Real Questions Section */}
+      <section className="relative z-10 bg-white py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+              Real Questions{" "}
+              <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
+                From Product Teams
+              </span>
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Turn ambiguous business problems into clear analytics
+              specifications
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {/* Question 1 */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-blue-500">
+              <p className="text-gray-800 text-lg italic leading-relaxed">
+                How should we define activation for our product, and what events
+                and properties do we need to track?
+              </p>
+            </div>
+
+            {/* Question 2 */}
+            <div className="bg-gradient-to-br from-emerald-50 to-green-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-emerald-500">
+              <p className="text-gray-800 text-lg italic leading-relaxed">
+                We're launching a new feature, what are the success metrics,
+                instrumentation plan, and dashboard outlines we need to
+                consider?
+              </p>
+            </div>
+
+            {/* Question 3 */}
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-indigo-500">
+              <p className="text-gray-800 text-lg italic leading-relaxed">
+                Conversion is flat-lining, what decisions do we need to consider
+                to improve it and how will we measure its impact?
+              </p>
+            </div>
+
+            {/* Question 4 */}
+            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-cyan-500">
+              <p className="text-gray-800 text-lg italic leading-relaxed">
+                Which KPI's should be our North Star, and what would we stop
+                doing if it doesn't improve?
+              </p>
+            </div>
+
+            {/* Question 5 */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-purple-500 lg:col-span-2 max-w-3xl mx-auto">
+              <p className="text-gray-800 text-lg italic leading-relaxed">
+                Where are our users dropping off during onboarding, and what is
+                the minimum event taxonomy to diagnose it?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Product Cards Section */}
       <section
         id="products-grid"
