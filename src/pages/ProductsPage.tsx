@@ -222,7 +222,7 @@ const ProductsPage = () => {
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-blue-500">
               <p className="text-gray-800 text-lg italic leading-relaxed">
                 How should we define activation for our product, and what events
-                and properties do we need to track?"
+                and properties do we need to track?
               </p>
             </div>
 
