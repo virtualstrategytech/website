@@ -222,7 +222,7 @@ const ProductsPage = () => {
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-blue-500">
               <p className="text-gray-800 text-lg italic leading-relaxed">
                 How should we define activation for our product in real value
-                for the customer, and what events and properties do we need to
+                for the customer in the events and properties that we need to
                 track?
               </p>
             </div>
@@ -230,7 +230,7 @@ const ProductsPage = () => {
             {/* Question 2 */}
             <div className="bg-gradient-to-br from-emerald-50 to-green-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-emerald-500">
               <p className="text-gray-800 text-lg italic leading-relaxed">
-                We're launching a new feature, what are the success metrics,
+                We are launching a new feature, what are the success metrics,
                 instrumentation plan, and dashboard blueprint that we need to
                 consider?
               </p>
@@ -247,7 +247,7 @@ const ProductsPage = () => {
             {/* Question 4 */}
             <div className="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-cyan-500">
               <p className="text-gray-800 text-lg italic leading-relaxed">
-                Which KPI's should be our North Star, and what would we stop
+                Which KPI's should be our North Star, and what should we stop
                 doing if it doesn't improve?
               </p>
             </div>
@@ -256,8 +256,7 @@ const ProductsPage = () => {
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-purple-500 lg:col-span-2 max-w-3xl mx-auto">
               <p className="text-gray-800 text-lg italic leading-relaxed">
                 Where are our users dropping off during onboarding, and what is
-                the minimum event taxonomy that would help us diagnose and fix
-                it?
+                the minimum event taxonomy that would diagnose and fix it?
               </p>
             </div>
           </div>
