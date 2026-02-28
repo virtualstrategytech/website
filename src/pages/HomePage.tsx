@@ -573,15 +573,12 @@ export function HomePage() {
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Built For{" "}
+              Built for{" "}
               <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
-                Teams Like Yours
+                Product, Analytics or Strategy Leaders
               </span>
             </h2>
-            <p className="text-xl text-gray-900 max-w-3xl mx-auto leading-relaxed">
-              Whether you're in consulting, operations, or enablement, our of
-              the-box-solution will fit your workflow
-            </p>
+            <p className="text-xl text-gray-900 max-w-3xl mx-auto leading-relaxed"></p>
           </div>
 
           {/* ICP Cards */}
@@ -595,10 +592,10 @@ export function HomePage() {
                 </h3>
               </div>
               <p className="text-md text-emerald-700 mb-3 font-semibold">
-                10–200 people
+                1–200 people
               </p>
               <p className="text-md text-emerald-700 mb-2 italic">
-                Strategy, operations, analytics, product, customer success teams
+                Strategy, operations, analytics and product teams
               </p>
               <div className="mb-4">
                 <p className="text-sm font-bold text-emerald-800 mb-2">Need:</p>
@@ -608,7 +605,7 @@ export function HomePage() {
               </div>
               <div className="bg-white/60 p-3 rounded-lg">
                 <p className="text-sm font-semibold text-emerald-900 italic">
-                  Turn ad-hoc analysis into a reusable playbooks.
+                  Turn your questions into analytics specifications
                 </p>
               </div>
             </div>
@@ -625,12 +622,13 @@ export function HomePage() {
                 Small and Medium Businesses
               </p>
               <p className="text-md text-blue-700 mb-2 italic">
-                Revenue operations, product operations, marketing operations
+                Revenue, product or marketing operations
               </p>
               <div className="mb-4">
                 <p className="text-sm font-bold text-blue-800 mb-2">Need:</p>
                 <p className="text-sm text-blue-700">
-                  Translate goals into metrics into decisions and prompts
+                  Translate your goals into metrics that give your decisions
+                  confidence
                 </p>
               </div>
               <div className="bg-white/60 p-3 rounded-lg">
@@ -651,8 +649,8 @@ export function HomePage() {
                 </h3>
               </div>
               <p className="text-lg text-gray-900 text-center leading-relaxed">
-                Teams who already use ChatGPT or Claude but lack analytics
-                clarity, prompt standards and want better quality control.
+                Teams who use ChatGPT but lack analytics clarity and want
+                quality control.
               </p>
             </div>
           </div>
