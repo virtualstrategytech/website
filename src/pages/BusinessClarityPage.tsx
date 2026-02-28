@@ -103,7 +103,7 @@ export const ProductDevelopmentPage: React.FC = () => {
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl sm:text-2xl md:text-3xl text-emerald-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+          <p className="text-xl sm:text-2xl md:text-3xl text-emerald-100 mb-12 max-w-4xl mx-auto leading-relaxed font-semibold animate-slide-up delay-200">
             And Upskill Your Team With Prompt Engineering Lessons And Quizzes As
             You Do It
           </p>
@@ -114,7 +114,7 @@ export const ProductDevelopmentPage: React.FC = () => {
               onClick={handleOpenModal}
               className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 rounded-xl shadow-2xl hover:shadow-emerald-800/30 transition-all duration-500 transform hover:scale-105 min-w-[280px]"
             >
-              <span className="relative z-10">Schedule Your Free Demo</span>
+              <span className="relative z-10">See Demo / Join Beta</span>
               <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:translate-x-1" />
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 rounded-xl opacity-0 group-hover:opacity-25 transition-opacity duration-500"></div>
             </button>
@@ -539,7 +539,7 @@ export const ProductDevelopmentPage: React.FC = () => {
                   <CheckCircle className="w-6 h-6 text-emerald-500 mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      Alignment Without Chaos
+                      Alignment With Clarity
                     </h4>
                     <p className="text-gray-600">Shared definition of "done"</p>
                   </div>
