@@ -52,13 +52,11 @@ export function HomePage() {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
       {/* Header/Navigation */}
       <header
-        className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40"
-        style={{ height: "calc(6rem * 1.3)" }}
+        className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40 h-20 sm:h-24 md:h-28 lg:h-32"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div
-            className="flex justify-between items-center"
-            style={{ height: "calc(6rem * 1.3)" }}
+            className="flex justify-between items-center h-full"
           >
             {/* Logo */}
             <div className="flex items-start">
@@ -73,35 +71,25 @@ export function HomePage() {
             <nav className="hidden md:flex items-center space-x-8">
               <a
                 href="#"
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "22px" }}
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium text-xl lg:text-2xl"
               >
                 Home
               </a>
               <button
                 onClick={() => handleNavigateToPage("/products")}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "22px" }}
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium text-xl lg:text-2xl"
               >
                 Product
               </button>
               <button
                 onClick={() => handleNavigateToPage("/use-cases")}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "22px" }}
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium text-xl lg:text-2xl"
               >
                 Use Cases
               </button>
               <button
                 onClick={() => handleCTAClick("header-cta")}
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-1.5 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
-                style={{
-                  fontSize: "26px",
-                  paddingLeft: "1.5rem",
-                  paddingRight: "1.5rem",
-                  paddingTop: "0.75rem",
-                  paddingBottom: "0.75rem"
-                }}
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105 text-xl md:text-2xl"
               >
                 Demo
               </button>
@@ -150,8 +138,7 @@ export function HomePage() {
                     setIsMobileMenuOpen(false);
                     handleNavigateToPage("/use-cases");
                   }}
-                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                  style={{ fontSize: "18px" }}
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium text-lg"
                 >
                   Case Studies
                 </button>
@@ -159,8 +146,7 @@ export function HomePage() {
                   onClick={() => {
                     setIsModalOpen(true);
                   }}
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105"
-                  style={{ fontSize: "16px", fontWeight: "600" }}
+                  className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105 text-base"
                 >
                   Demo
                 </button>
@@ -190,13 +176,7 @@ export function HomePage() {
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-900 via-emerald-700 to-indigo-900 backdrop-blur-sm border border-blue-400/30 rounded-full text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <Lightbulb className="w-5 h-5 mr-2" />
             <Brain className="w-5 h-5 mr-2 text-emerald-300" />
-            <span
-              style={{
-                fontSize: "22px",
-                fontWeight: 600,
-                letterSpacing: "0.02em"
-              }}
-            >
+            <span className="text-lg sm:text-xl font-semibold tracking-wide">
               Product and Analytics Enablement
             </span>
           </div>
