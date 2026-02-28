@@ -63,7 +63,7 @@ export function HomePage() {
               <img
                 src="/Logo/VirtualStrategyTechLogoSVG.svg"
                 alt="Virtual Strategy Tech - Productivity Reimagined"
-                className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain"
+                className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain"
               />
             </div>
 
