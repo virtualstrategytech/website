@@ -818,8 +818,7 @@ export function HomePage() {
                     Stronger Morale
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Less busy work, more empowerment towards mastery. People
-                    feel supported - not replaced.
+                    Empowerment towards mastery. Teams feel supported.
                   </p>
                 </div>
               </div>
@@ -935,8 +934,7 @@ export function HomePage() {
             </span>
           </h2>
           <p className="text-xl sm:text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto">
-            Upskilling with analytics - rather than replacing performers, we
-            empower them to be better performing.
+            Empowering performers with clarity in analytics.
           </p>
         </div>
       </section>
