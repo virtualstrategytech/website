@@ -102,14 +102,14 @@ export const UpskillingProAgentsPage: React.FC = () => {
 
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-                Bridge Business Questions{" "}
+                Translate Business Questions{" "}
                 <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
                   Into Analytics Specifications
                 </span>
               </h1>
 
               {/* Subheading */}
-              <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+              <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-semibold animate-slide-up delay-200">
                 And Upskill Your Team With Prompt Engineering Lessons And
                 Quizzes As You Do It
               </p>
@@ -176,7 +176,7 @@ export const UpskillingProAgentsPage: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900">
-                      Funnel + conversion tracking
+                      Funnel and conversion tracking
                     </h3>
                     <p className="text-base mt-1">
                       <span className="font-semibold text-gray-900">
@@ -229,7 +229,7 @@ export const UpskillingProAgentsPage: React.FC = () => {
                   Why it’s valuable
                 </h4>
                 <p className="text-base text-gray-800">
-                  Product + engineering can implement immediately.
+                  Product and engineering can implement immediately.
                 </p>
               </div>
             </div>
@@ -308,7 +308,7 @@ export const UpskillingProAgentsPage: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900">
-                      Revenue / pricing analytics
+                      Revenue and pricing analytics
                     </h3>
                     <p className="text-base mt-1">
                       <span className="font-semibold text-gray-900">
@@ -643,15 +643,12 @@ export const UpskillingProAgentsPage: React.FC = () => {
 
           <div className="relative z-10 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-              Ready to{" "}
+              Join our{" "}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-[#10B981] bg-clip-text text-transparent">
-                Transform
+                Beta Pilot
               </span>{" "}
-              Your Analytics?
+              to Transform Analytics!
             </h2>
-            <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Join our Beta Pilot and help shape the future of decision making!
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
               <button
