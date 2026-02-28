@@ -392,8 +392,7 @@ export function HomePage() {
           <br />
           <br />
           <span className="text-emerald-200 font-semibold">
-            Join our Beta and help us shape the future of stable, reliable,
-            agentic flow!
+            Join our Beta to shape the future of reliable agentic flow!
           </span>
         </p>
 
