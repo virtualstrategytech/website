@@ -515,7 +515,7 @@ export const ProductDevelopmentPage: React.FC = () => {
           {/* Key Benefits List */}
           <div className="bg-white p-12 rounded-3xl shadow-xl border border-gray-100 animate-fade-in-up">
             <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              Why Choose Our{" "}
+              Our{" "}
               <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                 NovAIn Decision Platform
               </span>
