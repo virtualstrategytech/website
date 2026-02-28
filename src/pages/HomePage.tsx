@@ -675,12 +675,10 @@ export function HomePage() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Building{" "}
+              Human-AI Collaboration:{" "}
               <span className="font-semibold text-gray-900">
-                Human-AI collaboration{" "}
+                increasing capability while learning on the job{" "}
               </span>
-              that increases capability - not headcount reduction. Teams learn
-              while solving business problems on the job.
             </p>
           </div>
 
@@ -901,9 +899,9 @@ export function HomePage() {
 
             <div className="border-t border-white/20 pt-8">
               <p className="text-xl mb-6 text-blue-100">
-                Our upskilling agents don't just automate outputs, they{" "}
-                <strong> standardize decision quality</strong> to help teams
-                improve over time.
+                Our analytics and upskilling platform{" "}
+                <strong> standardizes decision quality</strong> to elevate the
+                team
               </p>
 
               <button
@@ -938,9 +936,8 @@ export function HomePage() {
             </span>
           </h2>
           <p className="text-xl sm:text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto">
-            Bulding the most practical upskilling tool for knowledge workers —
-            rather than replacing performers, we empower them with analytics to
-            better ways of working.
+            Upskilling with analytics - rather than replacing performers, we
+            empower them to be better performing.
           </p>
         </div>
       </section>
