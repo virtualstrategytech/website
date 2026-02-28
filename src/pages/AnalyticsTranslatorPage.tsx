@@ -119,7 +119,7 @@ export const UpskillingProAgentsPage: React.FC = () => {
                   onClick={handleOpenModal}
                   className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50"
                 >
-                  <span className="relative z-10">Schedule Your Free Demo</span>
+                  <span className="relative z-10">See Demo / Join Beta</span>
                   <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 </button>
@@ -294,7 +294,7 @@ export const UpskillingProAgentsPage: React.FC = () => {
                   Why it’s valuable
                 </h4>
                 <p className="text-base text-gray-800">
-                  Prevents fake wins and vanity metrics.
+                  Prevents false wins and unnecessary metrics.
                 </p>
               </div>
             </div>
@@ -540,7 +540,7 @@ export const UpskillingProAgentsPage: React.FC = () => {
           {/* Key Benefits List */}
           <div className="bg-white p-12 rounded-3xl shadow-xl border border-gray-100 animate-fade-in-up">
             <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              Why Choose Our{" "}
+              Our{" "}
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 NovAIn Decision Platform
               </span>

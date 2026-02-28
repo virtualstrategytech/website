@@ -603,12 +603,12 @@ export function HomePage() {
               <div className="mb-4">
                 <p className="text-sm font-bold text-emerald-800 mb-2">Need:</p>
                 <p className="text-sm text-emerald-700">
-                  Faster thinking, better deliverables, repeatable methods
+                  Faster thinking, better deliverables, repeatable results
                 </p>
               </div>
               <div className="bg-white/60 p-3 rounded-lg">
                 <p className="text-sm font-semibold text-emerald-900 italic">
-                  Turn ad-hoc analysis into a repeatable playbook.
+                  Turn ad-hoc analysis into a reusable playbooks.
                 </p>
               </div>
             </div>
@@ -622,22 +622,20 @@ export function HomePage() {
                 </h3>
               </div>
               <p className="text-md text-blue-700 mb-3 font-semibold">
-                SMB / Mid-Market
+                Small and Medium Businesses
               </p>
               <p className="text-md text-blue-700 mb-2 italic">
-                Revenue operations, product operations, marketing operations,
-                finance
+                Revenue operations, product operations, marketing operations
               </p>
               <div className="mb-4">
                 <p className="text-sm font-bold text-blue-800 mb-2">Need:</p>
                 <p className="text-sm text-blue-700">
-                  Translate goals → metrics → prompts → decisions
+                  Translate goals into metrics into decisions and prompts
                 </p>
               </div>
               <div className="bg-white/60 p-3 rounded-lg">
                 <p className="text-sm font-semibold text-blue-900 italic">
-                  Reduce rework and confusion by aligning prompts to the
-                  business outcome.
+                  Reduce rework by aligning prompts to the business outcome.
                 </p>
               </div>
             </div>
@@ -654,8 +652,7 @@ export function HomePage() {
               </div>
               <p className="text-lg text-gray-900 text-center leading-relaxed">
                 Teams who already use ChatGPT or Claude but lack analytics
-                clarity,prompt standards or are struggling with implementation
-                and quality control.
+                clarity, prompt standards and want better quality control.
               </p>
             </div>
           </div>
@@ -680,13 +677,12 @@ export function HomePage() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              We are building{" "}
+              Building{" "}
               <span className="font-semibold text-gray-900">
                 Human-AI collaboration{" "}
               </span>
               that increases capability - not headcount reduction. Teams learn
-              while solving real business problems without the need for external
-              training.
+              while solving business problems on the job.
             </p>
           </div>
 
@@ -746,7 +742,7 @@ export function HomePage() {
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-blue-800">
-                  Our Decision Brief Upskilling Approach
+                  Our Decision Brief Analytics and Upskilling Approach
                 </h3>
               </div>
 
