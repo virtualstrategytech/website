@@ -51,13 +51,9 @@ export function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 relative overflow-hidden scroll-smooth">
       {/* Header/Navigation */}
-      <header
-        className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40 h-20 sm:h-24 md:h-28 lg:h-32"
-      >
+      <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40 h-20 sm:h-24 md:h-28 lg:h-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-          <div
-            className="flex justify-between items-center h-full"
-          >
+          <div className="flex justify-between items-center h-full">
             {/* Logo */}
             <div className="flex items-start">
               <img
@@ -190,10 +186,9 @@ export function HomePage() {
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+          <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-semibold animate-slide-up delay-200">
             Turn Business Questions into Decision Briefs and Analytics
-            Specifications your Team can Execute then Reinforce with Prompt
-            Upskilling.
+            Specifications then Reinforce with Upskilling.
           </p>
 
           {/* CTA Button */}
@@ -237,9 +232,9 @@ export function HomePage() {
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose{" "}
+              From Question to{" "}
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
-                NovAIn
+                Execution
               </span>
             </h2>
           </div>
@@ -257,16 +252,12 @@ export function HomePage() {
                 </span>
               </h3>
               <p className="text-gray-700 text-center leading-relaxed">
-                Translate{" "}
+                Turn one product question into a{" "}
                 <span className="font-bold text-blue-700">
-                  business strategy questions
+                  decision brief and analytics specification
                 </span>{" "}
-                into{" "}
-                <span className="font-bold text-indigo-700">
-                  prompt engineering education
-                </span>{" "}
-                through our{" "}
-                <span className="font-semibold text-blue-600">
+                <span className="font-bold text-blue-700"></span> through our{" "}
+                <span className="font-bold text-blue-700">
                   dual translation lens
                 </span>{" "}
                 with seamless switching between the two.
@@ -288,12 +279,14 @@ export function HomePage() {
                   Reusable prompt packages
                 </span>{" "}
                 equip your whole team with a library of artifacts that build{" "}
-                <span className="font-semibold text-emerald-600">
+                <span className="font-bold text-emerald-700">
                   shared understanding
                 </span>
                 ,{" "}
-                <span className="font-bold text-green-700">less variance</span>,
-                few hallucinated outputs and{" "}
+                <span className="font-bold text-emerald-700">
+                  less variance
+                </span>
+                , few hallucinated outputs and{" "}
                 <span className="font-bold text-emerald-700">
                   overall consistency
                 </span>
@@ -316,11 +309,10 @@ export function HomePage() {
                   Track your improvement
                 </span>{" "}
                 in implementing LLMs on-the-job through
-                <span className="font-semibold text-indigo-600">
+                <span className="font-bold text-purple-700">
                   {" "}
-                  quizzes, rubrics and dashboards
+                  quizzes and rubrics and learn as you work
                 </span>{" "}
-                without investing extra time to data science education.{" "}
               </p>
             </div>
           </div>
@@ -339,7 +331,7 @@ export function HomePage() {
               className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-emerald-500 via-blue-600 to-purple-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-emerald-400 hover:via-blue-500 hover:to-purple-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
-                Discover Our Product
+                Our Product
               </span>
               <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
@@ -1008,7 +1000,7 @@ export function HomePage() {
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-[#10B981] bg-clip-text text-transparent">
                 Beta Pilot
               </span>{" "}
-              and shape the future of decision-making!
+              to Transform Analytics!
             </h2>
 
             {/* CTA Buttons */}

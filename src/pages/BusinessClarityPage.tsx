@@ -96,7 +96,7 @@ export const ProductDevelopmentPage: React.FC = () => {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            Turn Real Business Questions
+            Turn Business Questions
             <span className="bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 bg-clip-text text-transparent">
               Into Decision Ready Analytics
             </span>
@@ -613,15 +613,12 @@ export const ProductDevelopmentPage: React.FC = () => {
 
           <div className="relative z-10 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-              Ready to{" "}
+              Join our{" "}
               <span className="bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 bg-clip-text text-transparent">
-                Revolutionize{" "}
-              </span>
-              Your Strategy?
+                Beta Pilot
+              </span>{" "}
+              to Transform Analytics!
             </h2>
-            <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Join our Beta Pilot and help shape the future of decision-making!
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
               <button

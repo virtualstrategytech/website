@@ -104,9 +104,8 @@ export const SmartTicketSchedulingPage: React.FC = () => {
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl sm:text-2xl md:text-3xl text-purple-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
-            And Upskill Your Team With Prompt Engineering Lessons and Quizzes As
-            You Do It
+          <p className="text-xl sm:text-2xl md:text-3xl text-purple-100 mb-12 max-w-4xl mx-auto leading-relaxed font-semibold animate-slide-up delay-200">
+            And Upskill Your Team With Prompt Engineering Lessons and Quizzes
           </p>
 
           {/* CTA Button in Hero Section */}
@@ -115,7 +114,7 @@ export const SmartTicketSchedulingPage: React.FC = () => {
               onClick={handleOpenModal}
               className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-fuchsia-700 via-pink-600 to-fuchsia-500 rounded-xl shadow-2xl shadow-fuchsia-700/40 hover:shadow-fuchsia-800/45 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-fuchsia-600/40 border border-fuchsia-600/10"
             >
-              <span className="relative z-10">Schedule Your Free Demo</span>
+              <span className="relative z-10">See Demo / Join Beta</span>
               <ArrowRight className="w-5 h-5 ml-3 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
               <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-fuchsia-800 via-pink-600 to-fuchsia-600 opacity-0 group-hover:opacity-30 transition-opacity duration-300 filter blur-sm"></div>
             </button>
@@ -644,22 +643,19 @@ export const SmartTicketSchedulingPage: React.FC = () => {
 
           <div className="relative z-10 animate-fade-in-up">
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-              Ready to{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-[#10B981] bg-clip-text text-transparent">
-                Transform
+              Join our{" "}
+              <span className="bg-gradient-to-r from-fuchsia-700 via-pink-600 to-fuchsia-500 bg-clip-text text-transparent">
+                Beta Pilot
               </span>{" "}
-              Your Model Approach?
+              to Transform Analytics!
             </h2>
-            <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Join our Beta Pilot and help shape the future of decision-making!
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
               <button
                 onClick={handleOpenModal}
                 className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-fuchsia-700 via-pink-600 to-fuchsia-500 rounded-xl shadow-2xl shadow-fuchsia-700/40 hover:shadow-fuchsia-800/45 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-fuchsia-600/40 border border-fuchsia-600/10"
               >
-                <span className="relative z-10">Schedule Your Free Demo</span>
+                <span className="relative z-10">See Demo / Join Beta</span>
                 <ArrowRight className="w-5 h-5 ml-3 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-fuchsia-800 via-pink-600 to-fuchsia-600 opacity-0 group-hover:opacity-30 transition-opacity duration-300 filter blur-sm"></div>
               </button>

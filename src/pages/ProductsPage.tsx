@@ -161,7 +161,7 @@ const ProductsPage = () => {
             </span>
           </h1>
           {/* Subheadline */}
-          <p className="text-xl sm:text-xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-light animate-slide-up delay-200">
+          <p className="text-xl sm:text-xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-semibold animate-slide-up delay-200">
             Integrated module platform designed to turn real business questions
             into analytics and machine learning readiness.
           </p>
