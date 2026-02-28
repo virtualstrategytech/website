@@ -206,15 +206,11 @@ const ProductsPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Real Questions{" "}
+              Turn Ambiguous Problems into{" "}
               <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent">
-                From Product Teams
+                Clear Analytics Specifications
               </span>
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Turn ambiguous business problems into clear analytics
-              specifications
-            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
