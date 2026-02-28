@@ -90,10 +90,9 @@ export const UseCasesPage: React.FC = () => {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-blue-100/90 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in">
-            See how these solutions drive results in real organizations. Dive
-            into case studies and research to discover the strategies behind
-            intelligent upskilling and automation.
+          <p className="text-lg sm:text-xl md:text-2xl text-blue-100/90 mb-12 max-w-4xl mx-auto leading-relaxed font-semibold animate-fade-in">
+            Dive into case studies and research behind analytics and intelligent
+            upskilling.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
@@ -101,7 +100,7 @@ export const UseCasesPage: React.FC = () => {
               className="inline-flex items-center px-5 py-4 text-lg font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl shadow-md hover:shadow-lg transition-all"
               onClick={handleOpenModal}
             >
-              Request a Demo
+              See Demo / Join Beta
               <ArrowRight className="ml-2 h-4 w-4" />
             </button>
 
