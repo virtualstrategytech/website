@@ -11,7 +11,7 @@ export default function BrandBlock({ theme = "dark" }: BrandBlockProps) {
     <a
       href="/"
       className="inline-flex items-center gap-3 no-underline group transition-all duration-300"
-      aria-label="Virtual Strategy Tech — Where strategy meets prompt engineering"
+      aria-label="Virtual Strategy Tech — Where analytics meets clarity"
     >
       <div className="relative">
         <img
@@ -33,7 +33,7 @@ export default function BrandBlock({ theme = "dark" }: BrandBlockProps) {
             isLight ? "text-gray-600" : "text-blue-200"
           }`}
         >
-          Where strategy meets prompt engineering
+          Where analytics meets clarity
         </span>
       </div>
     </a>

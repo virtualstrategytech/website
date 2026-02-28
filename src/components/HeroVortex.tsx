@@ -1,6 +1,4 @@
-import React, { PropsWithChildren, useEffect, useMemo, useState } from "react";
-import { Vortex } from "./ui/vortex";
-import { shouldEnableHeavyEffects } from "@/utils/animationGate";
+import React, { PropsWithChildren, useMemo } from "react";
 import StarfieldLite from "./StarfieldLite";
 
 type Variant = "home" | "inner";
@@ -13,7 +11,7 @@ type Props = {
   rangeY?: number;
 
   /**
-   * home = heavy/rich animation (Home page only)
+   * home = lightweight animation (Home page)
    * inner = lightweight, consistent particle hero (Products/Solutions/UseCases)
    */
   variant?: Variant;
@@ -28,16 +26,6 @@ export default function HeroVortex({
   rangeY = 800,
   variant = "home",
 }: PropsWithChildren<Props>) {
-  const [enableHeavy, setEnableHeavy] = useState(false);
-
-  useEffect(() => {
-    if (variant === "home") {
-      setEnableHeavy(shouldEnableHeavyEffects());
-    } else {
-      setEnableHeavy(false);
-    }
-  }, [variant]);
-
   const innerBg = useMemo(() => {
     return (
       <>
@@ -75,36 +63,7 @@ export default function HeroVortex({
     );
   }, []);
 
-  // INNER: always use lightweight background
-  if (variant === "inner") {
-    return (
-      <div className={`relative overflow-hidden ${className ?? ""}`}>
-        {innerBg}
-        <div className="relative z-10">{children}</div>
-      </div>
-    );
-  }
-
-  // HOME: heavy vortex only if device can handle it
-  if (enableHeavy) {
-    return (
-      <Vortex
-        backgroundColor={backgroundColor}
-        baseHue={baseHue}
-        particleCount={particleCount}
-        rangeY={rangeY}
-        baseSpeed={0.05}
-        rangeSpeed={0.4}
-        baseRadius={1.5}
-        rangeRadius={1.5}
-        className={className}
-      >
-        {children}
-      </Vortex>
-    );
-  }
-
-  // HOME fallback (if heavy effects disabled)
+  // Both HOME and INNER: always use lightweight background
   return (
     <div className={`relative overflow-hidden ${className ?? ""}`}>
       {innerBg}

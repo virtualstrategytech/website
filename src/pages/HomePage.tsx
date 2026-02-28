@@ -223,7 +223,7 @@ export function HomePage() {
               className="group relative inline-flex items-center px-10 py-5 text-xl font-bold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-2xl shadow-2xl hover:shadow-blue-500/30 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-400/50"
             >
               <span className="relative z-10 tracking-wide drop-shadow">
-                Schedule your Free Demo
+                Try Demo / Join Beta
               </span>
               <ArrowRight className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
@@ -944,7 +944,7 @@ export function HomePage() {
                 onClick={() => handleCTAClick("comparison-cta")}
                 className="group bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl"
               >
-                Schedule your Free Demo
+                Try Demo / Join Beta
                 <ArrowRight className="w-5 h-5 ml-2 inline transition-transform duration-500 group-hover:translate-x-1" />
               </button>
             </div>
@@ -1024,15 +1024,12 @@ export function HomePage() {
           <div className="relative z-10 animate-fade-in-up">
             {/* Headline */}
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
-              Ready to{" "}
+              Join our{" "}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-[#10B981] bg-clip-text text-transparent">
-                Transform{" "}
-              </span>
-              Your Workforce?
+                Beta Pilot
+              </span>{" "}
+              and shape the future of decision-making!
             </h2>
-            <p className="text-xl sm:text-2xl text-blue-200 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Join our Beta Pilot and help shape the future of decision-making!
-            </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-stagger-in">
@@ -1041,7 +1038,7 @@ export function HomePage() {
                 onClick={() => handleCTAClick("final-cta-primary")}
                 className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-[#10B981] to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-[#10B981] hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50 min-w-[280px]"
               >
-                <span className="relative z-10">Schedule your Free Demo</span>
+                <span className="relative z-10">Try Demo / Join Beta</span>
                 <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:translate-x-1" />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-[#10B981] to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
               </button>
