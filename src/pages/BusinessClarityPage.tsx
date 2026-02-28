@@ -625,7 +625,7 @@ export const ProductDevelopmentPage: React.FC = () => {
                 onClick={handleOpenModal}
                 className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 rounded-xl shadow-2xl hover: shadow-emerald-800/30 transition-all duration-500 transform hover:scale-105 min-w-[280px]"
               >
-                <span className="relative z-10">Schedule Your Free Demo</span>
+                <span className="relative z-10"> See Demo / Join Beta</span>
                 <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-500 group-hover:translate-x-1" />
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 rounded-xl opacity-0 group-hover:opacity-25 transition-opacity duration-500"></div>
               </button>
