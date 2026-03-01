@@ -36,7 +36,7 @@ export const UseCasesPage: React.FC = () => {
               <button
                 onClick={() => navigate("/")}
                 className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "22px" }}
               >
                 <ArrowLeft className="w-5 h-5 mr-2" />
                 Back to Home
