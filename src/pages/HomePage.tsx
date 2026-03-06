@@ -188,7 +188,7 @@ export function HomePage() {
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-semibold animate-slide-up delay-200">
             Turn Business Questions into Decision Briefs and Translate Analytics
-            through a Dual-Lens System to Reinforce with Upskilling.
+            through a Dual-Lens System that Reinforces with Upskilling.
           </p>
 
           {/* CTA Button */}
