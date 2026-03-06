@@ -181,14 +181,14 @@ export function HomePage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             Make Better Product Decisions:{" "}
             <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent inline-block pb-1">
-              Execute Analaytics with Confidence
+              Translating Analytics into Clarity
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-semibold animate-slide-up delay-200">
-            Turn Business Questions into Decision Briefs and Analytics
-            Specifications then Reinforce with Upskilling.
+            Turn Business Questions into Decision Briefs and Translate Analytics
+            through a Dual-Lens System to Reinforce with Upskilling.
           </p>
 
           {/* CTA Button */}

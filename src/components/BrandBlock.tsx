@@ -33,7 +33,7 @@ export default function BrandBlock({ theme = "dark" }: BrandBlockProps) {
             isLight ? "text-gray-600" : "text-blue-200"
           }`}
         >
-          Making product analytics clear
+          Clarifying product strategy with analytics
         </span>
       </div>
     </a>

@@ -17,19 +17,13 @@ type Props = {
   variant?: Variant;
 };
 
-export default function HeroVortex({
-  children,
-  className,
-  backgroundColor = "black",
-  baseHue = 220,
-  particleCount = 1200,
-  rangeY = 800,
-  variant = "home",
-}: PropsWithChildren<Props>) {
+export default function HeroVortex(props: PropsWithChildren<Props>) {
+  const { children, className, backgroundColor = "black" } = props;
   const innerBg = useMemo(() => {
     return (
       <>
-        {/* Base gradient (match home vibe) */}
+        {/* Base color layer (from prop), then gradient on top */}
+        <div className="absolute inset-0" style={{ backgroundColor }} />
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950" />
 
         {/* Starfield canvas (this is the “moving particles” layer) */}
@@ -61,7 +55,7 @@ export default function HeroVortex({
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20 pointer-events-none" />
       </>
     );
-  }, []);
+  }, [backgroundColor]);
 
   // Both HOME and INNER: always use lightweight background
   return (
