@@ -234,7 +234,7 @@ export function HomePage() {
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
               From Question to{" "}
               <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
-                Execution
+                Clarity
               </span>
             </h2>
           </div>
