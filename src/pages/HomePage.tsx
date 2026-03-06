@@ -934,7 +934,9 @@ export function HomePage() {
             </span>
           </h2>
           <p className="text-xl sm:text-2xl text-blue-100 leading-relaxed max-w-4xl mx-auto">
-            Empowering performers with clarity in analytics.
+            To empower product and strategy leaders with clear decision insights
+            using analytics and reinforce their learning with on-the-job
+            upskilling.
           </p>
         </div>
       </section>
