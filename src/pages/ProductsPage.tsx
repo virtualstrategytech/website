@@ -155,15 +155,31 @@ const ProductsPage = () => {
 
           {/* Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-            Make Better Decisions:{" "}
+            Make Better Product Decisions:{" "}
             <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent inline-block pb-1">
-              Execute with Confidence
+              Translating Analytics into{" "}
+              <br />
+              <span className="inline-block pb-1">
+                {[
+                  { char: "C", className: "bg-gradient-to-r from-blue-400 via-emerald-400 to-emerald-300 bg-clip-text text-transparent" },
+                  { char: "l", className: "bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-200 bg-clip-text text-transparent" },
+                  { char: "a", className: "bg-gradient-to-r from-emerald-300 via-emerald-200 to-indigo-400 bg-clip-text text-transparent" },
+                  { char: "r", className: "bg-gradient-to-r from-emerald-400 via-indigo-400 to-indigo-300 bg-clip-text text-transparent" },
+                  { char: "i", className: "bg-gradient-to-r from-indigo-300 via-emerald-400 to-indigo-400 bg-clip-text text-transparent" },
+                  { char: "t", className: "bg-gradient-to-r from-indigo-400 via-emerald-400 to-blue-400 bg-clip-text text-transparent" },
+                  { char: "y", className: "bg-gradient-to-r from-blue-400 via-emerald-400 to-blue-300 bg-clip-text text-transparent" },
+                ].map(({ char, className }, i) => (
+                  <span key={`clarity-${i}`} className={`inline-block ${className}`}>
+                    {char}
+                  </span>
+                ))}
+              </span>
             </span>
           </h1>
           {/* Subheadline */}
           <p className="text-xl sm:text-xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-semibold animate-slide-up delay-200">
             Integrated module platform designed to turn real business questions
-            into analytics and machine learning readiness.
+            into analytics specifications and machine learning readiness.
           </p>
 
           {/* CTA */}
