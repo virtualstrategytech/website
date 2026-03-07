@@ -195,7 +195,7 @@ const ProductsPage = () => {
             </div>
             <div className="flex items-center space-x-3 bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <LifeBuoy className="w-6 h-6 text-purple-400" />
-              <span className="text-xl font-medium">Consistent Delivery</span>
+              <span className="text-xl font-medium">Decision Optimization</span>
             </div>
           </div>
         </div>
