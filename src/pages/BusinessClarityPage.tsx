@@ -109,7 +109,7 @@ export const ProductDevelopmentPage: React.FC = () => {
           </p>
 
           {/* CTA Button */}
-          <div className="mb-11 animate-slide-up delay-400">
+          <div className="mb-16 animate-slide-up delay-400">
             <button
               onClick={handleOpenModal}
               className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-emerald-700 via-teal-600 to-green-700 rounded-xl shadow-2xl hover:shadow-emerald-800/30 transition-all duration-500 transform hover:scale-105 min-w-[280px]"
@@ -121,7 +121,7 @@ export const ProductDevelopmentPage: React.FC = () => {
           </div>
 
           {/* Key Benefits */}
-          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-emerald-200 animate-slide-slide delay-600">
+          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-emerald-200 animate-slide-up delay-600">
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
               <Clock className="w-6 h-6 text-emerald-400" />
               <span className="text-xl font-medium">Strategic Clarity</span>

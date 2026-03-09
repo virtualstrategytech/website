@@ -67,9 +67,9 @@ export const UseCasesPage: React.FC = () => {
         baseHue={235}
         particleCount={900}
         rangeY={900}
-        className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
+        className="min-h-screen px-4 sm:px-6 lg:px-8 pt-20 lg:flex lg:items-center lg:justify-center"
       >
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center pt-12 pb-20 sm:pt-16 sm:pb-24">
           <div className="inline-flex items-center px-4 py-3 rounded-full bg-gradient-to-r from-blue-600/40 to-indigo-600/40 border border-white/15 text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <BookOpen className="w-5 h-5 mr-2" />
             <span

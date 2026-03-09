@@ -135,9 +135,9 @@ const ProductsPage = () => {
         baseHue={555}
         particleCount={1100}
         rangeY={800}
-        className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
+        className="min-h-screen relative px-4 sm:px-6 lg:px-8 pt-20 lg:flex lg:items-center lg:justify-center"
       >
-        <div className="max-w-6xl w-full mx-auto text-center">
+        <div className="max-w-6xl w-full mx-auto text-center pt-12 pb-20 sm:pt-16 sm:pb-24">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-3 rounded-full bg-gradient-to-r from-emerald-600/40 to-indigo-600/40 border border-white/15 text-blue-100 text-lg font-medium mb-8 shadow-lg animate-fade-in">
             <Lightbulb className="w-5 h-5 mr-2" />
@@ -157,19 +157,49 @@ const ProductsPage = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
             Make Better Product Decisions:{" "}
             <span className="bg-gradient-to-r from-blue-500 via-emerald-400 to-indigo-400 bg-clip-text text-transparent inline-block pb-1">
-              Translating Analytics into{" "}
-              <br />
+              Translating Analytics into <br />
               <span className="inline-block pb-1">
                 {[
-                  { char: "C", className: "bg-gradient-to-r from-blue-400 via-emerald-400 to-emerald-300 bg-clip-text text-transparent" },
-                  { char: "l", className: "bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-200 bg-clip-text text-transparent" },
-                  { char: "a", className: "bg-gradient-to-r from-emerald-300 via-emerald-200 to-indigo-400 bg-clip-text text-transparent" },
-                  { char: "r", className: "bg-gradient-to-r from-emerald-400 via-indigo-400 to-indigo-300 bg-clip-text text-transparent" },
-                  { char: "i", className: "bg-gradient-to-r from-indigo-300 via-emerald-400 to-indigo-400 bg-clip-text text-transparent" },
-                  { char: "t", className: "bg-gradient-to-r from-indigo-400 via-emerald-400 to-blue-400 bg-clip-text text-transparent" },
-                  { char: "y", className: "bg-gradient-to-r from-blue-400 via-emerald-400 to-blue-300 bg-clip-text text-transparent" },
+                  {
+                    char: "C",
+                    className:
+                      "bg-gradient-to-r from-blue-400 via-emerald-400 to-emerald-300 bg-clip-text text-transparent"
+                  },
+                  {
+                    char: "l",
+                    className:
+                      "bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-200 bg-clip-text text-transparent"
+                  },
+                  {
+                    char: "a",
+                    className:
+                      "bg-gradient-to-r from-emerald-300 via-emerald-200 to-indigo-400 bg-clip-text text-transparent"
+                  },
+                  {
+                    char: "r",
+                    className:
+                      "bg-gradient-to-r from-emerald-400 via-indigo-400 to-indigo-300 bg-clip-text text-transparent"
+                  },
+                  {
+                    char: "i",
+                    className:
+                      "bg-gradient-to-r from-indigo-300 via-emerald-400 to-indigo-400 bg-clip-text text-transparent"
+                  },
+                  {
+                    char: "t",
+                    className:
+                      "bg-gradient-to-r from-indigo-400 via-emerald-400 to-blue-400 bg-clip-text text-transparent"
+                  },
+                  {
+                    char: "y",
+                    className:
+                      "bg-gradient-to-r from-blue-400 via-emerald-400 to-blue-300 bg-clip-text text-transparent"
+                  }
                 ].map(({ char, className }, i) => (
-                  <span key={`clarity-${i}`} className={`inline-block ${className}`}>
+                  <span
+                    key={`clarity-${i}`}
+                    className={`inline-block ${className}`}
+                  >
                     {char}
                   </span>
                 ))}

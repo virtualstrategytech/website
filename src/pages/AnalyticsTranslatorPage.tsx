@@ -92,56 +92,52 @@ export const UpskillingProAgentsPage: React.FC = () => {
         className="min-h-screen relative flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
       >
         <div className="max-w-6xl w-full mx-auto text-center">
-          <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
-            <div className="max-w-6xl mx-auto text-center">
-              {/* Badge */}
-              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600/20 via-emerald-500/12 to-indigo-600/20 backdrop-blur-sm border border-blue-600/30 rounded-full text-emerald-200 text-lg font-medium mb-8 animate-fade-in">
-                <Brain className="w-5 h-5 mr-2 text-emerald-200" />
-                <span style={{ fontSize: "22px" }}>Analytics Translator</span>
-              </div>
+          {/* Badge */}
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600/20 via-emerald-500/12 to-indigo-600/20 backdrop-blur-sm border border-blue-600/30 rounded-full text-emerald-200 text-lg font-medium mb-8 animate-fade-in">
+            <Brain className="w-5 h-5 mr-2 text-emerald-200" />
+            <span style={{ fontSize: "22px" }}>Analytics Translator</span>
+          </div>
 
-              {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
-                Translate Business Questions{" "}
-                <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
-                  Into Analytics Specifications
-                </span>
-              </h1>
+          {/* Main Headline */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-up">
+            Translate Business Questions{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 bg-clip-text text-transparent">
+              Into Analytics Specifications
+            </span>
+          </h1>
 
-              {/* Subheading */}
-              <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-semibold animate-slide-up delay-200">
-                And Upskill Your Team With Prompt Engineering Lessons And
-                Quizzes As You Do It
-              </p>
-              {/* CTA Button */}
-              <div className="mb-16 animate-slide-up delay-400">
-                <button
-                  onClick={handleOpenModal}
-                  className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50"
-                >
-                  <span className="relative z-10">See Demo / Join Beta</span>
-                  <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                </button>
-              </div>
+          {/* Subheading */}
+          <p className="text-xl sm:text-2xl md:text-3xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed font-semibold animate-slide-up delay-200">
+            And Upskill Your Team With Prompt Engineering Lessons And Quizzes As
+            You Do It
+          </p>
+          {/* CTA Button */}
+          <div className="mb-16 animate-slide-up delay-400">
+            <button
+              onClick={handleOpenModal}
+              className="group relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 via-emerald-500 to-indigo-600 rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-105 hover:from-blue-500 hover:via-emerald-400 hover:to-indigo-500 focus:outline-none focus:ring-4 focus:ring-blue-500/50"
+            >
+              <span className="relative z-10">See Demo / Join Beta</span>
+              <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-indigo-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            </button>
+          </div>
 
-              {/* Key Benefits */}
-              <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-blue-200 animate-slide-up delay-600">
-                <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
-                  <BookOpen className="w-6 h-6 text-blue-400" />
-                  <span className="text-xl font-medium">Business Clarity</span>
-                </div>
-                <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
-                  <TrendingUp className="w-6 h-6 text-indigo-400" />
-                  <span className="text-xl font-medium">
-                    Analytics Specifications
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
-                  <Zap className="w-6 h-6 text-purple-400" />
-                  <span className="text-xl font-medium">Tracking Plan</span>
-                </div>
-              </div>
+          {/* Key Benefits */}
+          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-blue-200 animate-slide-up delay-600">
+            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+              <BookOpen className="w-6 h-6 text-blue-400" />
+              <span className="text-xl font-medium">Business Clarity</span>
+            </div>
+            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+              <TrendingUp className="w-6 h-6 text-indigo-400" />
+              <span className="text-xl font-medium">
+                Analytics Specifications
+              </span>
+            </div>
+            <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+              <Zap className="w-6 h-6 text-purple-400" />
+              <span className="text-xl font-medium">Tracking Plan</span>
             </div>
           </div>
         </div>
